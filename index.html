@@ -4356,6 +4356,155 @@ margin-bottom:5px;
 }
 
 }
+
+  /* ANIMACIÓN DE PORTADA POR CAPAS */
+
+
+.opening-inner{
+
+animation:none;
+
+}
+
+
+.monogram-frame,
+.opening h1,
+.opening .script,
+.opening .date,
+.opening button{
+
+opacity:0;
+
+animation:stagedFadeUp 1.1s ease forwards;
+
+}
+
+
+.monogram-frame{
+
+animation-delay:.25s;
+
+}
+
+
+.opening h1{
+
+animation-delay:.85s;
+
+}
+
+
+.opening .script{
+
+animation-delay:1.25s;
+
+}
+
+
+.opening .date{
+
+animation-delay:1.65s;
+
+}
+
+
+.opening button{
+
+animation-delay:2.15s;
+
+}
+
+
+.opening .gold-rule{
+
+opacity:0;
+
+animation:lineReveal 1s ease forwards;
+
+}
+
+
+.opening .gold-rule:nth-of-type(1){
+
+animation-delay:1.45s;
+
+}
+
+
+.opening .gold-rule:nth-of-type(2){
+
+animation-delay:1.95s;
+
+}
+
+
+@keyframes stagedFadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(18px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+@keyframes lineReveal{
+
+from{
+
+opacity:0;
+
+width:0;
+
+}
+
+to{
+
+opacity:1;
+
+width:125px;
+
+}
+
+}
+
+
+/* TRANSICIÓN AL ENTRAR */
+
+
+.opening.hide{
+
+animation:openingOut 1.2s ease forwards;
+
+}
+
+
+@keyframes openingOut{
+
+to{
+
+opacity:0;
+
+visibility:hidden;
+
+transform:scale(1.025);
+
+filter:blur(3px);
+
+}
+
+}
   
   
 </style>
