@@ -239,6 +239,15 @@ button {
 .civil {
     margin-top:60px;
 }
+.civil {
+    display:none;
+    margin-top:60px;
+}
+
+.civil.show {
+    display:block;
+    animation:appear 1.5s ease;
+}
 </style>
 
 </head>
@@ -317,11 +326,13 @@ Morcote, Switzerland
 <div class="ornament">
 ✦
 </div>
-
+<button onclick="showCivil()">
+Continue
+</button>
 </div>
 
 </div>
-<div class="card civil">
+<div class="card civil" id="civilCard">
 
 <h2>
 Civil Ceremony
@@ -349,8 +360,8 @@ Buenos Aires, Argentina
 </div>
 <script>
 
-function openInvitation(){
-document.getElementById("envelope").classList.add("open");
+function showCivil(){
+document.getElementById("civilCard").classList.add("show");
 }
 
 </script>
