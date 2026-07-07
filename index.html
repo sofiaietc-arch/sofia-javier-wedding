@@ -684,29 +684,36 @@ document
 
 }
 
+
 function openEnvelope(){
 
-    document.getElementById("envelope").classList.add("open");
+document
+.getElementById("envelope")
+.classList
+.add("open");
 
-    setTimeout(function(){
+setTimeout(function(){
 
-        document.getElementById("page1").classList.add("active");
+document
+.getElementById("page1")
+.classList
+.add("active");
 
-    },1800);
+},1800);
 
 }
 
 
 function nextPage(number){
 
-let pages = document.querySelectorAll(".page");
+let pages=document.querySelectorAll(".page");
 
 pages.forEach(function(page){
 page.classList.remove("active");
 });
 
 
-let next = document.getElementById("page" + number);
+let next=document.getElementById("page"+number);
 
 if(next){
 next.classList.add("active");
@@ -719,85 +726,58 @@ behavior:"smooth"
 });
 
 }
-const wedding = new Date("September 26, 2026 17:30:00");
-
-function updateCountdown() {
-
-    const now = new Date();
-    const diff = wedding - now;
-
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "Today is the day!";
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    document.getElementById("countdown").innerHTML = days + " Days";
-}
-
-updateCountdown();
-setInterval(updateCountdown, 60000);
-
-}
 
 
+// CUENTA REGRESIVA MORCOTE
 
-function sendRSVP(){
-
-let asistencia =
-document.getElementById("asistencia").value;
+const wedding =
+new Date("September 26, 2026 17:30:00");
 
 
-if(asistencia==="no"){
+function updateCountdown(){
 
-document.querySelector(".modal-content").innerHTML=`
+const now=new Date();
 
-<h2>
-Gracias por acompañarnos con tu cariño 🤍
-</h2>
+const diff=wedding-now;
 
-<div class="gold-line"></div>
 
-<p>
-Aunque no puedas estar presente,
-agradecemos profundamente formar parte
-de este momento tan especial.
-</p>
+if(diff<=0){
 
-<h2>
-Sofía & Javier
-</h2>
-
-`;
+document.getElementById("countdown").innerHTML=
+"Today is the day!";
 
 return;
 
 }
 
 
-alert(
-"Gracias por confirmar tu asistencia 🤍"
+const days=Math.floor(
+diff/(1000*60*60*24)
 );
 
-}
-function openRSVP(){
 
-document
-.getElementById("rsvpModal")
-.style.display="flex";
+document.getElementById("countdown").innerHTML=
+days+" Days";
 
 }
 
 
+updateCountdown();
+
+setInterval(updateCountdown,60000);
+
+
+
+
+// RSVP DINÁMICO
 
 function mostrarEvento(){
 
-let opcion =
+let opcion=
 document.getElementById("asistencia").value;
 
 
-let detalle =
+let detalle=
 document.getElementById("detalleEvento");
 
 
@@ -812,7 +792,7 @@ detalle.innerHTML=`
 <p>
 03 de agosto de 2026<br>
 Museo Isaac Fernández Blanco<br>
-Buenos Aires, Argentina
+Buenos Aires
 </p>
 
 `;
@@ -845,18 +825,16 @@ detalle.innerHTML=`
 
 <div class="gold-line"></div>
 
-<h3>Ceremonias</h3>
+<h3>Nuestras ceremonias</h3>
 
 <p>
 03 de agosto de 2026<br>
-Museo Isaac Fernández Blanco<br>
+Ceremonia Civil<br>
 Buenos Aires
 </p>
 
-
 <p>
 26 de septiembre de 2026<br>
-17:30 hs<br>
 Chiesa Maria del Sasso<br>
 Morcote, Switzerland
 </p>
@@ -900,7 +878,7 @@ detalle.innerHTML="";
 
 function sendRSVP(){
 
-let asistencia =
+let asistencia=
 document.getElementById("asistencia").value;
 
 
@@ -925,6 +903,7 @@ return;
 }
 
 
+
 document.querySelector(".modal-content").innerHTML=`
 
 <h2>
@@ -934,8 +913,6 @@ document.querySelector(".modal-content").innerHTML=`
 <div class="gold-line"></div>
 
 <p>
-Hemos recibido tu respuesta.
-<br><br>
 Nos hace mucha ilusión compartir este momento contigo.
 </p>
 
@@ -948,7 +925,7 @@ Sofía & Javier
 }
 </script>
 
-<div id="rsvpModal" class="modal">
+
 
 <div class="modal-content">
 
