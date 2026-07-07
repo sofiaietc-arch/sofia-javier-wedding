@@ -525,51 +525,6 @@ Continue
 
 
 </div>
-
-</section>
-</div>
-
-</section>
-
-
-</div>
-
-<script>
-
-function openEnvelope(){
-
-document
-.getElementById("envelope")
-.classList
-.add("open");
-
-}
-
-
-function nextPage(number){
-
-let pages = document.querySelectorAll(".page");
-
-pages.forEach(function(page){
-page.classList.remove("active");
-});
-
-let next = document.getElementById("page" + number);
-
-if(next){
-next.classList.add("active");
-}
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-</script>
-
-
 <!-- PAGINA 6 -->
 
 <section class="page" id="page6">
@@ -614,3 +569,43 @@ Morcote, Switzerland
 
 </body>
 </html>
+</section>
+</div>
+
+
+<script>
+
+function openEnvelope(){
+
+document
+.getElementById("envelope")
+.classList
+.add("open");
+
+}
+
+
+function nextPage(number){
+
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+page.classList.remove("active");
+});
+
+let next = document.getElementById("page" + number);
+
+if(next){
+next.classList.add("active");
+}
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+
