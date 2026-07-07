@@ -533,7 +533,7 @@ Please confirm your attendance.
 
 
 <button onclick="openRSVP()">
-Confirm Attendance
+Confirmar asistencia
 </button>
 
 
@@ -738,11 +738,6 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 60000);
-function openRSVP(){
-
-document
-.getElementById("rsvpModal")
-.style.display="flex";
 
 }
 
@@ -786,7 +781,171 @@ alert(
 );
 
 }
+function openRSVP(){
 
+document
+.getElementById("rsvpModal")
+.style.display="flex";
+
+}
+
+
+
+function mostrarEvento(){
+
+let opcion =
+document.getElementById("asistencia").value;
+
+
+let detalle =
+document.getElementById("detalleEvento");
+
+
+if(opcion==="civil"){
+
+detalle.innerHTML=`
+
+<div class="gold-line"></div>
+
+<h3>Ceremonia Civil</h3>
+
+<p>
+03 de agosto de 2026<br>
+Museo Isaac Fernández Blanco<br>
+Buenos Aires, Argentina
+</p>
+
+`;
+
+}
+
+
+else if(opcion==="morcote"){
+
+detalle.innerHTML=`
+
+<div class="gold-line"></div>
+
+<h3>María del Sasso</h3>
+
+<p>
+26 de septiembre de 2026<br>
+17:30 hs<br>
+Morcote, Switzerland
+</p>
+
+`;
+
+}
+
+
+else if(opcion==="ambos"){
+
+detalle.innerHTML=`
+
+<div class="gold-line"></div>
+
+<h3>Ceremonias</h3>
+
+<p>
+03 de agosto de 2026<br>
+Museo Isaac Fernández Blanco<br>
+Buenos Aires
+</p>
+
+
+<p>
+26 de septiembre de 2026<br>
+17:30 hs<br>
+Chiesa Maria del Sasso<br>
+Morcote, Switzerland
+</p>
+
+`;
+
+}
+
+
+else if(opcion==="no"){
+
+detalle.innerHTML=`
+
+<div class="gold-line"></div>
+
+<h3>
+Gracias por acompañarnos con tu cariño 🤍
+</h3>
+
+<p>
+Aunque no puedas estar presente,
+agradecemos profundamente formar parte
+de este momento tan especial.
+</p>
+
+`;
+
+}
+
+
+else{
+
+detalle.innerHTML="";
+
+}
+
+}
+
+
+
+
+function sendRSVP(){
+
+let asistencia =
+document.getElementById("asistencia").value;
+
+
+if(asistencia==="no"){
+
+document.querySelector(".modal-content").innerHTML=`
+
+<h2>
+Gracias por estar presentes en nuestros corazones 🤍
+</h2>
+
+<div class="gold-line"></div>
+
+<p>
+Sofía & Javier
+</p>
+
+`;
+
+return;
+
+}
+
+
+document.querySelector(".modal-content").innerHTML=`
+
+<h2>
+¡Gracias por confirmar! 🤍
+</h2>
+
+<div class="gold-line"></div>
+
+<p>
+Hemos recibido tu respuesta.
+<br><br>
+Nos hace mucha ilusión compartir este momento contigo.
+</p>
+
+<h2>
+Sofía & Javier
+</h2>
+
+`;
+
+}
 </script>
 
 <div id="rsvpModal" class="modal">
@@ -833,10 +992,63 @@ placeholder="Mensaje para Sofía & Javier">
 Enviar confirmación
 </button>
 
+<div id="rsvpModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Confirmación</h2>
+
+<p>
+Nos encantará compartir este día con ustedes.
+</p>
+
+
+<input id="nombre" placeholder="Nombre y apellido">
+
+
+<select id="asistencia" onchange="mostrarEvento()">
+
+<option value="">
+Selecciona tu asistencia
+</option>
+
+<option value="civil">
+Ceremonia Civil · Buenos Aires
+</option>
+
+<option value="morcote">
+María del Sasso · Morcote
+</option>
+
+<option value="ambos">
+Ambos eventos
+</option>
+
+<option value="no">
+No podré asistir
+</option>
+
+</select>
+
+
+<div id="detalleEvento"></div>
+
+
+<textarea id="mensaje"
+placeholder="Mensaje para Sofía & Javier">
+</textarea>
+
+
+<button onclick="sendRSVP()">
+Enviar confirmación
+</button>
+
 
 </div>
+</div>
+</div>
 
-
+</div>
 
 </body>
 </html>
