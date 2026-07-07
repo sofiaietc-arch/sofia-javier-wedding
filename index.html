@@ -1630,6 +1630,431 @@ height:42px;
 
 }
 
+  /* AJUSTE FINAL DE ESTILO SEGÚN REFERENCIA */
+
+
+/* paleta más suave y de papel */
+
+:root{
+
+--ivory:#F7F1E8;
+
+--paper:#FBF8F1;
+
+--gold:#B99555;
+
+--gold-dark:#9F7A3A;
+
+--olive:#8A9070;
+
+--text:#4A4038;
+
+--muted:#7D7168;
+
+--line:rgba(185,149,85,.38);
+
+}
+
+
+/* fondo general más claro y mate */
+
+body{
+
+background:#F7F1E8;
+
+color:var(--text);
+
+}
+
+
+/* secciones tipo lámina, no bloques pesados */
+
+.section{
+
+background:
+linear-gradient(
+rgba(247,241,232,.94),
+rgba(247,241,232,.94)
+);
+
+border-bottom:1px solid rgba(185,149,85,.18);
+
+}
+
+
+/* tarjetas más planas, tipo papel */
+
+.paper-card{
+
+background:rgba(251,248,241,.72);
+
+border:1px solid rgba(185,149,85,.34);
+
+box-shadow:
+0 10px 32px rgba(80,60,30,.06);
+
+max-width:900px;
+
+}
+
+
+/* menos caja moderna */
+
+.paper-card::before,
+.paper-card::after{
+
+opacity:.45;
+
+}
+
+
+/* tipografía general más fina */
+
+p{
+
+font-size:14px;
+
+letter-spacing:.02em;
+
+color:#5A5048;
+
+}
+
+
+/* títulos más parecidos a invitación */
+
+h2{
+
+font-family:"Playfair Display",serif;
+
+font-weight:400;
+
+letter-spacing:.04em;
+
+color:var(--gold-dark);
+
+}
+
+
+h3{
+
+font-family:"Playfair Display",serif;
+
+font-weight:400;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:var(--gold-dark);
+
+}
+
+
+/* textos pequeños espaciados */
+
+.kicker,
+.place,
+.date-small{
+
+font-family:"Montserrat",sans-serif;
+
+font-weight:300;
+
+letter-spacing:.28em;
+
+text-transform:uppercase;
+
+}
+
+
+/* portada más parecida a la referencia */
+
+.opening{
+
+background:
+radial-gradient(circle at 80% 12%, rgba(255,255,255,.55), transparent 28%),
+radial-gradient(circle at 12% 72%, rgba(255,255,255,.50), transparent 30%),
+#F7F1E8;
+
+}
+
+
+.opening h1{
+
+font-family:"Playfair Display",serif;
+
+font-size:clamp(38px,6.4vw,70px);
+
+font-weight:400;
+
+letter-spacing:.22em;
+
+color:#A57D3C;
+
+}
+
+
+.opening .script{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(26px,4vw,40px);
+
+font-weight:300;
+
+font-style:italic;
+
+color:#7A6C60;
+
+}
+
+
+.opening .date{
+
+font-size:12px;
+
+letter-spacing:.34em;
+
+line-height:2.15;
+
+color:#4A4038;
+
+}
+
+
+/* monograma tipo sello */
+
+.monogram-frame{
+
+border-color:rgba(185,149,85,.55);
+
+box-shadow:none;
+
+}
+
+
+.monogram{
+
+color:#A57D3C;
+
+font-family:"Playfair Display",serif;
+
+}
+
+
+/* botones rectangulares finos, no redondeados */
+
+button,
+.btn{
+
+border-radius:0;
+
+border:1px solid rgba(185,149,85,.75);
+
+color:#9F7A3A;
+
+background:rgba(251,248,241,.28);
+
+font-size:11px;
+
+font-weight:300;
+
+letter-spacing:.22em;
+
+padding:14px 40px;
+
+box-shadow:none;
+
+}
+
+
+button:hover,
+.btn:hover{
+
+background:#B99555;
+
+border-color:#B99555;
+
+color:#FBF8F1;
+
+}
+
+
+/* tarjetas de celebraciones más horizontales y elegantes */
+
+.celebration-grid{
+
+gap:34px;
+
+}
+
+
+.celebration-card{
+
+min-height:310px;
+
+background:
+linear-gradient(
+90deg,
+rgba(251,248,241,.92) 0%,
+rgba(251,248,241,.82) 52%,
+rgba(255,255,255,.36) 100%
+);
+
+border:1px solid rgba(185,149,85,.28);
+
+box-shadow:
+0 12px 28px rgba(80,60,30,.07);
+
+}
+
+
+.celebration-card h3{
+
+font-size:27px;
+
+line-height:1.25;
+
+}
+
+
+.celebration-card .place{
+
+font-size:11px;
+
+color:#5D5249;
+
+}
+
+
+.celebration-card .date-small{
+
+font-size:13px;
+
+color:#4A4038;
+
+}
+
+
+/* cuenta regresiva más fina */
+
+.countdown strong{
+
+font-size:clamp(38px,6vw,58px);
+
+color:#A57D3C;
+
+}
+
+
+.countdown span{
+
+font-size:10px;
+
+letter-spacing:.24em;
+
+color:#5D5249;
+
+}
+
+
+/* navegación inferior como referencia */
+
+.bottom-nav{
+
+background:rgba(251,248,241,.95);
+
+border-top:1px solid rgba(185,149,85,.25);
+
+box-shadow:none;
+
+}
+
+
+.bottom-nav a{
+
+font-size:10px;
+
+font-weight:300;
+
+letter-spacing:.18em;
+
+color:#4A4038;
+
+}
+
+
+.bottom-nav span{
+
+font-size:22px;
+
+color:#9F7A3A;
+
+}
+
+
+/* RSVP más fino */
+
+.modal-content{
+
+background:#FBF8F1;
+
+border:1px solid rgba(185,149,85,.55);
+
+box-shadow:
+0 18px 45px rgba(80,60,30,.12);
+
+}
+
+
+input,
+select,
+textarea{
+
+background:#F7F1E8;
+
+border:1px solid rgba(185,149,85,.38);
+
+font-size:13px;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.opening h1{
+
+letter-spacing:.12em;
+
+font-size:38px;
+
+}
+
+
+.opening .date{
+
+letter-spacing:.18em;
+
+}
+
+
+.paper-card{
+
+box-shadow:none;
+
+}
+
+
+.celebration-card{
+
+min-height:260px;
+
+}
+
+}
 </style>
 
 </head>
