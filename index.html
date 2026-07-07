@@ -75,14 +75,26 @@ position:relative;
 z-index:5;
 transition:.8s;
 }
+.envelope.open .cover-content{
 
+    opacity:0;
+
+    pointer-events:none;
+
+}
 
 .envelope.open{
 pointer-events:none;
+animation:hideEnvelope .5s forwards;
+
+    animation-delay:1.8s;
 }
-.envelope.open .cover-content{
+@keyframes hideEnvelope{
+
+    to{
     opacity:0;
-    pointer-events:none;
+    visibility:hidden;
+    }
 }
 
 .initials{
@@ -298,7 +310,7 @@ View Invitation
 
 <!-- PAGINA 1 -->
 
-<section class="page active" id="page1">
+<section class="page" id="page1">
 
 <div class="card">
 
