@@ -2055,6 +2055,413 @@ min-height:260px;
 }
 
 }
+
+  /* CELEBRACIONES TIPO TARJETA IMPRESA */
+
+
+.celebrations-section{
+
+padding-top:90px;
+
+padding-bottom:90px;
+
+}
+
+
+.celebrations-wrapper{
+
+max-width:1120px;
+
+background:transparent;
+
+border:none;
+
+box-shadow:none;
+
+padding:20px;
+
+}
+
+
+.celebrations-wrapper::before,
+.celebrations-wrapper::after{
+
+display:none;
+
+}
+
+
+.celebrations-wrapper .script-title{
+
+font-size:clamp(44px,6vw,68px);
+
+margin-bottom:8px;
+
+}
+
+
+.small-ornament{
+
+color:var(--gold-dark);
+
+font-size:16px;
+
+letter-spacing:.2em;
+
+margin-bottom:34px;
+
+}
+
+
+.celebration-grid.refined{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:34px;
+
+margin-top:0;
+
+}
+
+
+.refined-card{
+
+min-height:300px;
+
+padding:0;
+
+display:grid;
+
+grid-template-columns:52% 48%;
+
+overflow:hidden;
+
+background:#FBF8F1;
+
+border:1px solid rgba(185,149,85,.34);
+
+box-shadow:
+0 14px 34px rgba(80,60,30,.08);
+
+}
+
+
+.refined-card::before{
+
+display:none;
+
+}
+
+
+.celebration-illustration{
+
+position:relative;
+
+min-height:300px;
+
+background:#F7F1E8;
+
+overflow:hidden;
+
+}
+
+
+/* ilustración abstracta tipo acuarela para civil */
+
+.civil-illustration{
+
+background:
+linear-gradient(
+rgba(247,241,232,.55),
+rgba(247,241,232,.55)
+),
+linear-gradient(
+90deg,
+rgba(90,80,70,.10) 0 1px,
+transparent 1px 100%
+),
+linear-gradient(
+0deg,
+rgba(90,80,70,.08) 0 1px,
+transparent 1px 100%
+),
+radial-gradient(circle at 34% 48%, rgba(185,149,85,.10), transparent 34%),
+#F7F1E8;
+
+background-size:
+auto,
+42px 42px,
+42px 42px,
+auto,
+auto;
+
+}
+
+
+.civil-illustration::before{
+
+content:"";
+
+position:absolute;
+
+left:18%;
+
+top:18%;
+
+width:62%;
+
+height:64%;
+
+border:1px solid rgba(80,70,62,.22);
+
+box-shadow:
+18px 18px 0 rgba(80,70,62,.04),
+-14px 26px 0 rgba(185,149,85,.05);
+
+}
+
+
+.civil-illustration::after{
+
+content:"";
+
+position:absolute;
+
+left:30%;
+
+top:32%;
+
+width:36%;
+
+height:45%;
+
+border-left:1px solid rgba(80,70,62,.25);
+
+border-right:1px solid rgba(80,70,62,.18);
+
+border-top:1px solid rgba(80,70,62,.20);
+
+opacity:.75;
+
+}
+
+
+/* ilustración abstracta tipo lago / Morcote */
+
+.morcote-illustration{
+
+background:
+linear-gradient(
+rgba(247,241,232,.35),
+rgba(247,241,232,.35)
+),
+radial-gradient(circle at 65% 22%, rgba(130,145,150,.20), transparent 34%),
+radial-gradient(circle at 48% 70%, rgba(125,150,160,.16), transparent 42%),
+linear-gradient(
+160deg,
+transparent 0 38%,
+rgba(122,128,96,.14) 39% 58%,
+transparent 59%
+),
+#F7F1E8;
+
+}
+
+
+.morcote-illustration::before{
+
+content:"";
+
+position:absolute;
+
+left:20%;
+
+top:22%;
+
+width:46%;
+
+height:58%;
+
+border-left:1px solid rgba(80,70,62,.24);
+
+border-bottom:1px solid rgba(80,70,62,.18);
+
+transform:skewX(-8deg);
+
+opacity:.75;
+
+}
+
+
+.morcote-illustration::after{
+
+content:"";
+
+position:absolute;
+
+right:18%;
+
+top:22%;
+
+width:42px;
+
+height:150px;
+
+border:1px solid rgba(80,70,62,.22);
+
+background:
+linear-gradient(
+to bottom,
+transparent 0 24%,
+rgba(80,70,62,.10) 25% 26%,
+transparent 27% 100%
+);
+
+box-shadow:
+0 -28px 0 -10px rgba(185,149,85,.22);
+
+}
+
+
+/* flores doradas laterales */
+
+.refined-card .celebration-illustration:before{
+
+z-index:1;
+
+}
+
+
+.refined-card .celebration-info{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:36px 26px;
+
+background:
+linear-gradient(
+rgba(251,248,241,.92),
+rgba(251,248,241,.92)
+);
+
+}
+
+
+.celebration-info::after{
+
+content:"";
+
+position:absolute;
+
+right:-35px;
+
+bottom:-35px;
+
+width:135px;
+
+height:135px;
+
+opacity:.28;
+
+background:
+radial-gradient(circle at 45% 35%, rgba(255,255,255,.95) 0 9%, transparent 10%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.85) 0 12%, transparent 13%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.82) 0 12%, transparent 13%),
+radial-gradient(circle at 50% 64%, rgba(255,255,255,.78) 0 14%, transparent 15%),
+radial-gradient(circle at 52% 52%, rgba(185,149,85,.20), transparent 38%);
+
+}
+
+
+.celebration-info h3{
+
+font-size:30px;
+
+line-height:1.28;
+
+margin-bottom:18px;
+
+}
+
+
+.celebration-info .place{
+
+font-size:11px;
+
+margin-bottom:16px;
+
+}
+
+
+.celebration-info .date-small{
+
+font-family:"Playfair Display",serif;
+
+font-size:18px;
+
+letter-spacing:.22em;
+
+margin-bottom:32px;
+
+color:#4A4038;
+
+}
+
+
+.small-btn{
+
+padding:12px 28px;
+
+font-size:10px;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.celebration-grid.refined{
+
+grid-template-columns:1fr;
+
+gap:24px;
+
+}
+
+
+.refined-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+.celebration-illustration{
+
+min-height:210px;
+
+}
+
+
+.refined-card .celebration-info{
+
+padding:34px 22px 40px;
+
+}
+
+}
+  
 </style>
 
 </head>
@@ -2275,19 +2682,31 @@ Para nuestro gran día
 </section>
 <!-- CELEBRACIONES -->
 
+<!-- CELEBRACIONES -->
 
-<section class="section" id="celebraciones">
 
-<div class="paper-card">
+<section class="section celebrations-section" id="celebraciones">
+
+<div class="paper-card celebrations-wrapper">
 
 <div class="script-title">
 Nuestras celebraciones
 </div>
 
 
-<div class="celebration-grid">
+<div class="small-ornament">
+✦
+</div>
 
-<div class="celebration-card">
+
+<div class="celebration-grid refined">
+
+
+<div class="celebration-card refined-card">
+
+<div class="celebration-illustration civil-illustration"></div>
+
+<div class="celebration-info">
 
 <h3>
 Civil
@@ -2301,14 +2720,20 @@ Buenos Aires
 03 · 08 · 2026
 </div>
 
-<a class="btn" href="#civil">
+<a class="btn small-btn" href="#civil">
 Ver detalles
 </a>
 
 </div>
 
+</div>
 
-<div class="celebration-card">
+
+<div class="celebration-card refined-card">
+
+<div class="celebration-illustration morcote-illustration"></div>
+
+<div class="celebration-info">
 
 <h3>
 Ceremonia
@@ -2324,7 +2749,7 @@ Morcote, Suiza
 26 · 09 · 2026
 </div>
 
-<a class="btn" href="#ceremonia">
+<a class="btn small-btn" href="#ceremonia">
 Ver detalles
 </a>
 
@@ -2332,10 +2757,12 @@ Ver detalles
 
 </div>
 
+
+</div>
+
 </div>
 
 </section>
-
 
 <!-- CIVIL -->
 
