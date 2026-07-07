@@ -608,10 +608,13 @@ Morcote, Switzerland
 
 function openEnvelope(){
 
-document
-.getElementById("envelope")
-.classList
-.add("open");
+    document.getElementById("envelope").classList.add("open");
+
+    setTimeout(function(){
+
+        document.getElementById("page1").classList.add("active");
+
+    },1800);
 
 }
 
