@@ -3459,6 +3459,392 @@ url("https://github.com/user-attachments/assets/95ac9567-33fd-4990-850d-0ae5ce8c
 
 }
 
+  /* FLORES DEFINITIVAS SEGÚN REFERENCIA */
+
+
+:root{
+
+--fondo-relieve:url("fondo-relieve.jpg");
+
+--flores-portada:url("flores-portada.jpg");
+
+--flores-esquina:url("flores-esquina.jpg");
+
+--flores-guirnalda:url("flores-guirnalda.jpg");
+
+--flores-tulipanes:url("flores-tulipanes.jpg");
+
+}
+
+
+/* fondo blanco con relieve */
+
+body::before{
+
+background-image:
+linear-gradient(
+rgba(255,253,248,.72),
+rgba(255,253,248,.78)
+),
+var(--fondo-relieve);
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+opacity:1;
+
+}
+
+
+/* fondo de todas las láminas */
+
+.opening,
+.section,
+.welcome,
+.count-section,
+.celebrations,
+.detail,
+.dress,
+.rsvp,
+.info,
+.final{
+
+background-image:
+linear-gradient(
+rgba(255,253,248,.74),
+rgba(255,253,248,.82)
+),
+var(--fondo-relieve) !important;
+
+background-size:cover !important;
+
+background-position:center !important;
+
+background-repeat:no-repeat !important;
+
+}
+
+
+/* eliminar flores dibujadas */
+
+.floral{
+
+background:none !important;
+
+background-repeat:no-repeat !important;
+
+background-size:contain !important;
+
+background-position:center !important;
+
+filter:drop-shadow(0 14px 24px rgba(70,55,38,.08));
+
+mix-blend-mode:multiply;
+
+}
+
+
+.floral::before,
+.floral::after{
+
+display:none !important;
+
+content:none !important;
+
+}
+
+
+/* portada */
+
+.opening .floral.top-right{
+
+background-image:var(--flores-portada) !important;
+
+width:560px;
+
+height:390px;
+
+top:-34px;
+
+right:-36px;
+
+background-size:contain !important;
+
+background-position:top right !important;
+
+opacity:.92;
+
+}
+
+
+.opening .floral.bottom-left{
+
+background-image:var(--flores-portada) !important;
+
+width:560px;
+
+height:390px;
+
+left:-36px;
+
+bottom:-34px;
+
+background-size:contain !important;
+
+background-position:top right !important;
+
+transform:rotate(180deg);
+
+opacity:.84;
+
+}
+
+
+/* secciones internas */
+
+.section > .floral.top-left,
+.section > .floral.top-right,
+.section > .floral.bottom-left,
+.section > .floral.bottom-right{
+
+background-image:var(--flores-esquina) !important;
+
+width:360px;
+
+height:240px;
+
+opacity:.42;
+
+background-size:contain !important;
+
+}
+
+
+.section > .floral.top-left{
+
+left:-46px;
+
+top:-22px;
+
+}
+
+
+.section > .floral.top-right{
+
+right:-46px;
+
+top:-22px;
+
+transform:scaleX(-1);
+
+}
+
+
+.section > .floral.bottom-left{
+
+left:-48px;
+
+bottom:-32px;
+
+transform:rotate(180deg);
+
+}
+
+
+.section > .floral.bottom-right{
+
+right:-48px;
+
+bottom:-32px;
+
+transform:rotate(180deg) scaleX(-1);
+
+}
+
+
+/* tarjetas y laterales */
+
+.event-copy .floral.small,
+.detail-art .floral.small,
+.dress-card .floral.small,
+.rsvp .floral.small,
+.final .floral.small{
+
+background-image:var(--flores-tulipanes) !important;
+
+width:280px;
+
+height:250px;
+
+opacity:.44;
+
+background-size:contain !important;
+
+}
+
+
+.event-copy .floral.small{
+
+right:-70px;
+
+bottom:-82px;
+
+}
+
+
+.detail-art .floral.small{
+
+right:-74px;
+
+bottom:-78px;
+
+}
+
+
+.dress-card .floral.small,
+.rsvp .floral.small.bottom-right,
+.final .floral.small{
+
+right:-76px;
+
+bottom:-82px;
+
+}
+
+
+.rsvp .floral.small.bottom-left{
+
+left:-76px;
+
+bottom:-82px;
+
+transform:rotate(180deg);
+
+}
+
+
+/* guirnalda superior opcional */
+
+.celebrations::before,
+.info::before{
+
+content:"";
+
+position:absolute;
+
+top:-12px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:min(900px,92%);
+
+height:180px;
+
+background-image:var(--flores-guirnalda);
+
+background-size:contain;
+
+background-repeat:no-repeat;
+
+background-position:top center;
+
+opacity:.30;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+
+/* dorado */
+
+h1,
+h2,
+h3,
+.monogram,
+.opening h1,
+.event-date,
+.countdown strong,
+.count-separator,
+.nav-icon{
+
+color:#A77C32 !important;
+
+}
+
+
+button,
+.btn{
+
+border-color:rgba(198,160,91,.85) !important;
+
+color:#A77C32 !important;
+
+background:rgba(255,255,255,.56) !important;
+
+}
+
+
+button:hover,
+.btn:hover{
+
+background:#C6A05B !important;
+
+color:white !important;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.opening .floral.top-right,
+.opening .floral.bottom-left{
+
+width:330px;
+
+height:240px;
+
+}
+
+
+.section > .floral.top-left,
+.section > .floral.top-right,
+.section > .floral.bottom-left,
+.section > .floral.bottom-right{
+
+width:240px;
+
+height:170px;
+
+opacity:.32;
+
+}
+
+
+.event-copy .floral.small,
+.detail-art .floral.small,
+.dress-card .floral.small,
+.rsvp .floral.small,
+.final .floral.small{
+
+width:190px;
+
+height:180px;
+
+opacity:.34;
+
+}
+
+}
+
 </style>
 
 </head>
