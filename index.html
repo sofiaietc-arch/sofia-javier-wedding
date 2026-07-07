@@ -490,7 +490,6 @@ Continue
 </section>
 
 
-
 <!-- PAGINA 5 -->
 
 <section class="page" id="page5">
@@ -505,26 +504,26 @@ Continue
 Counting the days
 </h2>
 
-
 <h1 id="countdown">
 26 · 09 · 2026
 </h1>
-
 
 <p>
 Until we celebrate our forever
 </p>
 
-
 <div class="gold-line"></div>
-
 
 <button onclick="nextPage(6)">
 Continue
 </button>
 
-
 </div>
+
+</section>
+
+
+
 <!-- PAGINA 6 -->
 
 <section class="page" id="page6">
@@ -567,11 +566,6 @@ Morcote, Switzerland
 
 </div>
 
-</body>
-</html>
-</section>
-</div>
-
 
 <script>
 
@@ -593,11 +587,13 @@ pages.forEach(function(page){
 page.classList.remove("active");
 });
 
+
 let next = document.getElementById("page" + number);
 
 if(next){
 next.classList.add("active");
 }
+
 
 window.scrollTo({
 top:0,
@@ -608,4 +604,7 @@ behavior:"smooth"
 
 </script>
 
+
+</body>
+</html>
 
