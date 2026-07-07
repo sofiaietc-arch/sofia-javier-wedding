@@ -4168,6 +4168,194 @@ height:220px;
 }
 
 }
+
+  /* NAVEGACIÓN INFERIOR REFINADA */
+
+
+.bottom-nav{
+
+position:sticky;
+
+bottom:0;
+
+z-index:30;
+
+height:auto;
+
+background:
+linear-gradient(
+rgba(251,248,241,.96),
+rgba(251,248,241,.98)
+);
+
+border-top:1px solid rgba(185,149,85,.28);
+
+box-shadow:
+0 -8px 28px rgba(80,60,30,.05);
+
+backdrop-filter:blur(10px);
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+
+.bottom-nav a{
+
+position:relative;
+
+padding:15px 6px 14px;
+
+text-decoration:none;
+
+color:#6A5E54;
+
+font-family:"Montserrat",sans-serif;
+
+font-size:9px;
+
+font-weight:300;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+border-right:1px solid rgba(185,149,85,.18);
+
+transition:.28s ease;
+
+}
+
+
+.bottom-nav a:last-child{
+
+border-right:none;
+
+}
+
+
+.bottom-nav a::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:50%;
+
+width:0;
+
+height:1px;
+
+background:#B99555;
+
+transform:translateX(-50%);
+
+transition:.28s ease;
+
+}
+
+
+.bottom-nav a.active::before,
+.bottom-nav a:hover::before{
+
+width:42%;
+
+}
+
+
+.nav-icon{
+
+display:block;
+
+font-size:20px;
+
+line-height:1;
+
+color:#A57D3C;
+
+margin-bottom:6px;
+
+transition:.28s ease;
+
+}
+
+
+.nav-label{
+
+display:block;
+
+line-height:1.2;
+
+}
+
+
+.bottom-nav a.active{
+
+color:#3F352E;
+
+background:
+linear-gradient(
+rgba(185,149,85,.08),
+rgba(251,248,241,.0)
+);
+
+}
+
+
+.bottom-nav a.active .nav-icon{
+
+color:#8E6930;
+
+transform:translateY(-1px);
+
+}
+
+
+.bottom-nav a:hover{
+
+color:#3F352E;
+
+}
+
+
+/* MOBILE NAV */
+
+
+@media(max-width:760px){
+
+.bottom-nav{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+
+.bottom-nav a{
+
+padding:12px 4px 11px;
+
+font-size:8px;
+
+letter-spacing:.14em;
+
+}
+
+
+.nav-icon{
+
+font-size:18px;
+
+margin-bottom:5px;
+
+}
+
+}
   
   
 </style>
@@ -5153,73 +5341,84 @@ With love
 
 <nav class="bottom-nav">
 
-<a href="#celebraciones">
+<a href="#celebraciones" data-section="celebraciones" class="active">
 
-<span>
-□
+<span class="nav-icon">
+✦
 </span>
 
+<span class="nav-label">
 Agenda
+</span>
 
 </a>
 
 
-<a href="#ceremonia">
+<a href="#ceremonia" data-section="ceremonia">
 
-<span>
+<span class="nav-icon">
 ⌂
 </span>
 
-Ceremonia
-
-</a>
-
-
-<a href="#recepcion">
-
-<span>
-◠
+<span class="nav-label">
+Ceremony
 </span>
 
-Recepción
+</a>
+
+
+<a href="#recepcion" data-section="recepcion">
+
+<span class="nav-icon">
+◌
+</span>
+
+<span class="nav-label">
+Dinner
+</span>
 
 </a>
 
 
-<a href="#dresscode">
+<a href="#dresscode" data-section="dresscode">
 
-<span>
+<span class="nav-icon">
 ♢
 </span>
 
-Dress Code
+<span class="nav-label">
+Dress
+</span>
 
 </a>
 
 
-<a href="#info">
+<a href="#info" data-section="info">
 
-<span>
+<span class="nav-icon">
 ✈
 </span>
 
-Info útil
+<span class="nav-label">
+Travel
+</span>
 
 </a>
 
 
-<a href="#rsvp">
+<a href="#rsvp" data-section="rsvp">
 
-<span>
+<span class="nav-icon">
 ✉
 </span>
 
+<span class="nav-label">
 RSVP
+</span>
 
 </a>
 
 </nav>
-
 
 </main>
 
@@ -5911,6 +6110,63 @@ alert(
 
 }
 
+  /* NAV ACTIVA SEGÚN SCROLL */
+
+
+const navLinks =
+document.querySelectorAll(".bottom-nav a");
+
+
+const observedSections =
+document.querySelectorAll(
+"#celebraciones, #ceremonia, #recepcion, #dresscode, #info, #rsvp"
+);
+
+
+const navObserver =
+new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+const id =
+entry.target.id;
+
+
+navLinks.forEach(function(link){
+
+link
+.classList
+.remove("active");
+
+
+if(link.dataset.section === id){
+
+link
+.classList
+.add("active");
+
+}
+
+});
+
+}
+
+});
+
+},
+{
+threshold:0.45
+});
+
+
+observedSections.forEach(function(section){
+
+navObserver
+.observe(section);
+
+});
 
 
 </script>
