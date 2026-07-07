@@ -195,6 +195,29 @@ button {
     opacity:0;
 }
 
+.card::before,
+.card::after {
+    content:"";
+    position:absolute;
+    width:45px;
+    height:45px;
+    border-color:#C9A45C;
+    opacity:0.5;
+}
+
+.card::before {
+    top:15px;
+    left:15px;
+    border-top:1px solid #C9A45C;
+    border-left:1px solid #C9A45C;
+}
+
+.card::after {
+    bottom:15px;
+    right:15px;
+    border-bottom:1px solid #C9A45C;
+    border-right:1px solid #C9A45C;
+}
 </style>
 
 </head>
