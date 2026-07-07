@@ -6579,6 +6579,54 @@ navObserver
 
 });
 
+  /* ANIMACIÓN DE PANELES AL SCROLL */
+
+
+const revealPanels =
+document.querySelectorAll(
+".paper-card, .detail-card, .dress-card, .useful-card, .rsvp-card, .final-card"
+);
+
+
+revealPanels.forEach(function(panel){
+
+panel
+.classList
+.add("reveal-panel");
+
+});
+
+
+const panelObserver =
+new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry
+.target
+.classList
+.add("panel-visible");
+
+}
+
+});
+
+},
+{
+threshold:.22
+});
+
+
+revealPanels.forEach(function(panel){
+
+panelObserver
+.observe(panel);
+
+});
+  
+
 
 </script>
 </body>
