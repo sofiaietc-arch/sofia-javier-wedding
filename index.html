@@ -4707,6 +4707,199 @@ box-shadow:
 }
 
 }
+
+  /* APERTURA TIPO CARTA PARA CADA PANEL */
+
+
+.reveal-panel{
+
+position:relative;
+
+overflow:hidden;
+
+opacity:0;
+
+transform:
+perspective(1200px)
+rotateX(4deg)
+translateY(34px);
+
+transform-origin:top center;
+
+transition:
+opacity .8s ease,
+transform 1s ease;
+
+}
+
+
+.reveal-panel.panel-visible{
+
+opacity:1;
+
+transform:
+perspective(1200px)
+rotateX(0deg)
+translateY(0);
+
+}
+
+
+.panel-fold{
+
+position:absolute;
+
+top:0;
+
+height:100%;
+
+width:50%;
+
+z-index:12;
+
+pointer-events:none;
+
+background:
+linear-gradient(
+rgba(251,248,241,.98),
+rgba(247,241,232,.98)
+);
+
+box-shadow:0 0 36px rgba(80,60,30,.08);
+
+backface-visibility:hidden;
+
+transition:
+transform 1.25s ease,
+opacity .45s ease 1s;
+
+}
+
+
+.panel-fold-left{
+
+left:0;
+
+transform-origin:left center;
+
+border-right:1px solid rgba(185,149,85,.32);
+
+}
+
+
+.panel-fold-right{
+
+right:0;
+
+transform-origin:right center;
+
+border-left:1px solid rgba(185,149,85,.32);
+
+}
+
+
+.panel-fold::before{
+
+content:"";
+
+position:absolute;
+
+inset:22px;
+
+border:1px solid rgba(185,149,85,.20);
+
+}
+
+
+.panel-fold::after{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+opacity:.20;
+
+background:
+radial-gradient(circle at 45% 35%, rgba(255,255,255,.98) 0 9%, transparent 10%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.90) 0 12%, transparent 13%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.88) 0 12%, transparent 13%),
+radial-gradient(circle at 50% 64%, rgba(255,255,255,.82) 0 14%, transparent 15%),
+radial-gradient(circle at 52% 52%, rgba(185,149,85,.20), transparent 38%);
+
+}
+
+
+.panel-fold-left::after{
+
+left:24px;
+
+top:24px;
+
+}
+
+
+.panel-fold-right::after{
+
+right:24px;
+
+bottom:24px;
+
+transform:rotate(180deg);
+
+}
+
+
+.reveal-panel.panel-visible .panel-fold-left{
+
+transform:rotateY(-112deg);
+
+opacity:0;
+
+}
+
+
+.reveal-panel.panel-visible .panel-fold-right{
+
+transform:rotateY(112deg);
+
+opacity:0;
+
+}
+
+
+/* para que los botones queden clickeables después de abrir */
+
+.reveal-panel.panel-visible .panel-fold{
+
+pointer-events:none;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.panel-fold::before{
+
+inset:14px;
+
+}
+
+
+.panel-fold::after{
+
+width:84px;
+
+height:84px;
+
+}
+
+}
   
 </style>
 
