@@ -6252,6 +6252,9 @@ top:0,
 behavior:"smooth"
 });
 
+
+startPanelObserver();
+
 },1850);
 
 
@@ -6772,7 +6775,24 @@ navObserver
 
 });
 
-  /* ANIMACIÓN DE PANELES AL SCROLL */
+/* ANIMACIÓN DE PANELES COMO CARTAS */
+
+
+let panelsStarted =
+false;
+
+
+function startPanelObserver(){
+
+if(panelsStarted){
+
+return;
+
+}
+
+
+panelsStarted =
+true;
 
 
 const revealPanels =
@@ -6786,6 +6806,36 @@ revealPanels.forEach(function(panel){
 panel
 .classList
 .add("reveal-panel");
+
+
+if(!panel.querySelector(".panel-fold-left")){
+
+const leftFold =
+document.createElement("div");
+
+
+leftFold
+.classList
+.add("panel-fold","panel-fold-left");
+
+
+const rightFold =
+document.createElement("div");
+
+
+rightFold
+.classList
+.add("panel-fold","panel-fold-right");
+
+
+panel
+.appendChild(leftFold);
+
+
+panel
+.appendChild(rightFold);
+
+}
 
 });
 
@@ -6808,9 +6858,11 @@ entry
 
 },
 {
-threshold:.22
+threshold:.18
 });
 
+
+setTimeout(function(){
 
 revealPanels.forEach(function(panel){
 
@@ -6818,6 +6870,10 @@ panelObserver
 .observe(panel);
 
 });
+
+},120);
+
+}
   
 
 
