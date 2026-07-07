@@ -7,298 +7,280 @@
 <title>Sofía & Javier Wedding</title>
 
 <style>
-.ornament {
-    color:#C9A45C;
-    font-size:24px;
-    margin-top:35px;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap');
 
-* {
-    box-sizing: border-box;
+*{
+box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    background: #F8F3EA;
-    height: 100vh;
-    color: #3A332B;
-    text-align: center;
-    overflow-y:auto;
-}
-
-.page {
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:40px 0;
+body{
+margin:0;
+background:#F8F3EA;
+color:#3A332B;
+font-family:"Montserrat", sans-serif;
+text-align:center;
+overflow-x:hidden;
 }
 
 
-/* PORTADA */
+/* SOBRE INICIAL */
 
-.cover {
-    background:#F8F3EA;
-    z-index:2;
-}
-
-.cover.open {
-    transform:translateY(-100%);
-    opacity:0;
-}
-
-
-.initials {
-    font-family:"Playfair Display", serif;
-    font-size:38px;
-    letter-spacing:8px;
-    color:#C9A45C;
-    margin-bottom:35px;
-}
-
-h1 {
-    font-family:"Playfair Display", serif;
-    font-size:55px;
-    font-weight:400;
-    margin:0;
-}
-
-.wedding {
-    font-family:"Montserrat", sans-serif;
-    font-size:14px;
-    letter-spacing:8px;
-    margin-top:18px;
-    color:#7A8060;
-}
-
-.line {
-    width:80px;
-    height:1px;
-    background:#C9A45C;
-    margin:35px auto;
-}
-
-button {
-    padding:15px 45px;
-    background:transparent;
-    border:1px solid #C9A45C;
-    color:#C9A45C;
-    border-radius:30px;
-    font-family:"Montserrat", sans-serif;
-    letter-spacing:2px;
-    cursor:pointer;
-    margin-top:30px;
-    transition:0.4s ease;
-}
-
-button:hover {
-    background:#C9A45C;
-    color:#F8F3EA;
-
-}
-
-
-/* INTERIOR */
-
-.inside {
-    background:#F8F3EA;
-    padding:40px;
-}
-
-.card {
-   
-    background:#FBF7F0;
-    border:1px solid #C9A45C;
-    padding:60px 35px;
-    max-width:450px;
-    width:90%;
-    box-shadow:0 20px 50px rgba(80,60,30,0.12);
-    position:relative;
-    animation:appear 2s ease;
-
-}
-
-.card h2 {
-    font-family:"Playfair Display", serif;
-    font-weight:400;
-    font-size:24px;
-}
-
-.card p {
-    font-family:"Montserrat", sans-serif;
-    font-weight:300;
-    line-height:1.8;
-}
-
-.card h1 {
-    margin:35px 0;
-}
-
-
-@keyframes appear {
-    from {
-        opacity:0;
-        transform:scale(.9);
-    }
-    to {
-        opacity:1;
-        transform:scale(1);
-    }
-}
-.envelope {
-    position:absolute;
-    width:100%;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:3;
-    perspective:1200px;
+.envelope{
+position:fixed;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1200px;
+z-index:10;
 }
 
 .left-page,
-.right-page {
-    position:absolute;
-    width:50%;
-    height:100%;
-    top:0;
-    background:#F8F3EA;
-    transition:1.6s ease;
-     box-shadow:0 0 40px rgba(80,60,30,0.08);
+.right-page{
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:#F8F3EA;
+transition:1.8s ease;
+box-shadow:0 0 40px rgba(80,60,30,.08);
 }
 
-.left-page {
-    left:0;
-    transform-origin:left center;
-    border-right:1px solid #C9A45C;
+.left-page{
+left:0;
+transform-origin:left;
+border-right:1px solid #C9A45C;
 }
 
-.right-page {
-    right:0;
-    transform-origin:right center;
-    border-left:1px solid #C9A45C;
-}
-
-
-.open .left-page {
-    transform:rotateY(-105deg);
-}
-
-.open .right-page {
-    transform:rotateY(105deg);
+.right-page{
+right:0;
+transform-origin:right;
+border-left:1px solid #C9A45C;
 }
 
 
-.center-content {
-    position:relative;
-    z-index:5;
-    transition:0.8s ease;
+.envelope.open .left-page{
+transform:rotateY(-110deg);
+}
+
+.envelope.open .right-page{
+transform:rotateY(110deg);
 }
 
 
-.open .center-content {
-    opacity:0;
+.cover-content{
+position:relative;
+z-index:5;
+transition:.8s;
 }
 
-.card::before,
-.card::after {
-    content:"";
-    position:absolute;
-    width:45px;
-    height:45px;
-    border-color:#C9A45C;
-    opacity:0.5;
+
+.envelope.open .cover-content{
+opacity:0;
 }
 
-.card::before {
-    top:15px;
-    left:15px;
-    border-top:1px solid #C9A45C;
-    border-left:1px solid #C9A45C;
+
+.initials{
+font-family:"Playfair Display",serif;
+font-size:42px;
+letter-spacing:8px;
+color:#C9A45C;
+margin-bottom:35px;
 }
 
-.card::after {
-    bottom:15px;
-    right:15px;
-    border-bottom:1px solid #C9A45C;
-    border-right:1px solid #C9A45C;
-}
-.olive,
-.flower {
-    position:absolute;
-    opacity:0.35;
+
+h1{
+font-family:"Playfair Display",serif;
+font-weight:400;
+font-size:52px;
+margin:0;
 }
 
-.olive {
-    top:15px;
-    left:20px;
-    font-size:28px;
+
+.subtitle{
+letter-spacing:8px;
+font-size:13px;
+margin-top:20px;
+color:#7A8060;
 }
 
-.flower {
-    bottom:15px;
-    right:20px;
-    font-size:32px;
-    color:#F5F1E8;
+
+.gold-line{
+width:80px;
+height:1px;
+background:#C9A45C;
+margin:35px auto;
 }
 
-.civil {
-    display:none;
-    margin-top:60px;
+
+button{
+padding:15px 45px;
+background:transparent;
+border:1px solid #C9A45C;
+color:#C9A45C;
+border-radius:40px;
+font-size:13px;
+letter-spacing:2px;
+cursor:pointer;
 }
 
-.civil.show {
-    display:block;
-    animation:appear 1.5s ease;
+
+button:hover{
+background:#C9A45C;
+color:white;
 }
+
+
+/* PAGINAS */
+
+.container{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+
+.page{
+display:none;
+animation:pageIn 1.2s ease;
+}
+
+
+.page.active{
+display:block;
+}
+
+
+.card{
+background:#FBF7F0;
+border:1px solid #C9A45C;
+padding:60px 35px;
+max-width:450px;
+margin:auto;
+box-shadow:0 20px 50px rgba(80,60,30,.12);
+position:relative;
+}
+
+
+.card:before,
+.card:after{
+content:"";
+position:absolute;
+width:45px;
+height:45px;
+opacity:.5;
+}
+
+.card:before{
+top:15px;
+left:15px;
+border-top:1px solid #C9A45C;
+border-left:1px solid #C9A45C;
+}
+
+.card:after{
+bottom:15px;
+right:15px;
+border-bottom:1px solid #C9A45C;
+border-right:1px solid #C9A45C;
+}
+
+
+.card h2{
+font-family:"Playfair Display",serif;
+font-weight:400;
+font-size:26px;
+}
+
+
+.card h1{
+font-size:38px;
+margin:30px 0;
+}
+
+
+.card p{
+line-height:1.8;
+font-weight:300;
+}
+
+
+.ornament{
+color:#C9A45C;
+font-size:25px;
+margin:30px;
+}
+
+
+@keyframes pageIn{
+from{
+opacity:0;
+transform:translateX(80px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
 </style>
 
 </head>
 
-
 <body>
-
+<!-- SOBRE -->
 
 <div class="envelope" id="envelope">
-  <div class="left-page"></div>
 
-<div class="center-content">
+<div class="left-page"></div>
 
-    <div class="initials">S & J</div>
+<div class="cover-content">
 
-    <h1>Sofía & Javier</h1>
+<div class="initials">
+S & J
+</div>
 
-    <div class="wedding">
+<h1>
+Sofía & Javier
+</h1>
 
-      WEDDING
+<div class="subtitle">
+WEDDING
+</div>
 
-    </div>
+<div class="gold-line"></div>
 
-    <div class="line"></div>
+<button onclick="openEnvelope()">
+View Invitation
+</button>
 
-    <button onclick="openInvitation()">
+</div>
 
-      View Invitation
-
-    </button>
-
-  </div>
-
-  <div class="right-page"></div>
+<div class="right-page"></div>
 
 </div>
 
 
 
-<div class="page inside">
+<!-- CONTENIDO -->
+
+<div class="container">
+
+
+<!-- PAGINA 1 -->
+
+<section class="page active" id="page1">
 
 <div class="card">
-<div class="olive top-left">🌿</div>
-<div class="flower bottom-right">✿</div>
+
+<div class="ornament">
+✦
+</div>
+
 <h2>
 Together with their families,
 </h2>
@@ -316,69 +298,190 @@ of your company
 to celebrate their wedding
 </p>
 
-<div class="line"></div>
+
+<div class="gold-line"></div>
+
 
 <p>
 26 September 2026
 </p>
 
 <p>
-Chiesa Maria del Sasso
+<strong>Chiesa Maria del Sasso</strong>
 <br>
 Morcote, Switzerland
 </p>
+
+
+<div class="ornament">
+🌿
+</div>
+
+
+<button onclick="nextPage(2)">
+Continue
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- PAGINA 2 -->
+
+<section class="page" id="page2">
+
+<div class="card">
 
 <div class="ornament">
 ✦
 </div>
 
-<button onclick="showCivil()">
-Continue
-</button>
-
-</div>
-
-
-<div class="card civil" id="civilCard">
-
-
 <h2>
 Civil Ceremony
 </h2>
 
-<div class="line"></div>
+
+<div class="gold-line"></div>
+
 
 <h1>
 03 August 2026
 </h1>
 
+
 <p>
-Museo Isaac Fernández Blanco
+<strong>Museo Isaac Fernández Blanco</strong>
 <br>
 Suipacha 1422
 <br>
 Buenos Aires, Argentina
 </p>
 
+
 <div class="ornament">
 ✦
 </div>
 
+
+<button onclick="nextPage(3)">
+Continue
+</button>
+
+
 </div>
+
+</section>
+
+
+
+<!-- PAGINA 3 -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+
+<div class="ornament">
+✦
+</div>
+
+
+<h2>
+Dress Code
+</h2>
+
+
+<h1>
+Formal<br>
+Elegant
+</h1>
+
+
+<div class="gold-line"></div>
+
+
+<p>
+We kindly ask our guests<br>
+to celebrate this special day<br>
+with elegance and love.
+</p>
+
+
+<div class="ornament">
+✦
+</div>
+
+
+<h2>
+RSVP
+</h2>
+
+
+<p>
+Please confirm your attendance.
+</p>
+
+
+<button>
+Confirm Attendance
+</button>
+
+
+<div class="ornament">
+S & J
+</div>
+
+
+</div>
+
+</section>
+
+
 </div>
 
 <script>
 
-function openInvitation(){
-document.getElementById("envelope").classList.add("open");
+function openEnvelope(){
+
+document
+.getElementById("envelope")
+.classList
+.add("open");
+
 }
 
-function showCivil(){
-document.getElementById("civilCard").classList.add("show");
+
+function nextPage(number){
+
+// ocultar todas las páginas
+
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+
+// mostrar la página elegida
+
+document
+.getElementById("page" + number)
+.classList
+.add("active");
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 </script>
-
-
 </body>
 </html>
