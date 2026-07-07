@@ -2461,6 +2461,85 @@ padding:34px 22px 40px;
 }
 
 }
+
+/* IMÁGENES REALES PARA CELEBRACIONES */
+
+
+/* Museo Isaac Fernández Blanco / Palacio Noel */
+
+.civil-illustration{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.18),
+rgba(247,241,232,.18)
+),
+url("https://upload.wikimedia.org/wikipedia/commons/2/23/Palacio_Noel_%28fachada%29.JPG");
+
+background-size:cover;
+
+background-position:center;
+
+filter:grayscale(18%) sepia(18%) brightness(1.08);
+
+}
+
+
+/* Santa Maria del Sasso / Morcote */
+
+.morcote-illustration{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.10),
+rgba(247,241,232,.10)
+),
+url("https://upload.wikimedia.org/wikipedia/commons/6/65/Morcote_-_Chiesa_di_Santa_Maria_del_Sasso_20160627-11.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+filter:grayscale(12%) sepia(12%) brightness(1.08);
+
+}
+
+
+/* eliminamos los dibujos CSS anteriores sobre las fotos */
+
+.civil-illustration::before,
+.civil-illustration::after,
+.morcote-illustration::before,
+.morcote-illustration::after{
+
+display:none;
+
+}
+
+
+/* velo marfil para que parezcan acuarela */
+
+.celebration-illustration::after{
+
+content:"";
+
+display:block;
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+rgba(251,248,241,.12),
+rgba(251,248,241,.26)
+);
+
+mix-blend-mode:screen;
+
+pointer-events:none;
+
+}
   
 </style>
 
