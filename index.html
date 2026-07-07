@@ -1,69 +1,115 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sofía & Javier</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      background:#F8F4EE;
-      font-family:Georgia, serif;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      color:#7c6846;
-      text-align:center;
-    }
+<title>Sofía & Javier Wedding</title>
 
-    h1{
-      font-size:52px;
-      margin-bottom:10px;
-      letter-spacing:4px;
-    }
+<style>
 
-    h2{
-      font-weight:300;
-      color:#444;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap');
 
-    p{
-      color:#8b8b8b;
-    }
+body {
+    margin: 0;
+    background: #F8F3EA;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3A332B;
+    text-align: center;
+    overflow: hidden;
+}
 
-    button{
-      margin-top:40px;
-      padding:16px 38px;
-      background:#b38b59;
-      color:white;
-      border:none;
-      border-radius:40px;
-      font-size:18px;
+.invitation {
+    animation: fadeIn 2.5s ease;
+}
+
+.initials {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    letter-spacing: 8px;
+    color: #C9A45C;
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.wedding {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    letter-spacing: 8px;
+    margin-top: 18px;
+    color: #7A8060;
+}
+
+.line {
+    width: 80px;
+    height: 1px;
+    background: #C9A45C;
+    margin: 35px auto;
+}
+
+button {
+    margin-top: 45px;
+    padding: 15px 45px;
+    background: transparent;
+    border: 1px solid #C9A45C;
+    color: #C9A45C;
+    border-radius: 30px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover {
+    background:#C9A45C;
+    color:white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity:0;
+        transform:translateY(20px);
     }
-  </style>
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div>
+<div class="invitation">
 
-<h1>S & J</h1>
+<div class="initials">
+S & J
+</div>
 
-<h2>Sofía & Javier</h2>
+<h1>
+Sofía & Javier
+</h1>
 
-<p>03 · 08 · 2026</p>
+<div class="wedding">
+WEDDING
+</div>
 
-<p>Buenos Aires · Argentina</p>
+<div class="line"></div>
 
-<p>✦</p>
-
-<p>26 · 09 · 2026</p>
-
-<p>Morcote · Switzerland</p>
-
-<button>Entrar</button>
+<button>
+View Invitation
+</button>
 
 </div>
 
