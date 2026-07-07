@@ -2540,6 +2540,310 @@ mix-blend-mode:screen;
 pointer-events:none;
 
 }
+
+  /* SECCIONES DETALLE CON IMAGEN LATERAL */
+
+
+.detail-section{
+
+padding-top:0;
+
+padding-bottom:0;
+
+min-height:auto;
+
+}
+
+
+.detail-card{
+
+width:100%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+min-height:520px;
+
+border-bottom:1px solid rgba(185,149,85,.24);
+
+background:#FBF8F1;
+
+}
+
+
+.detail-card.reverse{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+.detail-text{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:flex-start;
+
+text-align:left;
+
+padding:clamp(46px,7vw,88px);
+
+position:relative;
+
+}
+
+
+.detail-text .kicker{
+
+font-family:"Playfair Display",serif;
+
+font-size:clamp(30px,4vw,46px);
+
+letter-spacing:.04em;
+
+text-transform:none;
+
+font-weight:400;
+
+color:var(--gold-dark);
+
+margin-bottom:8px;
+
+}
+
+
+.detail-text .small-ornament{
+
+margin:0 0 34px;
+
+color:var(--gold-dark);
+
+}
+
+
+.detail-row{
+
+display:grid;
+
+grid-template-columns:34px 1fr;
+
+gap:18px;
+
+margin:18px 0;
+
+font-size:13px;
+
+line-height:1.75;
+
+letter-spacing:.04em;
+
+color:#4A4038;
+
+}
+
+
+.detail-row strong{
+
+font-weight:500;
+
+color:#3F352E;
+
+}
+
+
+.detail-icon{
+
+color:var(--gold-dark);
+
+font-size:20px;
+
+line-height:1.4;
+
+}
+
+
+.detail-photo{
+
+min-height:520px;
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+filter:grayscale(12%) sepia(10%) brightness(1.08);
+
+}
+
+
+.detail-photo::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+rgba(251,248,241,.08),
+rgba(251,248,241,.24)
+);
+
+pointer-events:none;
+
+}
+
+
+.detail-photo::after{
+
+content:"";
+
+position:absolute;
+
+right:22px;
+
+bottom:22px;
+
+width:170px;
+
+height:170px;
+
+opacity:.38;
+
+background:
+radial-gradient(circle at 45% 35%, rgba(255,255,255,.95) 0 9%, transparent 10%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.88) 0 12%, transparent 13%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.85) 0 12%, transparent 13%),
+radial-gradient(circle at 50% 64%, rgba(255,255,255,.80) 0 14%, transparent 15%),
+radial-gradient(circle at 52% 52%, rgba(185,149,85,.20), transparent 38%);
+
+pointer-events:none;
+
+}
+
+
+/* imágenes */
+
+
+.civil-photo{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.18),
+rgba(247,241,232,.18)
+),
+url("https://upload.wikimedia.org/wikipedia/commons/2/23/Palacio_Noel_%28fachada%29.JPG");
+
+}
+
+
+.ceremony-photo{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.10),
+rgba(247,241,232,.10)
+),
+url("https://upload.wikimedia.org/wikipedia/commons/6/65/Morcote_-_Chiesa_di_Santa_Maria_del_Sasso_20160627-11.jpg");
+
+background-position:center;
+
+}
+
+
+/* usar una imagen propia/autorizada de Vicania */
+/* subí una imagen al proyecto como assets/vicania.jpg */
+
+.reception-photo{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.12),
+rgba(247,241,232,.16)
+),
+url("assets/vicania.jpg");
+
+background-position:center;
+
+}
+
+
+/* si todavía no cargaste assets/vicania.jpg, queda un fondo elegante */
+
+.reception-photo{
+
+background-color:#EDE4D8;
+
+}
+
+
+/* botón más chico dentro de secciones detalle */
+
+.detail-text .small-btn{
+
+margin-top:28px;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.detail-card,
+.detail-card.reverse{
+
+grid-template-columns:1fr;
+
+}
+
+
+.detail-card.reverse .detail-photo{
+
+order:2;
+
+}
+
+
+.detail-card.reverse .detail-text{
+
+order:1;
+
+}
+
+
+.detail-photo{
+
+min-height:300px;
+
+}
+
+
+.detail-text{
+
+padding:46px 28px;
+
+}
+
+
+.detail-row{
+
+grid-template-columns:28px 1fr;
+
+gap:14px;
+
+font-size:12px;
+
+}
+
+}
   
 </style>
 
