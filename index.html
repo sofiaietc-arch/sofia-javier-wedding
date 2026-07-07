@@ -476,7 +476,7 @@ Please confirm your attendance.
 </p>
 
 
-<button onclick="window.open();">
+<button onclick="openRSVP()">
 Confirm Attendance
 </button>
 
@@ -676,6 +676,54 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 60000);
 </script>
+
+<div id="rsvpModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Confirmación</h2>
+
+<input id="nombre" placeholder="Nombre y apellido">
+
+<input id="email" placeholder="Email">
+
+<select id="asistencia">
+
+<option value="">
+Selecciona una opción
+</option>
+
+<option value="civil">
+Ceremonia Civil
+</option>
+
+<option value="morcote">
+María del Sasso - Morcote
+</option>
+
+<option value="ambos">
+Ambos eventos
+</option>
+
+<option value="no">
+No podré asistir
+</option>
+
+</select>
+
+
+<textarea id="mensaje"
+placeholder="Mensaje para Sofía & Javier">
+</textarea>
+
+
+<button onclick="sendRSVP()">
+Enviar confirmación
+</button>
+
+
+</div>
+
 
 
 </body>
