@@ -561,10 +561,11 @@ page.classList.remove("active");
 
 // mostrar la página elegida
 
-document
-.getElementById("page" + number)
-.classList
-.add("active");
+let next = document.getElementById("page" + number);
+
+if(next){
+next.classList.add("active");
+}
 
 
 window.scrollTo({
