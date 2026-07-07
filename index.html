@@ -2164,6 +2164,13 @@ Enviar confirmación
 
   <script>
 
+<script>
+
+
+const RSVP_URL =
+"https://script.google.com/macros/s/AKfycbxYfsjJXvug9kGxvEbniUhQFPmUtgdrJv7Po56u1M9WhQfAWWjTl4tiShAvI1qrIYo9/exec";
+
+
 
 function enterInvitation(){
 
@@ -2478,14 +2485,6 @@ setInterval(updateCountdown,1000);
 
 
 function sendRSVP(event){
-<script>
-
-
-const RSVP_URL =
-"https://script.google.com/macros/s/AKfycbxYfsjJXvug9kGxvEbniUhQFPmUtgdrJv7Po56u1M9WhQfAWWjTl4tiShAvI1qrIYo9/exec";
-
-
-
 
 event.preventDefault();
 
@@ -2651,49 +2650,7 @@ alert(
 
 
 
-
-
-
-console.log("RSVP:",rsvpData);
-
-
-
-document
-.getElementById("modalContent")
-.innerHTML = `
-
-<h2>
-Thank you
-</h2>
-
-<div class="gold-rule"></div>
-
-<p>
-Your confirmation has been received.
-</p>
-
-<p>
-Your presence means the world to us.
-</p>
-
-<h2>
-Sofía & Javier
-</h2>
-
-<br>
-
-<button type="button" onclick="closeRSVP()">
-Cerrar
-</button>
-
-`;
-
-}
-
-
-
 </script>
-
 </body>
 
 </html>
