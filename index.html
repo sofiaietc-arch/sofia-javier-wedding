@@ -162,13 +162,25 @@ color:white;
 
 
 .page{
-display:none;
-animation:pageIn 1.2s ease;
+    display:none;
+    opacity:0;
+    animation:fadeIn .9s forwards;
 }
 
-
 .page.active{
-display:block;
+    display:block;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 
