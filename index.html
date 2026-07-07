@@ -1234,7 +1234,401 @@ grid-template-columns:1fr;
 }
 
 }
+/* MEJORAS VISUALES ESTILO INVITACIÓN */
 
+
+/* textura más fina de papel */
+
+body{
+
+background:
+linear-gradient(
+rgba(248,243,234,.96),
+rgba(248,243,234,.96)
+),
+repeating-linear-gradient(
+0deg,
+rgba(120,100,70,.035) 0px,
+rgba(120,100,70,.035) 1px,
+transparent 1px,
+transparent 5px
+);
+
+}
+
+
+/* flores grandes tipo acuarela en portada */
+
+.opening::before{
+
+width:420px;
+
+height:420px;
+
+top:-90px;
+
+right:-90px;
+
+opacity:.55;
+
+background:
+radial-gradient(circle at 46% 42%, rgba(255,255,255,.98) 0 8%, transparent 9%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.92) 0 11%, transparent 12%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.90) 0 12%, transparent 13%),
+radial-gradient(circle at 48% 63%, rgba(255,255,255,.86) 0 14%, transparent 15%),
+radial-gradient(circle at 70% 35%, rgba(122,128,96,.35) 0 5%, transparent 6%),
+radial-gradient(circle at 76% 44%, rgba(122,128,96,.28) 0 6%, transparent 7%),
+radial-gradient(circle at 35% 76%, rgba(122,128,96,.25) 0 5%, transparent 6%),
+radial-gradient(circle at 52% 52%, rgba(201,164,92,.15), transparent 38%);
+
+}
+
+
+.opening::after{
+
+width:420px;
+
+height:420px;
+
+bottom:-95px;
+
+left:-95px;
+
+opacity:.45;
+
+background:
+radial-gradient(circle at 46% 42%, rgba(255,255,255,.98) 0 8%, transparent 9%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.92) 0 11%, transparent 12%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.90) 0 12%, transparent 13%),
+radial-gradient(circle at 48% 63%, rgba(255,255,255,.86) 0 14%, transparent 15%),
+radial-gradient(circle at 70% 35%, rgba(122,128,96,.35) 0 5%, transparent 6%),
+radial-gradient(circle at 76% 44%, rgba(122,128,96,.28) 0 6%, transparent 7%),
+radial-gradient(circle at 35% 76%, rgba(122,128,96,.25) 0 5%, transparent 6%),
+radial-gradient(circle at 52% 52%, rgba(201,164,92,.15), transparent 38%);
+
+}
+
+
+/* monograma más parecido a sello dorado */
+
+.monogram-frame{
+
+width:170px;
+
+height:170px;
+
+border:1px solid rgba(201,164,92,.55);
+
+box-shadow:
+0 0 0 8px rgba(201,164,92,.06),
+0 0 0 18px rgba(201,164,92,.035),
+0 18px 45px rgba(80,60,30,.08);
+
+}
+
+
+.monogram-frame::after{
+
+content:"";
+
+position:absolute;
+
+inset:18px;
+
+border-radius:50%;
+
+border:1px solid rgba(201,164,92,.22);
+
+}
+
+
+.monogram{
+
+font-size:60px;
+
+color:#B88D3F;
+
+}
+
+
+/* portada más editorial */
+
+.opening h1{
+
+font-size:clamp(38px,6vw,66px);
+
+letter-spacing:.14em;
+
+color:#A9833F;
+
+}
+
+
+.opening .script{
+
+color:#6F6257;
+
+}
+
+
+/* tarjetas como papel de invitación */
+
+.paper-card{
+
+background:
+linear-gradient(
+rgba(251,247,240,.92),
+rgba(251,247,240,.92)
+),
+repeating-linear-gradient(
+90deg,
+rgba(120,100,70,.025) 0px,
+rgba(120,100,70,.025) 1px,
+transparent 1px,
+transparent 6px
+);
+
+border:1px solid rgba(201,164,92,.50);
+
+box-shadow:
+0 20px 55px rgba(80,60,30,.11),
+inset 0 0 0 8px rgba(255,255,255,.28);
+
+}
+
+
+/* segundo marco interno dorado */
+
+.paper-card::before{
+
+width:64px;
+
+height:64px;
+
+top:20px;
+
+left:20px;
+
+border-top:1px solid rgba(201,164,92,.75);
+
+border-left:1px solid rgba(201,164,92,.75);
+
+}
+
+
+.paper-card::after{
+
+width:64px;
+
+height:64px;
+
+bottom:20px;
+
+right:20px;
+
+border-bottom:1px solid rgba(201,164,92,.75);
+
+border-right:1px solid rgba(201,164,92,.75);
+
+}
+
+
+/* flor decorativa tenue dentro de las tarjetas */
+
+.paper-card .ornament{
+
+font-family:"Playfair Display",serif;
+
+letter-spacing:.18em;
+
+color:#B88D3F;
+
+}
+
+
+/* títulos más elegantes */
+
+h2{
+
+letter-spacing:.02em;
+
+}
+
+
+.script-title{
+
+color:#6B5E52;
+
+}
+
+
+/* botones más finos */
+
+button,
+.btn{
+
+border-radius:0;
+
+padding:15px 44px;
+
+background:rgba(251,247,240,.45);
+
+box-shadow:0 8px 20px rgba(80,60,30,.05);
+
+}
+
+
+button:hover,
+.btn:hover{
+
+background:#B88D3F;
+
+border-color:#B88D3F;
+
+}
+
+
+/* tarjetas de celebraciones más parecidas a las imágenes */
+
+.celebration-card{
+
+background:
+linear-gradient(
+rgba(251,247,240,.88),
+rgba(251,247,240,.88)
+),
+radial-gradient(circle at top right, rgba(255,255,255,.85), transparent 34%),
+radial-gradient(circle at bottom left, rgba(122,128,96,.12), transparent 36%);
+
+border:1px solid rgba(201,164,92,.48);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.celebration-card::before{
+
+content:"";
+
+position:absolute;
+
+width:150px;
+
+height:150px;
+
+top:-45px;
+
+right:-45px;
+
+opacity:.32;
+
+background:
+radial-gradient(circle at 46% 42%, rgba(255,255,255,.98) 0 9%, transparent 10%),
+radial-gradient(circle at 38% 50%, rgba(255,255,255,.90) 0 12%, transparent 13%),
+radial-gradient(circle at 56% 52%, rgba(255,255,255,.90) 0 12%, transparent 13%),
+radial-gradient(circle at 50% 63%, rgba(255,255,255,.82) 0 14%, transparent 15%),
+radial-gradient(circle at 52% 52%, rgba(201,164,92,.18), transparent 38%);
+
+}
+
+
+.celebration-card h3{
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+.celebration-card .place,
+.celebration-card .date-small,
+.celebration-card .btn{
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+/* navegación inferior más fina */
+
+.bottom-nav{
+
+box-shadow:0 -10px 30px rgba(80,60,30,.06);
+
+}
+
+
+.bottom-nav a{
+
+font-size:9px;
+
+color:#6B5E52;
+
+}
+
+
+.bottom-nav span{
+
+font-size:20px;
+
+color:#B88D3F;
+
+}
+
+
+/* mobile */
+
+@media(max-width:760px){
+
+.opening::before,
+.opening::after{
+
+width:300px;
+
+height:300px;
+
+}
+
+
+.monogram-frame{
+
+width:140px;
+
+height:140px;
+
+}
+
+
+.monogram{
+
+font-size:50px;
+
+}
+
+
+.paper-card{
+
+padding:46px 24px;
+
+}
+
+
+.paper-card::before,
+.paper-card::after{
+
+width:42px;
+
+height:42px;
+
+}
+
+}
 
 </style>
 
