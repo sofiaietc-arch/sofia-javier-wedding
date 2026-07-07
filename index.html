@@ -236,9 +236,7 @@ button {
     font-size:32px;
     color:#F5F1E8;
 }
-.civil {
-    margin-top:60px;
-}
+
 .civil {
     display:none;
     margin-top:60px;
@@ -358,7 +356,12 @@ Buenos Aires, Argentina
 
 
 </div>
+
 <script>
+
+function openInvitation(){
+document.getElementById("envelope").classList.add("open");
+}
 
 function showCivil(){
 document.getElementById("civilCard").classList.add("show");
