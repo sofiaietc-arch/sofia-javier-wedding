@@ -548,25 +548,17 @@ document
 
 function nextPage(number){
 
-// ocultar todas las páginas
-
 let pages = document.querySelectorAll(".page");
 
 pages.forEach(function(page){
-
 page.classList.remove("active");
-
 });
-
-
-// mostrar la página elegida
 
 let next = document.getElementById("page" + number);
 
 if(next){
 next.classList.add("active");
 }
-
 
 window.scrollTo({
 top:0,
@@ -575,7 +567,9 @@ behavior:"smooth"
 
 }
 
-</section>
+</script>
+
+
 <!-- PAGINA 6 -->
 
 <section class="page" id="page6">
@@ -614,7 +608,9 @@ Morcote, Switzerland
 </div>
 
 </section>
+
+
 </div>
-<script>
+
 </body>
 </html>
