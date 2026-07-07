@@ -945,7 +945,7 @@ border:1px solid rgba(80,70,62,.45);
 .suit-leg.left{left:30px;}
 .suit-leg.right{right:30px;}
 
-/* RSVP */
+/* Confirmación */
 
 .rsvp{
 min-height:620px;
@@ -4021,6 +4021,364 @@ opacity:.24 !important;
 }
 
 
+
+
+/* ============================================================
+   AJUSTES FINALES EN ESPAÑOL
+   - Código de vestimenta con opciones
+   - Confirmación antes del 20/7
+   - Mapa a Morcote con ruta trazada y avión
+   - Íconos solicitados
+   - Plantillas de texto con fondo texturado
+   ============================================================ */
+
+/* Fondos de texto: papel texturado, no blanco liso */
+.paper-card,
+.count-card,
+.event-copy,
+.detail-text,
+.dress-title,
+.rsvp-card,
+.info-wrap,
+.final .panel,
+.modal-content{
+background-image:
+linear-gradient(
+rgba(255,255,255,.76),
+rgba(255,253,248,.86)
+),
+url("fondo-relieve.jpg") !important;
+background-size:cover !important;
+background-position:center !important;
+background-repeat:no-repeat !important;
+background-blend-mode:screen !important;
+border-color:rgba(198,160,91,.34) !important;
+}
+
+/* Mantener texto dorado/marrón dorado */
+body,
+p,
+.copy,
+.detail-row,
+.detail-row div,
+.event-name,
+.event-place,
+.place,
+.date-small,
+.useful-item,
+.useful-item span,
+.rsvp-intro,
+.info-subtitle,
+.final-note,
+label,
+input,
+select,
+textarea,
+.radio-box,
+.nav-label{
+color:#9A7636 !important;
+}
+
+h1,
+h2,
+h3,
+.monogram,
+.letter-mark,
+.opening h1,
+.event-date,
+.countdown strong,
+.count-separator,
+.kicker,
+.detail-icon,
+.useful-icon,
+.nav-icon{
+color:#A77C32 !important;
+}
+
+/* Código de vestimenta */
+.dress-options{
+gap:48px !important;
+align-items:center !important;
+justify-content:center !important;
+}
+
+.dress-option{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-width:150px;
+}
+
+.dress-option-text{
+margin-top:16px;
+text-align:center;
+color:#9A7636;
+}
+
+.dress-option-text strong{
+display:block;
+font-family:"Playfair Display",serif;
+font-size:20px;
+font-weight:400;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:#A77C32;
+margin-bottom:8px;
+}
+
+.dress-option-text span{
+display:block;
+font-size:11px;
+letter-spacing:.16em;
+text-transform:uppercase;
+line-height:1.55;
+color:#9A7636;
+}
+
+/* Figuras de mujer/hombre más finas y doradas */
+.dress-head,
+.dress-body,
+.dress-skirt,
+.suit-body,
+.suit-leg{
+border-color:rgba(167,124,50,.72) !important;
+}
+
+.suit-body::before{
+border-left-color:rgba(167,124,50,.52) !important;
+}
+
+.dress-divider{
+background:rgba(198,160,91,.30) !important;
+}
+
+/* Mapa Morcote */
+.morcote-map{
+width:min(780px,94%);
+height:285px;
+margin:0 auto 50px;
+position:relative;
+border:1px solid rgba(198,160,91,.24);
+background-image:
+linear-gradient(
+rgba(255,255,255,.58),
+rgba(255,253,248,.76)
+),
+url("fondo-relieve.jpg");
+background-size:cover;
+background-position:center;
+overflow:hidden;
+}
+
+.morcote-map::before{
+content:"";
+position:absolute;
+inset:24px;
+border:1px solid rgba(198,160,91,.16);
+pointer-events:none;
+}
+
+.route-svg{
+position:absolute;
+inset:18px 20px;
+width:calc(100% - 40px);
+height:calc(100% - 36px);
+overflow:visible;
+}
+
+.route-line-main,
+.route-line-soft{
+fill:none;
+stroke:#A77C32;
+stroke-width:1.8;
+stroke-linecap:round;
+stroke-dasharray:8 8;
+opacity:.72;
+}
+
+.route-line-soft{
+stroke-width:1;
+stroke-dasharray:3 9;
+opacity:.38;
+}
+
+.map-origin,
+.map-destination{
+position:absolute;
+z-index:3;
+text-align:center;
+color:#9A7636;
+}
+
+.map-origin{
+left:8%;
+bottom:18%;
+}
+
+.map-destination{
+right:8%;
+top:14%;
+}
+
+.map-origin::before,
+.map-destination::before{
+content:"";
+display:block;
+width:14px;
+height:14px;
+border-radius:50%;
+background:#A77C32;
+box-shadow:0 0 0 8px rgba(198,160,91,.16);
+margin:0 auto 12px;
+}
+
+.map-origin span,
+.map-destination span{
+display:block;
+font-size:9px;
+letter-spacing:.24em;
+text-transform:uppercase;
+color:#A77C32;
+margin-bottom:5px;
+}
+
+.map-origin strong,
+.map-destination strong{
+display:block;
+font-family:"Playfair Display",serif;
+font-weight:400;
+font-size:22px;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:#A77C32;
+}
+
+.map-destination em{
+display:block;
+font-style:normal;
+font-size:10px;
+letter-spacing:.22em;
+text-transform:uppercase;
+margin-top:5px;
+color:#9A7636;
+}
+
+.morcote-map .plane{
+position:absolute;
+left:50%;
+top:49%;
+z-index:4;
+font-size:34px;
+color:#A77C32;
+transform:translate(-50%,-50%) rotate(-13deg);
+filter:drop-shadow(0 4px 8px rgba(80,60,20,.12));
+}
+
+/* Íconos finales */
+.bottom-nav a[data-section="celebraciones"] .nav-icon{
+font-size:24px !important;
+}
+
+.bottom-nav a[data-section="ceremonia"] .nav-icon{
+font-family:"Playfair Display",serif !important;
+font-size:28px !important;
+}
+
+.bottom-nav a[data-section="recepcion"] .nav-icon{
+font-size:22px !important;
+font-family:system-ui, sans-serif !important;
+}
+
+.bottom-nav a[data-section="dresscode"] .nav-icon{
+font-size:0 !important;
+}
+
+.bottom-nav a[data-section="dresscode"] .nav-icon::before{
+content:"♁";
+font-family:"Playfair Display",serif;
+font-size:23px;
+letter-spacing:-.08em;
+}
+
+.bottom-nav a[data-section="rsvp"] .nav-icon{
+font-size:23px !important;
+}
+
+/* Hotel y moneda */
+.useful-icon{
+min-height:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.chf-icon{
+font-family:"Playfair Display",serif !important;
+font-size:21px !important;
+letter-spacing:.08em !important;
+}
+
+/* Ajuste RSVP */
+.rsvp-intro{
+font-family:"Cormorant Garamond",serif !important;
+font-size:clamp(22px,3vw,30px) !important;
+line-height:1.55 !important;
+color:#9A7636 !important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+
+.dress-options{
+gap:20px !important;
+padding:20px 22px 52px !important;
+}
+
+.dress-option{
+min-width:110px;
+}
+
+.dress-option-text strong{
+font-size:16px;
+letter-spacing:.12em;
+}
+
+.dress-option-text span{
+font-size:10px;
+letter-spacing:.12em;
+}
+
+.morcote-map{
+height:250px;
+width:96%;
+}
+
+.map-origin{
+left:6%;
+bottom:16%;
+}
+
+.map-destination{
+right:6%;
+top:13%;
+}
+
+.map-origin strong,
+.map-destination strong{
+font-size:16px;
+letter-spacing:.10em;
+}
+
+.morcote-map .plane{
+font-size:29px;
+left:51%;
+top:50%;
+}
+
+}
+
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -4067,15 +4425,15 @@ J
 <h1>SOFÍA & JAVIER</h1>
 
 <div class="script">
-We can’t wait to celebrate with you
+Estamos felices de celebrar con ustedes
 </div>
 
 <div class="gold-rule"></div>
 
 <div class="date">
-September 26, 2026
+03 de agosto de 2026 · 26 de septiembre de 2026
 <br>
-Morcote · Switzerland
+Buenos Aires · Morcote
 </div>
 
 <div class="gold-rule"></div>
@@ -4101,7 +4459,7 @@ Morcote · Switzerland
 <div class="letter-center">
 <div class="letter-mark">S & J</div>
 <div class="gold-rule"></div>
-<p>Opening invitation</p>
+<p>Abriendo invitación</p>
 </div>
 
 </div>
@@ -4447,7 +4805,7 @@ onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/65/Morcote_-
 <div class="dress-title">
 
 <div class="kicker">
-Dress Code
+Código de vestimenta
 </div>
 
 <div class="detail-ornament">
@@ -4464,7 +4822,9 @@ Les pedimos acompañarnos con una vestimenta formal y elegante.
 
 </div>
 
-<div class="dress-figures">
+<div class="dress-figures dress-options">
+
+<div class="dress-option">
 
 <div class="dress-figure">
 <div class="dress-head"></div>
@@ -4472,13 +4832,29 @@ Les pedimos acompañarnos con una vestimenta formal y elegante.
 <div class="dress-skirt"></div>
 </div>
 
+<div class="dress-option-text">
+<strong>Mujeres</strong>
+<span>Traje o vestido largo</span>
+</div>
+
+</div>
+
 <div class="dress-divider"></div>
+
+<div class="dress-option">
 
 <div class="dress-figure">
 <div class="dress-head"></div>
 <div class="suit-body"></div>
 <div class="suit-leg left"></div>
 <div class="suit-leg right"></div>
+</div>
+
+<div class="dress-option-text">
+<strong>Hombres</strong>
+<span>Traje o polo</span>
+</div>
+
 </div>
 
 </div>
@@ -4505,13 +4881,13 @@ Confirmación de asistencia
 </div>
 
 <h2>
-RSVP
+Confirmación
 </h2>
 
 <p class="rsvp-intro">
 Agradecemos confirmar tu asistencia
 <br>
-antes del 15 de agosto de 2026.
+antes del 20 de julio de 2026.
 </p>
 
 <div class="rsvp-events">
@@ -4530,7 +4906,7 @@ antes del 15 de agosto de 2026.
 
 </div>
 
-<button type="button" onclick="openRSVP()">
+<button type="button" onclick="openConfirmación()">
 Enviar confirmación
 </button>
 
@@ -4554,19 +4930,25 @@ El viaje
 Un camino que nos lleva a Morcote
 </p>
 
-<div class="travel-map">
+<div class="travel-map morcote-map">
 
-<div class="map-line"></div>
-
-<div class="map-point argentina">
-<span>Buenos Aires</span>
+<div class="map-origin">
+<span>Salida</span>
+<strong>Buenos Aires</strong>
 </div>
 
-<div class="map-point switzerland">
-<span>Morcote</span>
-</div>
+<svg class="route-svg" viewBox="0 0 720 250" aria-hidden="true">
+<path class="route-line-main" d="M110 175 C250 72, 420 205, 610 72"></path>
+<path class="route-line-soft" d="M125 190 C280 120, 430 168, 590 92"></path>
+</svg>
 
 <div class="plane">✈</div>
+
+<div class="map-destination">
+<span>Destino</span>
+<strong>Morcote</strong>
+<em>Suiza</em>
+</div>
 
 </div>
 
@@ -4578,7 +4960,7 @@ Un camino que nos lleva a Morcote
 </a>
 
 <a class="useful-item" href="#info">
-<div class="useful-icon">▣</div>
+<div class="useful-icon">🛎</div>
 <span>Hoteles</span>
 </a>
 
@@ -4593,7 +4975,7 @@ Un camino que nos lleva a Morcote
 </a>
 
 <a class="useful-item" href="#info">
-<div class="useful-icon">₣</div>
+<div class="useful-icon chf-icon">CHF</div>
 <span>Moneda</span>
 </a>
 
@@ -4629,7 +5011,7 @@ Sofía & Javier
 <div class="gold-rule"></div>
 
 <p>
-With love
+Con amor
 </p>
 
 </div>
@@ -4639,23 +5021,23 @@ With love
 <nav class="bottom-nav">
 
 <a href="#celebraciones" data-section="celebraciones" class="active">
-<span class="nav-icon">▦</span>
+<span class="nav-icon">✦</span>
 <span class="nav-label">Agenda</span>
 </a>
 
 <a href="#ceremonia" data-section="ceremonia">
-<span class="nav-icon">⌂</span>
+<span class="nav-icon">∞</span>
 <span class="nav-label">Ceremonia</span>
 </a>
 
 <a href="#recepcion" data-section="recepcion">
-<span class="nav-icon">⌂</span>
+<span class="nav-icon">🥂</span>
 <span class="nav-label">Recepción</span>
 </a>
 
 <a href="#dresscode" data-section="dresscode">
 <span class="nav-icon">♁</span>
-<span class="nav-label">Dress Code</span>
+<span class="nav-label">Vestimenta</span>
 </a>
 
 <a href="#info" data-section="info">
@@ -4665,7 +5047,7 @@ With love
 
 <a href="#rsvp" data-section="rsvp">
 <span class="nav-icon">✉</span>
-<span class="nav-label">RSVP</span>
+<span class="nav-label">Confirmación</span>
 </a>
 
 </nav>
@@ -4676,10 +5058,10 @@ With love
 
 <div class="modal-content" id="modalContent">
 
-<button class="close-modal" type="button" onclick="closeRSVP()">×</button>
+<button class="close-modal" type="button" onclick="closeConfirmación()">×</button>
 
 <h2>
-RSVP
+Confirmación
 </h2>
 
 <div class="gold-rule"></div>
@@ -4688,7 +5070,7 @@ RSVP
 Por favor confirmá tu asistencia.
 </p>
 
-<form id="rsvpForm" onsubmit="sendRSVP(event)">
+<form id="rsvpForm" onsubmit="sendConfirmación(event)">
 
 <label for="fullName">
 Nombre y apellido *
@@ -4814,7 +5196,7 @@ Enviar confirmación
 
 <script>
 
-const RSVP_URL =
+const Confirmación_URL =
 "https://script.google.com/macros/s/AKfycbwS7-KWNoBlOTYLQi124fm8FLGOv1XmIJgd6IwNQK3rsFQGToOryxuWdIYTXErqeJo/exec";
 
 
@@ -4955,7 +5337,7 @@ label.textContent =
 }
 
 
-function openRSVP(){
+function openConfirmación(){
 
 document
 .getElementById("rsvpModal")
@@ -4965,7 +5347,7 @@ document
 }
 
 
-function closeRSVP(){
+function closeConfirmación(){
 
 document
 .getElementById("rsvpModal")
@@ -5120,7 +5502,7 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 
-function sendRSVP(event){
+function sendConfirmación(event){
 
 event.preventDefault();
 
@@ -5159,7 +5541,7 @@ submittedAt:new Date().toISOString()
 
 };
 
-fetch(RSVP_URL,{
+fetch(Confirmación_URL,{
 
 method:"POST",
 
@@ -5175,17 +5557,17 @@ document
 .getElementById("modalContent")
 .innerHTML = `
 
-<h2>Thank you</h2>
+<h2>Gracias</h2>
 
 <div class="gold-rule"></div>
 
-<p>Your confirmation has been received.</p>
+<p>Tu confirmación fue recibida.</p>
 
-<p>Your presence means the world to us.</p>
+<p>Gracias por acompañarnos en este momento tan especial.</p>
 
 <br>
 
-<button type="button" onclick="closeRSVP()">Close</button>
+<button type="button" onclick="closeConfirmación()">Cerrar</button>
 
 `;
 
