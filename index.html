@@ -476,9 +476,7 @@ Please confirm your attendance.
 </p>
 
 
-<button onclick="window.open(
-'https://maps.app.goo.gl/iG5gtthmX73iwxrF6?g_st=ic',
-'_blank');">
+<button onclick="window.open();">
 Confirm Attendance
 </button>
 
@@ -525,7 +523,8 @@ Morcote, Switzerland
 </p>
 
 
-<button onclick="window.open('https://maps.app.goo.gl/iG5gtthmX73iwxrF6?g_st=ic')">
+<button onclick="window.open('https://maps.app.goo.gl/iG5gtthmX73iwxrF6?g_st=ic',
+'_blank');">
 View Map
 </button>
 
@@ -558,22 +557,7 @@ Counting the days
 </h2>
 
 <h1 id="countdown">
-const wedding = new Date("September 26, 2026 17:30:00");
-
-function updateCountdown(){
-
-    const now = new Date();
-    const diff = wedding - now;
-
-    const days = Math.floor(diff/(1000*60*60*24));
-
-    document.getElementById("countdown").innerHTML =
-    days + " Days";
-
-}
-
-updateCountdown();
-setInterval(updateCountdown,60000);
+Loading...
 </h1>
 
 <p>
@@ -672,7 +656,25 @@ behavior:"smooth"
 });
 
 }
+const wedding = new Date("September 26, 2026 17:30:00");
 
+function updateCountdown() {
+
+    const now = new Date();
+    const diff = wedding - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "Today is the day!";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById("countdown").innerHTML = days + " Days";
+}
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
 </script>
 
 
