@@ -2,3 +2,14 @@
 rcote-1.jpg…]()
 
 # sofia-javier-wedding
+
+.reception-photo{
+
+background-image:
+linear-gradient(
+rgba(247,241,232,.12),
+rgba(247,241,232,.16)
+),
+url("https://github.com/user-attachments/assets/95ac9567-33fd-4990-850d-0ae5ce8c40b9");
+
+}
