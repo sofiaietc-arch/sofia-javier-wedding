@@ -6019,9 +6019,32 @@ const main =
 document.getElementById("main");
 
 
+const letterTransition =
+document.getElementById("letterTransition");
+
+
 opening
 .classList
 .add("hide");
+
+
+setTimeout(function(){
+
+letterTransition
+.classList
+.add("show");
+
+
+setTimeout(function(){
+
+letterTransition
+.classList
+.add("open");
+
+},120);
+
+
+},450);
 
 
 setTimeout(function(){
@@ -6036,7 +6059,20 @@ top:0,
 behavior:"smooth"
 });
 
-},650);
+},1850);
+
+
+setTimeout(function(){
+
+letterTransition
+.classList
+.remove("show");
+
+letterTransition
+.classList
+.remove("open");
+
+},2600);
 
 }
 
