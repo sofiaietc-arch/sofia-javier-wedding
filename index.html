@@ -6216,6 +6216,10 @@ const letterTransition =
 document.getElementById("letterTransition");
 
 
+const targetHash =
+window.location.hash;
+
+
 opening
 .classList
 .add("hide");
@@ -6247,13 +6251,44 @@ main
 .add("visible");
 
 
+startPanelObserver();
+
+
+if(targetHash){
+
+const targetSection =
+document.querySelector(targetHash);
+
+
+if(targetSection){
+
+setTimeout(function(){
+
+targetSection
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},250);
+
+}else{
+
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
 
+}
 
-startPanelObserver();
+}else{
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
 
 },1850);
 
@@ -6268,7 +6303,7 @@ letterTransition
 .classList
 .remove("open");
 
-},2600);
+},2900);
 
 }
 
