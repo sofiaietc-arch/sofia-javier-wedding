@@ -9,7 +9,9 @@
 <title>Sofía & Javier Wedding</title>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&display=swap');
 
 :root{
@@ -5205,6 +5207,70 @@ h3,
   margin: 0 auto 22px !important;
   max-width: 680px !important;
 }
+/* =====================================================
+   TIPOGRAFÍAS DEFINITIVAS
+   GFS Didot: títulos
+   Antic Didone: textos especiales
+   ===================================================== */
+
+/* TÍTULOS PRINCIPALES */
+.welcome h2,
+.count-section h2,
+.celebrations h2,
+.dress-title h2,
+.rsvp-card h2,
+.info h2,
+.final h2 {
+  font-family: 'GFS Didot', 'Didot', 'Bodoni 72', 'Times New Roman', serif !important;
+  font-size: clamp(32px, 5vw, 56px) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.08 !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+/* TEXTOS ESPECIALES */
+.texto-morcote,
+.welcome-subtitle,
+.rsvp-subtitle,
+.rsvp-intro,
+.dress-subtitle,
+.dress-title p,
+.info-subtitle,
+.final-note {
+  font-family: 'Antic Didone', 'Didot', 'Times New Roman', serif !important;
+  font-size: clamp(20px, 3vw, 28px) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+  max-width: 720px !important;
+  margin: 0 auto 22px !important;
+}
+
+/* Formal elegante más chico que el título */
+.dress-subtitle {
+  font-size: clamp(18px, 2.4vw, 24px) !important;
+}
+
+/* Texto final en mayúscula, pero con Antic Didone */
+.final-note,
+.final .texto-morcote {
+  font-family: 'Antic Didone', 'Didot', 'Times New Roman', serif !important;
+  font-size: clamp(20px, 3vw, 28px) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
    
 </style>
 
@@ -5303,11 +5369,11 @@ Buenos Aires · Morcote
 <div class="gold-rule small"></div>
 
 <div class="copy">
-<p class="welcome-subtitle">
+<p class="texto-morcote">
   Con enorme alegría los invitamos a compartir uno de los momentos más importantes de nuestras vidas.
 </p>
 
-<p class="welcome-subtitle">
+<p class="texto-morcote">
   Será un honor celebrar este día juntos.
 </p>
 </div>
@@ -5663,7 +5729,7 @@ alt="Referencia de vestimenta formal y elegante">
   ⌁
 </div>
 
-<p class="rsvp-subtitle">
+<p class="texto-morcote">
   Agradecemos que confirmes tu asistencia antes del 20 de julio para poder acompañarnos.
 </p>
 
