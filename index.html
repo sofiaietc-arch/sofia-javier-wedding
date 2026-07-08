@@ -4812,7 +4812,6 @@ article::after,
   box-shadow: none !important;
   border-color: transparent !important;
 }
-
 /* Mantener fondo blanco SOLO en Civil, Ceremonia religiosa y Recepción */
 .event-card,
 .celebration-card,
@@ -4827,7 +4826,6 @@ article::after,
   box-shadow: 0 12px 30px rgba(120, 100, 70, 0.10) !important;
   border: 1px solid rgba(198, 160, 91, 0.22) !important;
 }
-
 /* Mantener también el fondo blanco si esas tarjetas usan pseudo-elementos */
 .event-card::before,
 .event-card::after,
@@ -4842,7 +4840,6 @@ article::after,
   background: rgba(255, 255, 255, 0.72) !important;
   background-color: rgba(255, 255, 255, 0.72) !important;
 }
-
 /* Títulos siempre sin fondo */
 h1,
 h2,
@@ -4880,7 +4877,6 @@ body section [class*="content"] {
   background-color: transparent !important;
   box-shadow: none !important;
 }
-
 /* BORRAR FONDOS BLANCOS DE PSEUDO-ELEMENTOS */
 body section::before,
 body section::after,
@@ -4896,7 +4892,6 @@ body section [class*="panel"]::after {
   background-color: transparent !important;
   box-shadow: none !important;
 }
-
 /* RESTAURAR FONDO SOLO EN CIVIL / CEREMONIA / RECEPCIÓN */
 .event-card,
 .event-card::before,
@@ -4933,6 +4928,45 @@ h3,
   color: #A77C32 !important;
   position: relative !important;
   z-index: 10 !important;
+}
+/* Quitar fondo blanco de la sección final Sofía y Javier */
+.final-section,
+.footer-section,
+.closing-section,
+.end-section,
+.signature-section,
+.sofia-javier-section,
+.couple-section,
+.final-card,
+.footer-card,
+.closing-card,
+.end-card,
+.signature-card,
+.sofia-javier-card,
+.couple-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.final-section::before,
+.final-section::after,
+.footer-section::before,
+.footer-section::after,
+.closing-section::before,
+.closing-section::after,
+.end-section::before,
+.end-section::after,
+.signature-section::before,
+.signature-section::after,
+.sofia-javier-section::before,
+.sofia-javier-section::after,
+.couple-section::before,
+.couple-section::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 </style>
