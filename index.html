@@ -5972,15 +5972,6 @@ stroke:none !important;
 
 </style>
 
-/* ICONO DEFINITIVO DE VESTIMENTA */
-.bottom-nav a[data-section="dresscode"] .nav-icon{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  height:28px !important;
-  margin-bottom:6px !important;
-  font-size:0 !important;
-}
 
 .bottom-nav a[data-section="dresscode"] .nav-icon svg{
   width:28px !important;
@@ -6055,6 +6046,38 @@ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http:
 /* CONFIRMACIÓN: sobre */
 .bottom-nav a[data-section="rsvp"] .nav-label::before{
 background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='10' y='18' width='44' height='30' rx='2'/%3E%3Cpath d='M12 20 L32 36 L52 20'/%3E%3Cpath d='M12 46 L26 34'/%3E%3Cpath d='M52 46 L38 34'/%3E%3C/svg%3E") !important;
+}
+
+</style>
+
+<style>
+
+/* FIX FINAL VESTIMENTA: OCULTA ICONO VIEJO Y DIBUJA PAREJA */
+
+.bottom-nav a[data-section="dresscode"] .nav-icon,
+.bottom-nav a[data-section="dresscode"] .nav-icon::before,
+.bottom-nav a[data-section="dresscode"] .nav-icon::after{
+display:none !important;
+visibility:hidden !important;
+opacity:0 !important;
+width:0 !important;
+height:0 !important;
+font-size:0 !important;
+content:none !important;
+background:none !important;
+background-image:none !important;
+}
+
+.bottom-nav a[data-section="dresscode"] .nav-label::before{
+content:"";
+display:block !important;
+width:30px !important;
+height:30px !important;
+margin:0 auto 7px !important;
+background-repeat:no-repeat !important;
+background-position:center !important;
+background-size:28px 28px !important;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='%23A77C32'%3E%3Ccircle cx='21' cy='12' r='5'/%3E%3Cpath d='M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z'/%3E%3Ccircle cx='45' cy='12' r='5'/%3E%3Cpath d='M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z'/%3E%3C/svg%3E") !important;
 }
 
 </style>
