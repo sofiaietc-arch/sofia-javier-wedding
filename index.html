@@ -4862,6 +4862,54 @@ h4 span,
   background-color: transparent !important;
   box-shadow: none !important;
 }
+/* BORRAR FONDOS BLANCOS GENERALES */
+body section,
+body section > div,
+body section > article,
+body section .container,
+body section .content,
+body section .inner,
+body section .wrap,
+body section .wrapper,
+body section [class*="box"],
+body section [class*="card"],
+body section [class*="panel"],
+body section [class*="paper"],
+body section [class*="content"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* BORRAR FONDOS BLANCOS DE PSEUDO-ELEMENTOS */
+body section::before,
+body section::after,
+body section > div::before,
+body section > div::after,
+body section [class*="box"]::before,
+body section [class*="box"]::after,
+body section [class*="card"]::before,
+body section [class*="card"]::after,
+body section [class*="panel"]::before,
+body section [class*="panel"]::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* RESTAURAR FONDO SOLO EN CIVIL / CEREMONIA / RECEPCIÓN */
+.event-card,
+.event-card::before,
+.event-card::after,
+.celebration-card,
+.celebration-card::before,
+.celebration-card::after {
+  background: rgba(255,255,255,.72) !important;
+  background-color: rgba(255,255,255,.72) !important;
+  box-shadow: 0 12px 30px rgba(120,100,70,.10) !important;
+  border: 1px solid rgba(198,160,91,.22) !important;
+}
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
