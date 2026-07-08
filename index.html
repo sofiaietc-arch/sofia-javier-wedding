@@ -1666,14 +1666,14 @@ font-family:"Playfair Display",serif;
 font-size:25px;
 }
 
-
+.bottom-nav a[data-section="dresscode"] .nav-icon{
 font-family:"Playfair Display",serif;
 font-size:22px;
 letter-spacing:-.10em;
 }
 
-
-content:"👫🏻";
+.bottom-nav a[data-section="dresscode"] .nav-icon::before{
+content:none !important;
 }
 
 .bottom-nav a[data-section="dresscode"] .nav-icon{
@@ -1880,7 +1880,8 @@ font-size:25px;
 font-size:0 !important;
 }
 
-
+.bottom-nav a[data-section="dresscode"] .nav-icon::before{
+content:none !important;
 font-family:"Playfair Display",serif;
 font-size:23px;
 letter-spacing:-.08em;
@@ -2818,7 +2819,8 @@ font-size:25px;
 font-size:0 !important;
 }
 
-
+.bottom-nav a[data-section="dresscode"] .nav-icon::before{
+content:none !important;
 font-family:"Playfair Display",serif;
 font-size:23px;
 letter-spacing:-.08em;
@@ -4289,14 +4291,14 @@ font-family:system-ui, sans-serif !important;
 }
 
 .bottom-nav a[data-section="dresscode"] .nav-icon{
-font-size:22px !important;
+font-size:0 !important;
 }
 
 .bottom-nav a[data-section="dresscode"] .nav-icon::before{
-content:"👫";
-font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+content:none !important;
+font-family:"Playfair Display",serif;
 font-size:23px;
-letter-spacing:0;
+letter-spacing:-.08em;
 }
 
 .bottom-nav a[data-section="rsvp"] .nav-icon{
@@ -4376,18 +4378,98 @@ top:50%;
 
 }
 
-/* ICONO FINAL VESTIMENTA - NO USA nav-icon */
+
+
+
+/* ÍCONOS DEFINITIVOS DE LA BARRA INFERIOR
+   Agenda: fuegos artificiales
+   Ceremonia: anillos
+   Recepción: copas
+   Vestimenta: pareja hombre/mujer
+   Confirmación: carta/sobre
+*/
+
+.bottom-nav .nav-icon{
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
+width:30px !important;
+height:30px !important;
+margin:0 auto 6px !important;
+font-size:0 !important;
+background:none !important;
+background-image:none !important;
+-webkit-text-fill-color:initial !important;
+color:#A77C32 !important;
+}
+
+.bottom-nav .nav-icon::before,
+.bottom-nav .nav-icon::after{
+display:none !important;
+content:none !important;
+}
+
+.bottom-nav .nav-icon svg{
+display:block !important;
+width:28px !important;
+height:28px !important;
+fill:none !important;
+stroke:#A77C32 !important;
+stroke-width:2.2 !important;
+stroke-linecap:round !important;
+stroke-linejoin:round !important;
+filter:drop-shadow(0 1px 2px rgba(84,58,15,.08));
+}
+
+.bottom-nav .nav-couple svg *{
+fill:#A77C32 !important;
+stroke:none !important;
+}
+
+.bottom-nav .nav-fireworks svg circle{
+fill:#A77C32 !important;
+stroke:none !important;
+}
+
+.bottom-nav .nav-fireworks svg path{
+stroke:#A77C32 !important;
+}
+
+.bottom-nav .nav-label{
+color:#9A7636 !important;
+}
+
+@media(max-width:760px){
+
+.bottom-nav .nav-icon{
+width:25px !important;
+height:25px !important;
+margin-bottom:5px !important;
+}
+
+.bottom-nav .nav-icon svg{
+width:24px !important;
+height:24px !important;
+stroke-width:2.1 !important;
+}
+
+}
+
+
+
+
+/* ===== FIX DEFINITIVO ICONOS BARRA INFERIOR ===== */
 
 .bottom-nav a[data-section="dresscode"] .nav-icon,
 .bottom-nav a[data-section="dresscode"] .nav-icon::before,
 .bottom-nav a[data-section="dresscode"] .nav-icon::after{
 display:none !important;
-content:none !important;
 visibility:hidden !important;
 opacity:0 !important;
 width:0 !important;
 height:0 !important;
 font-size:0 !important;
+content:none !important;
 background:none !important;
 background-image:none !important;
 }
@@ -4399,8 +4481,17 @@ justify-content:center !important;
 width:30px !important;
 height:30px !important;
 margin:0 auto 6px !important;
+line-height:0 !important;
 background:none !important;
 background-image:none !important;
+-webkit-text-fill-color:initial !important;
+color:#A77C32 !important;
+}
+
+.vestimenta-icono-final::before,
+.vestimenta-icono-final::after{
+display:none !important;
+content:none !important;
 }
 
 .vestimenta-icono-final svg{
@@ -4409,7 +4500,15 @@ width:28px !important;
 height:28px !important;
 fill:#A77C32 !important;
 stroke:none !important;
+background:none !important;
+-webkit-text-fill-color:initial !important;
 }
+
+.vestimenta-icono-final svg *{
+fill:#A77C32 !important;
+stroke:none !important;
+}
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -4420,6 +4519,7 @@ stroke:none !important;
 <!-- Borrado total de flores en sección Nuestras celebraciones -->
 <!-- Sello actualizado: palabra Abrir debajo del sello -->
 <!-- Flores de esquina actualizadas con PNG de portada sin fondo -->
+<!-- Iconos finales: fuegos artificiales, anillos, copas, pareja y carta -->
 </head>
 
 <body>
@@ -5052,23 +5152,56 @@ Con amor
 <nav class="bottom-nav">
 
 <a href="#celebraciones" data-section="celebraciones" class="active">
-<span class="nav-icon">🗒️</span>
+<span class="nav-icon nav-fireworks" aria-hidden="true">
+<svg viewBox="0 0 64 64" role="img">
+<path d="M32 8 L32 22"></path>
+<path d="M32 42 L32 56"></path>
+<path d="M8 32 L22 32"></path>
+<path d="M42 32 L56 32"></path>
+<path d="M15 15 L25 25"></path>
+<path d="M39 39 L49 49"></path>
+<path d="M49 15 L39 25"></path>
+<path d="M25 39 L15 49"></path>
+<circle cx="32" cy="32" r="4"></circle>
+<path d="M46 9 L46 17"></path>
+<path d="M42 13 L50 13"></path>
+<path d="M18 8 L18 15"></path>
+<path d="M14.5 11.5 L21.5 11.5"></path>
+</svg>
+</span>
 <span class="nav-label">Agenda</span>
 </a>
 
 <a href="#ceremonia" data-section="ceremonia">
-<span class="nav-icon">∞</span>
+<span class="nav-icon nav-rings" aria-hidden="true">
+<svg viewBox="0 0 64 64" role="img">
+<circle cx="25" cy="36" r="13"></circle>
+<circle cx="39" cy="36" r="13"></circle>
+<path d="M32 17 L37 25 L27 25 Z"></path>
+</svg>
+</span>
 <span class="nav-label">Ceremonia</span>
 </a>
 
 <a href="#recepcion" data-section="recepcion">
-<span class="nav-icon">🥂</span>
+<span class="nav-icon nav-glasses" aria-hidden="true">
+<svg viewBox="0 0 64 64" role="img">
+<path d="M20 10 C18 22 20 32 28 36 C27 45 24 50 19 54"></path>
+<path d="M28 36 C35 32 37 22 35 10"></path>
+<path d="M13 10 H35"></path>
+<path d="M44 10 C42 22 44 32 52 36 C51 45 48 50 43 54"></path>
+<path d="M52 36 C59 32 61 22 59 10"></path>
+<path d="M37 10 H59"></path>
+<path d="M16 54 H31"></path>
+<path d="M40 54 H55"></path>
+</svg>
+</span>
 <span class="nav-label">Recepción</span>
 </a>
 
 <a href="#dresscode" data-section="dresscode">
 <span class="vestimenta-icono-final" aria-hidden="true">
-<svg viewBox="0 0 64 64">
+<svg viewBox="0 0 64 64" role="img">
 <circle cx="21" cy="12" r="5"></circle>
 <path d="M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z"></path>
 <circle cx="45" cy="12" r="5"></circle>
@@ -5079,12 +5212,27 @@ Con amor
 </a>
 
 <a href="#info" data-section="info">
-<span class="nav-icon">✈</span>
+<span class="nav-icon nav-plane" aria-hidden="true">
+<svg viewBox="0 0 64 64" role="img">
+<path d="M10 42 C22 22 42 22 54 42"></path>
+<path d="M17 43 L47 43"></path>
+<path d="M32 12 L36 31 L28 31 Z"></path>
+<path d="M32 31 L32 52"></path>
+<path d="M22 52 L42 52"></path>
+</svg>
+</span>
 <span class="nav-label">Info</span>
 </a>
 
 <a href="#rsvp" data-section="rsvp">
-<span class="nav-icon">✉</span>
+<span class="nav-icon nav-envelope" aria-hidden="true">
+<svg viewBox="0 0 64 64" role="img">
+<rect x="10" y="18" width="44" height="30" rx="2"></rect>
+<path d="M12 20 L32 36 L52 20"></path>
+<path d="M12 46 L26 34"></path>
+<path d="M52 46 L38 34"></path>
+</svg>
+</span>
 <span class="nav-label">Confirmación</span>
 </a>
 
@@ -5763,342 +5911,8 @@ navObserver
 
 });
 
-
-
 </script>
 
 </body>
 
 </html>
-
-<style>
-
-/* ICONOS FINALES BARRA INFERIOR */
-
-.bottom-nav .nav-icon{
-display:flex !important;
-align-items:center !important;
-justify-content:center !important;
-width:30px !important;
-height:30px !important;
-margin:0 auto 6px !important;
-font-size:0 !important;
-background:none !important;
-background-repeat:no-repeat !important;
-background-position:center !important;
-background-size:27px 27px !important;
--webkit-text-fill-color:initial !important;
-color:#A77C32 !important;
-}
-
-.bottom-nav .nav-icon::before,
-.bottom-nav .nav-icon::after{
-display:none !important;
-content:none !important;
-}
-
-/* Agenda: fuegos artificiales */
-.bottom-nav a[data-section="celebraciones"] .nav-icon{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 8 L32 22'/%3E%3Cpath d='M32 42 L32 56'/%3E%3Cpath d='M8 32 L22 32'/%3E%3Cpath d='M42 32 L56 32'/%3E%3Cpath d='M15 15 L25 25'/%3E%3Cpath d='M39 39 L49 49'/%3E%3Cpath d='M49 15 L39 25'/%3E%3Cpath d='M25 39 L15 49'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23A77C32' stroke='none'/%3E%3Cpath d='M46 9 L46 17'/%3E%3Cpath d='M42 13 L50 13'/%3E%3C/svg%3E") !important;
-}
-
-/* Ceremonia: anillos */
-.bottom-nav a[data-section="ceremonia"] .nav-icon{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='25' cy='36' r='13'/%3E%3Ccircle cx='39' cy='36' r='13'/%3E%3Cpath d='M32 17 L37 25 L27 25 Z'/%3E%3C/svg%3E") !important;
-}
-
-/* Recepción: copas */
-.bottom-nav a[data-section="recepcion"] .nav-icon{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 10 H35 C35 25 31 34 25 37 C25 45 22 50 17 54'/%3E%3Cpath d='M17 54 H32'/%3E%3Cpath d='M39 10 H59 C59 25 55 34 49 37 C49 45 46 50 41 54'/%3E%3Cpath d='M41 54 H56'/%3E%3C/svg%3E") !important;
-}
-
-/* Vestimenta: pareja hombre y mujer */
-.bottom-nav a[data-section="dresscode"] .nav-icon{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='%23A77C32'%3E%3Ccircle cx='22' cy='13' r='6'/%3E%3Cpath d='M18 22 L26 22 L31 43 L25 43 L25 58 L19 58 L19 43 L13 43 Z'/%3E%3Ccircle cx='44' cy='13' r='6'/%3E%3Cpath d='M38 22 L50 22 L50 58 L44 58 L44 39 L42 39 L42 58 L36 58 L36 22 Z'/%3E%3C/svg%3E") !important;
-}
-
-/* Confirmación: carta */
-.bottom-nav a[data-section="rsvp"] .nav-icon{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='10' y='18' width='44' height='30' rx='2'/%3E%3Cpath d='M12 20 L32 36 L52 20'/%3E%3Cpath d='M12 46 L26 34'/%3E%3Cpath d='M52 46 L38 34'/%3E%3C/svg%3E") !important;
-}
-
-</style>
-
-<style id="forzar-iconos-finales">
-
-.bottom-nav a .nav-icon{
-display:flex !important;
-align-items:center !important;
-justify-content:center !important;
-width:30px !important;
-height:30px !important;
-margin:0 auto 6px !important;
-font-size:0 !important;
-background:none !important;
-background-image:none !important;
-color:#A77C32 !important;
--webkit-text-fill-color:initial !important;
-}
-
-.bottom-nav a .nav-icon::before,
-.bottom-nav a .nav-icon::after{
-display:none !important;
-content:none !important;
-}
-
-.bottom-nav a .nav-icon svg{
-display:block !important;
-width:28px !important;
-height:28px !important;
-fill:none !important;
-stroke:#A77C32 !important;
-stroke-width:2.2 !important;
-stroke-linecap:round !important;
-stroke-linejoin:round !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-icon svg *{
-fill:#A77C32 !important;
-stroke:none !important;
-}
-
-.bottom-nav a[data-section="celebraciones"] .nav-icon svg circle{
-fill:#A77C32 !important;
-stroke:none !important;
-}
-
-</style>
-
-<script id="forzar-iconos-finales-script">
-
-(function(){
-
-function setIcon(section, svg){
-
-var link =
-document.querySelector('.bottom-nav a[data-section="' + section + '"]');
-
-if(!link){
-return;
-}
-
-var icon =
-link.querySelector('.nav-icon');
-
-if(!icon){
-return;
-}
-
-icon.innerHTML = svg;
-
-}
-
-/* Agenda: fuegos artificiales */
-setIcon("celebraciones", `
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<path d="M32 8 L32 22"></path>
-<path d="M32 42 L32 56"></path>
-<path d="M8 32 L22 32"></path>
-<path d="M42 32 L56 32"></path>
-<path d="M15 15 L25 25"></path>
-<path d="M39 39 L49 49"></path>
-<path d="M49 15 L39 25"></path>
-<path d="M25 39 L15 49"></path>
-<circle cx="32" cy="32" r="4"></circle>
-<path d="M46 9 L46 17"></path>
-<path d="M42 13 L50 13"></path>
-</svg>
-`);
-
-/* Ceremonia: anillos */
-setIcon("ceremonia", `
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<circle cx="25" cy="36" r="13"></circle>
-<circle cx="39" cy="36" r="13"></circle>
-<path d="M32 17 L37 25 L27 25 Z"></path>
-</svg>
-`);
-
-/* Recepción: copas */
-setIcon("recepcion", `
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<path d="M15 10 H35 C35 25 31 34 25 37 C25 45 22 50 17 54"></path>
-<path d="M17 54 H32"></path>
-<path d="M39 10 H59 C59 25 55 34 49 37 C49 45 46 50 41 54"></path>
-<path d="M41 54 H56"></path>
-</svg>
-`);
-
-/* Vestimenta: pareja hombre y mujer */
-setIcon("dresscode", `
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<circle cx="22" cy="13" r="6"></circle>
-<path d="M18 22 L26 22 L31 43 L25 43 L25 58 L19 58 L19 43 L13 43 Z"></path>
-<circle cx="44" cy="13" r="6"></circle>
-<path d="M38 22 L50 22 L50 58 L44 58 L44 39 L42 39 L42 58 L36 58 L36 22 Z"></path>
-</svg>
-`);
-
-/* Confirmación: carta / sobre */
-setIcon("rsvp", `
-<svg viewBox="0 0 64 64" aria-hidden="true">
-<rect x="10" y="18" width="44" height="30" rx="2"></rect>
-<path d="M12 20 L32 36 L52 20"></path>
-<path d="M12 46 L26 34"></path>
-<path d="M52 46 L38 34"></path>
-</svg>
-`);
-
-})();
-
-</script>
-
-<style>
-
-.bottom-nav a[data-section="dresscode"] .nav-icon{
-font-size:0 !important;
-background:none !important;
-background-image:none !important;
--webkit-text-fill-color:initial !important;
-color:#A77C32 !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-icon::before,
-.bottom-nav a[data-section="dresscode"] .nav-icon::after{
-display:none !important;
-content:none !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-couple{
-display:flex !important;
-align-items:center !important;
-justify-content:center !important;
-width:30px !important;
-height:30px !important;
-margin:0 auto 6px !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-couple svg{
-display:block !important;
-width:28px !important;
-height:28px !important;
-fill:#A77C32 !important;
-stroke:none !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-couple svg *{
-fill:#A77C32 !important;
-stroke:none !important;
-}
-
-</style>
-
-
-.bottom-nav a[data-section="dresscode"] .nav-icon svg{
-  width:28px !important;
-  height:28px !important;
-  display:block !important;
-  stroke:#B99555 !important;
-  fill:none !important;
-  stroke-width:1.8 !important;
-  stroke-linecap:round !important;
-  stroke-linejoin:round !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-icon::before{
-  content:none !important;
-  display:none !important;
-}
-
-<style id="patch-iconos-mobile-final">
-
-/* OCULTAR TODOS LOS ICONOS VIEJOS */
-.bottom-nav a .nav-icon,
-.bottom-nav a .nav-icon::before,
-.bottom-nav a .nav-icon::after{
-display:none !important;
-visibility:hidden !important;
-opacity:0 !important;
-width:0 !important;
-height:0 !important;
-font-size:0 !important;
-content:none !important;
-background:none !important;
-background-image:none !important;
-}
-
-/* LOS ICONOS NUEVOS VAN ARRIBA DEL TEXTO */
-.bottom-nav a .nav-label::before{
-content:"";
-display:block !important;
-width:30px !important;
-height:30px !important;
-margin:0 auto 7px !important;
-background-repeat:no-repeat !important;
-background-position:center !important;
-background-size:28px 28px !important;
-}
-
-/* AGENDA: fuegos artificiales */
-.bottom-nav a[data-section="celebraciones"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 7 L32 22'/%3E%3Cpath d='M32 42 L32 57'/%3E%3Cpath d='M7 32 L22 32'/%3E%3Cpath d='M42 32 L57 32'/%3E%3Cpath d='M15 15 L25 25'/%3E%3Cpath d='M39 39 L49 49'/%3E%3Cpath d='M49 15 L39 25'/%3E%3Cpath d='M25 39 L15 49'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23A77C32' stroke='none'/%3E%3Cpath d='M48 8 L48 17'/%3E%3Cpath d='M43.5 12.5 L52.5 12.5'/%3E%3C/svg%3E") !important;
-}
-
-/* VESTIMENTA: pareja hombre y mujer */
-.bottom-nav a[data-section="dresscode"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='%23A77C32'%3E%3Ccircle cx='21' cy='12' r='5'/%3E%3Cpath d='M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z'/%3E%3Ccircle cx='45' cy='12' r='5'/%3E%3Cpath d='M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z'/%3E%3C/svg%3E") !important;
-}
-
-/* CEREMONIA: anillos */
-.bottom-nav a[data-section="ceremonia"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='25' cy='36' r='13'/%3E%3Ccircle cx='39' cy='36' r='13'/%3E%3Cpath d='M32 16 L38 25 L26 25 Z'/%3E%3C/svg%3E") !important;
-}
-
-/* INFO: avión */
-.bottom-nav a[data-section="info"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 42 C22 22 42 22 54 42'/%3E%3Cpath d='M17 43 L47 43'/%3E%3Cpath d='M32 12 L36 31 L28 31 Z'/%3E%3Cpath d='M32 31 L32 52'/%3E%3Cpath d='M22 52 L42 52'/%3E%3C/svg%3E") !important;
-}
-
-/* RECEPCIÓN: copas */
-.bottom-nav a[data-section="recepcion"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 10 H35 C35 25 31 34 25 37 C25 45 22 50 17 54'/%3E%3Cpath d='M17 54 H32'/%3E%3Cpath d='M39 10 H60 C60 25 56 34 50 37 C50 45 47 50 42 54'/%3E%3Cpath d='M42 54 H57'/%3E%3C/svg%3E") !important;
-}
-
-/* CONFIRMACIÓN: sobre */
-.bottom-nav a[data-section="rsvp"] .nav-label::before{
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23A77C32' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='10' y='18' width='44' height='30' rx='2'/%3E%3Cpath d='M12 20 L32 36 L52 20'/%3E%3Cpath d='M12 46 L26 34'/%3E%3Cpath d='M52 46 L38 34'/%3E%3C/svg%3E") !important;
-}
-
-</style>
-
-<style>
-
-/* FIX FINAL VESTIMENTA: OCULTA ICONO VIEJO Y DIBUJA PAREJA */
-
-.bottom-nav a[data-section="dresscode"] .nav-icon,
-.bottom-nav a[data-section="dresscode"] .nav-icon::before,
-.bottom-nav a[data-section="dresscode"] .nav-icon::after{
-display:none !important;
-visibility:hidden !important;
-opacity:0 !important;
-width:0 !important;
-height:0 !important;
-font-size:0 !important;
-content:none !important;
-background:none !important;
-background-image:none !important;
-}
-
-.bottom-nav a[data-section="dresscode"] .nav-label::before{
-content:"";
-display:block !important;
-width:30px !important;
-height:30px !important;
-margin:0 auto 7px !important;
-background-repeat:no-repeat !important;
-background-position:center !important;
-background-size:28px 28px !important;
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' fill='%23A77C32'%3E%3Ccircle cx='21' cy='12' r='5'/%3E%3Cpath d='M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z'/%3E%3Ccircle cx='45' cy='12' r='5'/%3E%3Cpath d='M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z'/%3E%3C/svg%3E") !important;
-}
-
-</style>
