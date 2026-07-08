@@ -4509,6 +4509,76 @@ fill:#A77C32 !important;
 stroke:none !important;
 }
 
+
+/* ============================================================
+   DRESS CODE CON IMAGEN DE RECOMENDACIONES
+   ============================================================ */
+
+.dress-image-card{
+display:block !important;
+min-height:auto !important;
+padding:54px clamp(18px,4vw,58px) 72px !important;
+background-image:
+linear-gradient(
+rgba(255,255,255,.76),
+rgba(255,253,248,.88)
+),
+url("fondo-relieve.jpg") !important;
+background-size:cover !important;
+background-position:center !important;
+background-repeat:no-repeat !important;
+background-blend-mode:screen !important;
+}
+
+.dress-title-image{
+display:block !important;
+padding:0 !important;
+max-width:760px !important;
+margin:0 auto 32px !important;
+background:transparent !important;
+background-image:none !important;
+}
+
+.dress-title-image h2{
+margin-bottom:14px !important;
+}
+
+.dress-image-wrap{
+width:min(1080px,100%) !important;
+margin:0 auto !important;
+padding:14px !important;
+background:rgba(255,255,255,.66) !important;
+border:1px solid rgba(198,160,91,.30) !important;
+box-shadow:0 14px 36px rgba(70,55,38,.055) !important;
+}
+
+.dress-image-wrap img{
+display:block !important;
+width:100% !important;
+height:auto !important;
+border:none !important;
+outline:none !important;
+box-shadow:none !important;
+}
+
+@media(max-width:760px){
+
+.dress-image-card{
+padding:42px 12px 58px !important;
+}
+
+.dress-title-image{
+margin-bottom:22px !important;
+padding:0 12px !important;
+}
+
+.dress-image-wrap{
+padding:8px !important;
+width:100% !important;
+}
+
+}
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -4931,9 +5001,9 @@ onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/65/Morcote_-
 
 <section class="section dress" id="dresscode">
 
-<div class="dress-card">
+<div class="dress-card dress-image-card">
 
-<div class="dress-title">
+<div class="dress-title dress-title-image">
 
 <div class="kicker">
 Código de vestimenta
@@ -4948,46 +5018,15 @@ Formal · Elegante
 </h2>
 
 <p>
-Les pedimos acompañarnos con una vestimenta formal y elegante.
+Estas son algunas referencias de vestimenta para mujeres y hombres.
 </p>
 
 </div>
 
-<div class="dress-figures dress-options">
-
-<div class="dress-option">
-
-<div class="dress-figure">
-<div class="dress-head"></div>
-<div class="dress-body"></div>
-<div class="dress-skirt"></div>
-</div>
-
-<div class="dress-option-text">
-<strong>Mujeres</strong>
-<span>Traje o vestido largo</span>
-</div>
-
-</div>
-
-<div class="dress-divider"></div>
-
-<div class="dress-option">
-
-<div class="dress-figure">
-<div class="dress-head"></div>
-<div class="suit-body"></div>
-<div class="suit-leg left"></div>
-<div class="suit-leg right"></div>
-</div>
-
-<div class="dress-option-text">
-<strong>Hombres</strong>
-<span>Traje o polo</span>
-</div>
-
-</div>
-
+<div class="dress-image-wrap">
+<img
+src="dress-code-recomendaciones.png"
+alt="Recomendaciones de vestimenta formal y elegante para mujeres y hombres">
 </div>
 
 <div class="floral small bottom-right"></div>
