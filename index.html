@@ -4687,7 +4687,67 @@ h3 span,
   box-shadow: none !important;
   border: none !important;
 }
+/* Quitar recuadros blancos de todas las secciones */
+section,
+.section,
+.section-content,
+.content-box,
+.info-box,
+.info-card,
+.travel-box,
+.travel-section,
+.details-box,
+.details-section,
+.dress-box,
+.dress-section,
+.confirmation-box,
+.confirmation-section,
+.countdown-box,
+.countdown-section,
+.useful-box,
+.useful-section,
+.gallery-box,
+.gallery-section,
+.mapa-section,
+.celebrations-section,
+.celebrations,
+.nuestras-celebraciones,
+.events-section {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
 
+/* Dejar fondo blanco SOLO en Civil, Ceremonia religiosa y Recepción */
+.event-card,
+.celebration-card,
+.civil-card,
+.ceremony-card,
+.reception-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 12px 30px rgba(120, 100, 70, 0.10) !important;
+  border: 1px solid rgba(198, 160, 91, 0.22) !important;
+}
+
+/* Asegurar que los títulos no tengan fondo propio */
+h1,
+h2,
+h3,
+h1 span,
+h2 span,
+h3 span,
+.section-title,
+.section-title span,
+.gold-title,
+.gold-title span,
+.titulo-dorado,
+.titulo-dorado span {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
