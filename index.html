@@ -1880,8 +1880,7 @@ font-size:25px;
 font-size:0 !important;
 }
 
-.bottom-nav a[data-section="dresscode"] .nav-icon::before{
-content:"👫🏻";
+
 font-family:"Playfair Display",serif;
 font-size:23px;
 letter-spacing:-.08em;
@@ -2819,8 +2818,7 @@ font-size:25px;
 font-size:0 !important;
 }
 
-.bottom-nav a[data-section="dresscode"] .nav-icon::before{
-content:"👫🏻";
+
 font-family:"Playfair Display",serif;
 font-size:23px;
 letter-spacing:-.08em;
@@ -4378,7 +4376,40 @@ top:50%;
 
 }
 
+/* ICONO FINAL VESTIMENTA - NO USA nav-icon */
 
+.bottom-nav a[data-section="dresscode"] .nav-icon,
+.bottom-nav a[data-section="dresscode"] .nav-icon::before,
+.bottom-nav a[data-section="dresscode"] .nav-icon::after{
+display:none !important;
+content:none !important;
+visibility:hidden !important;
+opacity:0 !important;
+width:0 !important;
+height:0 !important;
+font-size:0 !important;
+background:none !important;
+background-image:none !important;
+}
+
+.vestimenta-icono-final{
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
+width:30px !important;
+height:30px !important;
+margin:0 auto 6px !important;
+background:none !important;
+background-image:none !important;
+}
+
+.vestimenta-icono-final svg{
+display:block !important;
+width:28px !important;
+height:28px !important;
+fill:#A77C32 !important;
+stroke:none !important;
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -5036,25 +5067,15 @@ Con amor
 </a>
 
 <a href="#dresscode" data-section="dresscode">
-  <span class="nav-icon nav-icon-pareja" aria-hidden="true">
-    <svg viewBox="0 0 64 64">
-      <!-- mujer -->
-      <circle cx="19" cy="12" r="5"></circle>
-      <path d="M19 19 L12 30 L8 50 H14 L19 35 L24 50 H30 L26 30 Z"></path>
-      <path d="M15 24 L10 31"></path>
-      <path d="M23 24 L28 31"></path>
-
-      <!-- hombre -->
-      <circle cx="45" cy="12" r="5"></circle>
-      <path d="M39 21 L45 18 L51 21"></path>
-      <path d="M41 21 L45 27 L49 21"></path>
-      <path d="M40 21 L38 34 L42 34 L42 50"></path>
-      <path d="M50 21 L52 34 L48 34 L48 50"></path>
-      <path d="M42 50 L39 58"></path>
-      <path d="M48 50 L51 58"></path>
-    </svg>
-  </span>
-  <span class="nav-label">Vestimenta</span>
+<span class="vestimenta-icono-final" aria-hidden="true">
+<svg viewBox="0 0 64 64">
+<circle cx="21" cy="12" r="5"></circle>
+<path d="M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z"></path>
+<circle cx="45" cy="12" r="5"></circle>
+<path d="M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z"></path>
+</svg>
+</span>
+<span class="nav-label">Vestimenta</span>
 </a>
 
 <a href="#info" data-section="info">
