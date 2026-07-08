@@ -4968,7 +4968,90 @@ h3,
   background-color: transparent !important;
   box-shadow: none !important;
 }
+/* =====================================================
+   CORRECCIÓN FINAL:
+   - títulos dorados nítidos
+   - quitar fondos blancos generales
+   - conservar blanco solo en Civil / Ceremonia / Recepción
+   ===================================================== */
 
+/* Títulos dorados nítidos, sin efecto difuminado */
+h1,
+h2,
+h3,
+.monogram,
+.letter-mark,
+.opening h1,
+.final h2,
+.section-title,
+.gold-title,
+.titulo-dorado,
+.script-title,
+.event-date,
+.countdown strong,
+.count-separator,
+.kicker {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Times New Roman', serif !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  color: #A77C32 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Quitar recuadros blancos de secciones generales */
+.paper-card,
+.count-card,
+.rsvp-card,
+.info-wrap,
+.final .panel,
+.dress-card,
+.dress-title,
+.event-copy,
+.detail-text {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Quitar específicamente el fondo blanco de la última sección Sofía y Javier */
+.final,
+.final .panel,
+.final .panel::before,
+.final .panel::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Mantener fondo blanco SOLO en Civil / Ceremonia / Recepción */
+.event-card,
+.detail-card {
+  background: rgba(255,255,255,.86) !important;
+  background-color: rgba(255,255,255,.86) !important;
+  border: 1px solid rgba(198,160,91,.31) !important;
+  box-shadow: 0 14px 36px rgba(70,55,38,.045) !important;
+}
+
+/* Mantener blanco dentro de esas tarjetas solamente */
+.event-card .event-copy,
+.detail-card .detail-text {
+  background: rgba(255,255,255,.72) !important;
+  background-color: rgba(255,255,255,.72) !important;
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
