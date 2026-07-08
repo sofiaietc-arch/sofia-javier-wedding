@@ -5052,6 +5052,53 @@ h3,
   background: rgba(255,255,255,.72) !important;
   background-color: rgba(255,255,255,.72) !important;
 }
+/* AJUSTES FINALES DE TÍTULOS */
+
+/* Títulos principales: mismo tamaño y en mayúscula */
+.welcome h2,
+.count-section h2,
+.celebrations h2,
+.rsvp-card h2,
+.final h2 {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Times New Roman', serif !important;
+  font-size: clamp(32px, 5vw, 56px) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.08 !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+/* Títulos secundarios: Civil, Ceremonia religiosa, Recepción, Código de vestimenta */
+.event-copy h3,
+.detail-text h2,
+.dress-title h2 {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Times New Roman', serif !important;
+  font-size: clamp(22px, 3.3vw, 34px) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.12 !important;
+  font-weight: 500 !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+/* Confirmación de asistencia en mayúscula */
+.rsvp-card h2 {
+  text-transform: uppercase !important;
+}
+
+/* Ocultar frase pequeña "Confirmación" si aparece arriba del título */
+.rsvp .kicker,
+.rsvp .info-subtitle {
+  display: none !important;
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
