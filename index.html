@@ -4579,6 +4579,58 @@ width:100% !important;
 
 }
 
+
+/* ============================================================
+   FIX VISIBILIDAD DRESS CODE
+   La imagen ya está embebida; este bloque impide que la animación
+   de carta/tapado cubra el sector de vestimenta.
+   ============================================================ */
+
+#dresscode,
+#dresscode .dress-image-card,
+#dresscode .dress-image-wrap,
+#dresscode .dress-image-wrap img{
+display:block !important;
+visibility:visible !important;
+opacity:1 !important;
+transform:none !important;
+}
+
+#dresscode .dress-image-card{
+position:relative !important;
+z-index:20 !important;
+overflow:visible !important;
+min-height:auto !important;
+}
+
+#dresscode .dress-image-wrap{
+position:relative !important;
+z-index:200 !important;
+width:min(1080px,100%) !important;
+margin:0 auto !important;
+}
+
+#dresscode .dress-image-wrap img{
+position:relative !important;
+z-index:201 !important;
+width:100% !important;
+height:auto !important;
+max-width:100% !important;
+min-height:120px !important;
+object-fit:contain !important;
+}
+
+#dresscode .panel-fold,
+#dresscode .panel-fold-left,
+#dresscode .panel-fold-right{
+display:none !important;
+visibility:hidden !important;
+opacity:0 !important;
+width:0 !important;
+height:0 !important;
+pointer-events:none !important;
+}
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -5830,7 +5882,7 @@ true;
 
 const revealPanels =
 document.querySelectorAll(
-".paper-card, .event-card, .detail-card, .dress-card, .rsvp-card, .info-wrap, .final .panel"
+".paper-card, .event-card, .detail-card, .rsvp-card, .info-wrap, .final .panel"
 );
 
 revealPanels.forEach(function(panel){
