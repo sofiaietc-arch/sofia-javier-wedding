@@ -4748,6 +4748,120 @@ h3 span,
   background-color: transparent !important;
   box-shadow: none !important;
 }
+
+/* FORZAR: quitar fondos blancos de la página */
+main,
+section,
+article,
+.container,
+.wrapper,
+.inner,
+.content,
+.content-box,
+.section-content,
+.card,
+.box,
+.panel,
+.paper,
+.glass,
+.info-card,
+.info-box,
+.travel-card,
+.travel-box,
+.details-card,
+.details-box,
+.dress-card,
+.dress-box,
+.confirmation-card,
+.confirmation-box,
+.countdown-card,
+.countdown-box,
+.useful-card,
+.useful-box,
+.gallery-card,
+.gallery-box {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Quitar también fondos creados con ::before y ::after */
+main::before,
+main::after,
+section::before,
+section::after,
+article::before,
+article::after,
+.container::before,
+.container::after,
+.wrapper::before,
+.wrapper::after,
+.content-box::before,
+.content-box::after,
+.section-content::before,
+.section-content::after,
+.card::before,
+.card::after,
+.box::before,
+.box::after,
+.panel::before,
+.panel::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Mantener fondo blanco SOLO en Civil, Ceremonia religiosa y Recepción */
+.event-card,
+.celebration-card,
+.civil-card,
+.ceremony-card,
+.reception-card,
+.civil,
+.ceremony,
+.reception {
+  background: rgba(255, 255, 255, 0.72) !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 12px 30px rgba(120, 100, 70, 0.10) !important;
+  border: 1px solid rgba(198, 160, 91, 0.22) !important;
+}
+
+/* Mantener también el fondo blanco si esas tarjetas usan pseudo-elementos */
+.event-card::before,
+.event-card::after,
+.celebration-card::before,
+.celebration-card::after,
+.civil-card::before,
+.civil-card::after,
+.ceremony-card::before,
+.ceremony-card::after,
+.reception-card::before,
+.reception-card::after {
+  background: rgba(255, 255, 255, 0.72) !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Títulos siempre sin fondo */
+h1,
+h2,
+h3,
+h4,
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+.section-title,
+.section-title span,
+.gold-title,
+.gold-title span,
+.titulo-dorado,
+.titulo-dorado span {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
