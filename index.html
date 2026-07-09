@@ -10792,7 +10792,233 @@ button,
   background: transparent !important;
   background-image: none !important;
 }
+/* =====================================================
+   NUESTRAS CELEBRACIONES - DESKTOP CORREGIDO
+   cuadros iguales, centrados, imágenes visibles y texto proporcionado
+   ===================================================== */
 
+#celebraciones,
+.section.celebrations {
+  width: 100% !important;
+  min-height: auto !important;
+  padding: 64px 18px 92px !important;
+
+  display: block !important;
+  text-align: center !important;
+}
+
+#celebraciones .celebrations-wrap,
+.celebrations .celebrations-wrap {
+  width: min(900px, 94vw) !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  display: block !important;
+  text-align: center !important;
+}
+
+#celebraciones h2,
+.celebrations h2,
+#celebraciones .celebrations-wrap h2,
+.celebrations .celebrations-wrap h2 {
+  font-size: clamp(30px, 3.4vw, 42px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.08em !important;
+  margin: 0 auto 18px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .gold-rule.small,
+.celebrations .gold-rule.small {
+  width: 90px !important;
+  height: 1px !important;
+  margin: 0 auto 34px auto !important;
+}
+
+/* grilla centrada */
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 360px) !important;
+  gap: 36px !important;
+
+  justify-content: center !important;
+  align-items: start !important;
+
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* cuadros iguales */
+#celebraciones .event-card,
+.celebrations .event-card {
+  width: 360px !important;
+  max-width: 360px !important;
+  height: 470px !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 245px 225px !important;
+
+  margin: 0 auto !important;
+
+  background: rgba(255, 253, 248, .82) !important;
+  border: 1px solid rgba(198, 160, 91, .28) !important;
+  box-shadow: 0 12px 28px rgba(70, 55, 38, .06) !important;
+
+  overflow: hidden !important;
+}
+
+/* caja de imagen */
+#celebraciones .event-art,
+.celebrations .event-art {
+  width: 100% !important;
+  height: 245px !important;
+  min-height: 245px !important;
+  max-height: 245px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+  background: rgba(255, 253, 248, .92) !important;
+}
+
+/* imagen general */
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-position: center center !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Civil: foto llena el cuadro */
+#celebraciones .event-card:first-child .event-art img,
+.celebrations .event-card:first-child .event-art img {
+  object-fit: cover !important;
+}
+
+/* Ceremonia & Recepción: acuarela completa, sin cortarse */
+#celebraciones .event-card:nth-child(2) .event-art img,
+.celebrations .event-card:nth-child(2) .event-art img {
+  object-fit: contain !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* texto debajo */
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  width: 100% !important;
+  height: 225px !important;
+  min-height: 225px !important;
+  max-height: 225px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 24px 20px 28px !important;
+  text-align: center !important;
+
+  background: rgba(255, 255, 255, .70) !important;
+}
+
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  font-size: clamp(25px, 2.4vw, 32px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.08em !important;
+
+  margin: 0 auto 16px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .place,
+.celebrations .place {
+  font-size: 10px !important;
+  letter-spacing: 0.14em !important;
+  margin: 0 auto 10px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .date-small,
+.celebrations .date-small {
+  font-size: 13px !important;
+  letter-spacing: 0.14em !important;
+  margin: 0 auto 20px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .btn,
+.celebrations .btn {
+  font-size: 10px !important;
+  letter-spacing: 0.15em !important;
+  padding: 10px 22px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  #celebraciones,
+  .section.celebrations {
+    padding: 52px 14px 82px !important;
+  }
+
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+
+    width: min(340px, 94vw) !important;
+    max-width: 340px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    width: min(340px, 94vw) !important;
+    max-width: 340px !important;
+    height: 440px !important;
+
+    grid-template-rows: 225px 215px !important;
+  }
+
+  #celebraciones .event-art,
+  .celebrations .event-art {
+    height: 225px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    height: 215px !important;
+    min-height: 215px !important;
+    max-height: 215px !important;
+    padding: 22px 18px 26px !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 25px !important;
+  }
+}
+   
    
 </style>
 
