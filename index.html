@@ -8623,7 +8623,103 @@ body{
     font-size: clamp(36px, 12vw, 58px);
   }
 }
+/* =====================================================
+   CONFIRMAR ASISTENCIA: CENTRAR PÁGINA Y ACHICAR TÍTULO
+   ===================================================== */
 
+#rsvp,
+.rsvp {
+  min-height: 100vh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 90px 18px 120px !important;
+
+  text-align: center !important;
+}
+
+#rsvp .rsvp-card,
+.rsvp .rsvp-card {
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* título más chico */
+#rsvp h2,
+.rsvp h2,
+#rsvp .rsvp-card h2,
+.rsvp .rsvp-card h2 {
+  font-size: clamp(28px, 4.2vw, 44px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.075em !important;
+
+  margin: 0 auto 22px auto !important;
+
+  text-align: center !important;
+}
+
+/* texto centrado */
+#rsvp .rsvp-intro,
+.rsvp .rsvp-intro {
+  max-width: 660px !important;
+  margin: 0 auto 26px auto !important;
+  text-align: center !important;
+}
+
+/* fechas centradas */
+#rsvp .rsvp-events,
+.rsvp .rsvp-events {
+  width: min(680px, 100%) !important;
+  margin: 28px auto 24px auto !important;
+}
+
+/* botón y pájaros centrados */
+#rsvp .rsvp-birds-button,
+.rsvp .rsvp-birds-button {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #rsvp,
+  .rsvp {
+    min-height: 92vh !important;
+    padding: 70px 14px 105px !important;
+  }
+
+  #rsvp h2,
+  .rsvp h2,
+  #rsvp .rsvp-card h2,
+  .rsvp .rsvp-card h2 {
+    font-size: clamp(25px, 7.2vw, 36px) !important;
+    letter-spacing: 0.055em !important;
+    margin-bottom: 18px !important;
+  }
+
+  #rsvp .rsvp-intro,
+  .rsvp .rsvp-intro {
+    max-width: 92vw !important;
+    margin-bottom: 22px !important;
+  }
+}
    
 </style>
 
