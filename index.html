@@ -6189,6 +6189,78 @@ body,
     transform-origin: center center !important;
   }
 }
+/* FLORES PORTADA:
+   superior izquierda en espejo respecto de la inferior derecha */
+
+.opening > .floral.top-right{
+  left: -70px !important;
+  top: -55px !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: 520px !important;
+  height: 430px !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: top left !important;
+
+  /* espejo respecto de la flor inferior derecha */
+  transform: rotate(180deg) !important;
+  transform-origin: center center !important;
+
+  opacity: .72 !important;
+  z-index: 2 !important;
+}
+
+.opening > .floral.bottom-left{
+  right: -70px !important;
+  bottom: -55px !important;
+  left: auto !important;
+  top: auto !important;
+
+  width: 520px !important;
+  height: 430px !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom right !important;
+
+  transform: none !important;
+  opacity: .72 !important;
+  z-index: 2 !important;
+}
+
+/* móvil */
+@media (max-width: 760px){
+  .opening > .floral.top-right{
+    left: -45px !important;
+    top: -35px !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 320px !important;
+    height: 260px !important;
+
+    transform: rotate(180deg) !important;
+    transform-origin: center center !important;
+  }
+
+  .opening > .floral.bottom-left{
+    right: -45px !important;
+    bottom: -35px !important;
+    left: auto !important;
+    top: auto !important;
+
+    width: 320px !important;
+    height: 260px !important;
+
+    transform: none !important;
+  }
+}
+   
    
 </style>
 
