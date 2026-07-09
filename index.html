@@ -5297,28 +5297,30 @@ h3,
   filter: none !important;
   opacity: 1 !important;
 }
-/* OLIVO DIVISOR FINAL */
+/* DIVISOR CON RAMITO DE OLIVO */
 .detail-ornament {
   display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-
-  width: 115px !important;
-  height: 32px !important;
-  min-height: 32px !important;
-  margin: 8px auto 24px !important;
-
-  background: url("olivo-divisor.jpg") center center / contain no-repeat !important;
-
   font-size: 0 !important;
   line-height: 0 !important;
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
-
-  border: none !important;
-  box-shadow: none !important;
+  background: none !important;
+  background-image: none !important;
   text-shadow: none !important;
   filter: none !important;
+  margin: 8px auto 24px !important;
+}
+
+.detail-ornament::before {
+  content: "" !important;
+  display: block !important;
+  width: 105px !important;
+  height: 30px !important;
+  margin: 0 auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+
+  opacity: 1 !important;
 }
    
 </style>
