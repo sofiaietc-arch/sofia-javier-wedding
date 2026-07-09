@@ -11228,6 +11228,446 @@ button,
     margin-bottom: 36px !important;
   }
 }
+/* =====================================================
+   CIVIL / CEREMONIA / RECEPCIÓN
+   título centrado arriba del ramito de olivo
+   ===================================================== */
+
+#civil .detail-text,
+#ceremonia .detail-text,
+#recepcion .detail-text {
+  align-items: stretch !important;
+}
+
+/* títulos centrados */
+#civil .detail-text h2,
+#ceremonia .detail-text h2,
+#recepcion .detail-text h2 {
+  width: 100% !important;
+  display: block !important;
+
+  text-align: center !important;
+  margin: 0 auto 14px auto !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 4vw, 46px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.11em !important;
+  text-transform: uppercase !important;
+}
+
+/* ramito de olivo centrado debajo del título */
+#civil .detail-ornament,
+#ceremonia .detail-ornament,
+#recepcion .detail-ornament {
+  display: block !important;
+
+  width: 130px !important;
+  height: 34px !important;
+
+  margin: 0 auto 34px auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+}
+
+/* mantener datos alineados prolijos debajo */
+#civil .detail-row,
+#ceremonia .detail-row,
+#recepcion .detail-row {
+  text-align: left !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #civil .detail-text h2,
+  #ceremonia .detail-text h2,
+  #recepcion .detail-text h2 {
+    text-align: center !important;
+    font-size: clamp(28px, 8vw, 36px) !important;
+    letter-spacing: 0.10em !important;
+    margin-bottom: 12px !important;
+  }
+
+  #civil .detail-ornament,
+  #ceremonia .detail-ornament,
+  #recepcion .detail-ornament {
+    width: 124px !important;
+    height: 32px !important;
+    margin: 0 auto 32px auto !important;
+  }
+}
+/* =====================================================
+   TRANSICIÓN FINAL:
+   PORTADA → ABRIR → CARTA → BIENVENIDOS
+   Y APERTURA DE CARTA EN TODAS LAS PÁGINAS
+   ===================================================== */
+
+/* Portada */
+#opening,
+.opening {
+  z-index: 90000 !important;
+  transition:
+    opacity .75s ease,
+    visibility .75s ease,
+    transform .95s ease,
+    filter .95s ease !important;
+}
+
+#opening.hide,
+.opening.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: scale(1.018) !important;
+  filter: blur(2px) !important;
+}
+
+/* Botón abrir / sello */
+.opening button.seal-open,
+#opening button.seal-open {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 95000 !important;
+  position: relative !important;
+  transition:
+    transform .28s ease,
+    filter .28s ease,
+    opacity .28s ease !important;
+}
+
+.opening button.seal-open:active,
+#opening button.seal-open:active {
+  transform: scale(.96) !important;
+}
+
+/* Overlay de carta */
+#letterTransition,
+.letter-transition {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 120000 !important;
+
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+  perspective: 1800px !important;
+
+  background:
+    linear-gradient(
+      rgba(255,253,248,.88),
+      rgba(255,253,248,.96)
+    ),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .36s ease !important;
+}
+
+#letterTransition.show,
+.letter-transition.show {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* hojas de la carta */
+.letter-left,
+.letter-right {
+  position: absolute !important;
+  top: 0 !important;
+  width: 50.5% !important;
+  height: 100% !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.98),
+      rgba(255,253,248,.94)
+    ),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+
+  box-shadow:
+    0 0 46px rgba(80,60,30,.10),
+    inset 0 0 0 18px rgba(198,160,91,.035) !important;
+
+  backface-visibility: hidden !important;
+
+  transition:
+    transform 1.55s cubic-bezier(.18,.72,.2,1),
+    box-shadow 1.55s ease,
+    opacity .5s ease 1.15s !important;
+}
+
+.letter-left {
+  left: 0 !important;
+  transform-origin: left center !important;
+  border-right: 1px solid rgba(198,160,91,.30) !important;
+}
+
+.letter-right {
+  right: 0 !important;
+  transform-origin: right center !important;
+  border-left: 1px solid rgba(198,160,91,.30) !important;
+}
+
+.letter-left::before,
+.letter-right::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 24px !important;
+  border: 1px solid rgba(198,160,91,.22) !important;
+  pointer-events: none !important;
+}
+
+#letterTransition.open .letter-left,
+.letter-transition.open .letter-left {
+  transform: rotateY(-118deg) translateX(-2vw) !important;
+  box-shadow: 20px 0 56px rgba(80,60,30,.12) !important;
+  opacity: .98 !important;
+}
+
+#letterTransition.open .letter-right,
+.letter-transition.open .letter-right {
+  transform: rotateY(118deg) translateX(2vw) !important;
+  box-shadow: -20px 0 56px rgba(80,60,30,.12) !important;
+  opacity: .98 !important;
+}
+
+.letter-center {
+  position: relative !important;
+  z-index: 4 !important;
+  transition: opacity .55s ease, transform .55s ease !important;
+}
+
+#letterTransition.open .letter-center,
+.letter-transition.open .letter-center {
+  opacity: 0 !important;
+  transform: scale(.94) !important;
+}
+
+/* Main */
+main {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+main.visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  animation: mainInFinal .85s ease both !important;
+}
+
+@keyframes mainInFinal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paneles: apertura de carta en cada página */
+.reveal-panel {
+  position: relative !important;
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+  transform: perspective(1200px) rotateX(3deg) translateY(32px) !important;
+  transform-origin: top center !important;
+
+  transition:
+    opacity .72s ease,
+    transform .95s ease !important;
+}
+
+.reveal-panel.panel-visible {
+  opacity: 1 !important;
+  transform: perspective(1200px) rotateX(0deg) translateY(0) !important;
+}
+
+.panel-fold {
+  position: absolute !important;
+  top: 0 !important;
+  width: 50% !important;
+  height: 100% !important;
+  z-index: 40 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,.98),
+      rgba(255,253,248,.95)
+    ),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+
+  box-shadow: 0 0 30px rgba(80,60,30,.08) !important;
+  backface-visibility: hidden !important;
+
+  transition:
+    transform 1.22s cubic-bezier(.18,.72,.2,1),
+    opacity .42s ease .94s !important;
+}
+
+.panel-fold-left {
+  left: 0 !important;
+  transform-origin: left center !important;
+  border-right: 1px solid rgba(198,160,91,.24) !important;
+}
+
+.panel-fold-right {
+  right: 0 !important;
+  transform-origin: right center !important;
+  border-left: 1px solid rgba(198,160,91,.24) !important;
+}
+
+.panel-fold::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 18px !important;
+  border: 1px solid rgba(198,160,91,.16) !important;
+}
+
+.reveal-panel.panel-visible .panel-fold-left {
+  transform: rotateY(-112deg) !important;
+  opacity: 0 !important;
+}
+
+.reveal-panel.panel-visible .panel-fold-right {
+  transform: rotateY(112deg) !important;
+  opacity: 0 !important;
+}
+
+/* que los pliegues no tapen el contenido después */
+.reveal-panel.panel-visible .panel-fold {
+  pointer-events: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .letter-left::before,
+  .letter-right::before {
+    inset: 16px !important;
+  }
+
+  #letterTransition.open .letter-left,
+  .letter-transition.open .letter-left {
+    transform: rotateY(-112deg) translateX(-5vw) !important;
+  }
+
+  #letterTransition.open .letter-right,
+  .letter-transition.open .letter-right {
+    transform: rotateY(112deg) translateX(5vw) !important;
+  }
+
+  .reveal-panel {
+    transform: perspective(900px) rotateX(2deg) translateY(24px) !important;
+  }
+
+  .panel-fold::before {
+    inset: 12px !important;
+  }
+}
+/* =====================================================
+   PORTADA: CENTRAR ÓVALO SyJ Y EVITAR QUE SE CORTE
+   ===================================================== */
+
+.opening,
+#opening,
+.opening-inner {
+  overflow: visible !important;
+}
+
+.opening-inner {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 42px 18px 34px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* contenedor del óvalo */
+.portada-monograma-wrap {
+  width: min(500px, 86vw) !important;
+  max-width: 500px !important;
+
+  height: auto !important;
+  max-height: none !important;
+
+  margin: 0 auto 42px auto !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+
+  transform: none !important;
+  overflow: visible !important;
+  z-index: 5 !important;
+
+  background: transparent !important;
+}
+
+/* imagen del óvalo */
+.portada-monograma-img {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  position: static !important;
+  transform: none !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .opening-inner {
+    justify-content: center !important;
+    padding: 34px 14px 28px !important;
+  }
+
+  .portada-monograma-wrap {
+    width: min(360px, 88vw) !important;
+    margin: 0 auto 34px auto !important;
+  }
+
+  .portada-monograma-img {
+    width: 100% !important;
+  }
+}
    
 </style>
 
@@ -12891,6 +13331,206 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 });
+<script>
+/* =====================================================
+   SCRIPT FINAL:
+   ABRIR PORTADA + CARTA + BIENVENIDOS + TRANSICIONES
+   ===================================================== */
+
+(function(){
+
+  window.__selloAbierto = false;
+  window.__panelesIniciadosFinal = false;
+
+  function mostrarMain(){
+
+    const main = document.getElementById("main");
+
+    if (main) {
+      main.classList.add("visible");
+      main.style.opacity = "1";
+      main.style.pointerEvents = "auto";
+    }
+
+  }
+
+  function irABienvenidos(){
+
+    const bienvenida =
+      document.getElementById("bienvenida") ||
+      document.querySelector(".welcome");
+
+    if (bienvenida) {
+      bienvenida.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+  }
+
+  window.startPanelObserver = function(){
+
+    if (window.__panelesIniciadosFinal) {
+      return;
+    }
+
+    window.__panelesIniciadosFinal = true;
+
+    const revealPanels = document.querySelectorAll(
+      ".paper-card, .count-card, .event-card, .detail-card, .dress-card, .dress-image-card, .rsvp-card, .info-wrap, .useful-grid, .final .panel"
+    );
+
+    revealPanels.forEach(function(panel){
+
+      panel.classList.add("reveal-panel");
+
+      if (!panel.querySelector(".panel-fold-left")) {
+
+        const leftFold = document.createElement("div");
+        leftFold.className = "panel-fold panel-fold-left";
+
+        const rightFold = document.createElement("div");
+        rightFold.className = "panel-fold panel-fold-right";
+
+        panel.appendChild(leftFold);
+        panel.appendChild(rightFold);
+
+      }
+
+    });
+
+    const observer = new IntersectionObserver(function(entries){
+
+      entries.forEach(function(entry){
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("panel-visible");
+        }
+
+      });
+
+    }, {
+      threshold: 0.16
+    });
+
+    setTimeout(function(){
+
+      revealPanels.forEach(function(panel){
+        observer.observe(panel);
+      });
+
+    }, 180);
+
+  };
+
+  window.enterInvitation = function(){
+
+    if (window.__selloAbierto) {
+      return;
+    }
+
+    window.__selloAbierto = true;
+
+    const opening = document.getElementById("opening");
+    const main = document.getElementById("main");
+    const letterTransition = document.getElementById("letterTransition");
+
+    if (history.replaceState) {
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+
+    if (letterTransition) {
+      letterTransition.classList.add("show");
+
+      setTimeout(function(){
+        letterTransition.classList.add("open");
+      }, 90);
+    }
+
+    setTimeout(function(){
+
+      if (opening) {
+        opening.classList.add("hide");
+        opening.style.pointerEvents = "none";
+      }
+
+    }, 260);
+
+    setTimeout(function(){
+
+      mostrarMain();
+
+      if (typeof window.startPanelObserver === "function") {
+        try {
+          window.startPanelObserver();
+        } catch(error) {}
+      }
+
+      irABienvenidos();
+
+    }, 1450);
+
+    setTimeout(function(){
+
+      if (letterTransition) {
+        letterTransition.classList.remove("show");
+        letterTransition.classList.remove("open");
+      }
+
+      if (main) {
+        main.style.pointerEvents = "auto";
+      }
+
+    }, 2600);
+
+  };
+
+  function instalarBotonAbrir(){
+
+    const boton =
+      document.querySelector("#opening .seal-open") ||
+      document.querySelector(".opening .seal-open") ||
+      document.querySelector(".seal-open");
+
+    if (!boton) {
+      return;
+    }
+
+    boton.style.pointerEvents = "auto";
+    boton.style.zIndex = "95000";
+
+    boton.onclick = function(event){
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      window.enterInvitation();
+
+      return false;
+
+    };
+
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", instalarBotonAbrir);
+  } else {
+    instalarBotonAbrir();
+  }
+
+})();
+</script>
+   
 </script>
 </script>
 </script>
