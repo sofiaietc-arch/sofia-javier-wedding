@@ -13703,7 +13703,128 @@ body.confirmacion-morcote-no #recepcion {
     height: 26px;
   }
 }
+/* =====================================================
+   MENÚ INFERIOR FIJO DEFINITIVO
+   ===================================================== */
 
+.bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  z-index: 150000 !important;
+
+  width: 100% !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+
+  background: rgba(255, 255, 255, .94) !important;
+  border-top: 1px solid rgba(198, 160, 91, .34) !important;
+  box-shadow: 0 -10px 26px rgba(70, 55, 38, .08) !important;
+
+  padding: 0 0 env(safe-area-inset-bottom) 0 !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.bottom-nav a {
+  min-height: 66px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 4px !important;
+
+  padding: 8px 4px 7px !important;
+
+  text-decoration: none !important;
+
+  border-right: 1px solid rgba(198, 160, 91, .18) !important;
+
+  background: transparent !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  text-transform: uppercase !important;
+}
+
+.bottom-nav a:last-child {
+  border-right: none !important;
+}
+
+.bottom-nav .nav-icon {
+  display: block !important;
+
+  font-size: 22px !important;
+  line-height: 1 !important;
+
+  margin: 0 !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.bottom-nav .nav-label {
+  display: block !important;
+
+  font-size: 7.5px !important;
+  line-height: 1.1 !important;
+  letter-spacing: .08em !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+/* estado activo */
+.bottom-nav a.active {
+  background: rgba(198, 160, 91, .08) !important;
+}
+
+.bottom-nav a.active .nav-icon,
+.bottom-nav a.active .nav-label {
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* espacio inferior para que el menú no tape contenido */
+body {
+  padding-bottom: 82px !important;
+}
+
+/* celular */
+@media (max-width: 760px) {
+  .bottom-nav {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+
+  .bottom-nav a {
+    min-height: 61px !important;
+    padding: 7px 2px 6px !important;
+    gap: 3px !important;
+  }
+
+  .bottom-nav .nav-icon {
+    font-size: 19px !important;
+  }
+
+  .bottom-nav .nav-label {
+    font-size: 6.2px !important;
+    letter-spacing: .035em !important;
+  }
+
+  body {
+    padding-bottom: 74px !important;
+  }
+}
+
+   
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -14300,95 +14421,39 @@ Toda la información que necesitás para tu viaje a Suiza.
   </div>
 
 </section>
-<nav class="bottom-nav">
+<nav class="bottom-nav" id="bottomNav">
 
-<a href="#celebraciones" data-section="celebraciones" class="active">
-<span class="nav-icon nav-fireworks" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<path d="M32 8 L32 22"></path>
-<path d="M32 42 L32 56"></path>
-<path d="M8 32 L22 32"></path>
-<path d="M42 32 L56 32"></path>
-<path d="M15 15 L25 25"></path>
-<path d="M39 39 L49 49"></path>
-<path d="M49 15 L39 25"></path>
-<path d="M25 39 L15 49"></path>
-<circle cx="32" cy="32" r="4"></circle>
-<path d="M46 9 L46 17"></path>
-<path d="M42 13 L50 13"></path>
-<path d="M18 8 L18 15"></path>
-<path d="M14.5 11.5 L21.5 11.5"></path>
-</svg>
-</span>
-<span class="nav-label">Agenda</span>
-</a>
+  <a href="#bienvenida" data-section="bienvenida">
+    <span class="nav-icon">✦</span>
+    <span class="nav-label">Inicio</span>
+  </a>
 
-<a href="#celebraciones" data-section="ceremonia" onclick="abrirDetallePageTurn('morcote'); return false;">
-<span class="nav-icon nav-rings" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<circle cx="25" cy="36" r="13"></circle>
-<circle cx="39" cy="36" r="13"></circle>
-<path d="M32 17 L37 25 L27 25 Z"></path>
-</svg>
-</span>
-<span class="nav-label">Ceremonia</span>
-</a>
+  <a href="#cuenta" data-section="cuenta">
+    <span class="nav-icon">◷</span>
+    <span class="nav-label">Cuenta</span>
+  </a>
 
-<a href="#celebraciones" data-section="recepcion" onclick="abrirDetallePageTurn('morcote'); return false;">
-<span class="nav-icon nav-glasses" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<path d="M20 10 C18 22 20 32 28 36 C27 45 24 50 19 54"></path>
-<path d="M28 36 C35 32 37 22 35 10"></path>
-<path d="M13 10 H35"></path>
-<path d="M44 10 C42 22 44 32 52 36 C51 45 48 50 43 54"></path>
-<path d="M52 36 C59 32 61 22 59 10"></path>
-<path d="M37 10 H59"></path>
-<path d="M16 54 H31"></path>
-<path d="M40 54 H55"></path>
-</svg>
-</span>
-<span class="nav-label">Recepción</span>
-</a>
+  <a href="#celebraciones" data-section="celebraciones">
+    <span class="nav-icon">❦</span>
+    <span class="nav-label">Celebraciones</span>
+  </a>
 
-<a href="#dresscode" data-section="dresscode">
-<span class="vestimenta-icono-final" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<circle cx="21" cy="12" r="5"></circle>
-<path d="M17 20 L25 20 L31 42 L25 42 L25 58 L18 58 L18 42 L12 42 Z"></path>
-<circle cx="45" cy="12" r="5"></circle>
-<path d="M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z"></path>
-</svg>
-</span>
-<span class="nav-label">Vestimenta</span>
-</a>
+  <a href="#info" data-section="info">
+    <span class="nav-icon">⌁</span>
+    <span class="nav-label">Viaje</span>
+  </a>
 
-<a href="#info" data-section="info">
-<span class="nav-icon nav-plane" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<path d="M10 42 C22 22 42 22 54 42"></path>
-<path d="M17 43 L47 43"></path>
-<path d="M32 12 L36 31 L28 31 Z"></path>
-<path d="M32 31 L32 52"></path>
-<path d="M22 52 L42 52"></path>
-</svg>
-</span>
-<span class="nav-label">Info</span>
-</a>
+  <a href="#dresscode" data-section="dresscode">
+    <span class="nav-icon">♢</span>
+    <span class="nav-label">Dress Code</span>
+  </a>
 
-<a href="#rsvp" data-section="rsvp">
-<span class="nav-icon nav-envelope" aria-hidden="true">
-<svg viewBox="0 0 64 64" role="img">
-<rect x="10" y="18" width="44" height="30" rx="2"></rect>
-<path d="M12 20 L32 36 L52 20"></path>
-<path d="M12 46 L26 34"></path>
-<path d="M52 46 L38 34"></path>
-</svg>
-</span>
-<span class="nav-label">Confirmar asistencia</span>
-</a>
+  <a href="#rsvp" data-section="rsvp">
+    <span class="nav-icon">✉</span>
+    <span class="nav-label">Asistencia</span>
+  </a>
 
 </nav>
-
 </main>
 
 <div class="modal" id="rsvpModal">
@@ -15253,7 +15318,82 @@ Enviar confirmación
   }
 
 })();
+
+   
 </script>
+<script>
+/* =====================================================
+   MENÚ INFERIOR:
+   marcar sección activa
+   ===================================================== */
+
+(function(){
+
+  function activarMenuInferior(){
+
+    const links = document.querySelectorAll(".bottom-nav a");
+    const sections = [];
+
+    links.forEach(function(link){
+
+      const href = link.getAttribute("href");
+
+      if (!href || !href.startsWith("#")) {
+        return;
+      }
+
+      const section = document.querySelector(href);
+
+      if (section) {
+        sections.push({
+          link: link,
+          section: section
+        });
+      }
+
+    });
+
+    function actualizarActivo(){
+
+      let actual = null;
+
+      sections.forEach(function(item){
+
+        const rect = item.section.getBoundingClientRect();
+
+        if (rect.top <= window.innerHeight * 0.42 && rect.bottom >= window.innerHeight * 0.32) {
+          actual = item;
+        }
+
+      });
+
+      links.forEach(function(link){
+        link.classList.remove("active");
+      });
+
+      if (actual) {
+        actual.link.classList.add("active");
+      }
+
+    }
+
+    window.addEventListener("scroll", actualizarActivo, { passive: true });
+    window.addEventListener("resize", actualizarActivo);
+
+    actualizarActivo();
+
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", activarMenuInferior);
+  } else {
+    activarMenuInferior();
+  }
+
+})();
+</script>
+
+
 
 </body>
 
