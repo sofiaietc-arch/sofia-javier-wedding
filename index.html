@@ -11950,6 +11950,75 @@ main.visible {
     max-width: 330px !important;
   }
 }
+/* =====================================================
+   ICONOS DETALLE: FECHA / HORA / UBICACIÓN
+   Civil - Ceremonia - Recepción
+   ===================================================== */
+
+#civil .detail-row,
+#ceremonia .detail-row,
+#recepcion .detail-row {
+  display: grid !important;
+  grid-template-columns: 34px 1fr !important;
+  gap: 18px !important;
+  align-items: flex-start !important;
+}
+
+#civil .detail-icon,
+#ceremonia .detail-icon,
+#recepcion .detail-icon {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding-top: 2px !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+#civil .detail-icon img,
+#ceremonia .detail-icon img,
+#recepcion .detail-icon img {
+  display: block !important;
+
+  width: 24px !important;
+  height: 24px !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #civil .detail-row,
+  #ceremonia .detail-row,
+  #recepcion .detail-row {
+    grid-template-columns: 34px 1fr !important;
+    gap: 16px !important;
+  }
+
+  #civil .detail-icon img,
+  #ceremonia .detail-icon img,
+  #recepcion .detail-icon img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
    
 </style>
 
@@ -12196,30 +12265,39 @@ Para nuestro gran día
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">▣</div>
-<div>
-<strong>Lunes</strong>
-<br>
-3 de agosto de 2026
-</div>
+  <div class="detail-icon">
+    <img src="agenda.png" alt="Fecha">
+  </div>
+
+  <div>
+    <strong>Lunes</strong>
+    <br>
+    3 de agosto de 2026
+  </div>
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">◷</div>
-<div>
-<strong>12:00 hs</strong>
-</div>
+  <div class="detail-icon">
+    <img src="reloj.png" alt="Hora">
+  </div>
+
+  <div>
+    <strong>12:00 hs</strong>
+  </div>
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">⌖</div>
-<div>
-<strong>Museo Isaac Fernández Blanco</strong>
-<br>
-Suipacha 1422
-<br>
-Buenos Aires, Argentina
-</div>
+  <div class="detail-icon">
+    <img src="ubicacion.png" alt="Ubicación">
+  </div>
+
+  <div>
+    <strong>Museo Isaac Fernández Blanco</strong>
+    <br>
+    Suipacha 1422
+    <br>
+    Buenos Aires, Argentina
+  </div>
 </div>
 
 <a
@@ -12259,34 +12337,43 @@ Ver en Google Maps
 <div class="detail-ornament"></div>
 
 <div class="detail-row">
-<div class="detail-icon">▣</div>
-<div>
-<strong>Sábado</strong>
-<br>
-26 de septiembre de 2026
-</div>
+  <div class="detail-icon">
+    <img src="agenda.png" alt="Fecha">
+  </div>
+
+  <div>
+    <strong>Sábado</strong>
+    <br>
+    26 de septiembre de 2026
+  </div>
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">◷</div>
-<div>
-<strong>17:00 hs</strong>
-<br>
-Fotos y llegada de invitados
-<br><br>
-<strong>17:30 hs</strong>
-<br>
-Ceremonia religiosa
-</div>
+  <div class="detail-icon">
+    <img src="reloj.png" alt="Hora">
+  </div>
+
+  <div>
+    <strong>17:00 hs</strong>
+    <br>
+    Fotos y llegada de invitados
+    <br><br>
+    <strong>17:30 hs</strong>
+    <br>
+    Ceremonia religiosa
+  </div>
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">⌖</div>
-<div>
-<strong>Chiesa Santa Maria del Sasso</strong>
-<br>
-Morcote, Suiza
-</div>
+  <div class="detail-icon">
+    <img src="ubicacion.png" alt="Ubicación">
+  </div>
+
+  <div>
+    <strong>Chiesa Santa Maria del Sasso</strong>
+    <br>
+    Morcote, Suiza
+  </div>
 </div>
 
 <a
@@ -12314,21 +12401,39 @@ Cómo llegar
 <div class="detail-ornament"></div>
 
 <div class="detail-row">
-<div class="detail-icon">◷</div>
-<div>
-<strong>19:30 hs</strong>
-<br>
-Cena
-</div>
+  <div class="detail-icon">
+    <img src="agenda.png" alt="Fecha">
+  </div>
+
+  <div>
+    <strong>Sábado</strong>
+    <br>
+    26 de septiembre de 2026
+  </div>
 </div>
 
 <div class="detail-row">
-<div class="detail-icon">⌖</div>
-<div>
-<strong>Ristorante Vicania</strong>
-<br>
-Vico Morcote, Suiza
+  <div class="detail-icon">
+    <img src="reloj.png" alt="Hora">
+  </div>
+
+  <div>
+    <strong>19:30 hs</strong>
+    <br>
+    Cena
+  </div>
 </div>
+
+<div class="detail-row">
+  <div class="detail-icon">
+    <img src="ubicacion.png" alt="Ubicación">
+  </div>
+
+  <div>
+    <strong>Ristorante Vicania</strong>
+    <br>
+    Vico Morcote, Suiza
+  </div>
 </div>
 
 <a
