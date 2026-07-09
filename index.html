@@ -16249,6 +16249,143 @@ document.addEventListener("click", function(event) {
   };
 
 })();
+<script>
+/* =====================================================
+   MUSICA FINAL - CLARO DE LUNA
+   Archivo: claro-de-luna.mp3
+   Funciona con botón ABRIR y con icono de volumen
+   ===================================================== */
+
+(function(){
+
+  function asegurarAudio(){
+
+    let audio = document.getElementById("weddingMusic");
+
+    if (!audio) {
+      audio = document.createElement("audio");
+      audio.id = "weddingMusic";
+      audio.loop = true;
+      audio.preload = "auto";
+      audio.setAttribute("playsinline", "");
+
+      const source = document.createElement("source");
+      source.src = "claro-de-luna.mp3";
+      source.type = "audio/mpeg";
+
+      audio.appendChild(source);
+      document.body.appendChild(audio);
+    }
+
+    return audio;
+  }
+
+  function actualizarBotonMusica(activa){
+
+    const label = document.getElementById("musicLabel");
+    const boton = document.querySelector(".music-toggle");
+
+    if (label) {
+      label.textContent = activa ? "Música On" : "Música Off";
+    }
+
+    if (boton) {
+      boton.classList.toggle("music-playing", activa);
+    }
+
+  }
+
+  window.reproducirMusica = function(){
+
+    const audio = asegurarAudio();
+
+    audio.volume = 0.65;
+
+    const intento = audio.play();
+
+    if (intento && typeof intento.then === "function") {
+      intento
+        .then(function(){
+          actualizarBotonMusica(true);
+        })
+        .catch(function(error){
+          actualizarBotonMusica(false);
+          console.log("Audio bloqueado o no iniciado:", error);
+        });
+    }
+
+  };
+
+  window.pausarMusica = function(){
+
+    const audio = asegurarAudio();
+
+    audio.pause();
+    actualizarBotonMusica(false);
+
+  };
+
+  window.toggleMusic = function(){
+
+    const audio = asegurarAudio();
+
+    if (audio.paused) {
+      window.reproducirMusica();
+    } else {
+      window.pausarMusica();
+    }
+
+  };
+
+  document.addEventListener("DOMContentLoaded", function(){
+
+    asegurarAudio();
+
+    const botonMusica = document.querySelector(".music-toggle");
+
+    if (botonMusica) {
+
+      botonMusica.onclick = null;
+
+      botonMusica.addEventListener("click", function(event){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.toggleMusic();
+      }, true);
+
+    }
+
+    const botonAbrir =
+      document.querySelector("#opening .seal-open") ||
+      document.querySelector(".opening .seal-open") ||
+      document.querySelector(".seal-open");
+
+    if (botonAbrir) {
+
+      botonAbrir.addEventListener("click", function(){
+        window.reproducirMusica();
+      }, true);
+
+    }
+
+  });
+
+  const enterAnterior = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    window.reproducirMusica();
+
+    if (typeof enterAnterior === "function") {
+      enterAnterior();
+    }
+
+  };
+
+})();
+</script>
+
+   
 </script>
    
 </script>
