@@ -6056,6 +6056,95 @@ body,
     transform-origin: center center !important;
   }
 }
+/* OLIVOS GRANDES: QUITAR DE ÚLTIMA PÁGINA
+   Y PONER EN CÓDIGO DE VESTIMENTA + CONFIRMAR ASISTENCIA */
+
+/* quitar olivo de la última página */
+.final::before,
+.final::after,
+.final .panel::before,
+.final .panel::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* preparar páginas */
+#dresscode,
+#rsvp {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* contenido por encima del olivo */
+#dresscode .dress-card,
+#dresscode .dress-title,
+#dresscode .dress-image-wrap,
+#rsvp .rsvp-card,
+#rsvp h2,
+#rsvp p {
+  position: relative !important;
+  z-index: 6 !important;
+}
+
+/* OLIVO EN CÓDIGO DE VESTIMENTA */
+#dresscode::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+  position: absolute !important;
+
+  left: 0 !important;
+  bottom: 0 !important;
+
+  width: min(720px, 72vw) !important;
+  height: 82vh !important;
+
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .82 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* OLIVO EN CONFIRMAR ASISTENCIA */
+#rsvp::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+  position: absolute !important;
+
+  left: 0 !important;
+  bottom: 0 !important;
+
+  width: min(720px, 72vw) !important;
+  height: 82vh !important;
+
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .82 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #dresscode::before,
+  #rsvp::before {
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: 78vw !important;
+    height: 72vh !important;
+
+    background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+    opacity: .8 !important;
+  }
+}
    
 </style>
 
