@@ -12853,6 +12853,27 @@ body.confirmacion-morcote-no #recepcion {
     transform: rotateY(108deg) !important;
   }
 }
+/* ELIMINAR PREGUNTAS DE ALOJAMIENTO Y TRANSPORTE DEL FORMULARIO */
+
+#travelFields {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+#travelFields label,
+#travelFields select {
+  display: none !important;
+}
+
+
+
    
 </style>
 
@@ -13605,28 +13626,11 @@ No
 </label>
 
 </div>
+<div id="travelFields" class="hidden" style="display:none !important;">
 
-<div id="travelFields" class="hidden">
+  <input id="accommodation" name="accommodation" type="hidden" value="">
 
-<label for="accommodation">
-¿Necesitás información sobre alojamiento?
-</label>
-
-<select id="accommodation" name="accommodation">
-<option value="">Seleccionar</option>
-<option value="yes">Sí</option>
-<option value="no">No</option>
-</select>
-
-<label for="transport">
-¿Necesitás asistencia con transporte?
-</label>
-
-<select id="transport" name="transport">
-<option value="">Seleccionar</option>
-<option value="yes">Sí</option>
-<option value="no">No</option>
-</select>
+  <input id="transport" name="transport" type="hidden" value="">
 
 </div>
 
