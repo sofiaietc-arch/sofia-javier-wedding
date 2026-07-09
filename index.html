@@ -7807,6 +7807,141 @@ body section.final .panel::before,
     opacity: .72 !important;
   }
 }
+/* RSVP: PÁJAROS ENCUADRANDO SOLO CONFIRMAR ASISTENCIA */
+
+/* ocultar imagen anterior si quedó en el HTML */
+.pajaros-rsvp-frame {
+  display: none !important;
+}
+
+/* sección transparente */
+#rsvp,
+.rsvp {
+  position: relative !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* quitar cuadro */
+#rsvp .rsvp-card,
+.rsvp .rsvp-card {
+  position: relative !important;
+  max-width: 920px !important;
+  margin: 0 auto !important;
+  padding: 40px 18px 70px !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* borrar adornos anteriores */
+#rsvp::before,
+#rsvp::after,
+.rsvp::before,
+.rsvp::after,
+#rsvp .rsvp-card::before,
+#rsvp .rsvp-card::after,
+.rsvp .rsvp-card::before,
+.rsvp .rsvp-card::after,
+#rsvp .floral,
+.rsvp .floral,
+#rsvp .detail-ornament,
+.rsvp .detail-ornament {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* pájaros alrededor del título */
+.rsvp-birds-title {
+  width: min(980px, 112vw) !important;
+  height: 270px !important;
+
+  margin: -20px auto 18px auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  background: url("pajaros-rsvp.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* título centrado entre los pájaros */
+.rsvp-birds-title h2 {
+  position: relative !important;
+  z-index: 3 !important;
+
+  margin: 0 !important;
+  padding: 0 155px !important;
+
+  background: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  pointer-events: auto !important;
+}
+
+/* texto debajo */
+#rsvp .rsvp-intro,
+.rsvp .rsvp-intro {
+  position: relative !important;
+  z-index: 4 !important;
+
+  max-width: 760px !important;
+  margin: -18px auto 28px auto !important;
+
+  text-align: center !important;
+  background: transparent !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #rsvp .rsvp-card,
+  .rsvp .rsvp-card {
+    padding: 28px 14px 60px !important;
+  }
+
+  .rsvp-birds-title {
+    width: 128vw !important;
+    height: 220px !important;
+    margin: -18px auto 10px auto !important;
+  }
+
+  .rsvp-birds-title h2 {
+    padding: 0 92px !important;
+    font-size: clamp(30px, 9vw, 48px) !important;
+    line-height: .95 !important;
+  }
+
+  #rsvp .rsvp-intro,
+  .rsvp .rsvp-intro {
+    margin-top: -12px !important;
+  }
+}
    
 </style>
 
