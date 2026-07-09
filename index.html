@@ -5841,6 +5841,51 @@ body,
     opacity: .78 !important;
   }
 }
+/* OLIVO MÁS GRANDE EN ÚLTIMA PÁGINA */
+
+.final {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* contenido por encima del olivo */
+.final .panel,
+.final h2,
+.final p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* olivo hasta mitad de la última página */
+.final::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+
+  left: 0 !important;
+  bottom: 0 !important;
+
+  width: min(520px, 58vw) !important;
+  height: 50vh !important;
+
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  opacity: .82 !important;
+
+  z-index: 2 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .final::before {
+    width: 64vw !important;
+    height: 46vh !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    opacity: .8 !important;
+  }
+}
    
 </style>
 
