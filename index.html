@@ -12297,7 +12297,103 @@ main.visible {
     margin-top: 28px !important;
   }
 }
-   
+  /* =====================================================
+   PORTADA: SUBIR SELLO Y TEXTO ABRIR EN PC
+   ===================================================== */
+
+/* sello completo */
+#opening .seal-open,
+.opening .seal-open {
+  position: relative !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  transform: translateY(-58px) !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  z-index: 80 !important;
+  overflow: visible !important;
+}
+
+/* imagen del sello */
+#opening .seal-open img,
+.opening .seal-open img {
+  display: block !important;
+
+  width: 98px !important;
+  height: auto !important;
+
+  margin: 0 auto 18px auto !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* texto ABRIR */
+#opening .seal-open span,
+.opening .seal-open span {
+  display: block !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+
+  color: #C6A05B !important;
+  -webkit-text-fill-color: #C6A05B !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* computadora */
+@media (min-width: 1024px) {
+  #opening .seal-open,
+  .opening .seal-open {
+    transform: translateY(-72px) !important;
+  }
+
+  #opening .seal-open img,
+  .opening .seal-open img {
+    width: 104px !important;
+  }
+}
+
+/* celular: mantener más bajo y visible */
+@media (max-width: 760px) {
+  #opening .seal-open,
+  .opening .seal-open {
+    transform: translateY(-34px) !important;
+  }
+
+  #opening .seal-open img,
+  .opening .seal-open img {
+    width: 88px !important;
+    margin-bottom: 14px !important;
+  }
+
+  #opening .seal-open span,
+  .opening .seal-open span {
+    font-size: 9px !important;
+    letter-spacing: 0.30em !important;
+  }
+} 
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
