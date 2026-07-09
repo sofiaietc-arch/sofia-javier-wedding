@@ -6602,8 +6602,77 @@ body section.final .panel::after {
     opacity: .76 !important;
   }
 }    
+/* BORRAR FLORES PORTADA DE LA ÚLTIMA PÁGINA
+   sin borrar la guirnalda inferior */
 
+/* eliminar flores portada escritas como div */
+.final .floral,
+.final > .floral,
+.final .floral.top-left,
+.final .floral.top-right,
+.final .floral.bottom-left,
+.final .floral.bottom-right {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  background: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
 
+/* eliminar flores portada/olivos viejos en pseudo-elementos */
+.final::before,
+.final .panel::before,
+.final .panel::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* mantener SOLO la guirnalda grande inferior */
+.final::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  bottom: -18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(820px, 105vw) !important;
+  height: 260px !important;
+
+  background: url("flores-guirnalda.png") center bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* texto por encima */
+.final .panel,
+.final h2,
+.final p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+@media (max-width: 760px) {
+  .final::after {
+    bottom: -10px !important;
+    width: 115vw !important;
+    height: 210px !important;
+    opacity: .76 !important;
+  }
+}
+
+   
    
 </style>
 
