@@ -12682,6 +12682,29 @@ document.addEventListener("DOMContentLoaded", function(){
     button.remove();
   });
 });
+
+   <script>
+/* FORZAR TEXTO DE PORTADA */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  document.querySelectorAll("#opening h1, .opening h1, h1").forEach(function(el){
+
+    const texto = el.textContent.trim().toLowerCase();
+
+    if (
+      texto.includes("sofía") ||
+      texto.includes("sofia") ||
+      texto.includes("javier")
+    ) {
+      el.textContent = "SOFIA Y JAVIER";
+      el.classList.add("portada-nombres");
+    }
+
+  });
+
+});
+</script>
 </script>
 </script>
 
