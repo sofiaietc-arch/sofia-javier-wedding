@@ -14049,7 +14049,267 @@ body {
     padding-bottom: 74px !important;
   }
 }
+/* =====================================================
+   NUESTRAS CELEBRACIONES:
+   textos como referencia Civil / Ceremonia & Recepción
+   ===================================================== */
 
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(360px, 1fr)) !important;
+  gap: 34px !important;
+  width: min(1080px, 94vw) !important;
+  margin: 38px auto 0 auto !important;
+}
+
+/* tarjeta tipo lámina */
+#celebraciones .event-card,
+.celebrations .event-card {
+  position: relative !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  min-height: 470px !important;
+  height: 470px !important;
+
+  overflow: hidden !important;
+
+  background: rgba(255,253,248,.88) !important;
+  border: 1px solid rgba(198,160,91,.34) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+}
+
+/* imagen ocupa toda la tarjeta */
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  filter: grayscale(12%) sepia(8%) brightness(1.12) contrast(.88) !important;
+}
+
+/* velo blanco para que el texto se lea como en la referencia */
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,248,.16) 0%,
+      rgba(255,253,248,.54) 42%,
+      rgba(255,253,248,.88) 100%
+    ) !important;
+
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+/* contenido textual superpuesto */
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  padding: 58px 54px 42px 45% !important;
+
+  text-align: right !important;
+
+  background: transparent !important;
+}
+
+/* título */
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  width: 100% !important;
+
+  margin: 0 0 20px auto !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(32px, 3.2vw, 48px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .32em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  text-align: right !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* subtítulo lugar */
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  width: 100% !important;
+
+  margin: 0 0 20px auto !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .34em !important;
+  text-transform: uppercase !important;
+
+  text-align: right !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+/* fecha */
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  width: 100% !important;
+
+  margin: 0 auto 0 auto !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 3vw, 42px) !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  font-weight: 600 !important;
+
+  text-align: right !important;
+
+  color: #6F5B39 !important;
+  -webkit-text-fill-color: #6F5B39 !important;
+}
+
+/* botón abajo a la derecha */
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: absolute !important;
+  right: 54px !important;
+  bottom: 34px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .32em !important;
+  text-transform: uppercase !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+#celebraciones .event-copy .btn::after,
+.celebrations .event-copy .btn::after {
+  content: " →" !important;
+  margin-left: 10px !important;
+  letter-spacing: 0 !important;
+}
+
+/* tarjeta ceremonia: texto un poco más arriba y más ancho */
+#celebraciones .event-card:nth-child(2) .event-copy,
+.celebrations .event-card:nth-child(2) .event-copy {
+  padding-left: 38% !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  font-size: clamp(31px, 3vw, 45px) !important;
+  line-height: 1.22 !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    width: min(360px, 94vw) !important;
+    gap: 28px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+
+  #celebraciones .event-art::after,
+  .celebrations .event-art::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,253,248,.18) 0%,
+        rgba(255,253,248,.62) 45%,
+        rgba(255,253,248,.90) 100%
+      ) !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    padding: 52px 28px 40px 34% !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 30px !important;
+    letter-spacing: .24em !important;
+  }
+
+  #celebraciones .event-copy .place,
+  .celebrations .event-copy .place {
+    font-size: 8.5px !important;
+    letter-spacing: .24em !important;
+  }
+
+  #celebraciones .event-copy .date-small,
+  .celebrations .event-copy .date-small {
+    font-size: 30px !important;
+  }
+
+  #celebraciones .event-copy .btn,
+  .celebrations .event-copy .btn {
+    right: 28px !important;
+    bottom: 30px !important;
+
+    font-size: 9px !important;
+    letter-spacing: .24em !important;
+  }
+}
 
 
    
