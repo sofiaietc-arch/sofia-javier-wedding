@@ -13192,7 +13192,69 @@ body.confirmacion-morcote-no #recepcion {
     height: 26px !important;
   }
 }
+/* =====================================================
+   BOTÓN DE MÚSICA / VOLUMEN
+   ===================================================== */
 
+.music-toggle {
+  position: fixed !important;
+  top: 18px !important;
+  right: 18px !important;
+  left: auto !important;
+
+  width: 64px !important;
+  height: 64px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  z-index: 100000 !important;
+  cursor: pointer !important;
+}
+
+.volume-icon-img {
+  display: block !important;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  object-fit: contain !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.music-label-hidden {
+  display: none !important;
+}
+
+.music-toggle.music-playing .volume-icon-img {
+  opacity: 1 !important;
+}
+
+@media (max-width: 760px) {
+  .music-toggle {
+    top: 14px !important;
+    right: 14px !important;
+
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .volume-icon-img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+}
    
 </style>
 
@@ -15885,6 +15947,111 @@ document.addEventListener("click", function(event) {
   }
 
 });
+<audio id="weddingMusic" loop preload="auto">
+  <source src="claro-de-luna.mp3" type="audio/mpeg">
+</audio>
+   <script>
+/* =====================================================
+   MÚSICA: CLARO DE LUNA - DEBUSSY
+   ===================================================== */
+
+(function(){
+
+  window.__musicaActiva = false;
+
+  function obtenerAudio(){
+    return document.getElementById("weddingMusic");
+  }
+
+  function actualizarBotonMusica(playing){
+
+    const label = document.getElementById("musicLabel");
+
+    if (label) {
+      label.textContent = playing ? "Música On" : "Música Off";
+    }
+
+    const boton = document.querySelector(".music-toggle");
+
+    if (boton) {
+      boton.classList.toggle("music-playing", playing);
+    }
+
+  }
+
+  window.reproducirMusica = function(){
+
+    const audio = obtenerAudio();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.volume = 0.42;
+
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(function(){
+          window.__musicaActiva = true;
+          actualizarBotonMusica(true);
+        })
+        .catch(function(){
+          window.__musicaActiva = false;
+          actualizarBotonMusica(false);
+        });
+    }
+
+  };
+
+  window.pausarMusica = function(){
+
+    const audio = obtenerAudio();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.pause();
+    window.__musicaActiva = false;
+    actualizarBotonMusica(false);
+
+  };
+
+  window.toggleMusic = function(){
+
+    const audio = obtenerAudio();
+
+    if (!audio) {
+      return;
+    }
+
+    if (audio.paused) {
+      window.reproducirMusica();
+    } else {
+      window.pausarMusica();
+    }
+
+  };
+
+  /* iniciar música al tocar ABRIR */
+  const enterOriginal = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    if (typeof enterOriginal === "function") {
+      enterOriginal();
+    }
+
+    setTimeout(function(){
+      window.reproducirMusica();
+    }, 350);
+
+  };
+
+})();
+</script>
 </script>
 </script>
    
