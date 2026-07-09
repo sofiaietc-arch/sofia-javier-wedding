@@ -5322,6 +5322,48 @@ h3,
 
   opacity: 1 !important;
 }
+
+/* RAMITO DIVISOR FINAL: debajo de títulos y sin símbolo ⌁ */
+.detail-ornament {
+  display: block !important;
+  width: 95px !important;
+  height: 24px !important;
+  min-height: 24px !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  overflow: hidden !important;
+}
+
+/* Quitar cualquier símbolo anterior generado por pseudo-elementos */
+.detail-ornament::before,
+.detail-ornament::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Civil, Ceremonia religiosa y Recepción: ramito alineado debajo del título, no al centro de toda la sección */
+.detail-text .detail-ornament {
+  margin: 6px 0 22px 0 !important;
+}
+
+/* Código de vestimenta y Confirmar asistencia: ramito centrado debajo del título */
+.dress-title .detail-ornament,
+.rsvp-card .detail-ornament,
+.event-copy .detail-ornament {
+  margin: 6px auto 22px auto !important;
+}
    
 </style>
 
@@ -5772,9 +5814,7 @@ alt="Referencia de vestimenta formal y elegante">
 <div class="rsvp-card">
 <h2>CONFIRMAR ASISTENCIA</h2>
 
-<div class="detail-ornament">
-  ⌁
-</div>
+<div class="detail-ornament"></div>
 
 <p class="texto-morcote">
   Agradecemos que confirmes tu asistencia antes del 20 de julio para poder acompañarnos.
