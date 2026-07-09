@@ -6346,7 +6346,54 @@ body,
     opacity: .82 !important;
   }
 }
-   
+   /* OLIVOS MÁS CHICOS EN CÓDIGO DE VESTIMENTA
+   y más desplegados hacia el lado izquierdo */
+
+#dresscode {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#dresscode .dress-card,
+#dresscode .dress-title,
+#dresscode .dress-image-wrap {
+  position: relative !important;
+  z-index: 6 !important;
+}
+
+#dresscode::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+
+  left: -30px !important;
+  bottom: 0 !important;
+
+  width: 260px !important;
+  height: 190px !important;
+
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .72 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+/* celular */
+@media (max-width: 760px) {
+  #dresscode::before {
+    left: -18px !important;
+    bottom: 0 !important;
+
+    width: 145px !important;
+    height: 110px !important;
+
+    background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+    opacity: .68 !important;
+  }
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
