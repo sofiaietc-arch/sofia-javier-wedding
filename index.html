@@ -8513,6 +8513,117 @@ body{
     letter-spacing: .09em !important;
   }
 }
+/* =====================================================
+   TRANSICIÓN ENTRE SECCIONES: ABRIR CARTA
+   ===================================================== */
+
+.page-letter-transition {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 120000;
+  pointer-events: none;
+  perspective: 1800px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(255,253,248,.82),
+      rgba(255,253,248,.90)
+    ),
+    url("fondo-relieve.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-letter-transition.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-letter-fold {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,.96),
+      rgba(255,253,248,.94)
+    ),
+    url("fondo-relieve.jpg");
+
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 44px rgba(80,60,30,.10);
+
+  transition:
+    transform 1.05s cubic-bezier(.22,.78,.22,1),
+    opacity .35s ease .72s;
+}
+
+.page-letter-fold::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(198,160,91,.24);
+  pointer-events: none;
+}
+
+.page-letter-left {
+  left: 0;
+  transform-origin: left center;
+  border-right: 1px solid rgba(198,160,91,.34);
+}
+
+.page-letter-right {
+  right: 0;
+  transform-origin: right center;
+  border-left: 1px solid rgba(198,160,91,.34);
+}
+
+.page-letter-transition.open .page-letter-left {
+  transform: rotateY(-116deg);
+  opacity: 0;
+}
+
+.page-letter-transition.open .page-letter-right {
+  transform: rotateY(116deg);
+  opacity: 0;
+}
+
+.page-letter-mark {
+  position: relative;
+  z-index: 5;
+
+  font-family: 'GFS Didot', 'Didot', 'Times New Roman', serif;
+  font-size: clamp(42px, 8vw, 76px);
+  letter-spacing: .12em;
+  color: #A77C32;
+  -webkit-text-fill-color: #A77C32;
+
+  opacity: .92;
+  transition: opacity .35s ease;
+}
+
+.page-letter-transition.open .page-letter-mark {
+  opacity: 0;
+}
+
+@media (max-width: 760px) {
+  .page-letter-fold::before {
+    inset: 16px;
+  }
+
+  .page-letter-mark {
+    font-size: clamp(36px, 12vw, 58px);
+  }
+}
+
    
 </style>
 
@@ -9995,7 +10106,156 @@ window.enterInvitation = function(){
     }
 
   }, 2900);
+<script>
+/* TRANSICIÓN ENTRE SECCIONES COMO CARTA */
 
+(function(){
+
+  function crearTransicionCarta(){
+
+    let transicion = document.getElementById("pageLetterTransition");
+
+    if (transicion) {
+      return transicion;
+    }
+
+    transicion = document.createElement("div");
+    transicion.id = "pageLetterTransition";
+    transicion.className = "page-letter-transition";
+
+    transicion.innerHTML = `
+      <div class="page-letter-fold page-letter-left"></div>
+      <div class="page-letter-fold page-letter-right"></div>
+      <div class="page-letter-mark">S & J</div>
+    `;
+
+    document.body.appendChild(transicion);
+
+    return transicion;
+  }
+
+  function actualizarMenuActivo(hash){
+
+    const id = hash.replace("#", "");
+
+    document.querySelectorAll(".bottom-nav a").forEach(function(link){
+
+      link.classList.remove("active");
+
+      if (link.dataset.section === id) {
+        link.classList.add("active");
+      }
+
+    });
+
+  }
+
+  window.irConCarta = function(hash){
+
+    const destino = document.querySelector(hash);
+
+    if (!destino) {
+      return;
+    }
+
+    if (window.__transicionCartaActiva) {
+      return;
+    }
+
+    window.__transicionCartaActiva = true;
+
+    const transicion = crearTransicionCarta();
+
+    transicion.classList.remove("open");
+    transicion.classList.add("show");
+
+    /* fuerza que el navegador registre el estado cerrado */
+    void transicion.offsetWidth;
+
+    /* primero aparece la carta cerrada */
+    setTimeout(function(){
+
+      destino.scrollIntoView({
+        behavior: "auto",
+        block: "start"
+      });
+
+      if (history.pushState) {
+        history.pushState(null, "", hash);
+      }
+
+      actualizarMenuActivo(hash);
+
+      if (typeof startPanelObserver === "function") {
+        try {
+          startPanelObserver();
+        } catch(error) {}
+      }
+
+    }, 430);
+
+    /* después se abre la carta sobre la nueva sección */
+    setTimeout(function(){
+
+      transicion.classList.add("open");
+
+    }, 520);
+
+    /* limpiar transición */
+    setTimeout(function(){
+
+      transicion.classList.remove("show");
+      transicion.classList.remove("open");
+
+      window.__transicionCartaActiva = false;
+
+    }, 1420);
+
+  };
+
+
+  document.addEventListener("click", function(event){
+
+    const link = event.target.closest('a[href^="#"]');
+
+    if (!link) {
+      return;
+    }
+
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#") {
+      return;
+    }
+
+    const destino = document.querySelector(href);
+
+    if (!destino) {
+      return;
+    }
+
+    /* no tocar links dentro del modal */
+    if (link.closest(".modal")) {
+      return;
+    }
+
+    /* aplicar solo al menú inferior y botones internos */
+    const esMenu = link.closest(".bottom-nav");
+    const esBotonInterno = link.classList.contains("btn");
+    const esInfoItem = link.classList.contains("useful-item");
+
+    if (!esMenu && !esBotonInterno && !esInfoItem) {
+      return;
+    }
+
+    event.preventDefault();
+
+    window.irConCarta(href);
+
+  });
+
+})();
+</script>
 };
 </script>
 </body>
