@@ -13271,9 +13271,107 @@ body.confirmacion-morcote-no #recepcion {
 
 <body>
 
-<audio id="weddingMusic" loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
+<script>
+/* =====================================================
+   MÚSICA - CLARO DE LUNA
+   reproducir al tocar ABRIR o el icono de volumen
+   ===================================================== */
+
+(function(){
+
+  window.__musicaActiva = false;
+
+  function audioMusica(){
+    return document.getElementById("weddingMusic");
+  }
+
+  function actualizarEstadoMusica(activa){
+
+    window.__musicaActiva = activa;
+
+    const label = document.getElementById("musicLabel");
+
+    if (label) {
+      label.textContent = activa ? "Música On" : "Música Off";
+    }
+
+    const boton = document.querySelector(".music-toggle");
+
+    if (boton) {
+      boton.classList.toggle("music-playing", activa);
+    }
+
+  }
+
+  window.reproducirMusica = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.volume = 0.55;
+
+    const intento = audio.play();
+
+    if (intento && typeof intento.then === "function") {
+      intento
+        .then(function(){
+          actualizarEstadoMusica(true);
+        })
+        .catch(function(){
+          actualizarEstadoMusica(false);
+        });
+    }
+
+  };
+
+  window.pausarMusica = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.pause();
+    actualizarEstadoMusica(false);
+
+  };
+
+  window.toggleMusic = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    if (audio.paused) {
+      window.reproducirMusica();
+    } else {
+      window.pausarMusica();
+    }
+
+  };
+
+  const enterAnterior = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    /* IMPORTANTE:
+       esto corre inmediatamente dentro del clic en ABRIR */
+    window.reproducirMusica();
+
+    if (typeof enterAnterior === "function") {
+      enterAnterior();
+    }
+
+  };
+
+})();
+</script>
 
 <button class="music-toggle" type="button" onclick="toggleMusic()" aria-label="Activar o desactivar música">
   <img src="volumen-dorado.png" alt="Volumen" class="volume-icon-img">
@@ -15947,7 +16045,7 @@ document.addEventListener("click", function(event) {
   }
 
 });
-<audio id="weddingMusic" loop preload="auto">
+<audio id="weddingMusic" loop preload="auto" playsinline>
   <source src="claro-de-luna.mp3" type="audio/mpeg">
 </audio>
    <script>
@@ -16051,6 +16149,108 @@ document.addEventListener("click", function(event) {
   };
 
 })();
+<script>
+/* =====================================================
+   MÚSICA - CLARO DE LUNA
+   reproducir al tocar ABRIR o el icono de volumen
+   ===================================================== */
+
+(function(){
+
+  window.__musicaActiva = false;
+
+  function audioMusica(){
+    return document.getElementById("weddingMusic");
+  }
+
+  function actualizarEstadoMusica(activa){
+
+    window.__musicaActiva = activa;
+
+    const label = document.getElementById("musicLabel");
+
+    if (label) {
+      label.textContent = activa ? "Música On" : "Música Off";
+    }
+
+    const boton = document.querySelector(".music-toggle");
+
+    if (boton) {
+      boton.classList.toggle("music-playing", activa);
+    }
+
+  }
+
+  window.reproducirMusica = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.volume = 0.55;
+
+    const intento = audio.play();
+
+    if (intento && typeof intento.then === "function") {
+      intento
+        .then(function(){
+          actualizarEstadoMusica(true);
+        })
+        .catch(function(){
+          actualizarEstadoMusica(false);
+        });
+    }
+
+  };
+
+  window.pausarMusica = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    audio.pause();
+    actualizarEstadoMusica(false);
+
+  };
+
+  window.toggleMusic = function(){
+
+    const audio = audioMusica();
+
+    if (!audio) {
+      return;
+    }
+
+    if (audio.paused) {
+      window.reproducirMusica();
+    } else {
+      window.pausarMusica();
+    }
+
+  };
+
+  const enterAnterior = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    /* IMPORTANTE:
+       esto corre inmediatamente dentro del clic en ABRIR */
+    window.reproducirMusica();
+
+    if (typeof enterAnterior === "function") {
+      enterAnterior();
+    }
+
+  };
+
+})();
+</script>
+   
 </script>
 </script>
 </script>
