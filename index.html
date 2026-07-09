@@ -6832,6 +6832,287 @@ body section.final .panel::before,
   }
 }
    
+   /* =====================================================
+   FIX GENERAL: BIENVENIDOS, FONDOS, OLIVOS Y FINAL
+   ===================================================== */
+
+/* 1. QUITAR LÍNEAS ALREDEDOR DE BIENVENIDOS */
+#bienvenida .paper-card,
+.welcome .paper-card,
+#bienvenida h2,
+.welcome h2 {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#bienvenida h2::before,
+#bienvenida h2::after,
+.welcome h2::before,
+.welcome h2::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+
+/* 2. BORRAR GUIRNALDA PEQUEÑA EN PÁGINA BIENVENIDOS */
+/* borra la guirnalda chica dentro de la tarjeta */
+#bienvenida .paper-card::before,
+#bienvenida .paper-card::after,
+.welcome .paper-card::before,
+.welcome .paper-card::after {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* mantener SOLO la guirnalda grande detrás del texto */
+#bienvenida::before,
+.welcome::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  top: 18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(720px, 96vw) !important;
+  height: 210px !important;
+
+  background: url("flores-guirnalda.png") center top / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+
+/* 3. TODO TRANSPARENTE PARA VER EL FONDO */
+.section,
+.opening,
+.welcome,
+.count-section,
+.celebrations,
+.detail,
+.dress,
+.rsvp,
+.info,
+.final,
+.paper-card,
+.count-card,
+.celebrations-wrap,
+.detail-card,
+.detail-text,
+.detail-art,
+.dress-card,
+.dress-title,
+.dress-image-wrap,
+.rsvp-card,
+.info-wrap,
+.final .panel {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* 4, 5, 6. CENTRAR OLIVO BAJO CIVIL, CEREMONIA Y RECEPCIÓN */
+#civil .detail-ornament,
+#ceremonia .detail-ornament,
+#recepcion .detail-ornament,
+.detail-text .detail-ornament {
+  display: block !important;
+
+  width: 95px !important;
+  height: 24px !important;
+  min-height: 24px !important;
+
+  margin: 8px auto 24px auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+#civil .detail-ornament::before,
+#civil .detail-ornament::after,
+#ceremonia .detail-ornament::before,
+#ceremonia .detail-ornament::after,
+#recepcion .detail-ornament::before,
+#recepcion .detail-ornament::after,
+.detail-text .detail-ornament::before,
+.detail-text .detail-ornament::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* 7. CONFIRMAR ASISTENCIA: AGREGAR OLIVO CENTRADO DEBAJO DEL TEXTO */
+#rsvp,
+.rsvp {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* quitar olivos grandes de fondo en confirmar asistencia */
+#rsvp::before,
+.rsvp::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* quitar guirnaldas en confirmar asistencia */
+#rsvp::after,
+.rsvp::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* olivo centrado debajo del texto */
+#rsvp .rsvp-card::after,
+.rsvp .rsvp-card::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  width: 95px !important;
+  height: 24px !important;
+
+  margin: 18px auto 0 auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+
+
+/* 8. ELIMINAR LÍNEA DEBAJO DE SOFÍA Y JAVIER EN ÚLTIMA PÁGINA */
+.final h2,
+.final .panel h2 {
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.final h2::before,
+.final h2::after,
+.final .panel h2::before,
+.final .panel h2::after,
+.final .detail-ornament {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+
+/* mantener la guirnalda grande inferior de la última página */
+.final {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.final::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  bottom: -18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(820px, 105vw) !important;
+  height: 260px !important;
+
+  background: url("flores-guirnalda.png") center bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* texto por encima de flores */
+#bienvenida .paper-card,
+.welcome .paper-card,
+.final .panel,
+.final h2,
+.final p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+
+/* MÓVIL */
+@media (max-width: 760px) {
+  #bienvenida::before,
+  .welcome::before {
+    top: 12px !important;
+    width: 112vw !important;
+    height: 170px !important;
+    opacity: .76 !important;
+  }
+
+  .final::after {
+    bottom: -10px !important;
+    width: 115vw !important;
+    height: 210px !important;
+    opacity: .76 !important;
+  }
+
+  #civil .detail-ornament,
+  #ceremonia .detail-ornament,
+  #recepcion .detail-ornament,
+  .detail-text .detail-ornament,
+  #rsvp .rsvp-card::after {
+    width: 82px !important;
+    height: 22px !important;
+  }
+}
+   
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
