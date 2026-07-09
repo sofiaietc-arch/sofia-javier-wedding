@@ -7704,7 +7704,109 @@ body section.final .panel::before,
     opacity: .72 !important;
   }
 }
-   
+   /* CONFIRMAR ASISTENCIA: PÁJAROS VISIBLES CON HTML REAL */
+
+#rsvp,
+.rsvp {
+  position: relative !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* borrar cuadro de confirmar asistencia */
+#rsvp .rsvp-card,
+.rsvp .rsvp-card {
+  position: relative !important;
+  overflow: visible !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  max-width: 820px !important;
+  margin: 0 auto !important;
+  padding: 110px 24px 110px !important;
+}
+
+/* borrar adornos viejos */
+#rsvp::before,
+#rsvp::after,
+.rsvp::before,
+.rsvp::after,
+#rsvp .rsvp-card::before,
+#rsvp .rsvp-card::after,
+.rsvp .rsvp-card::before,
+.rsvp .rsvp-card::after,
+#rsvp .floral,
+.rsvp .floral,
+#rsvp .detail-ornament,
+.rsvp .detail-ornament {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* imagen de pájaros */
+#rsvp .pajaros-rsvp-frame,
+.rsvp .pajaros-rsvp-frame {
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: min(980px, 118vw) !important;
+  max-width: none !important;
+  height: auto !important;
+
+  opacity: .72 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* texto por encima */
+#rsvp .rsvp-card h2,
+#rsvp .rsvp-card p,
+#rsvp .rsvp-card a,
+#rsvp .rsvp-card button,
+.rsvp .rsvp-card h2,
+.rsvp .rsvp-card p,
+.rsvp .rsvp-card a,
+.rsvp .rsvp-card button {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #rsvp .rsvp-card,
+  .rsvp .rsvp-card {
+    padding: 95px 18px 95px !important;
+  }
+
+  #rsvp .pajaros-rsvp-frame,
+  .rsvp .pajaros-rsvp-frame {
+    width: 132vw !important;
+    opacity: .72 !important;
+  }
+}
    
 </style>
 
