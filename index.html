@@ -6489,6 +6489,121 @@ body section.final .panel::after {
     margin-top: 16px !important;
   }
 }
+   /* GUIRNALDAS GRANDES DETRÁS DEL TEXTO:
+   BIENVENIDOS + ÚLTIMA PÁGINA */
+
+/* Quitar guirnalda anterior dentro de tarjetas */
+#bienvenida .paper-card::before,
+.welcome .paper-card::before,
+.final .panel::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Quitar flores portada de última página */
+.final .floral,
+.final::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* BIENVENIDOS */
+#bienvenida,
+.welcome {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* texto por encima */
+#bienvenida .paper-card,
+.welcome .paper-card {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* guirnalda grande arriba, centrada, detrás del texto */
+#bienvenida::before,
+.welcome::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  top: 18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(720px, 96vw) !important;
+  height: 210px !important;
+
+  background: url("flores-guirnalda.png") center top / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* ÚLTIMA PÁGINA */
+.final {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* texto por encima */
+.final .panel,
+.final h2,
+.final p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* guirnalda grande centrada en el borde inferior, detrás del texto */
+.final::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  bottom: -18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(820px, 105vw) !important;
+  height: 260px !important;
+
+  background: url("flores-guirnalda.png") center bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  #bienvenida::before,
+  .welcome::before {
+    top: 12px !important;
+    width: 112vw !important;
+    height: 170px !important;
+    opacity: .76 !important;
+  }
+
+  .final::after {
+    bottom: -10px !important;
+    width: 115vw !important;
+    height: 210px !important;
+    opacity: .76 !important;
+  }
+}    
+
+
    
 </style>
 
