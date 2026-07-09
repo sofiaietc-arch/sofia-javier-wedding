@@ -7113,6 +7113,279 @@ body section.final .panel::before,
   }
 }
    
+   /* =====================================================
+   FIX FINAL: LÍNEAS, GUIRNALDAS Y RAMITOS DE OLIVO
+   ===================================================== */
+
+
+/* 1. BIENVENIDOS: quitar encuadre, líneas y rama de olivo */
+
+#bienvenida,
+.welcome,
+#bienvenida .paper-card,
+.welcome .paper-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#bienvenida .paper-card::before,
+#bienvenida .paper-card::after,
+.welcome .paper-card::before,
+.welcome .paper-card::after {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* quitar línea debajo de BIENVENIDOS */
+#bienvenida h2,
+.welcome h2 {
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+#bienvenida h2::before,
+#bienvenida h2::after,
+.welcome h2::before,
+.welcome h2::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  opacity: 0 !important;
+}
+
+/* eliminar ramito / rama de olivo en Bienvenidos */
+#bienvenida .detail-ornament,
+.welcome .detail-ornament,
+#bienvenida img[src*="olivo"],
+.welcome img[src*="olivo"],
+#bienvenida img[src*="ramito"],
+.welcome img[src*="ramito"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+
+/* 2. NUESTRAS CELEBRACIONES: quitar línea y poner ramito de olivo */
+
+#celebraciones h2,
+.celebrations h2,
+.celebrations-wrap h2 {
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+#celebraciones h2::before,
+.celebrations h2::before,
+.celebrations-wrap h2::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* ramito debajo de NUESTRAS CELEBRACIONES */
+#celebraciones h2::after,
+.celebrations h2::after,
+.celebrations-wrap h2::after {
+  content: "" !important;
+  display: block !important;
+
+  width: 125px !important;
+  height: 34px !important;
+
+  margin: 12px auto 26px auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: 1 !important;
+  border: none !important;
+}
+
+
+/* 3. BORRAR GUIRNALDA PEQUEÑA ARRIBA DE BIENVENIDOS */
+/* deja solo la guirnalda grande de fondo */
+
+#bienvenida .flores-guirnalda,
+.welcome .flores-guirnalda,
+#bienvenida img[src*="flores-guirnalda"],
+.welcome img[src*="flores-guirnalda"],
+#bienvenida [style*="flores-guirnalda"],
+.welcome [style*="flores-guirnalda"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* mantener guirnalda grande detrás del texto */
+#bienvenida::before,
+.welcome::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  top: 18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(720px, 96vw) !important;
+  height: 210px !important;
+
+  background: url("flores-guirnalda.png") center top / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+#bienvenida .paper-card,
+.welcome .paper-card,
+#bienvenida h2,
+.welcome h2,
+#bienvenida p,
+.welcome p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+
+/* 4, 5, 6. CIVIL / CEREMONIA / RECEPCIÓN:
+   ramito más grande y alineado a la izquierda debajo del texto */
+
+#civil .detail-ornament,
+#ceremonia .detail-ornament,
+#recepcion .detail-ornament {
+  display: block !important;
+
+  width: 145px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+
+  margin: 14px 0 26px 0 !important;
+
+  background: url("ramito-divisor.png") left center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+#civil .detail-ornament::before,
+#civil .detail-ornament::after,
+#ceremonia .detail-ornament::before,
+#ceremonia .detail-ornament::after,
+#recepcion .detail-ornament::before,
+#recepcion .detail-ornament::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* 7. CONFIRMAR ASISTENCIA:
+   eliminar ramito debajo de enviar confirmación */
+
+#rsvp .rsvp-card::after,
+.rsvp .rsvp-card::after,
+#rsvp .detail-ornament,
+.rsvp .detail-ornament {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* 8. ÚLTIMA PÁGINA:
+   eliminar línea debajo de Sofía y Javier */
+
+.final h2,
+.final .panel h2 {
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.final h2::before,
+.final h2::after,
+.final .panel h2::before,
+.final .panel h2::after,
+.final .detail-ornament {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  opacity: 0 !important;
+}
+
+
+/* móvil */
+@media (max-width: 760px) {
+  #bienvenida::before,
+  .welcome::before {
+    top: 12px !important;
+    width: 112vw !important;
+    height: 170px !important;
+    opacity: .76 !important;
+  }
+
+  #civil .detail-ornament,
+  #ceremonia .detail-ornament,
+  #recepcion .detail-ornament {
+    width: 125px !important;
+    height: 36px !important;
+    margin: 12px 0 24px 0 !important;
+  }
+
+  #celebraciones h2::after,
+  .celebrations h2::after,
+  .celebrations-wrap h2::after {
+    width: 110px !important;
+    height: 30px !important;
+  }
+}
+   
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
