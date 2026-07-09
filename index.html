@@ -9389,7 +9389,92 @@ body{
     letter-spacing: .075em !important;
   }
 }
+/* =====================================================
+   BOTÓN DE VOLUMEN: ICONO DORADO, FONDO TRANSPARENTE
+   ===================================================== */
 
+.music-toggle {
+  position: fixed !important;
+  top: 28px !important;
+  left: 28px !important;
+
+  z-index: 100000 !important;
+
+  width: 58px !important;
+  height: 58px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  cursor: pointer !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.music-toggle:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+
+  transform: scale(1.06) !important;
+}
+
+.volume-icon-img {
+  display: block !important;
+
+  width: 42px !important;
+  height: 42px !important;
+
+  object-fit: contain !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  pointer-events: none !important;
+}
+
+/* ocultar texto Música On/Off pero dejarlo para JavaScript */
+.music-label-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .music-toggle {
+    top: 16px !important;
+    left: 16px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .volume-icon-img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
    
 </style>
 
@@ -9410,9 +9495,9 @@ body{
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-toggle" type="button" onclick="toggleMusic()">
-<span>♫</span>
-<span id="musicLabel">Música Off</span>
+<button class="music-toggle" type="button" onclick="toggleMusic()" aria-label="Activar o desactivar música">
+  <img src="volumen-dorado.png" alt="Volumen" class="volume-icon-img">
+  <span id="musicLabel" class="music-label-hidden">Música Off</span>
 </button>
 
 <button class="language-toggle" type="button">
