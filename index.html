@@ -10295,6 +10295,193 @@ button,
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+/* =====================================================
+   NUESTRAS CELEBRACIONES:
+   centrar cuadros Civil / Ceremonia & Recepción
+   y visualizar bien ambas imágenes
+   ===================================================== */
+
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(300px, 430px)) !important;
+  gap: 34px !important;
+
+  justify-content: center !important;
+  align-items: stretch !important;
+
+  width: 100% !important;
+  max-width: 980px !important;
+  margin: 34px auto 0 auto !important;
+}
+
+/* cada cuadro */
+#celebraciones .event-card,
+.celebrations .event-card {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 270px auto !important;
+
+  width: 100% !important;
+  max-width: 430px !important;
+
+  margin: 0 auto !important;
+
+  background: rgba(255,255,255,.76) !important;
+  border: 1px solid rgba(198,160,91,.26) !important;
+  box-shadow: 0 12px 30px rgba(70,55,38,.05) !important;
+
+  overflow: hidden !important;
+}
+
+/* zona de imagen */
+#celebraciones .event-art,
+.celebrations .event-art {
+  width: 100% !important;
+  height: 270px !important;
+  min-height: 270px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(255,253,248,.72) !important;
+  overflow: hidden !important;
+}
+
+/* imagen centrada y visible */
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* texto centrado debajo */
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  min-height: 210px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 30px 22px 34px !important;
+
+  text-align: center !important;
+  background: rgba(255,255,255,.70) !important;
+}
+
+/* móvil: una tarjeta debajo de otra */
+@media (max-width: 760px) {
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 360px !important;
+    gap: 28px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    max-width: 360px !important;
+    grid-template-rows: 230px auto !important;
+  }
+
+  #celebraciones .event-art,
+  .celebrations .event-art {
+    height: 230px !important;
+    min-height: 230px !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    min-height: auto !important;
+    padding: 28px 18px 32px !important;
+  }
+}
+/* NUESTRAS CELEBRACIONES: CUADROS CENTRADOS E IMÁGENES PROPORCIONALES */
+
+#celebraciones .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(300px, 430px)) !important;
+  gap: 34px !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 980px !important;
+  margin: 34px auto 0 auto !important;
+}
+
+#celebraciones .event-card {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 270px auto !important;
+  width: 100% !important;
+  max-width: 430px !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+}
+
+#celebraciones .event-art {
+  width: 100% !important;
+  height: 270px !important;
+  min-height: 270px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.72) !important;
+}
+
+#celebraciones .event-art img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#celebraciones .event-copy {
+  min-height: 210px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 30px 22px 34px !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  #celebraciones .celebration-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 360px !important;
+    gap: 28px !important;
+  }
+
+  #celebraciones .event-card {
+    max-width: 360px !important;
+    grid-template-rows: 230px auto !important;
+  }
+
+  #celebraciones .event-art {
+    height: 230px !important;
+    min-height: 230px !important;
+  }
+}
+
 
    
 </style>
@@ -10454,76 +10641,76 @@ Para nuestro gran día
 </section>
 
 <section class="section celebrations" id="celebraciones">
-<div class="celebrations-wrap">
 
-<h2>NUESTRAS CELEBRACIONES</h2>
+  <div class="celebrations-wrap">
 
-<div class="gold-rule small"></div>
+    <h2>NUESTRAS CELEBRACIONES</h2>
 
-<div class="celebration-grid">
+    <div class="gold-rule small"></div>
 
-<div class="event-card">
+    <div class="celebration-grid">
 
-<div class="event-art">
-<img
-src="museo-fernandez-blanco.PNG"
-alt="Museo Isaac Fernández Blanco">
-</div>
+      <div class="event-card">
 
-<div class="event-copy">
-<h3>Civil</h3>
+        <div class="event-art">
+          <img
+            src="museo-fernandez-blanco.jpg"
+            alt="Museo Isaac Fernández Blanco"
+          >
+        </div>
 
-<div class="place">
-Buenos Aires
-</div>
+        <div class="event-copy">
+          <h3>Civil</h3>
 
-<div class="date-small">
-03 · 08 · 2026
-</div>
+          <div class="place">
+            Buenos Aires
+          </div>
 
-<a class="btn" href="#civil">
-Ver detalles
-</a>
+          <div class="date-small">
+            03 · 08 · 2026
+          </div>
 
-</div>
+          <a class="btn" href="#civil">
+            Ver detalles
+          </a>
+        </div>
 
-</div>
+      </div>
 
-<div class="event-card">
+      <div class="event-card">
 
-<div class="event-art">
-  <img
-    src="ceremonia-recepcion-acuarela.png"
-    alt="Ceremonia y recepción en Morcote"
-  >
-</div>
+        <div class="event-art">
+          <img
+            src="ceremonia-recepcion-acuarela.png"
+            alt="Ceremonia y recepción en Morcote"
+          >
+        </div>
 
-<div class="event-copy">
-<h3>
-Ceremonia
-<br>
-& Recepción
-</h3>
+        <div class="event-copy">
+          <h3>
+            Ceremonia
+            <br>
+            & Recepción
+          </h3>
 
-<div class="place">
-Morcote, Suiza
-</div>
+          <div class="place">
+            Morcote, Suiza
+          </div>
 
-<div class="date-small">
-26 · 09 · 2026
-</div>
+          <div class="date-small">
+            26 · 09 · 2026
+          </div>
 
-<a class="btn" href="#ceremonia">
-Ver detalles
-</a>
+          <a class="btn" href="#ceremonia">
+            Ver detalles
+          </a>
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
