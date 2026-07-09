@@ -5886,6 +5886,64 @@ body,
     opacity: .8 !important;
   }
 }
+/* FLORES DE PORTADA:
+   una arriba a la izquierda
+   y otra abajo a la derecha */
+
+.opening > .floral.top-right{
+  left: -70px !important;
+  top: -55px !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: 520px !important;
+  height: 430px !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: top left !important;
+
+  opacity: .72 !important;
+  transform: scaleX(-1) !important;
+}
+
+.opening > .floral.bottom-left{
+  right: -70px !important;
+  bottom: -55px !important;
+  left: auto !important;
+  top: auto !important;
+
+  width: 520px !important;
+  height: 430px !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom right !important;
+
+  opacity: .72 !important;
+  transform: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px){
+  .opening > .floral.top-right{
+    left: -45px !important;
+    top: -35px !important;
+    right: auto !important;
+    width: 320px !important;
+    height: 260px !important;
+  }
+
+  .opening > .floral.bottom-left{
+    right: -45px !important;
+    bottom: -35px !important;
+    left: auto !important;
+    width: 320px !important;
+    height: 260px !important;
+  }
+}
    
 </style>
 
