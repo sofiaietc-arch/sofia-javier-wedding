@@ -6393,7 +6393,103 @@ body,
     background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
     opacity: .68 !important;
   }
+} 
+
+/* GUIRNALDA: QUITAR DE CONFIRMAR ASISTENCIA,
+   AGREGAR EN BIENVENIDOS Y ÚLTIMA PÁGINA */
+
+/* 1. Quitar flores-guirnalda de Confirmar asistencia */
+#rsvp::after,
+.rsvp::after,
+#rsvp .flores-guirnalda,
+.rsvp .flores-guirnalda {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
 }
+
+/* 2. Bienvenidos: guirnalda arriba del título */
+#bienvenida,
+.welcome {
+  position: relative !important;
+}
+
+#bienvenida .paper-card,
+.welcome .paper-card {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* guirnalda arriba de BIENVENIDOS */
+body section#bienvenida .paper-card::before,
+body section.welcome .paper-card::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  width: min(420px, 78vw) !important;
+  height: 95px !important;
+
+  margin: 0 auto 18px auto !important;
+
+  background: url("flores-guirnalda.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .82 !important;
+}
+
+/* 3. Quitar flores de portada de la última página */
+.final .floral,
+.final::before,
+.final::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+/* 4. Última página: guirnalda centrada abajo de Sofía & Javier */
+.final .panel {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* guirnalda debajo del texto final */
+body section.final .panel::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  width: min(460px, 82vw) !important;
+  height: 105px !important;
+
+  margin: 20px auto 0 auto !important;
+
+  background: url("flores-guirnalda.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .82 !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  body section#bienvenida .paper-card::before,
+  body section.welcome .paper-card::before {
+    width: 82vw !important;
+    height: 78px !important;
+    margin-bottom: 14px !important;
+  }
+
+  body section.final .panel::after {
+    width: 84vw !important;
+    height: 82px !important;
+    margin-top: 16px !important;
+  }
+}
+   
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
