@@ -6145,6 +6145,51 @@ body,
     opacity: .8 !important;
   }
 }
+/* ROTAR FLORES DE PORTADA - ESQUINA SUPERIOR IZQUIERDA */
+
+/* flor superior izquierda de portada */
+.opening > .floral.top-right,
+.opening > .floral.top-left,
+.opening .floral.top-right,
+.opening .floral.top-left {
+  left: -70px !important;
+  top: -55px !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: 520px !important;
+  height: 430px !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: top left !important;
+
+  transform: rotate(180deg) !important;
+  transform-origin: center center !important;
+
+  opacity: .72 !important;
+  z-index: 2 !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .opening > .floral.top-right,
+  .opening > .floral.top-left,
+  .opening .floral.top-right,
+  .opening .floral.top-left {
+    left: -45px !important;
+    top: -35px !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 320px !important;
+    height: 260px !important;
+
+    transform: rotate(180deg) !important;
+    transform-origin: center center !important;
+  }
+}
    
 </style>
 
