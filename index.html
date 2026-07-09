@@ -12580,6 +12580,93 @@ main > section.section.page-letter.page-open {
     transform: rotateY(108deg) !important;
   }
 }
+/* =====================================================
+   ICONO DE VOLUMEN:
+   esquina superior derecha + tamaño más grande
+   ===================================================== */
+
+.music-toggle {
+  position: fixed !important;
+  top: 18px !important;
+  right: 18px !important;
+  left: auto !important;
+
+  width: 64px !important;
+  height: 64px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  z-index: 100000 !important;
+  cursor: pointer !important;
+}
+
+/* imagen del volumen */
+.music-toggle img,
+.volume-icon-img {
+  display: block !important;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  object-fit: contain !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* si queda símbolo musical como texto */
+.music-toggle span:first-child {
+  font-size: 48px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ocultar texto Música Off */
+.music-toggle #musicLabel,
+.music-label-hidden {
+  display: none !important;
+}
+
+/* celular */
+@media (max-width: 760px) {
+  .music-toggle {
+    top: 14px !important;
+    right: 14px !important;
+    left: auto !important;
+
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .music-toggle img,
+  .volume-icon-img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .music-toggle span:first-child {
+    font-size: 42px !important;
+  }
+}
+
    
 </style>
 
