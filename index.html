@@ -13005,7 +13005,193 @@ body.confirmacion-morcote-no #recepcion {
     transform: rotateY(110deg) translateX(4vw) !important;
   }
 }
+/* =====================================================
+   CIVIL / CEREMONIA / RECEPCIÓN:
+   ocultar páginas completas y usar ventana de detalles
+   ===================================================== */
 
+#civil,
+#ceremonia,
+#recepcion {
+  display: none !important;
+}
+
+/* ventana de detalles */
+.detalle-evento-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 160000;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+
+  background: rgba(255, 253, 248, .92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.detalle-evento-modal.show {
+  display: flex !important;
+}
+
+.detalle-evento-content {
+  position: relative;
+
+  width: min(620px, 94vw);
+  max-height: 88vh;
+  overflow-y: auto;
+
+  padding: 44px 34px 38px;
+
+  background:
+    linear-gradient(rgba(255,255,255,.92), rgba(255,253,248,.96)),
+    url("fondo-relieve.jpg") center center / cover no-repeat;
+
+  border: 1px solid rgba(198,160,91,.42);
+  box-shadow: 0 24px 60px rgba(80,60,30,.14);
+
+  text-align: left;
+}
+
+/* efecto abrir carta en la ventana */
+.detalle-evento-content {
+  animation: abrirDetalleCarta .75s ease both;
+  transform-origin: center center;
+}
+
+@keyframes abrirDetalleCarta {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(8deg) translateY(24px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) translateY(0) scale(1);
+  }
+}
+
+.detalle-evento-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+  padding: 0;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-size: 24px;
+  line-height: 1;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-evento-content h2 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 4vw, 44px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase !important;
+
+  margin: 0 auto 14px;
+  text-align: center;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-evento-content .detail-ornament {
+  display: block !important;
+  width: 130px !important;
+  height: 34px !important;
+  margin: 0 auto 28px auto !important;
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  font-size: 0 !important;
+}
+
+.detalle-evento-content .detail-row {
+  display: grid !important;
+  grid-template-columns: 38px 1fr !important;
+  gap: 16px !important;
+  align-items: flex-start !important;
+
+  margin: 17px 0 !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  letter-spacing: .02em !important;
+
+  color: #8F743B !important;
+}
+
+.detalle-evento-content .detail-icon {
+  width: 38px !important;
+  height: 38px !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding-top: 2px !important;
+
+  background: transparent !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.detalle-evento-content .detail-icon img {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.detalle-evento-content strong {
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  font-weight: 500 !important;
+}
+
+.detalle-evento-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.detalle-evento-buttons .btn {
+  font-size: 10px !important;
+  padding: 11px 20px !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .detalle-evento-content {
+    width: 94vw;
+    padding: 42px 22px 34px;
+  }
+
+  .detalle-evento-content .detail-row {
+    font-size: 16px !important;
+    grid-template-columns: 34px 1fr !important;
+    gap: 14px !important;
+  }
+
+  .detalle-evento-content .detail-icon img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
 
    
 </style>
@@ -13197,9 +13383,9 @@ Para nuestro gran día
             03 · 08 · 2026
           </div>
 
-         <a class="btn" href="#civil" onclick="abrirDetalleEvento('civil'); return false;">
+        <button type="button" class="btn" onclick="abrirVentanaDetalle('civil')">
   Ver detalles
-</a>
+</button>
         </div>
 
       </div>
@@ -13228,9 +13414,9 @@ Para nuestro gran día
             26 · 09 · 2026
           </div>
 
-          <a class="btn" href="#ceremonia" onclick="abrirDetalleEvento('ceremonia'); return false;">
+        <button type="button" class="btn" onclick="abrirVentanaDetalle('morcote')">
   Ver detalles
-</a>
+</button>
         </div>
 
       </div>
@@ -15495,6 +15681,211 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 })();
+<div class="detalle-evento-modal" id="detalleEventoModal">
+
+  <div class="detalle-evento-content">
+
+    <button type="button" class="detalle-evento-close" onclick="cerrarVentanaDetalle()">
+      ×
+    </button>
+
+    <div id="detalleEventoContenido"></div>
+
+  </div>
+
+</div>
+   <script>
+/* =====================================================
+   VENTANAS DE DETALLE:
+   Civil / Ceremonia & Recepción
+   ===================================================== */
+
+function abrirVentanaDetalle(tipo) {
+
+  const modal = document.getElementById("detalleEventoModal");
+  const contenido = document.getElementById("detalleEventoContenido");
+
+  if (!modal || !contenido) {
+    return;
+  }
+
+  if (tipo === "civil") {
+
+    contenido.innerHTML = `
+
+      <h2>Civil</h2>
+
+      <div class="detail-ornament"></div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-agenda.png" alt="Fecha">
+        </div>
+
+        <div>
+          <strong>Lunes</strong>
+          <br>
+          3 de agosto de 2026
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-reloj.png" alt="Hora">
+        </div>
+
+        <div>
+          <strong>12:00 hs</strong>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-ubicacion.png" alt="Ubicación">
+        </div>
+
+        <div>
+          <strong>Museo Isaac Fernández Blanco</strong>
+          <br>
+          Suipacha 1422
+          <br>
+          Buenos Aires, Argentina
+        </div>
+      </div>
+
+      <div class="detalle-evento-buttons">
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Museo%20Isaac%20Fernandez%20Blanco%20Suipacha%201422%20Buenos%20Aires"
+          target="_blank"
+          rel="noopener noreferrer">
+          Ver en Google Maps
+        </a>
+      </div>
+
+    `;
+
+  }
+
+  if (tipo === "morcote") {
+
+    contenido.innerHTML = `
+
+      <h2>Ceremonia & Recepción</h2>
+
+      <div class="detail-ornament"></div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-agenda.png" alt="Fecha">
+        </div>
+
+        <div>
+          <strong>Sábado</strong>
+          <br>
+          26 de septiembre de 2026
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-reloj.png" alt="Hora">
+        </div>
+
+        <div>
+          <strong>17:00 hs</strong>
+          <br>
+          Fotos y llegada de invitados
+          <br><br>
+          <strong>17:30 hs</strong>
+          <br>
+          Ceremonia religiosa
+          <br><br>
+          <strong>19:30 hs</strong>
+          <br>
+          Cena
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-icon">
+          <img src="icono-ubicacion.png" alt="Ubicación">
+        </div>
+
+        <div>
+          <strong>Chiesa Santa Maria del Sasso</strong>
+          <br>
+          Morcote, Suiza
+          <br><br>
+          <strong>Ristorante Vicania</strong>
+          <br>
+          Vico Morcote, Suiza
+        </div>
+      </div>
+
+      <div class="detalle-evento-buttons">
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland"
+          target="_blank"
+          rel="noopener noreferrer">
+          Iglesia
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland"
+          target="_blank"
+          rel="noopener noreferrer">
+          Restaurante
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+
+}
+
+function cerrarVentanaDetalle() {
+
+  const modal = document.getElementById("detalleEventoModal");
+
+  if (modal) {
+    modal.classList.remove("show");
+  }
+
+  document.body.style.overflow = "";
+
+}
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    cerrarVentanaDetalle();
+  }
+
+});
+
+document.addEventListener("click", function(event) {
+
+  const modal = document.getElementById("detalleEventoModal");
+
+  if (!modal) {
+    return;
+  }
+
+  if (event.target === modal) {
+    cerrarVentanaDetalle();
+  }
+
+});
+</script>
 </script>
    
 </script>
