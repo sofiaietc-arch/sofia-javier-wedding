@@ -12666,7 +12666,193 @@ main > section.section.page-letter.page-open {
     font-size: 42px !important;
   }
 }
+/* =====================================================
+   ORDEN FINAL DE PÁGINAS + DETALLES CONDICIONALES
+   ===================================================== */
 
+/* main como flujo vertical ordenado */
+#main {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Orden correcto después de la portada */
+#bienvenida {
+  order: 1 !important;
+}
+
+#cuenta {
+  order: 2 !important;
+}
+
+#celebraciones {
+  order: 3 !important;
+}
+
+#civil,
+#ceremonia {
+  order: 4 !important;
+}
+
+#info {
+  order: 5 !important;
+}
+
+#dresscode {
+  order: 6 !important;
+}
+
+#rsvp {
+  order: 7 !important;
+}
+
+#recepcion {
+  order: 8 !important;
+}
+
+#final {
+  order: 9 !important;
+}
+
+.bottom-nav {
+  order: 99 !important;
+}
+
+/* Civil / Ceremonia / Recepción NO aparecen en el flujo normal */
+#civil,
+#ceremonia,
+#recepcion {
+  display: none !important;
+}
+
+/* Civil o Ceremonia aparecen solo cuando se toca Ver detalles */
+body.detalle-civil #civil,
+body.detalle-ceremonia #ceremonia {
+  display: flex !important;
+}
+
+/* Recepción aparece solo después de confirmar Morcote = Sí */
+body.morcote-si #recepcion {
+  display: flex !important;
+}
+
+/* Después de confirmar Morcote Sí:
+   mostrar Información útil -> Recepción -> Final */
+body.confirmacion-morcote-si #dresscode,
+body.confirmacion-morcote-si #rsvp {
+  display: none !important;
+}
+
+/* Después de confirmar Morcote No:
+   cerrar directamente en página final */
+body.confirmacion-morcote-no #info,
+body.confirmacion-morcote-no #dresscode,
+body.confirmacion-morcote-no #rsvp,
+body.confirmacion-morcote-no #recepcion {
+  display: none !important;
+}
+
+/* Botón cerrar detalle */
+.cerrar-detalle {
+  margin-top: 22px !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .16em !important;
+}
+
+/* transición tipo carta para páginas principales */
+#main > section.section {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#main > section.section.page-carta {
+  opacity: 0 !important;
+  transform: translateY(18px) scale(.995) !important;
+  transition:
+    opacity .72s ease,
+    transform .88s ease !important;
+}
+
+#main > section.section.page-carta.page-carta-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* hojas de carta por página */
+.page-carta-fold {
+  position: absolute !important;
+  top: 0 !important;
+  width: 50.5% !important;
+  height: 100% !important;
+  z-index: 600 !important;
+
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,.96),
+      rgba(255,253,248,.95)
+    ),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+
+  box-shadow: 0 0 34px rgba(80,60,30,.08) !important;
+  backface-visibility: hidden !important;
+
+  transition:
+    transform 1.25s cubic-bezier(.18,.72,.2,1),
+    opacity .45s ease .95s !important;
+}
+
+.page-carta-fold-left {
+  left: 0 !important;
+  transform-origin: left center !important;
+  border-right: 1px solid rgba(198,160,91,.24) !important;
+}
+
+.page-carta-fold-right {
+  right: 0 !important;
+  transform-origin: right center !important;
+  border-left: 1px solid rgba(198,160,91,.24) !important;
+}
+
+.page-carta-fold::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 20px !important;
+  border: 1px solid rgba(198,160,91,.18) !important;
+}
+
+/* abrir carta */
+.page-carta.page-carta-visible .page-carta-fold-left {
+  transform: rotateY(-112deg) !important;
+  opacity: 0 !important;
+}
+
+.page-carta.page-carta-visible .page-carta-fold-right {
+  transform: rotateY(112deg) !important;
+  opacity: 0 !important;
+}
+
+/* evitar que los pliegues tapen contenido después */
+.page-carta.page-carta-abierta .page-carta-fold {
+  display: none !important;
+}
+
+/* móvil */
+@media (max-width: 760px) {
+  .page-carta-fold::before {
+    inset: 12px !important;
+  }
+
+  .page-carta.page-carta-visible .page-carta-fold-left {
+    transform: rotateY(-108deg) !important;
+  }
+
+  .page-carta.page-carta-visible .page-carta-fold-right {
+    transform: rotateY(108deg) !important;
+  }
+}
    
 </style>
 
@@ -12857,9 +13043,9 @@ Para nuestro gran día
             03 · 08 · 2026
           </div>
 
-          <a class="btn" href="#civil">
-            Ver detalles
-          </a>
+         <a class="btn" href="#civil" onclick="abrirDetalleEvento('civil'); return false;">
+  Ver detalles
+</a>
         </div>
 
       </div>
@@ -12888,9 +13074,9 @@ Para nuestro gran día
             26 · 09 · 2026
           </div>
 
-          <a class="btn" href="#ceremonia">
-            Ver detalles
-          </a>
+          <a class="btn" href="#ceremonia" onclick="abrirDetalleEvento('ceremonia'); return false;">
+  Ver detalles
+</a>
         </div>
 
       </div>
@@ -14663,6 +14849,326 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 })();
+<script>
+/* =====================================================
+   FLUJO FINAL:
+   - orden de páginas
+   - detalles Civil / Ceremonia por botón
+   - Morcote Sí: Información útil -> Recepción -> Final
+   - Morcote No: Final
+   - transición de carta en cada página
+   ===================================================== */
+
+(function(){
+
+  function valorRadio(nombre){
+
+    const seleccionado = document.querySelector('input[name="' + nombre + '"]:checked');
+
+    if (seleccionado) {
+      return seleccionado.value;
+    }
+
+    return "";
+  }
+
+  function cerrarConfirmacionModal(){
+
+    const modal = document.getElementById("rsvpModal");
+
+    if (modal) {
+      modal.classList.remove("show");
+    }
+
+  }
+
+  function scrollA(id){
+
+    const destino = document.getElementById(id);
+
+    if (destino) {
+      destino.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+  }
+
+  window.abrirDetalleEvento = function(tipo){
+
+    document.body.classList.remove("detalle-civil");
+    document.body.classList.remove("detalle-ceremonia");
+
+    if (tipo === "civil") {
+      document.body.classList.add("detalle-civil");
+
+      setTimeout(function(){
+        scrollA("civil");
+      }, 80);
+    }
+
+    if (tipo === "ceremonia") {
+      document.body.classList.add("detalle-ceremonia");
+
+      setTimeout(function(){
+        scrollA("ceremonia");
+      }, 80);
+    }
+
+  };
+
+  window.cerrarDetalleEvento = function(){
+
+    document.body.classList.remove("detalle-civil");
+    document.body.classList.remove("detalle-ceremonia");
+
+    setTimeout(function(){
+      scrollA("celebraciones");
+    }, 80);
+
+  };
+
+  function agregarBotonesCerrarDetalle(){
+
+    ["civil", "ceremonia"].forEach(function(id){
+
+      const section = document.getElementById(id);
+
+      if (!section) {
+        return;
+      }
+
+      const detailText = section.querySelector(".detail-text");
+
+      if (!detailText) {
+        return;
+      }
+
+      if (detailText.querySelector(".cerrar-detalle")) {
+        return;
+      }
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cerrar-detalle";
+      button.textContent = "Volver a celebraciones";
+      button.onclick = function(){
+        cerrarDetalleEvento();
+      };
+
+      detailText.appendChild(button);
+
+    });
+
+  }
+
+  function prepararCartas(){
+
+    const secciones = document.querySelectorAll("#main > section.section");
+
+    secciones.forEach(function(section){
+
+      if (section.classList.contains("page-carta-ready")) {
+        return;
+      }
+
+      section.classList.add("page-carta");
+      section.classList.add("page-carta-ready");
+
+      const left = document.createElement("div");
+      left.className = "page-carta-fold page-carta-fold-left";
+
+      const right = document.createElement("div");
+      right.className = "page-carta-fold page-carta-fold-right";
+
+      section.appendChild(left);
+      section.appendChild(right);
+
+    });
+
+    const observer = new IntersectionObserver(function(entries){
+
+      entries.forEach(function(entry){
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("page-carta-visible");
+
+          setTimeout(function(){
+            entry.target.classList.add("page-carta-abierta");
+          }, 1600);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.18
+    });
+
+    secciones.forEach(function(section){
+      observer.observe(section);
+    });
+
+  }
+
+  /* reemplaza sendConfirmación anterior, manteniendo el envío a Google */
+  window.sendConfirmación = function(event){
+
+    event.preventDefault();
+
+    const form = event.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    const morcote = valorRadio("morcote");
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
+    const rsvpData = {
+      fullName: document.getElementById("fullName").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      civil: valorRadio("civil"),
+      morcote: morcote,
+      guest: valorRadio("guest"),
+      guestNames: document.getElementById("guestNames").value.trim(),
+      accommodation: document.getElementById("accommodation").value,
+      transport: document.getElementById("transport").value,
+      message: document.getElementById("message").value.trim(),
+      submittedAt: new Date().toISOString()
+    };
+
+    fetch(Confirmación_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(rsvpData)
+    })
+    .then(function(){
+
+      const modalContent = document.getElementById("modalContent");
+
+      if (!modalContent) {
+        return;
+      }
+
+      if (morcote === "yes") {
+
+        document.body.classList.add("morcote-si");
+
+        modalContent.innerHTML = `
+
+          <h2>Gracias</h2>
+
+          <div class="gold-rule"></div>
+
+          <p>Tu confirmación fue enviada correctamente.</p>
+
+          <p>A continuación encontrarás información útil para el viaje y la recepción.</p>
+
+          <br>
+
+          <button type="button" onclick="continuarDespuesDeConfirmar('yes')">
+            Continuar
+          </button>
+
+        `;
+
+      } else {
+
+        document.body.classList.remove("morcote-si");
+
+        modalContent.innerHTML = `
+
+          <h2>Gracias</h2>
+
+          <div class="gold-rule"></div>
+
+          <p>Tu confirmación fue enviada correctamente.</p>
+
+          <p>Gracias por responder.</p>
+
+          <br>
+
+          <button type="button" onclick="continuarDespuesDeConfirmar('no')">
+            Finalizar
+          </button>
+
+        `;
+
+      }
+
+    })
+    .catch(function(){
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar confirmación";
+      }
+
+      alert("Hubo un error. Por favor intentá nuevamente.");
+
+    });
+
+  };
+
+  window.continuarDespuesDeConfirmar = function(morcote){
+
+    cerrarConfirmacionModal();
+
+    if (morcote === "yes") {
+
+      document.body.classList.add("confirmacion-morcote-si");
+      document.body.classList.remove("confirmacion-morcote-no");
+      document.body.classList.add("morcote-si");
+
+      setTimeout(function(){
+        scrollA("info");
+      }, 250);
+
+    } else {
+
+      document.body.classList.add("confirmacion-morcote-no");
+      document.body.classList.remove("confirmacion-morcote-si");
+      document.body.classList.remove("morcote-si");
+
+      setTimeout(function(){
+        scrollA("final");
+      }, 250);
+
+    }
+
+  };
+
+  document.addEventListener("DOMContentLoaded", function(){
+
+    agregarBotonesCerrarDetalle();
+
+    setTimeout(function(){
+      prepararCartas();
+    }, 700);
+
+  });
+
+  const oldEnterInvitation = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    if (typeof oldEnterInvitation === "function") {
+      oldEnterInvitation();
+    }
+
+    setTimeout(function(){
+      prepararCartas();
+    }, 1200);
+
+  };
+
+})();
+</script>
+   
 </script>
    
 </script>
