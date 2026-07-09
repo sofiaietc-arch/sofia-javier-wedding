@@ -11067,7 +11067,167 @@ button,
   background-color: transparent !important;
   opacity: 1 !important;
 }
-   
+   /* =====================================================
+   PORTADA FINAL:
+   óvalo S&J + fechas en un renglón + lugares debajo
+   ===================================================== */
+
+/* ocultar logo viejo y texto SOFIA Y JAVIER */
+.opening .monogram-frame,
+#opening .monogram-frame,
+.opening h1,
+#opening h1,
+.portada-nombres {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* contenedor general */
+.opening-inner {
+  width: min(760px, 92vw) !important;
+  margin: 0 auto !important;
+  padding: 34px 18px 28px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+}
+
+/* óvalo generado */
+.portada-monograma-wrap {
+  width: min(470px, 82vw) !important;
+  margin: 0 auto 54px auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.portada-monograma-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* fechas y lugares */
+.portada-fechas {
+  width: 100% !important;
+  max-width: 700px !important;
+  margin: 0 auto 56px auto !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  color: #3F352E !important;
+  -webkit-text-fill-color: #3F352E !important;
+
+  text-align: center !important;
+}
+
+.portada-fechas-linea {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+
+  white-space: nowrap !important;
+
+  font-size: clamp(13px, 1.55vw, 18px) !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 400 !important;
+
+  margin: 0 auto 14px auto !important;
+}
+
+.portada-lugares-linea {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+
+  white-space: nowrap !important;
+
+  font-size: clamp(13px, 1.5vw, 17px) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 400 !important;
+
+  margin: 0 auto !important;
+}
+
+.separador-fecha {
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* ocultar fecha vieja si quedó */
+.opening .date,
+#opening .date {
+  display: none !important;
+}
+
+/* líneas doradas proporcionadas */
+.opening .gold-rule {
+  width: 190px !important;
+  height: 1px !important;
+  margin: 0 auto 42px auto !important;
+}
+
+/* sello */
+.seal-open {
+  margin-top: 0 !important;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .opening-inner {
+    width: 100% !important;
+    padding: 28px 16px 24px !important;
+  }
+
+  .portada-monograma-wrap {
+    width: min(390px, 92vw) !important;
+    margin-bottom: 46px !important;
+  }
+
+  .portada-fechas {
+    max-width: 94vw !important;
+    margin-bottom: 48px !important;
+  }
+
+  .portada-fechas-linea {
+    gap: 7px !important;
+    font-size: clamp(10.2px, 2.75vw, 13px) !important;
+    letter-spacing: 0.105em !important;
+    line-height: 1.75 !important;
+  }
+
+  .portada-lugares-linea {
+    gap: 8px !important;
+    font-size: clamp(11px, 3vw, 14px) !important;
+    letter-spacing: 0.13em !important;
+    line-height: 1.65 !important;
+  }
+
+  .opening .gold-rule {
+    width: 160px !important;
+    margin-bottom: 36px !important;
+  }
+}
    
 </style>
 
@@ -11101,26 +11261,28 @@ button,
 
 <div class="opening-inner">
 
-<div class="monogram-frame">
-<div class="monogram">
-S
-<small>&</small>
-J
-</div>
-</div>
-
-<h1 class="portada-nombres">SOFIA Y JAVIER</h1>
-
-
-<div class="gold-rule"></div>
-
-<div class="date">
-03 de agosto de 2026 · 26 de septiembre de 2026
-<br>
-Buenos Aires · Morcote
+<div class="portada-monograma-wrap">
+  <img
+    src="monograma-ovalo-syj.png"
+    alt="Monograma Sofía y Javier"
+    class="portada-monograma-img"
+  >
 </div>
 
-<div class="gold-rule"></div>
+<div class="portada-fechas">
+  <div class="portada-fechas-linea">
+    <span>03 DE AGOSTO DE 2026</span>
+    <span class="separador-fecha">·</span>
+    <span>26 DE SEPTIEMBRE DE 2026</span>
+  </div>
+
+  <div class="portada-lugares-linea">
+    <span>BUENOS AIRES</span>
+    <span class="separador-fecha">·</span>
+    <span>MORCOTE</span>
+  </div>
+</div>
+
 
 <button class="seal-open" onclick="enterInvitation()">
   <img src="sello-nuevo.PNG" alt="Sello Sofia y Javier">
