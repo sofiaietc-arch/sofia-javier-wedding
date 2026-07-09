@@ -6753,7 +6753,84 @@ body section.final .panel::before,
     opacity: .76 !important;
   }
 }
-   
+   /* BORRAR GUIRNALDA PEQUEÑA ARRIBA DE BIENVENIDOS
+   y dejar solo la guirnalda grande de fondo */
+
+/* borrar guirnalda pequeña dentro de la tarjeta */
+#bienvenida .paper-card::before,
+#bienvenida .paper-card::after,
+.welcome .paper-card::before,
+.welcome .paper-card::after {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* borrar cualquier guirnalda chica escrita como imagen o div */
+#bienvenida .flores-guirnalda,
+#welcome .flores-guirnalda,
+.welcome .flores-guirnalda,
+#bienvenida img[src*="flores-guirnalda"],
+.welcome img[src*="flores-guirnalda"],
+#bienvenida [style*="flores-guirnalda"],
+.welcome [style*="flores-guirnalda"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* mantener SOLO la guirnalda grande detrás del texto */
+#bienvenida::before,
+.welcome::before {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  top: 18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(720px, 96vw) !important;
+  height: 210px !important;
+
+  background: url("flores-guirnalda.png") center top / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* texto por encima */
+#bienvenida .paper-card,
+.welcome .paper-card,
+#bienvenida h2,
+.welcome h2,
+#bienvenida p,
+.welcome p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+@media (max-width: 760px) {
+  #bienvenida::before,
+  .welcome::before {
+    top: 12px !important;
+    width: 112vw !important;
+    height: 170px !important;
+    opacity: .76 !important;
+  }
+}
    
 </style>
 
