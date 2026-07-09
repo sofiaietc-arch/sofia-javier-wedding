@@ -7500,6 +7500,74 @@ body section.final .panel::before,
   }
 }
    
+   /* BORRAR LÍNEA HORIZONTAL EN LA ÚLTIMA PÁGINA */
+
+.final h1::before,
+.final h1::after,
+.final h2::before,
+.final h2::after,
+.final .panel h1::before,
+.final .panel h1::after,
+.final .panel h2::before,
+.final .panel h2::after,
+.final .title::before,
+.final .title::after,
+.final .names::before,
+.final .names::after,
+.final .script-title::before,
+.final .script-title::after,
+.final .final-title::before,
+.final .final-title::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* borrar divisores escritos como elementos */
+.final hr,
+.final .line,
+.final .divider,
+.final .separator,
+.final .ornament-line,
+.final .gold-line,
+.final .detail-ornament {
+  display: none !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* quitar bordes del título */
+.final h1,
+.final h2,
+.final .panel h1,
+.final .panel h2,
+.final .title,
+.final .names,
+.final .script-title,
+.final .final-title {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
    
 </style>
 
