@@ -7385,6 +7385,121 @@ body section.final .panel::before,
     height: 30px !important;
   }
 }
+   /* =====================================================
+   FIX: CÓDIGO DE VESTIMENTA + ÚLTIMA PÁGINA
+   ===================================================== */
+
+
+/* 1. AGRANDAR RAMITO DE OLIVO DEBAJO DE CÓDIGO DE VESTIMENTA */
+
+#dresscode .detail-ornament,
+.dress-title .detail-ornament,
+#dresscode h2::after,
+.dress-title h2::after {
+  content: "" !important;
+  display: block !important;
+
+  width: 155px !important;
+  height: 45px !important;
+  min-height: 45px !important;
+
+  margin: 12px auto 28px auto !important;
+
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+  background-color: transparent !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+
+/* 2. BORRAR OLIVO ACUARELA GRANDE DEL LADO IZQUIERDO EN CÓDIGO DE VESTIMENTA */
+
+#dresscode::before,
+#dresscode::after,
+.dress::before,
+.dress::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+
+/* mantener el contenido visible */
+#dresscode .dress-card,
+#dresscode .dress-title,
+#dresscode .dress-image-wrap {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+
+/* 3. BORRAR LÍNEA DEBAJO DE SOFÍA Y JAVIER EN ÚLTIMA PÁGINA */
+
+.final h2,
+.final .panel h2,
+.final .final-title,
+.final .script-title {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+.final h2::before,
+.final h2::after,
+.final .panel h2::before,
+.final .panel h2::after,
+.final .final-title::before,
+.final .final-title::after,
+.final .script-title::before,
+.final .script-title::after,
+.final .detail-ornament,
+.final hr,
+.final .line,
+.final .divider {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* móvil */
+@media (max-width: 760px) {
+  #dresscode .detail-ornament,
+  .dress-title .detail-ornament,
+  #dresscode h2::after,
+  .dress-title h2::after {
+    width: 135px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    margin: 10px auto 24px auto !important;
+  }
+}
+   
    
 </style>
 
