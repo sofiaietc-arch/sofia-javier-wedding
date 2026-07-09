@@ -9,6 +9,9 @@
 <title>Sofía & Javier Wedding</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&display=swap');
@@ -10481,7 +10484,216 @@ button,
     min-height: 230px !important;
   }
 }
+/* =====================================================
+   TIPOGRAFÍAS FINALES
+   Cormorant Garamond: títulos
+   Cinzel: fechas, botones y menú
+   Allura: textos manuscritos
+   ===================================================== */
 
+
+/* TÍTULOS PRINCIPALES */
+
+h1,
+h2,
+h3,
+.opening h1,
+.welcome h2,
+.count-section h2,
+.celebrations h2,
+.celebrations-wrap h2,
+.event-copy h3,
+.detail-text h2,
+.dress-title h2,
+.rsvp-card h2,
+.info h2,
+.final h2,
+.monogram,
+.letter-mark {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.08 !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+
+/* SOFÍA & JAVIER DE PORTADA */
+
+.opening h1 {
+  font-size: clamp(42px, 7vw, 78px) !important;
+  letter-spacing: 0.18em !important;
+}
+
+
+/* CIVIL / CEREMONIA & RECEPCIÓN */
+
+.event-copy h3 {
+  font-size: clamp(26px, 3.8vw, 38px) !important;
+  letter-spacing: 0.10em !important;
+  font-weight: 500 !important;
+}
+
+
+/* TÍTULOS DE SECCIONES */
+
+.welcome h2,
+.count-section h2,
+.celebrations h2,
+.celebrations-wrap h2,
+.dress-title h2,
+.rsvp-card h2,
+.info h2,
+.final h2 {
+  font-size: clamp(30px, 4.6vw, 48px) !important;
+  letter-spacing: 0.075em !important;
+}
+
+
+/* FECHAS, BOTONES Y MENÚ */
+
+.opening .date,
+.date-small,
+.event-date,
+.countdown span,
+.place,
+.event-name,
+.event-place,
+button,
+.btn,
+.rsvp-button,
+.bottom-nav a,
+.bottom-nav .nav-label,
+.useful-item span,
+.info-subtitle {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+}
+
+
+/* FECHAS */
+
+.opening .date {
+  font-size: 12px !important;
+  line-height: 2 !important;
+}
+
+.date-small,
+.event-date {
+  font-size: 17px !important;
+  letter-spacing: 0.13em !important;
+}
+
+
+/* BOTONES */
+
+button,
+.btn,
+.rsvp-button {
+  font-size: 10.5px !important;
+  letter-spacing: 0.16em !important;
+}
+
+
+/* MENÚ INFERIOR */
+
+.bottom-nav .nav-label {
+  font-size: 7px !important;
+  letter-spacing: 0.08em !important;
+}
+
+
+/* TEXTOS MANUSCRITOS */
+
+.opening .script,
+.script-title,
+.handwritten,
+.texto-manuscrito {
+  font-family: 'Allura', cursive !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.05 !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+
+  background: transparent !important;
+  background-image: none !important;
+}
+
+
+/* TEXTOS DE PÁRRAFO: mantener legibles */
+
+p,
+.texto-morcote,
+.rsvp-intro,
+.dress-subtitle,
+.final-note {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(17px, 2.3vw, 23px) !important;
+  font-weight: 400 !important;
+  line-height: 1.48 !important;
+  letter-spacing: 0.02em !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+
+  background: transparent !important;
+  background-image: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .opening h1 {
+    font-size: clamp(34px, 9vw, 50px) !important;
+    letter-spacing: 0.13em !important;
+  }
+
+  .welcome h2,
+  .count-section h2,
+  .celebrations h2,
+  .celebrations-wrap h2,
+  .dress-title h2,
+  .rsvp-card h2,
+  .info h2,
+  .final h2 {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    letter-spacing: 0.055em !important;
+  }
+
+  .event-copy h3 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+  }
+
+  p,
+  .texto-morcote,
+  .rsvp-intro,
+  .dress-subtitle,
+  .final-note {
+    font-size: clamp(16px, 4.6vw, 20px) !important;
+  }
+
+  .bottom-nav .nav-label {
+    font-size: 6.6px !important;
+    letter-spacing: 0.045em !important;
+  }
+}
 
    
 </style>
