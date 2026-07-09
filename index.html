@@ -5732,6 +5732,43 @@ body,
   background-image: none !important;
   opacity: 0 !important;
 }
+/* OLIVO ACUARELA ABAJO A LA IZQUIERDA
+   en NUESTRAS CELEBRACIONES y en la ÚLTIMA PÁGINA */
+
+/* asegurar contenedor relativo */
+.celebrations-wrap,
+.final .panel{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Nuestras celebraciones */
+.celebrations-wrap::after{
+  content: "" !important;
+  position: absolute !important;
+  left: -36px !important;
+  bottom: -34px !important;
+  width: 170px !important;
+  height: 170px !important;
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  opacity: .78 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* Última página */
+.final .panel::before{
+  content: "" !important;
+  position: absolute !important;
+  left: -36px !important;
+  bottom: -34px !important;
+  width: 170px !important;
+  height: 170px !important;
+  background: url("olivo-acuarela.png") left bottom / contain no-repeat !important;
+  opacity: .78 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
    
 </style>
 
