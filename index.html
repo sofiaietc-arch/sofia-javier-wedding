@@ -5973,8 +5973,32 @@ body,
   background-image: none !important;
   opacity: 0 !important;
 }
+/* INVERTIR FLOR DE PORTADA SUPERIOR IZQUIERDA */
 
-   
+.opening > .floral.top-right {
+  left: -70px !important;
+  top: -55px !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  background-image: url("flores-portada.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: top left !important;
+
+  transform: none !important;
+}
+
+   @media (max-width: 760px) {
+  .opening > .floral.top-right {
+    left: -45px !important;
+    top: -35px !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+  }
+}
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
