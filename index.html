@@ -6684,6 +6684,75 @@ body section.final .panel::after {
   color: #A77C32 !important;
   -webkit-text-fill-color: #A77C32 !important;
 }
+   /* BORRAR GUIRNALDA PEQUEÑA EN ÚLTIMA PÁGINA
+   y dejar solo la guirnalda grande inferior */
+
+/* borrar guirnalda pequeña dentro del panel */
+body section.final .panel::after,
+body section.final .panel::before,
+.final .panel::after,
+.final .panel::before {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* borrar cualquier guirnalda pequeña escrita como imagen o div */
+.final .flores-guirnalda,
+.final img[src*="flores-guirnalda"],
+.final [style*="flores-guirnalda"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* mantener SOLO la guirnalda grande del borde inferior */
+.final::after {
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  bottom: -18px !important;
+  transform: translateX(-50%) !important;
+
+  width: min(820px, 105vw) !important;
+  height: 260px !important;
+
+  background: url("flores-guirnalda.png") center bottom / contain no-repeat !important;
+  background-color: transparent !important;
+
+  opacity: .78 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* texto por encima */
+.final .panel,
+.final h2,
+.final p {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+@media (max-width: 760px) {
+  .final::after {
+    bottom: -10px !important;
+    width: 115vw !important;
+    height: 210px !important;
+    opacity: .76 !important;
+  }
+}
    
    
 </style>
