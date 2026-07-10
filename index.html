@@ -182,6 +182,71 @@
     button.seal-open span { 
       font-size: 13px; letter-spacing: 0.3em; margin-top: 12px; 
       text-transform: uppercase;
+
+      /* =========================================
+       CORRECCIÓN: TEXTOS DE PORTADA
+       ========================================= */
+    .portada-fechas { display: flex; flex-direction: column; gap: 18px; margin-bottom: 35px; position: relative; z-index: 10; text-align: center; }
+    .fecha-bloque { display: flex; flex-direction: column; gap: 6px; }
+    .fecha-dia { font-size: clamp(14px, 3vw, 18px); letter-spacing: 0.15em; font-weight: 500; color: var(--gold-dark); }
+    .fecha-lugar { font-size: clamp(13px, 2.5vw, 16px); letter-spacing: 0.28em; font-weight: 600; color: var(--gold); opacity: 1 !important; }
+    .fecha-separador { font-size: 16px; margin: 0; color: var(--gold-dark); }
+
+    /* =========================================
+       ANIMACIÓN: APERTURA DE CARTA (SELLO INICIAL)
+       ========================================= */
+    .letter-transition {
+      position: fixed; inset: 0; z-index: 120000; display: none; align-items: center; justify-content: center;
+      perspective: 1800px; overflow: hidden;
+      background: linear-gradient(rgba(255,253,248,.88), rgba(255,253,248,.96)), var(--embossed);
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .letter-transition.show { display: flex; opacity: 1; pointer-events: auto; }
+    
+    .letter-left, .letter-right {
+      position: absolute; top: 0; width: 50.5%; height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,253,248,.94)), var(--embossed);
+      background-size: cover; background-position: center;
+      box-shadow: 0 0 46px rgba(80,60,30,.10);
+      transition: transform 1.5s cubic-bezier(0.18, 0.72, 0.2, 1), opacity 0.5s ease 1s;
+    }
+    .letter-left { left: 0; transform-origin: left center; border-right: 1px solid rgba(198,160,91,.3); }
+    .letter-right { right: 0; transform-origin: right center; border-left: 1px solid rgba(198,160,91,.3); }
+    .letter-left::before, .letter-right::before { content: ""; position: absolute; inset: 24px; border: 1px solid rgba(198,160,91,.22); pointer-events: none; }
+    .letter-center { position: relative; z-index: 10; transition: all 0.5s ease; }
+
+    /* Físicas de apertura del sello */
+    .letter-transition.open .letter-left { transform: rotateY(-116deg); opacity: 0; }
+    .letter-transition.open .letter-right { transform: rotateY(116deg); opacity: 0; }
+    .letter-transition.open .letter-center { opacity: 0; transform: scale(0.9); }
+
+    /* =========================================
+       ANIMACIÓN: CARTA EN SCROLL (SECCIONES)
+       ========================================= */
+    .page-carta { position: relative; perspective: 1800px; overflow: hidden; opacity: 0; transform: translateY(20px); transition: opacity 0.4s, transform 0.4s; }
+    .page-carta.carta-abierta { opacity: 1; transform: translateY(0); }
+    
+    .carta-fold {
+      position: absolute; top: 0; width: 50.5%; height: 100%; z-index: 500;
+      background: linear-gradient(rgba(255,255,255,.97), rgba(255,253,248,.95)), var(--embossed);
+      background-size: cover; background-position: center;
+      box-shadow: 0 0 34px rgba(80,60,30,.08);
+      backface-visibility: hidden; pointer-events: none;
+      transition: transform 1.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease 0.9s;
+    }
+    .carta-fold::before { content: ""; position: absolute; inset: 15px; border: 1px solid rgba(198,160,91,.2); }
+    .carta-fold.left { left: 0; transform-origin: left center; border-right: 1px solid rgba(198,160,91,.3); }
+    .carta-fold.right { right: 0; transform-origin: right center; border-left: 1px solid rgba(198,160,91,.3); }
+
+    /* Físicas de apertura en scroll */
+    .carta-abierta .carta-fold.left { transform: rotateY(-110deg); opacity: 0; }
+    .carta-abierta .carta-fold.right { transform: rotateY(110deg); opacity: 0; }
+
+    @media (max-width: 760px) {
+      .letter-left::before, .letter-right::before { inset: 16px; }
+      .carta-fold::before { inset: 12px; }
+    }
     }
     /* =========================================
        MANEJO DEL CONTENIDO PRINCIPAL
@@ -517,7 +582,15 @@
         <h2 class="gold-gradient" style="font-size: clamp(36px, 6vw, 64px);">Sofia & Javier</h2>
       </div>
     </section>
-
+<div id="letterTransition" class="letter-transition">
+    <div class="letter-left"></div>
+    <div class="letter-right"></div>
+    <div class="letter-center">
+      <h2 class="gold-gradient" style="font-size: clamp(40px, 8vw, 60px); margin-bottom: 10px;">S & J</h2>
+      <div class="gold-rule small"></div>
+      <p style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;">Abriendo invitación</p>
+    </div>
+  </div>
   </main>
 
   <nav class="bottom-nav" id="bottomNav">
@@ -611,30 +684,53 @@
       isPlaying = !isPlaying;
     }
 
-/* Animación de apertura */
+/* Animación de apertura (Sello) */
     function enterInvitation() {
       toggleMusic();
       document.getElementById('opening').classList.add('hide');
       
+      const overlay = document.getElementById('letterTransition');
+      overlay.classList.add('show');
+      
+      // Activa el desdoble 3D del sobre
+      setTimeout(() => {
+        overlay.classList.add('open');
+      }, 100);
+
+      // Limpia el sobre y muestra el contenido real
       setTimeout(() => {
         const main = document.getElementById('main');
+        main.style.display = 'block';
         main.classList.add('visible');
-        setTimeout(() => iniciarAnimacionesScroll(), 100);
-      }, 700);
+        overlay.style.display = 'none';
+        iniciarAnimacionesScrollCarta();
+      }, 1600);
     }
 
-    /* Scroll Observer y Nav Bar */
-    function iniciarAnimacionesScroll() {
+    /* Scroll Observer con transición de apertura de carta por sección */
+    function iniciarAnimacionesScrollCarta() {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if(entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('carta-abierta');
             if(entry.target.id === 'celebraciones') { document.body.classList.add('menu-visible'); }
+            observer.unobserve(entry.target); // Detiene la observación una vez abierta
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.15 });
 
-      document.querySelectorAll('.page-carta').forEach(section => observer.observe(section));
+      // Inyectar pliegues dinámicos y observar cada sección
+      document.querySelectorAll('.page-carta').forEach(section => {
+        const foldLeft = document.createElement('div');
+        foldLeft.className = 'carta-fold left';
+        const foldRight = document.createElement('div');
+        foldRight.className = 'carta-fold right';
+        
+        section.appendChild(foldLeft);
+        section.appendChild(foldRight);
+        
+        observer.observe(section);
+      });
     }
 
     /* Contador */
