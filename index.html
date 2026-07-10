@@ -358,7 +358,26 @@ body {
     .section {
       background: transparent !important;
     }
+/* FORZAR VISIBILIDAD DEL FONDO */
+    body {
+      background-image: url('fondo-cuenta-regresiva.png') !important;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
 
+    /* Hacemos transparentes las secciones y tarjetas */
+    .section, .paper-card, .content-wrapper {
+      background-color: transparent !important;
+    }
+
+    /* Si quieres que el texto se lea bien, añade un ligero velo blanco a las tarjetas */
+    .content-wrapper {
+      background: rgba(255, 253, 248, 0.3); /* Blanco crema suave y transparente */
+      padding: 20px;
+      border-radius: 10px;
+    }
   
   </style>
 </head>
