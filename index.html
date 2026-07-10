@@ -153,7 +153,8 @@
     /* Cuenta Regresiva (Líneas verticales) */
     .countdown { display: flex; justify-content: center; align-items: center; margin: 30px 0; }
     .countdown div { display: flex; flex-direction: column; align-items: center; padding: 0 clamp(15px, 3vw, 35px); }
-    .countdown-divider { width: 1px; height: 40px; background: rgba(198,160,91,.4); }
+    .countdown-separator { font-family: 'GFS Didot', serif;font-size: clamp(36px, 6vw, 56px); color: var(--gold); display: flex; align-items: center; margin: 0 5px;
+      padding-bottom: 25px; /* Compensa la alineación óptica respecto a los números */  }
     .countdown strong { font-size: clamp(36px, 6vw, 56px); color: var(--gold); font-family: 'GFS Didot', serif; }
     .countdown span { font-size: 9px; letter-spacing: 0.25em; margin-top: 8px; color: var(--gold-dark); font-weight: 600;}
 
@@ -315,16 +316,16 @@
     </section>
 
     <!-- 3. CUENTA REGRESIVA -->
-    <section id="cuenta" class="section page-carta">
+  <section id="cuenta" class="section page-carta">
       <div class="content-wrapper">
         <p class="cinzel" style="font-size: 12px; letter-spacing: 0.2em; margin-bottom: 5px;">Faltan</p>
         <div class="countdown">
           <div><strong id="days">--</strong><span class="cinzel">Días</span></div>
-          <div class="countdown-divider"></div>
+          <div class="countdown-separator">:</div>
           <div><strong id="hours">--</strong><span class="cinzel">Horas</span></div>
-          <div class="countdown-divider"></div>
+          <div class="countdown-separator">:</div>
           <div><strong id="minutes">--</strong><span class="cinzel">Minutos</span></div>
-          <div class="countdown-divider"></div>
+          <div class="countdown-separator">:</div>
           <div><strong id="seconds">--</strong><span class="cinzel">Segundos</span></div>
         </div>
       </div>
