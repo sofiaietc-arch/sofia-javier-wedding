@@ -123,10 +123,15 @@
       position: relative; z-index: 5;
     }
 
-    /* =========================================
+  /* =========================================
        4. PORTADA (OPENING)
        ========================================= */
-    #opening { position: fixed; inset: 0; z-index: 90000; overflow: hidden; background: var(--bg-color); transition: opacity .7s ease, visibility .7s ease; }
+    #opening { 
+      position: fixed; inset: 0; z-index: 90000; overflow: hidden; 
+      background: var(--bg-color); 
+      display: flex; align-items: center; justify-content: center; /* Alineación forzada al centro */
+      transition: opacity .7s ease, visibility .7s ease; 
+    }
     #opening.hide { opacity: 0; visibility: hidden; pointer-events: none; }
     #opening::before {
       content: ""; position: absolute; inset: 0; z-index: -1;
@@ -134,22 +139,35 @@
       background-size: cover; background-position: center;
     }
     
+    .opening-inner {
+      position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%;
+    }
+
     .floral-corner { position: absolute; width: 520px; height: 430px; background: url("flores-portada.png") no-repeat; background-size: contain; opacity: 0.72; z-index: 2; pointer-events: none; }
     .floral-tl { top: -55px; left: -70px; transform: rotate(180deg); }
     .floral-br { bottom: -55px; right: -70px; background-position: bottom right; }
 
-    .portada-monograma { width: 280px; max-width: 76vw; margin: 40px auto 30px; position: relative; z-index: 10; mix-blend-mode: multiply; }
-    .portada-fechas { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; position: relative; z-index: 10; }
+    .portada-monograma { width: 280px; max-width: 76vw; margin: 0 auto 30px; position: relative; z-index: 10; mix-blend-mode: multiply; }
+    .portada-fechas { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; position: relative; z-index: 10; }
     .portada-fechas span { font-size: clamp(12px, 2vw, 16px); letter-spacing: 0.15em; }
 
     .seal-open {
       position: relative; display: flex; flex-direction: column; align-items: center; z-index: 80;
-      background: transparent; border: none; padding: 0; margin: 0 auto;
+      background: transparent; border: none; padding: 0; margin: 0 auto; cursor: pointer;
     }
     .seal-open img { width: 150px; mix-blend-mode: multiply; transition: transform 0.3s; filter: drop-shadow(0 8px 13px rgba(96,65,20,.12)); }
     .seal-open:hover img { transform: scale(1.05); }
-    .seal-open span { font-size: 14px; letter-spacing: 0.3em; margin-top: 10px; }
+    .seal-open span { font-size: 14px; letter-spacing: 0.3em; margin-top: 10px; font-family: 'Cinzel', serif; }
 
+    /* =========================================
+       MANEJO DEL CONTENIDO PRINCIPAL
+       ========================================= */
+    #main {
+      opacity: 0; pointer-events: none; transition: opacity 1s ease;
+    }
+    #main.visible {
+      opacity: 1; pointer-events: auto;
+    }
     /* =========================================
        5. TRANSICIÓN CARTA AL HACER SCROLL
        ========================================= */
@@ -311,11 +329,12 @@
     <img src="volumen-dorado.png" alt="Música">
   </button>
 
+ <!-- PORTADA -->
   <section id="opening">
     <div class="floral-corner floral-tl"></div>
     <div class="floral-corner floral-br"></div>
     
-    <div class="section">
+    <div class="opening-inner">
       <img src="monograma-ovalo-syj.png" alt="S&J" class="portada-monograma">
       
       <div class="portada-fechas cinzel gold-gradient">
@@ -332,7 +351,8 @@
     </div>
   </section>
 
-  <main id="main" style="display:none;">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main">
 
     <section id="bienvenida" class="section page-carta">
       <div class="guirnalda-bg"></div>
@@ -520,13 +540,14 @@
       isPlaying = !isPlaying;
     }
 
-    /* Animación de apertura */
+/* Animación de apertura */
     function enterInvitation() {
       toggleMusic();
       document.getElementById('opening').classList.add('hide');
+      
       setTimeout(() => {
-        document.getElementById('opening').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
+        const main = document.getElementById('main');
+        main.classList.add('visible');
         setTimeout(() => iniciarAnimacionesScroll(), 100);
       }, 700);
     }
