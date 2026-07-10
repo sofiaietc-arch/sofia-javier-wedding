@@ -14993,6 +14993,3197 @@ body.invitation-open {
   }
 }
 
+
+/* =====================================================
+   RETOQUE FINAL: Ceremonia & Recepción previa a RSVP
+   ===================================================== */
+
+.detalle-page-teaser {
+  min-height: 520px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 74px 34px 68px !important;
+  background:
+    linear-gradient(rgba(255,255,255,.94), rgba(255,253,248,.96)),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+}
+
+.detalle-page-volver {
+  position: absolute !important;
+  top: 22px !important;
+  left: 24px !important;
+  z-index: 25 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .24em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-teaser h2 {
+  margin: 0 auto 12px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 4vw, 46px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-page-teaser .detalle-page-subtitle {
+  margin: 0 auto 24px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .34em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 0 auto 26px auto !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(20px, 2.7vw, 28px) !important;
+  font-style: italic !important;
+  line-height: 1.2 !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain !important;
+  flex: 0 0 auto !important;
+}
+
+.detalle-page-note {
+  max-width: 430px !important;
+  margin: 0 auto 26px auto !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+  font-style: italic !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.detalle-page-confirm-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 20px !important;
+  border: 1px solid rgba(198,160,91,.72) !important;
+  background: rgba(255,253,248,.74) !important;
+  box-shadow: none !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .24em !important;
+  text-transform: uppercase !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-page-confirm-btn .lock-simple {
+  font-size: 14px !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 760px) {
+  .detalle-page-teaser {
+    min-height: 470px !important;
+    padding: 64px 22px 56px !important;
+  }
+
+  .detalle-page-volver {
+    top: 18px !important;
+    left: 18px !important;
+    font-size: 9px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .detalle-page-teaser h2 {
+    font-size: clamp(23px, 6.4vw, 31px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: .17em !important;
+  }
+
+  .detalle-page-teaser .detalle-page-subtitle {
+    font-size: 8.5px !important;
+    letter-spacing: .25em !important;
+    margin-bottom: 22px !important;
+  }
+
+  .detalle-page-location-simple {
+    font-size: 20px !important;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .detalle-page-note {
+    font-size: 16px !important;
+    max-width: 280px !important;
+  }
+
+  .detalle-page-confirm-btn {
+    font-size: 9px !important;
+    letter-spacing: .17em !important;
+    padding: 11px 15px !important;
+  }
+}
+
+
+
+/* =====================================================
+   CORRECCIÓN FINAL 1120:
+   menú único flotante desde Nuestras celebraciones
+   + tarjetas Civil / Ceremonia como referencia
+   ===================================================== */
+
+/* ---------- MENÚ ÚNICO ---------- */
+
+/* El menú no se ve en portada, bienvenida ni cuenta regresiva */
+.bottom-nav,
+body:not(.menu-celebraciones-visible) .bottom-nav,
+body:not(.invitation-open) .bottom-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Desde Nuestras celebraciones hacia abajo: un solo menú flotante */
+body.invitation-open.menu-celebraciones-visible .bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+
+  z-index: 160000 !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  margin: 0 !important;
+  padding: 0 0 env(safe-area-inset-bottom) 0 !important;
+
+  background: rgba(255,253,248,.97) !important;
+  border-top: 1px solid rgba(198,160,91,.38) !important;
+  box-shadow: 0 -10px 26px rgba(70,55,38,.10) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a {
+  min-height: 62px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 4px !important;
+  padding: 7px 3px 6px !important;
+  margin: 0 !important;
+
+  text-decoration: none !important;
+  border-right: 1px solid rgba(198,160,91,.18) !important;
+  background: transparent !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+
+  transform: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a:last-child {
+  border-right: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+  width: 26px !important;
+  height: 26px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto 3px auto !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  background: transparent !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+  display: block !important;
+  width: 23px !important;
+  height: 23px !important;
+
+  stroke: #A77C32 !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-fireworks svg circle {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg * {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-label {
+  display: block !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 6.8px !important;
+  line-height: 1.05 !important;
+  letter-spacing: .025em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+
+  background: none !important;
+  background-image: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a.active {
+  background: rgba(198,160,91,.08) !important;
+}
+
+body.invitation-open.menu-celebraciones-visible {
+  padding-bottom: 76px !important;
+}
+
+/* La ventana Page Turn debe quedar por encima del menú */
+.detalle-page-turn {
+  z-index: 190000 !important;
+}
+
+/* ---------- NUESTRAS CELEBRACIONES: REFERENCIA VISUAL ---------- */
+
+#celebraciones,
+.section.celebrations {
+  min-height: auto !important;
+  padding: 78px 18px 104px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#celebraciones .celebrations-wrap,
+.celebrations .celebrations-wrap {
+  width: min(1110px, 96vw) !important;
+  max-width: 1110px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+#celebraciones h2,
+.celebrations h2 {
+  margin: 0 auto 14px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 32px !important;
+
+  width: 100% !important;
+  max-width: 1110px !important;
+  margin: 34px auto 0 auto !important;
+  padding: 0 !important;
+
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+#celebraciones .event-card,
+.celebrations .event-card {
+  position: relative !important;
+
+  display: block !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+
+  width: 100% !important;
+  height: clamp(390px, 36vw, 470px) !important;
+  min-height: clamp(390px, 36vw, 470px) !important;
+  max-height: 470px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: rgba(255,253,248,.92) !important;
+  border: 1px solid rgba(198,160,91,.36) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+}
+
+/* imagen como fondo total de lámina */
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  filter: grayscale(10%) sepia(8%) brightness(1.13) contrast(.88) !important;
+
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+#celebraciones .event-card:first-child .event-art img,
+.celebrations .event-card:first-child .event-art img {
+  object-position: left center !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-art img,
+.celebrations .event-card:nth-child(2) .event-art img {
+  object-position: center center !important;
+}
+
+/* velo blanco a la derecha como la referencia */
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,248,.05) 0%,
+      rgba(255,253,248,.28) 35%,
+      rgba(255,253,248,.72) 62%,
+      rgba(255,253,248,.94) 100%
+    ) !important;
+  mix-blend-mode: normal !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-art::after,
+.celebrations .event-card:nth-child(2) .event-art::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,248,.02) 0%,
+      rgba(255,253,248,.26) 42%,
+      rgba(255,253,248,.74) 70%,
+      rgba(255,253,248,.94) 100%
+    ) !important;
+}
+
+/* texto superpuesto */
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  padding: 58px 54px 50px 45% !important;
+  margin: 0 !important;
+
+  text-align: right !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy,
+.celebrations .event-card:nth-child(2) .event-copy {
+  padding-left: 34% !important;
+}
+
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  width: 100% !important;
+
+  margin: 0 0 18px auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 3vw, 43px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: .30em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  text-align: right !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  font-size: clamp(28px, 2.75vw, 39px) !important;
+  line-height: 1.20 !important;
+  letter-spacing: .24em !important;
+}
+
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  width: 100% !important;
+
+  margin: 0 0 18px auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(8.5px, .82vw, 10px) !important;
+  line-height: 1.25 !important;
+  letter-spacing: .32em !important;
+  text-transform: uppercase !important;
+
+  text-align: right !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  width: 100% !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(29px, 2.85vw, 39px) !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  font-weight: 600 !important;
+
+  text-align: right !important;
+
+  color: #6F5B39 !important;
+  -webkit-text-fill-color: #6F5B39 !important;
+
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: absolute !important;
+  right: 54px !important;
+  bottom: 32px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(8.5px, .78vw, 10px) !important;
+  line-height: 1 !important;
+  letter-spacing: .30em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+
+  text-align: right !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .btn::after,
+.celebrations .event-copy .btn::after {
+  content: "→" !important;
+  margin-left: 12px !important;
+  letter-spacing: 0 !important;
+}
+
+#celebraciones .event-copy .btn:hover,
+.celebrations .event-copy .btn:hover {
+  background: transparent !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+@media (max-width: 760px) {
+
+  #celebraciones,
+  .section.celebrations {
+    padding: 58px 14px 94px !important;
+  }
+
+  #celebraciones .celebrations-wrap,
+  .celebrations .celebrations-wrap {
+    width: min(372px, 94vw) !important;
+  }
+
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 410px !important;
+    min-height: 410px !important;
+    max-height: 410px !important;
+  }
+
+  #celebraciones .event-art::after,
+  .celebrations .event-art::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,253,248,.06) 0%,
+        rgba(255,253,248,.34) 34%,
+        rgba(255,253,248,.78) 64%,
+        rgba(255,253,248,.95) 100%
+      ) !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    padding: 48px 27px 44px 36% !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy,
+  .celebrations .event-card:nth-child(2) .event-copy {
+    padding-left: 30% !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 27px !important;
+    line-height: 1.18 !important;
+    letter-spacing: .22em !important;
+    margin-bottom: 15px !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy h3,
+  .celebrations .event-card:nth-child(2) .event-copy h3 {
+    font-size: 25px !important;
+    letter-spacing: .16em !important;
+    line-height: 1.18 !important;
+  }
+
+  #celebraciones .event-copy .place,
+  .celebrations .event-copy .place {
+    font-size: 7.8px !important;
+    letter-spacing: .20em !important;
+    margin-bottom: 16px !important;
+  }
+
+  #celebraciones .event-copy .date-small,
+  .celebrations .event-copy .date-small {
+    font-size: 28px !important;
+    letter-spacing: .06em !important;
+  }
+
+  #celebraciones .event-copy .btn,
+  .celebrations .event-copy .btn {
+    right: 27px !important;
+    bottom: 28px !important;
+
+    font-size: 8px !important;
+    letter-spacing: .18em !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav a {
+    min-height: 58px !important;
+    padding: 6px 2px 5px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon,
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-label {
+    font-size: 5.6px !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible {
+    padding-bottom: 70px !important;
+  }
+}
+
+
+
+/* =====================================================
+   CORRECCIÓN FINAL 1140:
+   menú visible desde Celebraciones + tarjetas referencia
+   + watercolormask + Page Turn Morcote correcto
+   ===================================================== */
+
+/* ---------- MENÚ ÚNICO FLOTANTE DESDE CELEBRACIONES ---------- */
+body:not(.invitation-open) .bottom-nav,
+body:not(.menu-celebraciones-visible) .bottom-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+
+  z-index: 170000 !important;
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+
+  margin: 0 !important;
+  padding: 0 0 env(safe-area-inset-bottom) 0 !important;
+
+  background: rgba(255,253,248,.98) !important;
+  border-top: 1px solid rgba(198,160,91,.38) !important;
+  box-shadow: 0 -10px 26px rgba(70,55,38,.10) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a {
+  min-height: 62px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 3px !important;
+  padding: 7px 3px 6px !important;
+  margin: 0 !important;
+
+  text-decoration: none !important;
+  border-right: 1px solid rgba(198,160,91,.18) !important;
+  background: transparent !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a:last-child {
+  border-right: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+  width: 26px !important;
+  height: 26px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto 3px auto !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  background: none !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+  display: block !important;
+  width: 23px !important;
+  height: 23px !important;
+
+  stroke: #A77C32 !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-fireworks svg circle {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg,
+body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg * {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-label {
+  display: block !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 6.8px !important;
+  line-height: 1.05 !important;
+  letter-spacing: .02em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+
+  background: none !important;
+  background-image: none !important;
+}
+
+body.invitation-open.menu-celebraciones-visible .bottom-nav a.active {
+  background: rgba(198,160,91,.08) !important;
+}
+
+body.invitation-open.menu-celebraciones-visible {
+  padding-bottom: 76px !important;
+}
+
+.detalle-page-turn {
+  z-index: 190000 !important;
+}
+
+/* ---------- NUESTRAS CELEBRACIONES COMO REFERENCIA ---------- */
+#celebraciones,
+.section.celebrations {
+  width: 100% !important;
+  min-height: auto !important;
+  padding: 78px 18px 112px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+#celebraciones .celebrations-wrap,
+.celebrations .celebrations-wrap {
+  width: min(1110px, 96vw) !important;
+  max-width: 1110px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  position: relative !important;
+  z-index: 5 !important;
+
+  text-align: center !important;
+}
+
+#celebraciones h2,
+.celebrations h2,
+#celebraciones .celebrations-wrap h2,
+.celebrations .celebrations-wrap h2 {
+  margin: 0 auto 14px auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .gold-rule.small,
+.celebrations .gold-rule.small {
+  margin: 0 auto 34px auto !important;
+}
+
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 32px !important;
+
+  width: 100% !important;
+  max-width: 1110px !important;
+  margin: 34px auto 0 auto !important;
+  padding: 0 !important;
+
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+#celebraciones .event-card,
+.celebrations .event-card {
+  position: relative !important;
+
+  display: block !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+
+  width: 100% !important;
+  height: 470px !important;
+  min-height: 470px !important;
+  max-height: 470px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: rgba(255,253,248,.94) !important;
+  border: 1px solid rgba(198,160,91,.36) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+}
+
+#celebraciones .event-card::before,
+.celebrations .event-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 16px !important;
+  border: 1px solid rgba(198,160,91,.12) !important;
+  z-index: 8 !important;
+  pointer-events: none !important;
+}
+
+/* imagen total con borde watercolormask */
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+  overflow: hidden !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  filter: grayscale(10%) sepia(8%) brightness(1.13) contrast(.88) !important;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at 28% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.96) 42%,
+      rgba(0,0,0,.62) 61%,
+      rgba(0,0,0,.20) 76%,
+      rgba(0,0,0,0) 100%
+    ) !important;
+  mask-image:
+    radial-gradient(
+      ellipse at 28% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.96) 42%,
+      rgba(0,0,0,.62) 61%,
+      rgba(0,0,0,.20) 76%,
+      rgba(0,0,0,0) 100%
+    ) !important;
+}
+
+#celebraciones .event-card:first-child .event-art img,
+.celebrations .event-card:first-child .event-art img {
+  object-position: left center !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-art img,
+.celebrations .event-card:nth-child(2) .event-art img {
+  object-position: left center !important;
+}
+
+/* velo papel para separar texto de imagen */
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,248,.10) 0%,
+      rgba(255,253,248,.32) 34%,
+      rgba(255,253,248,.74) 61%,
+      rgba(255,253,248,.97) 100%
+    ) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* texto: bloque derecho centrado, sin superponerse */
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  z-index: 7 !important;
+
+  width: 48% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  padding: 56px 40px 62px 18px !important;
+  margin: 0 !important;
+
+  text-align: right !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy,
+.celebrations .event-card:nth-child(2) .event-copy {
+  width: 55% !important;
+  padding-right: 38px !important;
+}
+
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  width: 100% !important;
+
+  margin: 0 0 18px auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 3vw, 43px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: .30em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  text-align: right !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  font-size: clamp(27px, 2.55vw, 37px) !important;
+  line-height: 1.22 !important;
+  letter-spacing: .22em !important;
+}
+
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  width: 100% !important;
+
+  margin: 0 0 19px auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(8px, .78vw, 9.5px) !important;
+  line-height: 1.25 !important;
+  letter-spacing: .30em !important;
+  text-transform: uppercase !important;
+
+  text-align: right !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+
+  background: none !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  width: 100% !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 2.8vw, 39px) !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  font-weight: 600 !important;
+
+  text-align: right !important;
+
+  color: #6F5B39 !important;
+  -webkit-text-fill-color: #6F5B39 !important;
+
+  background: none !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: absolute !important;
+  right: 40px !important;
+  bottom: 34px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(8.5px, .78vw, 10px) !important;
+  line-height: 1 !important;
+  letter-spacing: .30em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+
+  text-align: right !important;
+  text-shadow: none !important;
+}
+
+#celebraciones .event-copy .btn::after,
+.celebrations .event-copy .btn::after {
+  content: "→" !important;
+  margin-left: 12px !important;
+  letter-spacing: 0 !important;
+}
+
+#celebraciones .event-copy .btn:hover,
+.celebrations .event-copy .btn:hover {
+  background: transparent !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* ---------- PAGE TURN CEREMONIA & RECEPCIÓN ---------- */
+.detalle-page-turn.show {
+  display: flex !important;
+}
+
+.detalle-page-sheet {
+  width: min(980px, 94vw) !important;
+  max-height: 92vh !important;
+  overflow-y: auto !important;
+
+  background:
+    linear-gradient(rgba(255,255,255,.94), rgba(255,253,248,.96)),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+
+  border: 1px solid rgba(198,160,91,.42) !important;
+  box-shadow: 0 28px 70px rgba(80,60,30,.18) !important;
+}
+
+.detalle-page-teaser {
+  min-height: 560px !important;
+  padding: 88px 46px 74px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  background: rgba(255,253,248,.72) !important;
+}
+
+.detalle-page-volver {
+  position: absolute !important;
+  top: 22px !important;
+  left: 24px !important;
+  z-index: 30 !important;
+
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-teaser h2 {
+  margin: 0 auto 13px !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 3.6vw, 46px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+
+  text-align: center !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-page-subtitle {
+  margin: 0 auto 26px !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  line-height: 1 !important;
+  letter-spacing: .34em !important;
+  text-transform: uppercase !important;
+
+  text-align: center !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  margin: 0 auto 28px !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 23px !important;
+  line-height: 1.2 !important;
+  font-style: italic !important;
+
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain !important;
+}
+
+.detalle-page-note {
+  max-width: 380px !important;
+  margin: 0 auto 28px !important;
+
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+  font-style: italic !important;
+  text-align: center !important;
+
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.detalle-page-confirm-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  padding: 12px 20px !important;
+  border: 1px solid rgba(198,160,91,.72) !important;
+  background: rgba(255,253,248,.74) !important;
+  box-shadow: none !important;
+
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .24em !important;
+  text-transform: uppercase !important;
+
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* detalles completos después de RSVP */
+.detalle-page-grid {
+  display: grid !important;
+  grid-template-columns: 48% 52% !important;
+  min-height: 560px !important;
+}
+
+.detalle-page-grid.reverse {
+  grid-template-columns: 52% 48% !important;
+}
+
+.detalle-page-art {
+  position: relative !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.78) !important;
+}
+
+.detalle-page-art img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 280px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: grayscale(10%) sepia(8%) brightness(1.08) contrast(.92) !important;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 55%,
+      rgba(0,0,0,.72) 73%,
+      transparent 100%
+    ) !important;
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 55%,
+      rgba(0,0,0,.72) 73%,
+      transparent 100%
+    ) !important;
+}
+
+.detalle-page-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0) 48%,
+      rgba(255,253,248,.46) 76%,
+      rgba(255,253,248,.86) 100%
+    ) !important;
+}
+
+.detalle-page-art.two-images {
+  display: grid !important;
+  grid-template-rows: 1fr 1fr !important;
+}
+
+.detalle-page-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: clamp(46px, 6vw, 78px) !important;
+  text-align: left !important;
+  background: rgba(255,255,255,.76) !important;
+}
+
+.detalle-page-text h2 {
+  text-align: center !important;
+  font-size: clamp(28px, 3.2vw, 42px) !important;
+  letter-spacing: .13em !important;
+}
+
+@media (max-width: 760px) {
+  body.invitation-open.menu-celebraciones-visible .bottom-nav a {
+    min-height: 58px !important;
+    padding: 6px 2px 5px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon,
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible .bottom-nav .nav-label {
+    font-size: 5.6px !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.invitation-open.menu-celebraciones-visible {
+    padding-bottom: 70px !important;
+  }
+
+  #celebraciones,
+  .section.celebrations {
+    padding: 58px 12px 98px !important;
+  }
+
+  #celebraciones .celebrations-wrap,
+  .celebrations .celebrations-wrap {
+    width: min(372px, 94vw) !important;
+  }
+
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 410px !important;
+    min-height: 410px !important;
+    max-height: 410px !important;
+  }
+
+  #celebraciones .event-card::before,
+  .celebrations .event-card::before {
+    inset: 12px !important;
+  }
+
+  #celebraciones .event-art img,
+  .celebrations .event-art img {
+    -webkit-mask-image:
+      radial-gradient(
+        ellipse at 22% 50%,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.90) 44%,
+        rgba(0,0,0,.46) 62%,
+        rgba(0,0,0,0) 82%
+      ) !important;
+    mask-image:
+      radial-gradient(
+        ellipse at 22% 50%,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,.90) 44%,
+        rgba(0,0,0,.46) 62%,
+        rgba(0,0,0,0) 82%
+      ) !important;
+  }
+
+  #celebraciones .event-art::after,
+  .celebrations .event-art::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,253,248,.10) 0%,
+        rgba(255,253,248,.44) 35%,
+        rgba(255,253,248,.82) 62%,
+        rgba(255,253,248,.98) 100%
+      ) !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    width: 58% !important;
+    padding: 42px 24px 48px 8px !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy,
+  .celebrations .event-card:nth-child(2) .event-copy {
+    width: 62% !important;
+    padding-right: 22px !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 25px !important;
+    line-height: 1.18 !important;
+    letter-spacing: .20em !important;
+    margin-bottom: 15px !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy h3,
+  .celebrations .event-card:nth-child(2) .event-copy h3 {
+    font-size: 22px !important;
+    letter-spacing: .13em !important;
+    line-height: 1.20 !important;
+  }
+
+  #celebraciones .event-copy .place,
+  .celebrations .event-copy .place {
+    font-size: 7.4px !important;
+    letter-spacing: .17em !important;
+    margin-bottom: 15px !important;
+  }
+
+  #celebraciones .event-copy .date-small,
+  .celebrations .event-copy .date-small {
+    font-size: 27px !important;
+    letter-spacing: .05em !important;
+  }
+
+  #celebraciones .event-copy .btn,
+  .celebrations .event-copy .btn {
+    right: 24px !important;
+    bottom: 28px !important;
+    font-size: 8px !important;
+    letter-spacing: .17em !important;
+  }
+
+  .detalle-page-sheet {
+    width: 94vw !important;
+    max-height: 92vh !important;
+  }
+
+  .detalle-page-teaser {
+    min-height: 470px !important;
+    padding: 64px 22px 56px !important;
+  }
+
+  .detalle-page-volver {
+    top: 18px !important;
+    left: 18px !important;
+    font-size: 9px !important;
+  }
+
+  .detalle-page-teaser h2 {
+    font-size: clamp(23px, 6.4vw, 31px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: .17em !important;
+  }
+
+  .detalle-page-subtitle {
+    font-size: 8.5px !important;
+    letter-spacing: .25em !important;
+    margin-bottom: 22px !important;
+  }
+
+  .detalle-page-location-simple {
+    font-size: 20px !important;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .detalle-page-note {
+    font-size: 16px !important;
+    max-width: 280px !important;
+  }
+
+  .detalle-page-confirm-btn {
+    font-size: 9px !important;
+    letter-spacing: .16em !important;
+    padding: 11px 15px !important;
+  }
+
+  .detalle-page-grid,
+  .detalle-page-grid.reverse {
+    grid-template-columns: 1fr !important;
+  }
+
+  .detalle-page-art {
+    min-height: 260px !important;
+  }
+
+  .detalle-page-art.two-images {
+    grid-template-rows: 240px 240px !important;
+  }
+
+  .detalle-page-text {
+    padding: 42px 22px 36px !important;
+  }
+}
+
+
+
+/* =====================================================
+   RSVP FINAL:
+   Morcote Sí -> ventana detalles + Tu viaje
+   Morcote No -> última página
+   ===================================================== */
+
+.detalle-page-turn.detalle-post-rsvp .detalle-page-sheet {
+  width: min(1060px, 94vw) !important;
+  max-height: 92vh !important;
+  overflow-y: auto !important;
+}
+
+.post-rsvp-wrap {
+  width: 100% !important;
+  background:
+    linear-gradient(rgba(255,255,255,.93), rgba(255,253,248,.96)),
+    url("fondo-relieve.jpg") center center / cover no-repeat !important;
+}
+
+.post-rsvp-section {
+  position: relative !important;
+  padding: clamp(42px, 5vw, 68px) clamp(24px, 5vw, 62px) !important;
+  border-bottom: 1px solid rgba(198,160,91,.22) !important;
+  text-align: center !important;
+}
+
+.post-rsvp-section:last-child {
+  border-bottom: none !important;
+}
+
+.post-rsvp-title {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 3.6vw, 44px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: .20em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  margin: 0 auto 10px auto !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.post-rsvp-subtitle {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  margin: 0 auto 28px auto !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.post-rsvp-detail-grid {
+  display: grid !important;
+  grid-template-columns: 48% 52% !important;
+  align-items: stretch !important;
+  min-height: 520px !important;
+  border: 1px solid rgba(198,160,91,.24) !important;
+  background: rgba(255,255,255,.70) !important;
+  box-shadow: 0 14px 36px rgba(70,55,38,.055) !important;
+  overflow: hidden !important;
+}
+
+.post-rsvp-art {
+  position: relative !important;
+  display: grid !important;
+  grid-template-rows: 1fr 1fr !important;
+  min-height: 520px !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.72) !important;
+}
+
+.post-rsvp-art img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 260px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: grayscale(12%) sepia(8%) brightness(1.08) contrast(.90) !important;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, black 54%, rgba(0,0,0,.70) 75%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse at center, black 0%, black 54%, rgba(0,0,0,.70) 75%, transparent 100%) !important;
+}
+
+.post-rsvp-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 46%, rgba(255,253,248,.40) 74%, rgba(255,253,248,.88) 100%) !important;
+}
+
+.post-rsvp-detail-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: clamp(38px, 5vw, 64px) !important;
+  background: rgba(255,255,255,.78) !important;
+  text-align: left !important;
+}
+
+.post-rsvp-row {
+  display: grid !important;
+  grid-template-columns: 38px 1fr !important;
+  gap: 16px !important;
+  margin: 15px 0 !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  letter-spacing: .02em !important;
+  color: #8F743B !important;
+}
+
+.post-rsvp-row strong {
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  font-weight: 500 !important;
+}
+
+.post-rsvp-icon {
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding-top: 2px !important;
+}
+
+.post-rsvp-icon img {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
+}
+
+.post-rsvp-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 28px !important;
+}
+
+.post-rsvp-trip-map {
+  width: min(760px, 92%) !important;
+  margin: 22px auto 34px auto !important;
+}
+
+.post-rsvp-trip-map img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 14px !important;
+  opacity: .92 !important;
+}
+
+.post-rsvp-useful-grid {
+  width: min(820px, 100%) !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  margin: 0 auto !important;
+  border-top: 1px solid rgba(198,160,91,.26) !important;
+  border-bottom: 1px solid rgba(198,160,91,.26) !important;
+}
+
+.post-rsvp-useful-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  min-height: 92px !important;
+  padding: 18px 8px !important;
+  text-decoration: none !important;
+  border-right: 1px solid rgba(198,160,91,.20) !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.post-rsvp-useful-item:last-child {
+  border-right: none !important;
+}
+
+.post-rsvp-useful-icon {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.post-rsvp-useful-icon img {
+  width: 26px !important;
+  height: 26px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.post-rsvp-useful-item span:last-child {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.post-rsvp-final-btn {
+  margin-top: 32px !important;
+}
+
+/* No Morcote: después de responder NO solo se ve la página final */
+body.confirmacion-morcote-no #info,
+body.confirmacion-morcote-no #dresscode,
+body.confirmacion-morcote-no #rsvp,
+body.confirmacion-morcote-no #recepcion,
+body.confirmacion-morcote-no .bottom-nav {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .detalle-page-turn.detalle-post-rsvp .detalle-page-sheet {
+    width: 94vw !important;
+    max-height: 90vh !important;
+  }
+
+  .post-rsvp-section {
+    padding: 38px 18px !important;
+  }
+
+  .post-rsvp-title {
+    font-size: clamp(25px, 7vw, 34px) !important;
+    letter-spacing: .13em !important;
+  }
+
+  .post-rsvp-subtitle {
+    font-size: 8.5px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .post-rsvp-detail-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .post-rsvp-art {
+    grid-template-rows: 230px 230px !important;
+    min-height: auto !important;
+  }
+
+  .post-rsvp-detail-text {
+    padding: 36px 22px !important;
+  }
+
+  .post-rsvp-row {
+    grid-template-columns: 34px 1fr !important;
+    gap: 13px !important;
+    font-size: 16px !important;
+  }
+
+  .post-rsvp-icon img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .post-rsvp-useful-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .post-rsvp-useful-item {
+    border-bottom: 1px solid rgba(198,160,91,.20) !important;
+  }
+
+  .post-rsvp-useful-item:nth-child(2n) {
+    border-right: none !important;
+  }
+}
+
+
+
+/* =====================================================
+   CORRECCIÓN DEFINITIVA 1160:
+   menú visible desde Celebraciones + tarjetas watercolor
+   + Morcote previo RSVP + Post RSVP completo
+   ===================================================== */
+
+/* MENÚ: oculto hasta llegar a Nuestras celebraciones */
+body .bottom-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+
+  z-index: 170000 !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  margin: 0 !important;
+  padding: 0 0 env(safe-area-inset-bottom) 0 !important;
+
+  background: rgba(255,253,248,.97) !important;
+  border-top: 1px solid rgba(198,160,91,.36) !important;
+  box-shadow: 0 -10px 26px rgba(70,55,38,.10) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav a {
+  min-height: 64px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 4px 7px !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  border-right: 1px solid rgba(198,160,91,.18) !important;
+  background: transparent !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav a:last-child {
+  border-right: none !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav .nav-icon,
+body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 5px auto !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+  display: block !important;
+  width: 25px !important;
+  height: 25px !important;
+  fill: none !important;
+  stroke: #A77C32 !important;
+  stroke-width: 2.1 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav .nav-fireworks svg circle {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg,
+body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg * {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+body.menu-celebraciones-visible .bottom-nav .nav-label {
+  display: block !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 7px !important;
+  line-height: 1.08 !important;
+  letter-spacing: .035em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+body.menu-celebraciones-visible {
+  padding-bottom: 82px !important;
+}
+
+/* TARJETAS CIVIL / CEREMONIA: centradas, proporción imagen/texto como referencia */
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  width: min(1040px, 94vw) !important;
+  margin: 38px auto 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 500px)) !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 32px !important;
+}
+
+#celebraciones .event-card,
+.celebrations .event-card {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  height: 445px !important;
+  min-height: 445px !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.92) !important;
+  border: 1px solid rgba(198,160,91,.34) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+}
+
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: left center !important;
+  filter: grayscale(10%) sepia(8%) brightness(1.13) contrast(.88) !important;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, rgba(0,0,0,.72) 58%, rgba(0,0,0,.24) 76%, transparent 98%) !important;
+  mask-image: linear-gradient(90deg, #000 0%, #000 42%, rgba(0,0,0,.72) 58%, rgba(0,0,0,.24) 76%, transparent 98%) !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-art img,
+.celebrations .event-card:nth-child(2) .event-art img {
+  object-position: left center !important;
+}
+
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(255,253,248,.06) 0%, rgba(255,253,248,.34) 40%, rgba(255,253,248,.80) 66%, rgba(255,253,248,.96) 100%),
+    radial-gradient(ellipse at 26% 52%, rgba(255,255,255,0) 0%, rgba(255,253,248,.10) 45%, rgba(255,253,248,.72) 90%) !important;
+}
+
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 82px 38px 56px 43% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  text-align: right !important;
+  background: transparent !important;
+}
+
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  width: 100% !important;
+  margin: 0 0 20px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(29px, 2.55vw, 42px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .24em !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  text-align: right !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  font-size: clamp(27px, 2.35vw, 38px) !important;
+  line-height: 1.24 !important;
+  letter-spacing: .18em !important;
+}
+
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  width: 100% !important;
+  margin: 0 0 20px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  text-align: right !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  width: 100% !important;
+  margin: 0 !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 2.45vw, 38px) !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  font-weight: 600 !important;
+  text-align: right !important;
+  color: #6F5B39 !important;
+  -webkit-text-fill-color: #6F5B39 !important;
+}
+
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: absolute !important;
+  right: 38px !important;
+  bottom: 34px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .24em !important;
+  text-transform: uppercase !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+#celebraciones .event-copy .btn::after,
+.celebrations .event-copy .btn::after {
+  content: " →" !important;
+  margin-left: 10px !important;
+  letter-spacing: 0 !important;
+}
+
+/* MODAL PREVIO MORCOTE como referencia */
+#detallePageTurn.detalle-morcote-previo .detalle-page-sheet {
+  width: min(760px, 94vw) !important;
+  min-height: 560px !important;
+  max-height: 88vh !important;
+  background: rgba(255,253,248,.96) !important;
+  border: 1px solid rgba(198,160,91,.34) !important;
+  overflow-y: auto !important;
+}
+
+#detallePageTurn.detalle-morcote-previo .detalle-page-close {
+  display: none !important;
+}
+
+.detalle-page-volver {
+  position: absolute !important;
+  top: 20px !important;
+  left: 22px !important;
+  z-index: 20 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .20em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-teaser {
+  min-height: 560px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 76px 32px 62px !important;
+  text-align: center !important;
+}
+
+.detalle-page-teaser h2 {
+  margin: 0 auto 16px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 3vw, 43px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .26em !important;
+  text-transform: uppercase !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-page-subtitle {
+  margin: 0 auto 24px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .34em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 0 auto 28px auto !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(19px, 2.2vw, 25px) !important;
+  font-style: italic !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-page-location-simple img {
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain !important;
+}
+
+.detalle-page-note {
+  max-width: 360px !important;
+  margin: 0 auto 26px auto !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  font-style: italic !important;
+  text-align: center !important;
+  color: #9A8B76 !important;
+  -webkit-text-fill-color: #9A8B76 !important;
+}
+
+.detalle-page-confirm-btn {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .22em !important;
+  padding: 12px 18px !important;
+  background: rgba(255,255,255,.72) !important;
+  border: 1px solid rgba(198,160,91,.64) !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+/* POST RSVP: detalles completos + viaje en la misma ventana */
+#detallePageTurn.detalle-post-rsvp .detalle-page-sheet {
+  width: min(1060px, 95vw) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+.post-rsvp-wrap {
+  background: rgba(255,253,248,.97) !important;
+}
+
+.post-rsvp-section {
+  padding: 54px 34px !important;
+  border-bottom: 1px solid rgba(198,160,91,.20) !important;
+  text-align: center !important;
+}
+
+.post-rsvp-title {
+  margin: 0 auto 10px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 3vw, 44px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.post-rsvp-subtitle {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.post-rsvp-detail-grid {
+  width: min(920px, 100%) !important;
+  margin: 34px auto 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 47% 53% !important;
+  gap: 28px !important;
+  align-items: center !important;
+}
+
+.post-rsvp-art {
+  display: grid !important;
+  grid-template-rows: 1fr 1fr !important;
+  gap: 14px !important;
+}
+
+.post-rsvp-art img {
+  width: 100% !important;
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: grayscale(10%) sepia(8%) brightness(1.10) contrast(.90) !important;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 58%, rgba(0,0,0,.70) 76%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse at center, #000 0%, #000 58%, rgba(0,0,0,.70) 76%, transparent 100%) !important;
+}
+
+.post-rsvp-detail-text {
+  text-align: left !important;
+  padding: 8px 12px !important;
+}
+
+.post-rsvp-row {
+  display: grid !important;
+  grid-template-columns: 36px 1fr !important;
+  gap: 14px !important;
+  margin: 20px 0 !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 18px !important;
+  line-height: 1.45 !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.post-rsvp-row strong {
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  font-weight: 500 !important;
+}
+
+.post-rsvp-icon img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+}
+
+.post-rsvp-buttons,
+.post-rsvp-useful-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 28px !important;
+}
+
+.post-rsvp-trip-map img {
+  display: block !important;
+  width: min(620px, 90vw) !important;
+  height: auto !important;
+  margin: 20px auto 28px auto !important;
+  object-fit: contain !important;
+}
+
+.post-rsvp-useful-item {
+  width: 132px !important;
+  min-height: 92px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 1px solid rgba(198,160,91,.28) !important;
+  background: rgba(255,255,255,.70) !important;
+  text-decoration: none !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.post-rsvp-useful-icon img {
+  width: 25px !important;
+  height: 25px !important;
+  object-fit: contain !important;
+}
+
+.post-rsvp-final-btn {
+  margin-top: 32px !important;
+}
+
+@media (max-width: 760px) {
+  body.menu-celebraciones-visible .bottom-nav a {
+    min-height: 58px !important;
+    padding: 6px 2px 5px !important;
+  }
+
+  body.menu-celebraciones-visible .bottom-nav .nav-icon,
+  body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final {
+    width: 23px !important;
+    height: 23px !important;
+    margin-bottom: 3px !important;
+  }
+
+  body.menu-celebraciones-visible .bottom-nav .nav-icon svg,
+  body.menu-celebraciones-visible .bottom-nav .vestimenta-icono-final svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+  body.menu-celebraciones-visible .bottom-nav .nav-label {
+    font-size: 5.9px !important;
+    letter-spacing: .012em !important;
+  }
+
+  body.menu-celebraciones-visible {
+    padding-bottom: 74px !important;
+  }
+
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    width: min(360px, 94vw) !important;
+    gap: 28px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 415px !important;
+    min-height: 415px !important;
+    max-width: 360px !important;
+  }
+
+  #celebraciones .event-art img,
+  .celebrations .event-art img {
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 35%, rgba(0,0,0,.55) 56%, rgba(0,0,0,.16) 78%, transparent 100%) !important;
+    mask-image: linear-gradient(90deg, #000 0%, #000 35%, rgba(0,0,0,.55) 56%, rgba(0,0,0,.16) 78%, transparent 100%) !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    padding: 70px 24px 52px 33% !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 28px !important;
+    letter-spacing: .18em !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy h3,
+  .celebrations .event-card:nth-child(2) .event-copy h3 {
+    font-size: 25px !important;
+    letter-spacing: .125em !important;
+  }
+
+  #celebraciones .event-copy .place,
+  .celebrations .event-copy .place {
+    font-size: 8px !important;
+    letter-spacing: .18em !important;
+  }
+
+  #celebraciones .event-copy .date-small,
+  .celebrations .event-copy .date-small {
+    font-size: 28px !important;
+  }
+
+  #celebraciones .event-copy .btn,
+  .celebrations .event-copy .btn {
+    right: 24px !important;
+    bottom: 30px !important;
+    font-size: 8.5px !important;
+    letter-spacing: .18em !important;
+  }
+
+  .detalle-page-teaser {
+    min-height: 500px !important;
+    padding: 72px 22px 54px !important;
+  }
+
+  .detalle-page-teaser h2 {
+    font-size: 27px !important;
+    letter-spacing: .16em !important;
+  }
+
+  .detalle-page-subtitle {
+    font-size: 8px !important;
+    letter-spacing: .24em !important;
+  }
+
+  .detalle-page-location-simple {
+    font-size: 20px !important;
+  }
+
+  .post-rsvp-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .post-rsvp-art img {
+    height: 190px !important;
+  }
+
+  .post-rsvp-row {
+    font-size: 16px !important;
+  }
+
+  .post-rsvp-useful-item {
+    width: 125px !important;
+  }
+}
+
+
+
+/* =====================================================
+   CORRECCIÓN FINAL ESTABLE
+   Menú desde Cuenta Regresiva + Celebraciones + Detalles RSVP
+   ===================================================== */
+
+/* ---------- MENÚ ÚNICO FLOTANTE ---------- */
+.bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+  z-index: 160000 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  margin: 0 !important;
+  padding: 0 0 env(safe-area-inset-bottom) 0 !important;
+  background: rgba(255,253,248,.97) !important;
+  border-top: 1px solid rgba(198,160,91,.36) !important;
+  box-shadow: 0 -10px 26px rgba(70,55,38,.10) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(100%) !important;
+  transition: opacity .35s ease, transform .35s ease, visibility .35s ease !important;
+}
+
+body.menu-visible .bottom-nav {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.bottom-nav a {
+  min-height: 64px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 8px 3px 7px !important;
+  margin: 0 !important;
+  border-right: 1px solid rgba(198,160,91,.18) !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.bottom-nav a:last-child { border-right: none !important; }
+
+.bottom-nav .nav-icon,
+.bottom-nav .vestimenta-icono-final {
+  width: 25px !important;
+  height: 25px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 3px auto !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  background: none !important;
+}
+
+.bottom-nav .nav-icon svg,
+.bottom-nav .vestimenta-icono-final svg {
+  display: block !important;
+  width: 23px !important;
+  height: 23px !important;
+  stroke: #A77C32 !important;
+  fill: none !important;
+  stroke-width: 2.05 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.bottom-nav .nav-fireworks svg circle {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+.bottom-nav .vestimenta-icono-final svg,
+.bottom-nav .vestimenta-icono-final svg * {
+  fill: #A77C32 !important;
+  stroke: none !important;
+}
+
+.bottom-nav .nav-label {
+  display: block !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 6.6px !important;
+  line-height: 1.08 !important;
+  letter-spacing: .02em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+  white-space: normal !important;
+}
+
+.bottom-nav a.active {
+  background: rgba(198,160,91,.08) !important;
+}
+
+body.menu-visible {
+  padding-bottom: 82px !important;
+}
+
+/* ---------- NUESTRAS CELEBRACIONES: LÁMINAS CENTRADAS ---------- */
+#celebraciones,
+.section.celebrations {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 80px 18px 104px !important;
+  min-height: 720px !important;
+  overflow: hidden !important;
+}
+
+#celebraciones .celebrations-wrap,
+.celebrations .celebrations-wrap {
+  width: min(1120px, 96vw) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(390px, 1fr)) !important;
+  gap: 34px !important;
+  width: 100% !important;
+  margin: 38px auto 0 auto !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+#celebraciones .event-card,
+.celebrations .event-card {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 465px !important;
+  min-height: 465px !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.90) !important;
+  border: 1px solid rgba(198,160,91,.34) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+}
+
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: grayscale(10%) sepia(9%) brightness(1.13) contrast(.88) !important;
+  -webkit-mask-image: radial-gradient(ellipse at 34% 52%, #000 0%, #000 38%, rgba(0,0,0,.72) 58%, rgba(0,0,0,.22) 78%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse at 34% 52%, #000 0%, #000 38%, rgba(0,0,0,.72) 58%, rgba(0,0,0,.22) 78%, transparent 100%) !important;
+}
+
+/* Velo claro hacia el lado del texto */
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(255,253,248,.08) 0%, rgba(255,253,248,.58) 48%, rgba(255,253,248,.96) 100%),
+    radial-gradient(ellipse at 76% 50%, rgba(255,253,248,.98) 0%, rgba(255,253,248,.92) 36%, rgba(255,253,248,.35) 68%, transparent 100%) !important;
+}
+
+#celebraciones .event-copy,
+.celebrations .event-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 58px 48px 52px 43% !important;
+  text-align: right !important;
+  background: transparent !important;
+}
+
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3 {
+  width: 100% !important;
+  margin: 0 0 18px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(31px, 3.05vw, 44px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .27em !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  text-align: right !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.65) !important;
+}
+
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  width: 100% !important;
+  margin: 0 0 18px auto !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  text-align: right !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  width: 100% !important;
+  margin: 0 !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(29px, 2.6vw, 38px) !important;
+  line-height: 1 !important;
+  letter-spacing: .07em !important;
+  font-weight: 600 !important;
+  text-align: right !important;
+  color: #6F5B39 !important;
+  -webkit-text-fill-color: #6F5B39 !important;
+}
+
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: absolute !important;
+  right: 48px !important;
+  bottom: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 9px !important;
+  line-height: 1 !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+#celebraciones .event-copy .btn::after,
+.celebrations .event-copy .btn::after {
+  content: " →" !important;
+  margin-left: 9px !important;
+  letter-spacing: 0 !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy,
+.celebrations .event-card:nth-child(2) .event-copy {
+  padding-left: 36% !important;
+}
+
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  font-size: clamp(28px, 2.75vw, 40px) !important;
+  letter-spacing: .23em !important;
+  line-height: 1.22 !important;
+}
+
+/* ---------- MODAL PAGE TURN / RSVP ---------- */
+.detalle-page-turn {
+  display: none;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 190000 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  background: linear-gradient(rgba(255,253,248,.92), rgba(255,253,248,.97)), url("fondo-relieve.jpg") center center / cover no-repeat !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  overflow-y: auto !important;
+}
+
+.detalle-page-turn.show { display: flex !important; }
+
+.detalle-page-sheet {
+  position: relative !important;
+  width: min(980px, 94vw) !important;
+  max-height: 92vh !important;
+  overflow-y: auto !important;
+  background: linear-gradient(rgba(255,255,255,.95), rgba(255,253,248,.97)), url("fondo-relieve.jpg") center center / cover no-repeat !important;
+  border: 1px solid rgba(198,160,91,.42) !important;
+  box-shadow: 0 28px 70px rgba(80,60,30,.18) !important;
+  transform-origin: left center !important;
+  animation: sjPageTurnFinal .88s cubic-bezier(.18,.72,.2,1) both !important;
+}
+
+@keyframes sjPageTurnFinal {
+  0% { opacity: 0; transform: perspective(1400px) rotateY(-64deg) translateX(-28px) scale(.98); }
+  56% { opacity: 1; transform: perspective(1400px) rotateY(7deg) translateX(4px) scale(1); }
+  100% { opacity: 1; transform: perspective(1400px) rotateY(0) translateX(0) scale(1); }
+}
+
+.detalle-page-close {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  z-index: 25 !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 28px !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-previo-morcote {
+  width: min(620px, 94vw) !important;
+  min-height: 440px !important;
+  padding: 52px 40px 54px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background: rgba(255,253,248,.88) !important;
+}
+
+.detalle-volver {
+  position: absolute !important;
+  top: 18px !important;
+  left: 20px !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .22em !important;
+  color: #7F714E !important;
+  -webkit-text-fill-color: #7F714E !important;
+}
+
+.detalle-previo-morcote h2 {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(28px, 3vw, 42px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: .26em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 14px !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-previo-morcote .modal-place {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .32em !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 28px !important;
+  color: #9A7636 !important;
+  -webkit-text-fill-color: #9A7636 !important;
+}
+
+.detalle-previo-morcote .modal-church {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: clamp(20px, 2.3vw, 27px) !important;
+  font-style: italic !important;
+  line-height: 1.25 !important;
+  margin: 0 auto 24px !important;
+  color: #8F743B !important;
+  -webkit-text-fill-color: #8F743B !important;
+}
+
+.detalle-previo-morcote .modal-note {
+  max-width: 390px !important;
+  margin: 0 auto 24px !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  font-style: italic !important;
+  color: #9A8A6A !important;
+  -webkit-text-fill-color: #9A8A6A !important;
+}
+
+.detalle-page-grid-final {
+  display: grid !important;
+  grid-template-columns: 46% 54% !important;
+  min-height: 620px !important;
+}
+
+.detalle-page-art-final {
+  position: relative !important;
+  display: grid !important;
+  grid-template-rows: 1fr 1fr !important;
+  min-height: 620px !important;
+  overflow: hidden !important;
+  background: rgba(255,253,248,.72) !important;
+}
+
+.detalle-page-art-final img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 310px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: grayscale(10%) sepia(8%) brightness(1.08) contrast(.92) !important;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, rgba(0,0,0,.72) 76%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, rgba(0,0,0,.72) 76%, transparent 100%) !important;
+}
+
+.detalle-page-text-final {
+  padding: 58px 58px 48px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: left !important;
+  background: rgba(255,255,255,.82) !important;
+}
+
+.detalle-page-text-final h2 {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: clamp(30px, 3.2vw, 44px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: .24em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  margin: 0 auto 14px !important;
+  color: #A77C32 !important;
+  -webkit-text-fill-color: #A77C32 !important;
+}
+
+.detalle-page-text-final .detail-ornament,
+.detalle-page-text-final .detalle-page-ornament {
+  display: block !important;
+  width: 132px !important;
+  height: 34px !important;
+  margin: 0 auto 34px !important;
+  background: url("ramito-divisor.png") center center / contain no-repeat !important;
+}
+
+.detalle-page-row-final {
+  display: grid !important;
+  grid-template-columns: 38px 1fr !important;
+  gap: 16px !important;
+  margin: 16px 0 !important;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  color: #8F743B !important;
+}
+
+.detalle-page-row-final strong {
+  color: #A77C32 !important;
+  font-weight: 500 !important;
+}
+
+.detalle-page-row-final img {
+  width: 25px !important;
+  height: 25px !important;
+  object-fit: contain !important;
+}
+
+.detalle-page-buttons-final {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  margin-top: 28px !important;
+}
+
+/* ---------- INFO: pin de Cómo Llegar ---------- */
+#info .useful-grid .useful-item:first-child .useful-icon {
+  font-size: 0 !important;
+  background: transparent !important;
+}
+
+#info .useful-grid .useful-item:first-child .useful-icon img,
+#info .useful-icon-img {
+  width: 26px !important;
+  height: 26px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 900px) {
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    width: min(410px, 94vw) !important;
+    gap: 28px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy {
+    padding: 50px 28px 44px 36% !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy,
+  .celebrations .event-card:nth-child(2) .event-copy {
+    padding-left: 30% !important;
+  }
+
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3 {
+    font-size: 30px !important;
+    letter-spacing: .22em !important;
+  }
+
+  #celebraciones .event-card:nth-child(2) .event-copy h3,
+  .celebrations .event-card:nth-child(2) .event-copy h3 {
+    font-size: 26px !important;
+    letter-spacing: .18em !important;
+  }
+
+  #celebraciones .event-copy .place,
+  .celebrations .event-copy .place {
+    font-size: 8px !important;
+    letter-spacing: .22em !important;
+  }
+
+  #celebraciones .event-copy .date-small,
+  .celebrations .event-copy .date-small {
+    font-size: 29px !important;
+  }
+
+  #celebraciones .event-copy .btn,
+  .celebrations .event-copy .btn {
+    right: 28px !important;
+    bottom: 30px !important;
+    font-size: 8.5px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .detalle-page-grid-final {
+    grid-template-columns: 1fr !important;
+  }
+
+  .detalle-page-art-final {
+    grid-template-rows: 245px 245px !important;
+    min-height: 490px !important;
+  }
+
+  .detalle-page-art-final img {
+    min-height: 245px !important;
+  }
+
+  .detalle-page-text-final {
+    padding: 42px 24px 38px !important;
+  }
+
+  .detalle-page-text-final h2 {
+    font-size: 28px !important;
+    letter-spacing: .17em !important;
+  }
+
+  .detalle-previo-morcote {
+    padding: 50px 24px 46px !important;
+  }
+
+  .detalle-previo-morcote h2 {
+    font-size: 27px !important;
+    letter-spacing: .18em !important;
+  }
+
+  .bottom-nav a { min-height: 58px !important; padding: 6px 2px 5px !important; }
+  .bottom-nav .nav-icon,
+  .bottom-nav .vestimenta-icono-final { width: 22px !important; height: 22px !important; margin-bottom: 2px !important; }
+  .bottom-nav .nav-icon svg,
+  .bottom-nav .vestimenta-icono-final svg { width: 20px !important; height: 20px !important; }
+  .bottom-nav .nav-label { font-size: 5.3px !important; letter-spacing: 0 !important; }
+  body.menu-visible { padding-bottom: 74px !important; }
+}
+
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
@@ -15191,8 +18382,8 @@ Para nuestro gran día
 
         <div class="event-art">
           <img
-            src="ceremonia-recepcion-acuarela.png"
-            alt="Ceremonia y recepción en Morcote"
+            src="maria-del-sasso.png"
+            alt="Iglesia Santa Maria del Sasso en Morcote"
           >
         </div>
 
@@ -15644,7 +18835,7 @@ Toda la información que necesitás para tu viaje a Suiza.
 <path d="M38 20 L52 20 L52 58 L46 58 L46 39 L44 39 L44 58 L38 58 Z"></path>
 </svg>
 </span>
-<span class="nav-label">Vestimenta</span>
+<span class="nav-label">Dress Code</span>
 </a>
 
 <a href="#info" data-section="info">
@@ -15657,7 +18848,7 @@ Toda la información que necesitás para tu viaje a Suiza.
 <path d="M22 52 L42 52"></path>
 </svg>
 </span>
-<span class="nav-label">Info</span>
+<span class="nav-label">Información Útil</span>
 </a>
 
 <a href="#rsvp" data-section="rsvp">
@@ -15669,7 +18860,7 @@ Toda la información que necesitás para tu viaje a Suiza.
 <path d="M52 46 L38 34"></path>
 </svg>
 </span>
-<span class="nav-label">Confirmar asistencia</span>
+<span class="nav-label">Confirmar Asistencia</span>
 </a>
 
 </nav>
@@ -16076,6 +19267,131 @@ Enviar confirmación
      PAGE TURN DETALLES
      ========================= */
 
+  function mostrarDetalleMorcotePrevio(contenido){
+
+    contenido.innerHTML = `
+
+      <button type="button" class="detalle-page-volver" onclick="cerrarDetallePageTurn()">
+        ← Volver
+      </button>
+
+      <div class="detalle-page-teaser">
+
+        <h2>Ceremonia & Recepción</h2>
+
+        <div class="detalle-page-subtitle">
+          Morcote, Suiza
+        </div>
+
+        <div class="detalle-page-location-simple">
+          <img src="icono-ubicacion.png" alt="Ubicación">
+          <span>Iglesia Santa Maria del Sasso</span>
+        </div>
+
+        <p class="detalle-page-note">
+          Confirmá tu asistencia a la ceremonia para ver horarios y todos los detalles del día.
+        </p>
+
+        <button type="button" class="detalle-page-confirm-btn" onclick="irAConfirmarAsistenciaDesdeDetalle()">
+          <span class="lock-simple">▧</span>
+          Confirmar asistencia
+        </button>
+
+      </div>
+
+    `;
+
+  }
+
+  function mostrarDetalleMorcoteCompleto(contenido){
+
+    contenido.innerHTML = `
+
+        <div class="detalle-page-grid reverse">
+
+          <div class="detalle-page-art two-images">
+            <img src="maria-del-sasso.png" alt="Chiesa Santa Maria del Sasso">
+            <img src="ceremonia-recepcion-acuarela.png" alt="Recepción en Morcote">
+          </div>
+
+          <div class="detalle-page-text">
+
+            <h2>Ceremonia & Recepción</h2>
+
+            <div class="detalle-page-ornament"></div>
+
+            <div class="detalle-page-row">
+              <div class="detalle-page-icon">
+                <img src="icono-agenda.png" alt="Fecha">
+              </div>
+
+              <div>
+                <strong>Sábado</strong>
+                <br>
+                26 de septiembre de 2026
+              </div>
+            </div>
+
+            <div class="detalle-page-row">
+              <div class="detalle-page-icon">
+                <img src="icono-reloj.png" alt="Hora">
+              </div>
+
+              <div>
+                <strong>17:30 hs</strong>
+                <br>
+                Ceremonia religiosa
+                <br><br>
+                <strong>19:30 hs</strong>
+                <br>
+                Cena
+              </div>
+            </div>
+
+            <div class="detalle-page-row">
+              <div class="detalle-page-icon">
+                <img src="icono-ubicacion.png" alt="Ubicación">
+              </div>
+
+              <div>
+                <strong>Chiesa Santa Maria del Sasso</strong>
+                <br>
+                Morcote, Suiza
+                <br><br>
+                <strong>Ristorante Vicania</strong>
+                <br>
+                Vico Morcote, Suiza
+              </div>
+            </div>
+
+            <div class="detalle-page-buttons">
+
+              <a
+                class="btn"
+                href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland"
+                target="_blank"
+                rel="noopener noreferrer">
+                Iglesia
+              </a>
+
+              <a
+                class="btn"
+                href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland"
+                target="_blank"
+                rel="noopener noreferrer">
+                Restaurante
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+  }
+
   window.abrirDetallePageTurn = function(tipo){
 
     const modal = $("detallePageTurn");
@@ -16161,96 +19477,25 @@ Enviar confirmación
     }
 
     if (tipo === "morcote") {
+      mostrarDetalleMorcotePrevio(contenido);
+    }
 
-      contenido.innerHTML = `
-
-        <div class="detalle-page-grid reverse">
-
-          <div class="detalle-page-art two-images">
-            <img src="maria-del-sasso.png" alt="Chiesa Santa Maria del Sasso">
-            <img src="ceremonia-recepcion-acuarela.png" alt="Recepción en Morcote">
-          </div>
-
-          <div class="detalle-page-text">
-
-            <h2>Ceremonia & Recepción</h2>
-
-            <div class="detalle-page-ornament"></div>
-
-            <div class="detalle-page-row">
-              <div class="detalle-page-icon">
-                <img src="icono-agenda.png" alt="Fecha">
-              </div>
-
-              <div>
-                <strong>Sábado</strong>
-                <br>
-                26 de septiembre de 2026
-              </div>
-            </div>
-
-            <div class="detalle-page-row">
-              <div class="detalle-page-icon">
-                <img src="icono-reloj.png" alt="Hora">
-              </div>
-
-              <div>
-                <strong>17:30 hs</strong>
-                <br>
-                Ceremonia religiosa
-                <br><br>
-                <strong>19:30 hs</strong>
-                <br>
-                Cena
-              </div>
-            </div>
-
-            <div class="detalle-page-row">
-              <div class="detalle-page-icon">
-                <img src="icono-ubicacion.png" alt="Ubicación">
-              </div>
-
-              <div>
-                <strong>Chiesa Santa Maria del Sasso</strong>
-                <br>
-                Morcote, Suiza
-                <br><br>
-                <strong>Ristorante Vicania</strong>
-                <br>
-                Vico Morcote, Suiza
-              </div>
-            </div>
-
-            <div class="detalle-page-buttons">
-
-              <a
-                class="btn"
-                href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland"
-                target="_blank"
-                rel="noopener noreferrer">
-                Iglesia
-              </a>
-
-              <a
-                class="btn"
-                href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland"
-                target="_blank"
-                rel="noopener noreferrer">
-                Restaurante
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      `;
-
+    if (tipo === "morcoteCompleto") {
+      mostrarDetalleMorcoteCompleto(contenido);
     }
 
     modal.classList.add("show");
     document.body.style.overflow = "hidden";
+
+  };
+
+  window.irAConfirmarAsistenciaDesdeDetalle = function(){
+
+    window.cerrarDetallePageTurn();
+
+    setTimeout(function(){
+      scrollA("rsvp");
+    }, 180);
 
   };
 
@@ -16446,8 +19691,8 @@ Enviar confirmación
       document.body.classList.add("morcote-si");
 
       setTimeout(function(){
-        scrollA("info");
-      }, 250);
+        window.abrirDetallePageTurn("morcoteCompleto");
+      }, 350);
 
     } else {
 
@@ -16542,6 +19787,1380 @@ Enviar confirmación
 
 
 
+
+
+
+<script>
+/* =====================================================
+   MENÚ ÚNICO:
+   oculto hasta Nuestras celebraciones, luego flotante
+   ===================================================== */
+(function(){
+
+  function moverMenuAlBody(){
+    const nav = document.querySelector(".bottom-nav");
+    if (nav && nav.parentElement !== document.body) {
+      document.body.appendChild(nav);
+    }
+  }
+
+  function actualizarMenuCelebraciones(){
+
+    const nav = document.querySelector(".bottom-nav");
+    const celebraciones = document.getElementById("celebraciones");
+
+    if (!nav || !celebraciones) {
+      return;
+    }
+
+    moverMenuAlBody();
+
+    const rect = celebraciones.getBoundingClientRect();
+    const yaLlegoACelebraciones = rect.top <= window.innerHeight * 0.72;
+
+    if (document.body.classList.contains("invitation-open") && yaLlegoACelebraciones) {
+      document.body.classList.add("menu-celebraciones-visible");
+    } else {
+      document.body.classList.remove("menu-celebraciones-visible");
+    }
+
+  }
+
+  function instalarMenuCelebraciones(){
+    moverMenuAlBody();
+    actualizarMenuCelebraciones();
+
+    window.addEventListener("scroll", actualizarMenuCelebraciones, { passive: true });
+    window.addEventListener("resize", actualizarMenuCelebraciones);
+  }
+
+  const enterAnteriorMenuCelebraciones = window.enterInvitation;
+
+  window.enterInvitation = function(){
+
+    document.body.classList.add("invitation-open");
+
+    if (typeof enterAnteriorMenuCelebraciones === "function") {
+      enterAnteriorMenuCelebraciones();
+    }
+
+    setTimeout(function(){
+      instalarMenuCelebraciones();
+      actualizarMenuCelebraciones();
+    }, 450);
+
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", instalarMenuCelebraciones);
+  } else {
+    instalarMenuCelebraciones();
+  }
+
+  window.addEventListener("load", actualizarMenuCelebraciones);
+
+})();
+</script>
+
+
+
+<script>
+/* =====================================================
+   CORRECCIÓN FINAL 1140:
+   menú desde Celebraciones + Page Turn Morcote definitivo
+   ===================================================== */
+(function(){
+
+  function $(id){
+    return document.getElementById(id);
+  }
+
+  function moverMenuAlBody(){
+    const nav = document.querySelector('.bottom-nav');
+    if (nav && nav.parentElement !== document.body) {
+      document.body.appendChild(nav);
+    }
+  }
+
+  function actualizarMenuCelebraciones(){
+    const nav = document.querySelector('.bottom-nav');
+    const celebraciones = $('celebraciones');
+    const main = $('main');
+
+    if (!nav || !celebraciones) {
+      return;
+    }
+
+    moverMenuAlBody();
+
+    const invitacionAbierta =
+      document.body.classList.contains('invitation-open') ||
+      (main && main.classList.contains('visible'));
+
+    if (invitacionAbierta) {
+      document.body.classList.add('invitation-open');
+    }
+
+    const limite = celebraciones.offsetTop - 8;
+    const y = window.scrollY || window.pageYOffset || 0;
+
+    if (invitacionAbierta && y >= limite) {
+      document.body.classList.add('menu-celebraciones-visible');
+    } else {
+      document.body.classList.remove('menu-celebraciones-visible');
+    }
+  }
+
+  const enterAnterior1140 = window.enterInvitation;
+
+  window.enterInvitation = function(){
+    if (typeof enterAnterior1140 === 'function') {
+      enterAnterior1140();
+    }
+
+    setTimeout(function(){
+      document.body.classList.add('invitation-open');
+      moverMenuAlBody();
+      actualizarMenuCelebraciones();
+    }, 1900);
+  };
+
+  function abrirModalDetalle(contenidoHTML, clase){
+    const modal = $('detallePageTurn');
+    const contenido = $('detallePageTurnContenido');
+    const sheet = modal ? modal.querySelector('.detalle-page-sheet') : null;
+
+    if (!modal || !contenido || !sheet) {
+      return;
+    }
+
+    modal.classList.remove('detalle-morcote-previo');
+    modal.classList.remove('detalle-morcote-completo');
+    modal.classList.remove('detalle-civil');
+
+    if (clase) {
+      modal.classList.add(clase);
+    }
+
+    contenido.innerHTML = contenidoHTML;
+
+    sheet.style.animation = 'none';
+    sheet.offsetHeight;
+    sheet.style.animation = '';
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function detalleCivilHTML(){
+    return `
+      <div class="detalle-page-grid">
+
+        <div class="detalle-page-text">
+
+          <h2>Civil</h2>
+
+          <div class="detalle-page-ornament"></div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-agenda.png" alt="Fecha">
+            </div>
+
+            <div>
+              <strong>Lunes</strong>
+              <br>
+              3 de agosto de 2026
+            </div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-reloj.png" alt="Hora">
+            </div>
+
+            <div>
+              <strong>12:00 hs</strong>
+            </div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-ubicacion.png" alt="Ubicación">
+            </div>
+
+            <div>
+              <strong>Museo Isaac Fernández Blanco</strong>
+              <br>
+              Suipacha 1422
+              <br>
+              Buenos Aires, Argentina
+            </div>
+          </div>
+
+          <div class="detalle-page-buttons">
+            <a
+              class="btn"
+              href="https://www.google.com/maps/search/?api=1&query=Museo%20Isaac%20Fernandez%20Blanco%20Suipacha%201422%20Buenos%20Aires"
+              target="_blank"
+              rel="noopener noreferrer">
+              Ver en Google Maps
+            </a>
+          </div>
+
+        </div>
+
+        <div class="detalle-page-art">
+          <img src="museo-civil.PNG" alt="Museo Isaac Fernández Blanco">
+        </div>
+
+      </div>
+    `;
+  }
+
+  function detalleMorcotePrevioHTML(){
+    return `
+      <button type="button" class="detalle-page-volver" onclick="cerrarDetallePageTurn()">
+        ← Volver
+      </button>
+
+      <div class="detalle-page-teaser">
+
+        <h2>Ceremonia & Recepción</h2>
+
+        <div class="detalle-page-subtitle">
+          Morcote, Suiza
+        </div>
+
+        <div class="detalle-page-location-simple">
+          <img src="icono-ubicacion.png" alt="Ubicación">
+          <span>Iglesia Santa Maria del Sasso</span>
+        </div>
+
+        <p class="detalle-page-note">
+          Confirmá tu asistencia a la ceremonia para ver horarios y todos los detalles del día.
+        </p>
+
+        <button type="button" class="detalle-page-confirm-btn" onclick="irAConfirmarAsistenciaDesdeDetalle()">
+          <span class="lock-simple">▧</span>
+          Confirmar asistencia
+        </button>
+
+      </div>
+    `;
+  }
+
+  function detalleMorcoteCompletoHTML(){
+    return `
+      <div class="detalle-page-grid reverse">
+
+        <div class="detalle-page-art two-images">
+          <img src="maria-del-sasso.png" alt="Chiesa Santa Maria del Sasso">
+          <img src="ceremonia-recepcion-acuarela.png" alt="Recepción en Morcote">
+        </div>
+
+        <div class="detalle-page-text">
+
+          <h2>Ceremonia & Recepción</h2>
+
+          <div class="detalle-page-ornament"></div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-agenda.png" alt="Fecha">
+            </div>
+
+            <div>
+              <strong>Sábado</strong>
+              <br>
+              26 de septiembre de 2026
+            </div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-reloj.png" alt="Hora">
+            </div>
+
+            <div>
+              <strong>17:30 hs</strong>
+              <br>
+              Ceremonia religiosa
+              <br><br>
+              <strong>19:30 hs</strong>
+              <br>
+              Cena
+            </div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon">
+              <img src="icono-ubicacion.png" alt="Ubicación">
+            </div>
+
+            <div>
+              <strong>Chiesa Santa Maria del Sasso</strong>
+              <br>
+              Morcote, Suiza
+              <br><br>
+              <strong>Ristorante Vicania</strong>
+              <br>
+              Vico Morcote, Suiza
+            </div>
+          </div>
+
+          <div class="detalle-page-buttons">
+
+            <a
+              class="btn"
+              href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland"
+              target="_blank"
+              rel="noopener noreferrer">
+              Iglesia
+            </a>
+
+            <a
+              class="btn"
+              href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland"
+              target="_blank"
+              rel="noopener noreferrer">
+              Restaurante
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+  window.abrirDetallePageTurn = function(tipo){
+    if (tipo === 'civil') {
+      abrirModalDetalle(detalleCivilHTML(), 'detalle-civil');
+      return;
+    }
+
+    if (tipo === 'morcote') {
+      abrirModalDetalle(detalleMorcotePrevioHTML(), 'detalle-morcote-previo');
+      return;
+    }
+
+    if (tipo === 'morcoteCompleto') {
+      abrirModalDetalle(detalleMorcoteCompletoHTML(), 'detalle-morcote-completo');
+      return;
+    }
+  };
+
+  window.irAConfirmarAsistenciaDesdeDetalle = function(){
+    if (typeof window.cerrarDetallePageTurn === 'function') {
+      window.cerrarDetallePageTurn();
+    }
+
+    setTimeout(function(){
+      const rsvp = $('rsvp');
+      if (rsvp) {
+        rsvp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 180);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){
+      moverMenuAlBody();
+      actualizarMenuCelebraciones();
+    });
+  } else {
+    moverMenuAlBody();
+    actualizarMenuCelebraciones();
+  }
+
+  window.addEventListener('scroll', actualizarMenuCelebraciones, { passive: true });
+  window.addEventListener('resize', actualizarMenuCelebraciones);
+  window.addEventListener('load', actualizarMenuCelebraciones);
+
+})();
+</script>
+
+
+
+<script>
+/* =====================================================
+   RSVP FINAL:
+   Morcote Sí -> Detalles completos + Tu viaje
+   Morcote No -> Final
+   ===================================================== */
+(function(){
+
+  function $(id){
+    return document.getElementById(id);
+  }
+
+  function valorRadio(nombre){
+    const seleccionado = document.querySelector('input[name="' + nombre + '"]:checked');
+    return seleccionado ? seleccionado.value : "";
+  }
+
+  function scrollA(id){
+    const destino = $(id);
+    if (destino) {
+      destino.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function cerrarModalRSVP(){
+    const modal = $("rsvpModal");
+    if (modal) {
+      modal.classList.remove("show");
+    }
+  }
+
+  function abrirVentanaPostRSVPMorcote(){
+
+    const modal = $("detallePageTurn");
+    const contenido = $("detallePageTurnContenido");
+    const sheet = modal ? modal.querySelector(".detalle-page-sheet") : null;
+
+    if (!modal || !contenido || !sheet) {
+      return;
+    }
+
+    modal.classList.remove("detalle-morcote-previo");
+    modal.classList.remove("detalle-morcote-completo");
+    modal.classList.remove("detalle-civil");
+    modal.classList.add("detalle-post-rsvp");
+
+    contenido.innerHTML = `
+
+      <div class="post-rsvp-wrap">
+
+        <section class="post-rsvp-section post-rsvp-details">
+
+          <h2 class="post-rsvp-title">Ceremonia & Recepción</h2>
+
+          <div class="post-rsvp-subtitle">Morcote, Suiza</div>
+
+          <div class="gold-rule small"></div>
+
+          <div class="post-rsvp-detail-grid">
+
+            <div class="post-rsvp-art">
+              <img src="maria-del-sasso.png" alt="Chiesa Santa Maria del Sasso">
+              <img src="ceremonia-recepcion-acuarela.png" alt="Recepción en Morcote">
+            </div>
+
+            <div class="post-rsvp-detail-text">
+
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon">
+                  <img src="icono-agenda.png" alt="Fecha">
+                </div>
+
+                <div>
+                  <strong>Sábado</strong>
+                  <br>
+                  26 de septiembre de 2026
+                </div>
+              </div>
+
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon">
+                  <img src="icono-reloj.png" alt="Hora">
+                </div>
+
+                <div>
+                  <strong>17:30 hs</strong>
+                  <br>
+                  Ceremonia religiosa
+                  <br><br>
+                  <strong>19:30 hs</strong>
+                  <br>
+                  Cena
+                </div>
+              </div>
+
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon">
+                  <img src="icono-ubicacion.png" alt="Ubicación">
+                </div>
+
+                <div>
+                  <strong>Chiesa Santa Maria del Sasso</strong>
+                  <br>
+                  Morcote, Suiza
+                  <br><br>
+                  <strong>Ristorante Vicania</strong>
+                  <br>
+                  Vico Morcote, Suiza
+                </div>
+              </div>
+
+              <div class="post-rsvp-buttons">
+
+                <a
+                  class="btn"
+                  href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Iglesia
+                </a>
+
+                <a
+                  class="btn"
+                  href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Restaurante
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <section class="post-rsvp-section post-rsvp-trip">
+
+          <h2 class="post-rsvp-title">Tu viaje</h2>
+
+          <div class="post-rsvp-subtitle">Información útil para Morcote</div>
+
+          <div class="gold-rule small"></div>
+
+          <div class="post-rsvp-trip-map">
+            <img src="mapa-morcote.jpg" alt="Ilustración de viaje de Buenos Aires a Morcote">
+          </div>
+
+          <div class="post-rsvp-useful-grid">
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">
+                <img src="icono-ubicacion.png" alt="Cómo llegar">
+              </span>
+              <span>Cómo llegar</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">🛎</span>
+              <span>Hoteles</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">✈</span>
+              <span>Transporte</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">☼</span>
+              <span>Clima</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">CHF</span>
+              <span>Moneda</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon">A</span>
+              <span>Idioma</span>
+            </a>
+
+          </div>
+
+          <button type="button" class="btn post-rsvp-final-btn" onclick="cerrarDetallePageTurn(); scrollAFinalDesdeRSVP();">
+            Continuar
+          </button>
+
+        </section>
+
+      </div>
+
+    `;
+
+    sheet.style.animation = "none";
+    sheet.offsetHeight;
+    sheet.style.animation = "";
+
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+
+  }
+
+  window.scrollAFinalDesdeRSVP = function(){
+    setTimeout(function(){
+      scrollA("final");
+    }, 160);
+  };
+
+  window.sendConfirmación = function(event){
+
+    event.preventDefault();
+
+    const form = event.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const morcote = valorRadio("morcote");
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
+    const rsvpData = {
+      fullName: $("fullName") ? $("fullName").value.trim() : "",
+      email: $("email") ? $("email").value.trim() : "",
+      civil: valorRadio("civil"),
+      morcote: morcote,
+      guest: valorRadio("guest"),
+      guestNames: $("guestNames") ? $("guestNames").value.trim() : "",
+      accommodation: "",
+      transport: "",
+      message: $("message") ? $("message").value.trim() : "",
+      submittedAt: new Date().toISOString()
+    };
+
+    fetch(window.Confirmación_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(rsvpData)
+    })
+    .then(function(){
+
+      cerrarModalRSVP();
+
+      if (morcote === "yes") {
+
+        document.body.classList.add("confirmacion-morcote-si");
+        document.body.classList.remove("confirmacion-morcote-no");
+        document.body.classList.add("morcote-si");
+
+        scrollA("info");
+
+        setTimeout(function(){
+          abrirVentanaPostRSVPMorcote();
+        }, 300);
+
+      } else {
+
+        document.body.classList.add("confirmacion-morcote-no");
+        document.body.classList.remove("confirmacion-morcote-si");
+        document.body.classList.remove("morcote-si");
+
+        setTimeout(function(){
+          scrollA("final");
+        }, 250);
+
+      }
+
+    })
+    .catch(function(){
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar confirmación";
+      }
+
+      alert("Hubo un error. Por favor intentá nuevamente.");
+
+    });
+
+  };
+
+})();
+</script>
+
+
+
+<script>
+/* =====================================================
+   CORRECCIÓN DEFINITIVA 1160:
+   menú + Morcote previo + RSVP Sí/No
+   Este bloque pisa todos los scripts anteriores.
+   ===================================================== */
+(function(){
+
+  function $(id){
+    return document.getElementById(id);
+  }
+
+  function valorRadio(nombre){
+    const seleccionado = document.querySelector('input[name="' + nombre + '"]:checked');
+    return seleccionado ? seleccionado.value : "";
+  }
+
+  function scrollA(id){
+    const destino = $(id);
+    if (destino) {
+      destino.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function moverMenuAlBody(){
+    const nav = document.querySelector('.bottom-nav');
+    if (nav && nav.parentElement !== document.body) {
+      document.body.appendChild(nav);
+    }
+  }
+
+  function actualizarMenu(){
+    const nav = document.querySelector('.bottom-nav');
+    const celebraciones = $('celebraciones');
+    const main = $('main');
+
+    if (!nav || !celebraciones) {
+      return;
+    }
+
+    moverMenuAlBody();
+
+    const invitacionAbierta =
+      document.body.classList.contains('invitation-open') ||
+      (main && main.classList.contains('visible'));
+
+    if (invitacionAbierta) {
+      document.body.classList.add('invitation-open');
+    }
+
+    const y = window.scrollY || window.pageYOffset || 0;
+    const limite = celebraciones.offsetTop - 12;
+
+    if (invitacionAbierta && y >= limite) {
+      document.body.classList.add('menu-celebraciones-visible');
+    } else {
+      document.body.classList.remove('menu-celebraciones-visible');
+    }
+  }
+
+  const enterAnterior1160 = window.enterInvitation;
+
+  window.enterInvitation = function(){
+    if (typeof enterAnterior1160 === 'function') {
+      enterAnterior1160();
+    }
+
+    setTimeout(function(){
+      document.body.classList.add('invitation-open');
+      moverMenuAlBody();
+      actualizarMenu();
+    }, 1200);
+  };
+
+  function abrirModal(contenidoHTML, clase){
+    const modal = $('detallePageTurn');
+    const contenido = $('detallePageTurnContenido');
+    const sheet = modal ? modal.querySelector('.detalle-page-sheet') : null;
+
+    if (!modal || !contenido || !sheet) {
+      return;
+    }
+
+    modal.classList.remove('detalle-civil');
+    modal.classList.remove('detalle-morcote-previo');
+    modal.classList.remove('detalle-morcote-completo');
+    modal.classList.remove('detalle-post-rsvp');
+
+    if (clase) {
+      modal.classList.add(clase);
+    }
+
+    contenido.innerHTML = contenidoHTML;
+
+    sheet.scrollTop = 0;
+    sheet.style.animation = 'none';
+    sheet.offsetHeight;
+    sheet.style.animation = '';
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function detalleCivilHTML(){
+    return `
+      <div class="detalle-page-grid">
+        <div class="detalle-page-text">
+          <h2>Civil</h2>
+          <div class="detalle-page-ornament"></div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon"><img src="icono-agenda.png" alt="Fecha"></div>
+            <div><strong>Lunes</strong><br>3 de agosto de 2026</div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon"><img src="icono-reloj.png" alt="Hora"></div>
+            <div><strong>12:00 hs</strong></div>
+          </div>
+
+          <div class="detalle-page-row">
+            <div class="detalle-page-icon"><img src="icono-ubicacion.png" alt="Ubicación"></div>
+            <div><strong>Museo Isaac Fernández Blanco</strong><br>Suipacha 1422<br>Buenos Aires, Argentina</div>
+          </div>
+
+          <div class="detalle-page-buttons">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Museo%20Isaac%20Fernandez%20Blanco%20Suipacha%201422%20Buenos%20Aires" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+          </div>
+        </div>
+
+        <div class="detalle-page-art">
+          <img src="museo-civil.PNG" alt="Museo Isaac Fernández Blanco">
+        </div>
+      </div>
+    `;
+  }
+
+  function detalleMorcotePrevioHTML(){
+    return `
+      <button type="button" class="detalle-page-volver" onclick="cerrarDetallePageTurn()">← Volver</button>
+
+      <div class="detalle-page-teaser">
+        <h2>Ceremonia & Recepción</h2>
+
+        <div class="detalle-page-subtitle">Morcote, Suiza</div>
+
+        <div class="detalle-page-location-simple">
+          <img src="icono-ubicacion.png" alt="Ubicación">
+          <span>Iglesia Santa Maria del Sasso</span>
+        </div>
+
+        <p class="detalle-page-note">
+          Confirmá tu asistencia a la ceremonia para ver horarios y todos los detalles del día.
+        </p>
+
+        <button type="button" class="detalle-page-confirm-btn" onclick="irAConfirmarAsistenciaDesdeDetalle()">
+          <span class="lock-simple">▧</span>
+          Confirmar asistencia
+        </button>
+      </div>
+    `;
+  }
+
+  function postRSVPMorcoteHTML(){
+    return `
+      <div class="post-rsvp-wrap">
+
+        <section class="post-rsvp-section post-rsvp-details">
+          <h2 class="post-rsvp-title">Ceremonia & Recepción</h2>
+          <div class="post-rsvp-subtitle">Morcote, Suiza</div>
+          <div class="gold-rule small"></div>
+
+          <div class="post-rsvp-detail-grid">
+            <div class="post-rsvp-art">
+              <img src="maria-del-sasso.png" alt="Chiesa Santa Maria del Sasso">
+              <img src="ceremonia-recepcion-acuarela.png" alt="Recepción en Morcote">
+            </div>
+
+            <div class="post-rsvp-detail-text">
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon"><img src="icono-agenda.png" alt="Fecha"></div>
+                <div><strong>Sábado</strong><br>26 de septiembre de 2026</div>
+              </div>
+
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon"><img src="icono-reloj.png" alt="Hora"></div>
+                <div><strong>17:30 hs</strong><br>Ceremonia religiosa<br><br><strong>19:30 hs</strong><br>Cena</div>
+              </div>
+
+              <div class="post-rsvp-row">
+                <div class="post-rsvp-icon"><img src="icono-ubicacion.png" alt="Ubicación"></div>
+                <div><strong>Chiesa Santa Maria del Sasso</strong><br>Morcote, Suiza<br><br><strong>Ristorante Vicania</strong><br>Vico Morcote, Suiza</div>
+              </div>
+
+              <div class="post-rsvp-buttons">
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland" target="_blank" rel="noopener noreferrer">Iglesia</a>
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland" target="_blank" rel="noopener noreferrer">Restaurante</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="post-rsvp-section post-rsvp-trip">
+          <h2 class="post-rsvp-title">Tu viaje</h2>
+          <div class="post-rsvp-subtitle">Información útil para Morcote</div>
+          <div class="gold-rule small"></div>
+
+          <div class="post-rsvp-trip-map">
+            <img src="mapa-morcote.jpg" alt="Ilustración de viaje de Buenos Aires a Morcote">
+          </div>
+
+          <div class="post-rsvp-useful-grid">
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()">
+              <span class="post-rsvp-useful-icon"><img src="icono-ubicacion.png" alt="Cómo llegar"></span>
+              <span>Cómo llegar</span>
+            </a>
+
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()"><span class="post-rsvp-useful-icon">🛎</span><span>Hoteles</span></a>
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()"><span class="post-rsvp-useful-icon">✈</span><span>Transporte</span></a>
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()"><span class="post-rsvp-useful-icon">☼</span><span>Clima</span></a>
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()"><span class="post-rsvp-useful-icon">CHF</span><span>Moneda</span></a>
+            <a class="post-rsvp-useful-item" href="#info" onclick="cerrarDetallePageTurn()"><span class="post-rsvp-useful-icon">A</span><span>Idioma</span></a>
+          </div>
+
+          <button type="button" class="btn post-rsvp-final-btn" onclick="cerrarDetallePageTurn(); scrollAFinalDesdeRSVP();">
+            Continuar
+          </button>
+        </section>
+      </div>
+    `;
+  }
+
+  window.abrirDetallePageTurn = function(tipo){
+    if (tipo === 'civil') {
+      abrirModal(detalleCivilHTML(), 'detalle-civil');
+      return;
+    }
+
+    if (tipo === 'morcote') {
+      abrirModal(detalleMorcotePrevioHTML(), 'detalle-morcote-previo');
+      return;
+    }
+
+    if (tipo === 'morcoteCompleto' || tipo === 'postRSVPMorcote') {
+      abrirModal(postRSVPMorcoteHTML(), 'detalle-post-rsvp');
+      return;
+    }
+  };
+
+  window.cerrarDetallePageTurn = function(){
+    const modal = $('detallePageTurn');
+    if (modal) {
+      modal.classList.remove('show');
+    }
+    document.body.style.overflow = '';
+  };
+
+  window.irAConfirmarAsistenciaDesdeDetalle = function(){
+    window.cerrarDetallePageTurn();
+    setTimeout(function(){
+      scrollA('rsvp');
+    }, 180);
+  };
+
+  window.scrollAFinalDesdeRSVP = function(){
+    setTimeout(function(){
+      scrollA('final');
+    }, 160);
+  };
+
+  window.sendConfirmación = function(event){
+    event.preventDefault();
+
+    const form = event.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const morcote = valorRadio('morcote');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+    }
+
+    const rsvpData = {
+      fullName: $('fullName') ? $('fullName').value.trim() : '',
+      email: $('email') ? $('email').value.trim() : '',
+      civil: valorRadio('civil'),
+      morcote: morcote,
+      guest: valorRadio('guest'),
+      guestNames: $('guestNames') ? $('guestNames').value.trim() : '',
+      accommodation: '',
+      transport: '',
+      message: $('message') ? $('message').value.trim() : '',
+      submittedAt: new Date().toISOString()
+    };
+
+    fetch(window.Confirmación_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(rsvpData)
+    })
+    .then(function(){
+      const rsvpModal = $('rsvpModal');
+      if (rsvpModal) {
+        rsvpModal.classList.remove('show');
+      }
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar confirmación';
+      }
+
+      if (morcote === 'yes') {
+        document.body.classList.add('confirmacion-morcote-si');
+        document.body.classList.remove('confirmacion-morcote-no');
+        document.body.classList.add('morcote-si');
+
+        setTimeout(function(){
+          window.abrirDetallePageTurn('postRSVPMorcote');
+        }, 260);
+      } else {
+        document.body.classList.add('confirmacion-morcote-no');
+        document.body.classList.remove('confirmacion-morcote-si');
+        document.body.classList.remove('morcote-si');
+
+        setTimeout(function(){
+          scrollA('final');
+        }, 250);
+      }
+    })
+    .catch(function(){
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar confirmación';
+      }
+      alert('Hubo un error. Por favor intentá nuevamente.');
+    });
+  };
+
+  function initFinal1160(){
+    moverMenuAlBody();
+    actualizarMenu();
+    window.addEventListener('scroll', actualizarMenu, { passive: true });
+    window.addEventListener('resize', actualizarMenu);
+    window.addEventListener('load', actualizarMenu);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFinal1160);
+  } else {
+    initFinal1160();
+  }
+
+})();
+</script>
+
+
+<script>
+/* =====================================================
+   CORRECCIÓN FINAL ESTABLE
+   Ver detalles / RSVP / Menú desde Cuenta Regresiva
+   ===================================================== */
+(function(){
+
+  function $(id){ return document.getElementById(id); }
+
+  function scrollA(id){
+    const el = $(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function valorRadio(nombre){
+    const seleccionado = document.querySelector('input[name="' + nombre + '"]:checked');
+    return seleccionado ? seleccionado.value : '';
+  }
+
+  function asegurarModal(){
+    let modal = $('detallePageTurn');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'detalle-page-turn';
+      modal.id = 'detallePageTurn';
+      modal.innerHTML = '<div class="detalle-page-sheet"><button type="button" class="detalle-page-close" onclick="cerrarDetallePageTurn()">×</button><div id="detallePageTurnContenido"></div></div>';
+      document.body.appendChild(modal);
+    }
+    let contenido = $('detallePageTurnContenido');
+    if (!contenido) {
+      const sheet = modal.querySelector('.detalle-page-sheet');
+      contenido = document.createElement('div');
+      contenido.id = 'detallePageTurnContenido';
+      sheet.appendChild(contenido);
+    }
+    return modal;
+  }
+
+  function abrirModal(html){
+    const modal = asegurarModal();
+    const contenido = $('detallePageTurnContenido');
+    const sheet = modal.querySelector('.detalle-page-sheet');
+    contenido.innerHTML = html;
+    if (sheet) {
+      sheet.style.animation = 'none';
+      sheet.offsetHeight;
+      sheet.style.animation = '';
+    }
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function previewMorcoteHTML(){
+    return `
+      <div class="detalle-previo-morcote">
+        <button type="button" class="detalle-volver" onclick="cerrarDetallePageTurn()">← VOLVER</button>
+
+        <h2>Ceremonia & Recepción</h2>
+
+        <div class="modal-place">Morcote, Suiza</div>
+
+        <div class="modal-church">⌖&nbsp; Iglesia Santa Maria del Sasso</div>
+
+        <div class="modal-note">
+          Confirmá tu asistencia a la ceremonia para ver horarios y todos los detalles del día.
+        </div>
+
+        <button type="button" class="btn" onclick="irAConfirmarAsistenciaDesdeDetalle()">
+          Confirmar asistencia
+        </button>
+      </div>
+    `;
+  }
+
+  function detalleMorcoteCompletoHTML(){
+    return `
+      <div class="detalle-page-grid-final">
+
+        <div class="detalle-page-art-final">
+          <img src="maria-del-sasso.png" alt="Iglesia Santa Maria del Sasso">
+          <img src="restaurante.png" alt="Ristorante Vicania">
+        </div>
+
+        <div class="detalle-page-text-final">
+          <h2>Ceremonia & Recepción</h2>
+
+          <div class="detalle-page-ornament"></div>
+
+          <div class="detalle-page-row-final">
+            <div><img src="icono-agenda.png" alt="Fecha"></div>
+            <div>
+              <strong>Sábado</strong><br>
+              26 de septiembre de 2026
+            </div>
+          </div>
+
+          <div class="detalle-page-row-final">
+            <div><img src="icono-reloj.png" alt="Hora"></div>
+            <div>
+              <strong>17:30 hs</strong><br>
+              Ceremonia religiosa
+              <br><br>
+              <strong>19:30 hs</strong><br>
+              Cena
+            </div>
+          </div>
+
+          <div class="detalle-page-row-final">
+            <div><img src="icono-ubicacion.png" alt="Ubicación"></div>
+            <div>
+              <strong>Iglesia Santa Maria del Sasso</strong><br>
+              Morcote, Suiza
+              <br><br>
+              <strong>Ristorante Vicania</strong><br>
+              Vico Morcote, Suiza
+            </div>
+          </div>
+
+          <div class="detalle-page-buttons-final">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chiesa%20Santa%20Maria%20del%20Sasso%20Morcote%20Switzerland" target="_blank" rel="noopener noreferrer">Iglesia</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Vicania%20Morcote%20Switzerland" target="_blank" rel="noopener noreferrer">Restaurante</a>
+            <button type="button" class="btn" onclick="continuarAlViajeDesdeDetalles()">Continuar al viaje</button>
+          </div>
+        </div>
+
+      </div>
+    `;
+  }
+
+  function detalleCivilHTML(){
+    return `
+      <div class="detalle-page-grid-final">
+        <div class="detalle-page-art-final" style="grid-template-rows:1fr;">
+          <img src="museo-civil.PNG" alt="Museo Isaac Fernández Blanco">
+        </div>
+        <div class="detalle-page-text-final">
+          <h2>Civil</h2>
+          <div class="detalle-page-ornament"></div>
+          <div class="detalle-page-row-final">
+            <div><img src="icono-agenda.png" alt="Fecha"></div>
+            <div><strong>Lunes</strong><br>3 de agosto de 2026</div>
+          </div>
+          <div class="detalle-page-row-final">
+            <div><img src="icono-reloj.png" alt="Hora"></div>
+            <div><strong>12:00 hs</strong></div>
+          </div>
+          <div class="detalle-page-row-final">
+            <div><img src="icono-ubicacion.png" alt="Ubicación"></div>
+            <div><strong>Museo Isaac Fernández Blanco</strong><br>Suipacha 1422<br>Buenos Aires, Argentina</div>
+          </div>
+          <div class="detalle-page-buttons-final">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Museo%20Isaac%20Fernandez%20Blanco%20Suipacha%201422%20Buenos%20Aires" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  window.abrirDetallePageTurn = function(tipo){
+    if (tipo === 'civil') {
+      abrirModal(detalleCivilHTML());
+      return;
+    }
+
+    if (tipo === 'morcote') {
+      abrirModal(previewMorcoteHTML());
+      return;
+    }
+
+    if (tipo === 'morcoteCompleto' || tipo === 'postRSVPMorcote') {
+      abrirModal(detalleMorcoteCompletoHTML());
+      return;
+    }
+  };
+
+  window.cerrarDetallePageTurn = function(){
+    const modal = $('detallePageTurn');
+    if (modal) {
+      modal.classList.remove('show');
+    }
+    document.body.style.overflow = '';
+  };
+
+  window.irAConfirmarAsistenciaDesdeDetalle = function(){
+    window.cerrarDetallePageTurn();
+    setTimeout(function(){ scrollA('rsvp'); }, 180);
+  };
+
+  window.continuarAlViajeDesdeDetalles = function(){
+    window.cerrarDetallePageTurn();
+    setTimeout(function(){ scrollA('info'); }, 180);
+  };
+
+  window.sendConfirmación = function(event){
+    event.preventDefault();
+
+    const form = event.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const morcote = valorRadio('morcote');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+    }
+
+    const data = {
+      fullName: $('fullName') ? $('fullName').value.trim() : '',
+      email: $('email') ? $('email').value.trim() : '',
+      civil: valorRadio('civil'),
+      morcote: morcote,
+      guest: valorRadio('guest'),
+      guestNames: $('guestNames') ? $('guestNames').value.trim() : '',
+      accommodation: '',
+      transport: '',
+      message: $('message') ? $('message').value.trim() : '',
+      submittedAt: new Date().toISOString()
+    };
+
+    function despuesDeEnviar(){
+      const rsvpModal = $('rsvpModal');
+      if (rsvpModal) {
+        rsvpModal.classList.remove('show');
+      }
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar confirmación';
+      }
+
+      if (morcote === 'yes') {
+        document.body.classList.add('morcote-si');
+        document.body.classList.add('confirmacion-morcote-si');
+        document.body.classList.remove('confirmacion-morcote-no');
+        setTimeout(function(){ window.abrirDetallePageTurn('postRSVPMorcote'); }, 220);
+      } else {
+        document.body.classList.remove('morcote-si');
+        document.body.classList.remove('confirmacion-morcote-si');
+        document.body.classList.add('confirmacion-morcote-no');
+        setTimeout(function(){ scrollA('final'); }, 220);
+      }
+    }
+
+    if (window.Confirmación_URL) {
+      fetch(window.Confirmación_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+      }).then(despuesDeEnviar).catch(function(){
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar confirmación';
+        }
+        alert('Hubo un error. Por favor intentá nuevamente.');
+      });
+    } else {
+      despuesDeEnviar();
+    }
+  };
+
+  function corregirBotonesCelebraciones(){
+    const botones = document.querySelectorAll('#celebraciones .event-card .btn');
+    if (botones[0]) {
+      botones[0].setAttribute('type', 'button');
+      botones[0].onclick = function(event){ event.preventDefault(); window.abrirDetallePageTurn('civil'); return false; };
+    }
+    if (botones[1]) {
+      botones[1].setAttribute('type', 'button');
+      botones[1].onclick = function(event){ event.preventDefault(); window.abrirDetallePageTurn('morcote'); return false; };
+    }
+  }
+
+  function corregirMenu(){
+    const nav = document.querySelector('.bottom-nav');
+    if (!nav) return;
+
+    if (nav.parentElement !== document.body) {
+      document.body.appendChild(nav);
+    }
+
+    const links = nav.querySelectorAll('a');
+    if (links[0]) { links[0].setAttribute('href', '#cuenta'); links[0].setAttribute('data-section','agenda'); }
+    if (links[1]) { links[1].setAttribute('href', '#celebraciones'); links[1].setAttribute('data-section','ceremonia'); links[1].onclick = function(e){ e.preventDefault(); window.abrirDetallePageTurn('morcote'); return false; }; }
+    if (links[2]) { links[2].setAttribute('href', '#celebraciones'); links[2].setAttribute('data-section','recepcion'); links[2].onclick = function(e){ e.preventDefault(); window.abrirDetallePageTurn('morcote'); return false; }; }
+    if (links[3]) { links[3].setAttribute('href', '#dresscode'); links[3].setAttribute('data-section','dresscode'); }
+    if (links[4]) { links[4].setAttribute('href', '#info'); links[4].setAttribute('data-section','info'); }
+    if (links[5]) { links[5].setAttribute('href', '#rsvp'); links[5].setAttribute('data-section','rsvp'); }
+
+    const labels = nav.querySelectorAll('.nav-label');
+    const textos = ['Agenda','Ceremonia','Recepción','Dress Code','Información Útil','Confirmar Asistencia'];
+    labels.forEach(function(label, i){ if (textos[i]) label.textContent = textos[i]; });
+  }
+
+  function actualizarMenuVisible(){
+    const cuenta = $('cuenta');
+    const nav = document.querySelector('.bottom-nav');
+    if (!cuenta || !nav) return;
+
+    const rect = cuenta.getBoundingClientRect();
+    const debeVerse = rect.top <= window.innerHeight * 0.78;
+    document.body.classList.toggle('menu-visible', debeVerse);
+  }
+
+  function init(){
+    corregirBotonesCelebraciones();
+    corregirMenu();
+    actualizarMenuVisible();
+    window.addEventListener('scroll', actualizarMenuVisible, { passive: true });
+    window.addEventListener('resize', actualizarMenuVisible);
+
+    document.addEventListener('click', function(event){
+      const modal = $('detallePageTurn');
+      if (modal && event.target === modal) {
+        window.cerrarDetallePageTurn();
+      }
+    });
+
+    document.addEventListener('keydown', function(event){
+      if (event.key === 'Escape') {
+        window.cerrarDetallePageTurn();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
 
 </body>
 
