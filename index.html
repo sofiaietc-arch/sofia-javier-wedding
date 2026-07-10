@@ -307,6 +307,36 @@
         gap: 20px;
       }
     }
+/* =========================================
+   FONDO DE PÁGINAS INTERNAS
+   ========================================= */
+body {
+  margin: 0;
+  /* El fondo se aplicará a todo el sitio, pero la portada lo tapará */
+  background-image: url('fondo-cuenta-regresiva.png'); 
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Aseguramos que la portada no deje ver este fondo hasta que se abra */
+#opening {
+  background-color: var(--bg-color); /* Color sólido para asegurar cobertura */
+}
+
+/* Fondo específico de la portada (mantiene el que ya establecimos) */
+#opening::before {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  z-index: -1;
+  background-image: linear-gradient(rgba(255,253,248,.64), rgba(255,253,248,.72)), url('fondo portada.png');
+  background-size: cover; 
+  background-position: center;
+}
   </style>
 </head>
 <body>
