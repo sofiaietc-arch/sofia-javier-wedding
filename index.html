@@ -254,6 +254,58 @@
       .modal-grid { grid-template-columns: 1fr; }
       .rsvp-birds-container { max-width: 95vw; }
     }
+    /* Estilo del Grid de Información */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: min(700px, 90vw);
+      margin: 40px auto;
+      border-top: 1px solid rgba(198,160,91,.3);
+      border-bottom: 1px solid rgba(198,160,91,.3);
+      padding: 30px 0;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .info-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .info-item span {
+      font-family: 'Cinzel', serif;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    @media (max-width: 760px) {
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -374,14 +426,42 @@
     </section>
     
     <!-- 6. EL VIAJE -->
-    <section id="viaje" class="section page-carta">
+  <section id="info" class="section page-carta">
       <div class="content-wrapper">
-        <h2>El viaje</h2>
-        <p class="cinzel" style="font-size: 10px; margin-bottom: 20px;">Un camino que nos lleva a Morcote</p>
+        <h2 class="gold-gradient">El viaje</h2>
+        <div class="ramito"></div>
+        <p class="cinzel" style="font-size: 11px; margin-bottom: 30px;">Un camino que nos lleva a Morcote</p>
+        
         <div class="map-container">
           <img src="mapa-morcote.jpg" alt="Mapa">
         </div>
-        <p class="script" style="font-size: clamp(24px, 4vw, 32px); margin-top: 30px;">"Hay lugares que marcan la vida,<br>y personas que la hacen inolvidable."</p>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 14 C25 14 19 20 19 28 C19 40 32 54 32 54 C32 54 45 40 45 28 C45 20 39 14 32 14 Z"></path><circle cx="32" cy="28" r="4"></circle></svg></div>
+            <span>Cómo llegar</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 18 C24 18 18 28 18 38 H46 C46 28 40 18 32 18 Z"></path><rect x="14" y="38" width="36" height="4"></rect><circle cx="32" cy="14" r="2"></circle><path d="M32 16 V18"></path></svg></div>
+            <span>Hoteles</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M46 16 C50 12 54 14 54 18 L46 44 L34 40 L26 48 V40 L12 36 L18 28 L36 32 L46 16 Z"></path><path d="M34 40 L40 50 L46 44"></path></svg></div>
+            <span>Transporte</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="10"></circle><path d="M32 12 V16 M32 48 V52 M12 32 H16 M48 32 H52 M18 18 L21 21 M43 43 L46 46 M18 46 L21 43 M43 21 L46 18"></path></svg></div>
+            <span>Clima</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="16"></circle><text x="32" y="36" font-size="12" text-anchor="middle" font-family="'Cinzel', serif" fill="currentColor" stroke="none">CHF</text></svg></div>
+            <span>Moneda</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 18 L20 46 H24 L27 38 H37 L40 46 H44 L32 18 Z M29 32 L32 24 L35 32 Z"></path></svg></div>
+            <span>Idiomas</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -411,7 +491,7 @@
             </select>
           </div>
           <div class="form-group">
-            <input type="text" id="restricciones" placeholder="Restricciones alimentarias (opcional)">
+          <input type="email" id="email" placeholder="Email" required>
           </div>
           <div class="form-group">
             <textarea id="mensaje" rows="2" placeholder="Mensaje para los novios (opcional)"></textarea>
@@ -590,11 +670,11 @@
       
       const asisteMorcote = document.getElementById('asisteMorcote').value;
       const payload = {
-        nombre: document.getElementById('nombre').value,
-        civil: document.getElementById('asisteCivil').value,
-        morcote: asisteMorcote,
-        acompanante: document.getElementById('restricciones').value, // Used for restrictions in this form layout
-        mensaje: document.getElementById('mensaje').value
+      nombre: document.getElementById('nombre').value,
+      email: document.getElementById('email').value,
+      civil: document.getElementById('asisteCivil').value,
+      morcote: asisteMorcote,
+      mensaje: document.getElementById('mensaje').value
       };
 
       // Simulación de envío o llamada real a Google Apps Script
