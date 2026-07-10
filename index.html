@@ -123,13 +123,15 @@
       position: relative; z-index: 5;
     }
 
-  /* =========================================
+ /* =========================================
        4. PORTADA (OPENING)
        ========================================= */
     #opening { 
-      position: fixed; inset: 0; z-index: 90000; overflow: hidden; 
+      position: fixed; inset: 0; z-index: 90000; 
+      /* Permite scroll si la pantalla es muy pequeña para que no se corte el sello */
+      overflow-y: auto; overflow-x: hidden; 
       background: var(--bg-color); 
-      display: flex; align-items: center; justify-content: center; /* Alineación forzada al centro */
+      display: flex; align-items: center; justify-content: center; 
       transition: opacity .7s ease, visibility .7s ease; 
     }
     #opening.hide { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -140,25 +142,47 @@
     }
     
     .opening-inner {
-      position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%;
+      position: relative; z-index: 10; display: flex; flex-direction: column; 
+      align-items: center; justify-content: center; width: 100%; 
+      min-height: 100%; padding: 40px 15px; /* Padding extra para proteger los bordes */
     }
 
     .floral-corner { position: absolute; width: 520px; height: 430px; background: url("flores-portada.png") no-repeat; background-size: contain; opacity: 0.72; z-index: 2; pointer-events: none; }
     .floral-tl { top: -55px; left: -70px; transform: rotate(180deg); }
     .floral-br { bottom: -55px; right: -70px; background-position: bottom right; }
 
-    .portada-monograma { width: 280px; max-width: 76vw; margin: 0 auto 30px; position: relative; z-index: 10; mix-blend-mode: multiply; }
-    .portada-fechas { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; position: relative; z-index: 10; }
-    .portada-fechas span { font-size: clamp(12px, 2vw, 16px); letter-spacing: 0.15em; }
+    .portada-monograma { width: 250px; max-width: 65vw; margin: 0 auto 25px; position: relative; z-index: 10; mix-blend-mode: multiply; }
+    
+    /* Agrupación de fechas y lugares */
+    .portada-fechas { display: flex; flex-direction: column; gap: 12px; margin-bottom: 35px; position: relative; z-index: 10; text-align: center; }
+    .fecha-bloque { display: flex; flex-direction: column; gap: 3px; }
+    .fecha-dia { font-size: clamp(12px, 2.5vw, 16px); letter-spacing: 0.15em; font-weight: 500; }
+    .fecha-lugar { font-size: clamp(9px, 1.8vw, 12px); letter-spacing: 0.25em; opacity: 0.85; }
+    .fecha-separador { font-size: 14px; margin: 2px 0; }
 
-    .seal-open {
+    /* Botón Sello - Anulación de sombreados y fondos */
+    button.seal-open {
       position: relative; display: flex; flex-direction: column; align-items: center; z-index: 80;
-      background: transparent; border: none; padding: 0; margin: 0 auto; cursor: pointer;
+      background: transparent !important; border: none !important; padding: 0; margin: 0 auto; 
+      cursor: pointer; outline: none !important; box-shadow: none !important;
+      -webkit-tap-highlight-color: transparent; /* Evita el cuadro gris en móviles */
     }
-    .seal-open img { width: 150px; mix-blend-mode: multiply; transition: transform 0.3s; filter: drop-shadow(0 8px 13px rgba(96,65,20,.12)); }
-    .seal-open:hover img { transform: scale(1.05); }
-    .seal-open span { font-size: 14px; letter-spacing: 0.3em; margin-top: 10px; font-family: 'Cinzel', serif; }
-
+    button.seal-open:hover, 
+    button.seal-open:active, 
+    button.seal-open:focus {
+      background: transparent !important; border: none !important; box-shadow: none !important; outline: none !important;
+    }
+    
+    button.seal-open img { 
+      width: 145px; mix-blend-mode: multiply; transition: transform 0.3s; 
+      filter: drop-shadow(0 8px 13px rgba(96,65,20,.12)); 
+    }
+    button.seal-open:hover img { transform: scale(1.04); }
+    
+    button.seal-open span { 
+      font-size: 13px; letter-spacing: 0.3em; margin-top: 12px; 
+      text-transform: uppercase;
+    }
     /* =========================================
        MANEJO DEL CONTENIDO PRINCIPAL
        ========================================= */
@@ -329,7 +353,7 @@
     <img src="volumen-dorado.png" alt="Música">
   </button>
 
- <!-- PORTADA -->
+<!-- PORTADA -->
   <section id="opening">
     <div class="floral-corner floral-tl"></div>
     <div class="floral-corner floral-br"></div>
@@ -338,18 +362,28 @@
       <img src="monograma-ovalo-syj.png" alt="S&J" class="portada-monograma">
       
       <div class="portada-fechas cinzel gold-gradient">
-        <span>03 DE AGOSTO DE 2026</span><br>
-        <span style="font-size: 10px;">·</span><br>
-        <span>26 DE SEPTIEMBRE DE 2026</span><br><br>
-        <span>BUENOS AIRES · MORCOTE</span>
+        <!-- Grupo 1: Civil -->
+        <div class="fecha-bloque">
+          <span class="fecha-dia">03 DE AGOSTO DE 2026</span>
+          <span class="fecha-lugar">BUENOS AIRES</span>
+        </div>
+        
+        <div class="fecha-separador">·</div>
+        
+        <!-- Grupo 2: Ceremonia y Recepción -->
+        <div class="fecha-bloque">
+          <span class="fecha-dia">26 DE SEPTIEMBRE DE 2026</span>
+          <span class="fecha-lugar">MORCOTE</span>
+        </div>
       </div>
 
       <button class="seal-open" onclick="enterInvitation()">
         <img src="sello-nuevo.PNG" alt="Sello">
-        <span class="gold-gradient">Abrir</span>
+        <span class="cinzel gold-gradient">Abrir</span>
       </button>
     </div>
   </section>
+ 
 
   <!-- CONTENIDO PRINCIPAL -->
   <main id="main">
