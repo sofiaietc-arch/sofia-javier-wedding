@@ -100,6 +100,42 @@
         </div>
       </div>
     </section>
+<section id="cuenta" class="section">
+      <div class="content-wrapper">
+        <h2>Cuenta regresiva</h2>
+        <p class="cinzel" style="font-size: 9px; letter-spacing: 0.3em; margin-bottom: 25px;">Para nuestro gran día</p>
+        <div class="ramito"></div>
+        <div class="countdown">
+          <div><strong id="days">--</strong><span class="cinzel">Días</span></div>
+          <div class="countdown-separator">:</div>
+          <div><strong id="hours">--</strong><span class="cinzel">Horas</span></div>
+          <div class="countdown-separator">:</div>
+          <div><strong id="minutes">--</strong><span class="cinzel">Minutos</span></div>
+        </div>
+        <p class="cinzel" style="margin-top: 35px;">26 de septiembre 2026</p>
+      </div>
+    </section>
+
+    <section id="dresscode" class="section">
+      <div class="content-wrapper">
+        <h2>Dress Code</h2>
+        <div class="ramito"></div>
+        <p class="cinzel">Formal · Elegante</p>
+        <div class="dress-icons"><img src="formal-elegante.png" alt="Dress Code"></div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="section">
+      <div class="content-wrapper" style="max-width: 600px;">
+        <h2>Confirmación</h2>
+        <form id="rsvpForm" onsubmit="enviarRsvp(event)">
+          <div class="form-group"><input type="text" id="nombre" placeholder="Nombre" required></div>
+          <div class="form-group"><input type="email" id="email" placeholder="Email" required></div>
+          <button type="submit" class="btn">Enviar Confirmación</button>
+        </form>
+      </div>
+    </section>
+    
   </main>
 
   <div class="modal-overlay" id="mainModal"><div class="modal-sheet"><button class="close-btn" onclick="cerrarModal()">×</button><div id="modalContent"></div></div></div>
