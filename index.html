@@ -341,16 +341,12 @@
       z-index: 2;
       padding: 14px 28px;
       font-size: 13px;
-      background: rgba(255, 253, 248, 0.95); /* Fondo apenas opaco para destacar el texto sobre la línea de los pájaros */
-      box-shadow: 0 4px 15px rgba(80, 60, 30, 0.05);
+      background: transparent !important; /* Fondo totalmente transparente */
+      box-shadow: none !important;        /* Sin sombra para no manchar la imagen */
+      border: 1px solid rgba(198, 160, 91, 0.8) !important; /* Borde dorado para delimitar el botón */
     }
 
     @media (max-width: 760px) {
-      .rsvp-birds-container {
-        max-width: 95vw;
-        min-height: 100px;
-        margin-top: 20px;
-      }
       .rsvp-birds-container .btn {
         font-size: 11px;
         padding: 12px 22px;
