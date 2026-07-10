@@ -30,10 +30,8 @@
     }
 
     body::before {
-      content: ""; position: fixed; inset: 0; z-index: -4; pointer-events: none;
-      background-image: linear-gradient(rgba(255,253,248,.75), rgba(255,253,248,.85));
-      background-size: cover; background-position: center;
-    }
+    background: transparent !important;
+}
 
     /* =========================================
        2. TIPOGRAFÍAS Y ESTILOS BASE (ESTÉTICA LIMPIA)
@@ -339,8 +337,29 @@ body {
     /* Estilos específicos para este nuevo texto de pie */
     .cinzel {   font-family: 'Cinzel', serif !important;text-transform: uppercase !important;  color: var(--gold-dark) !important;
    }
+/* 1. Asegurar que el fondo esté fijo y cubra todo */
+    body {
+      background-image: url('fondo-cuenta-regresiva.png') !important;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
 
-    
+    /* 2. Hacer las tarjetas semi-transparentes para ver el fondo */
+    .paper-card {
+      /* Cambiamos .86 (casi sólido) por .4 (transparente) */
+      background: rgba(255, 255, 255, 0.4) !important;
+      border: 1px solid rgba(198,160,91,.2);
+      backdrop-filter: blur(10px); /* Esto mantiene la legibilidad del texto */
+    }
+
+    /* 3. Asegurar que las secciones no tengan fondo blanco opaco */
+    .section {
+      background: transparent !important;
+    }
+
+  
   </style>
 </head>
 <body>
