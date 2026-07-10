@@ -6,87 +6,46 @@
   <title>Sofía & Javier Wedding</title>
   
   <style>
-    /* 1. FUENTES Y VARIABLES */
+    /* RESET Y FUENTES */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&family=Allura&family=GFS+Didot&display=swap');
-
     :root { --gold: #A77C32; --gold-dark: #8F743B; --gold-text: #9A7636; --bg-color: #FFFDF8; }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 15px; }
+    body { margin: 0; font-family: 'Cormorant Garamond', serif; background-image: url('fondo-cuenta-regresiva.png'); background-size: cover; background-position: center; background-attachment: fixed; color: var(--gold-dark); text-align: center; }
 
-    /* 2. FONDO Y ESTRUCTURA GLOBAL */
-    body {
-      margin: 0;
-      background-image: url('fondo-cuenta-regresiva.png');
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: var(--gold-dark);
-      font-family: 'Cormorant Garamond', serif;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    /* 3. PORTADA Y APERTURA */
-    #opening { 
-      position: fixed; inset: 0; z-index: 90000; overflow-y: auto;
-      background: var(--bg-color); display: flex; align-items: center; justify-content: center;
-      transition: opacity .7s ease, visibility .7s ease;
-    }
-    #opening.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-    #opening::before {
-      content: ""; position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(rgba(255,253,248,.64), rgba(255,253,248,.72)), url('fondo portada.png');
-      background-size: cover; background-position: center;
-    }
-
-    /* 4. SECCIONES Y TRANSPARENCIAS */
+    /* SECCIONES */
     .section { position: relative; padding: 80px 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: transparent !important; }
-    .content-wrapper { background: rgba(255, 253, 248, 0.4); padding: 40px 20px; border-radius: 10px; width: min(800px, 94vw); margin: 0 auto; z-index: 5; }
+    .content-wrapper { background: rgba(255, 253, 248, 0.4); padding: 40px 20px; border-radius: 10px; width: min(800px, 94vw); z-index: 5; }
     
-    /* TIPOGRAFÍA BÁSICA */
-    h2 { font-family: 'GFS Didot', serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0; }
-    .cinzel { font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 0.15em; }
-    .ramito { display: block; width: 95px; height: 24px; margin: 12px auto 24px auto; background: url("ramito-divisor.png") center/contain no-repeat; }
-    
-    /* Botones y Grid de Info */
-    .btn { appearance: none; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 11px; padding: 14px 28px; cursor: pointer; background: transparent; border: 1px solid rgba(198,160,91,.86); color: var(--gold); }
-    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: min(700px, 90vw); margin: 40px auto; border-top: 1px solid rgba(198,160,91,.3); border-bottom: 1px solid rgba(198,160,91,.3); padding: 30px 0; }
-    .info-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; }
+    /* PORTADA */
+    #opening { position: fixed; inset: 0; z-index: 90000; background: var(--bg-color); display: flex; align-items: center; justify-content: center; transition: opacity 0.7s; }
+    #opening.hide { opacity: 0; pointer-events: none; }
+    #opening::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(255,253,248,.64), rgba(255,253,248,.72)), url('fondo portada.png'); background-size: cover; }
+
+    /* ELEMENTOS UI */
+    .btn { appearance: none; cursor: pointer; padding: 14px 28px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; text-transform: uppercase; }
+    h2 { font-family: 'GFS Didot', serif; color: var(--gold); text-transform: uppercase; }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px auto; padding: 30px 0; border-top: 1px solid rgba(198,160,91,.3); border-bottom: 1px solid rgba(198,160,91,.3); }
+    .info-item { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; color: inherit; }
     .info-icon { width: 38px; height: 38px; }
     .info-icon img { width: 100%; height: 100%; object-fit: contain; }
     
-    /* 5. NAVEGACIÓN Y OTROS */
-    .music-toggle { position: fixed; top: 20px; left: 20px; z-index: 100000; background: transparent; border: none; cursor: pointer; }
-    .music-toggle img { width: 35px; }
-    #main { display: none; opacity: 0; transition: opacity 1s ease; }
-    #main.visible { display: block; opacity: 1; }
-    
-    /* (Puedes incluir aquí el resto de tus estilos de modales y transiciones 3D) */
+    /* MODALES */
+    .modal-overlay { position: fixed; inset: 0; z-index: 200000; display: none; align-items: center; justify-content: center; background: rgba(255,253,248,.95); }
+    .modal-overlay.show { display: flex; }
+    .modal-sheet { background: white; padding: 40px; border: 1px solid var(--gold); position: relative; width: 90%; max-width: 500px; }
   </style>
 </head>
 <body>
 
-  <audio id="bgMusic" src="claro-de-luna.mp3" preload="auto" loop playsinline></audio>
-  <button class="music-toggle" onclick="toggleMusic()"><img src="volumen-dorado.png" alt="Música"></button>
-
   <section id="opening">
-    <div class="opening-inner">
-      <img src="monograma-ovalo-syj.png" alt="S&J" style="width: 220px; margin-bottom: 30px;">
-      <div class="portada-nombres">SOFÍA & JAVIER</div>
+    <div class="content-wrapper">
+      <div class="portada-nombres" style="font-family: 'GFS Didot'; font-size: 40px;">SOFÍA & JAVIER</div>
       <button class="btn" onclick="enterInvitation()">Abrir Invitación</button>
     </div>
   </section>
 
-  <main id="main">
-    <section id="bienvenidos" class="section">
-      <div class="content-wrapper">
-        <h2>Bienvenidos</h2>
-        <div class="ramito"></div>
-        <p>Los invitamos a celebrar nuestra boda.</p>
-      </div>
-    </section>
-
+  <main id="main" style="display: none; opacity: 0; transition: opacity 1s;">
+    
     <section id="info" class="section">
       <div class="content-wrapper">
         <h2>El viaje</h2>
@@ -96,55 +55,24 @@
           <a href="#" class="info-item"><div class="info-icon"><img src="icono-transporte.png"></div><span>Transporte</span></a>
           <a href="#" class="info-item"><div class="info-icon"><img src="icono-clima.png"></div><span>Clima</span></a>
           <a href="#" class="info-item"><div class="info-icon"><img src="icono-moneda.png"></div><span>Moneda</span></a>
-          <div class="info-item" style="cursor: pointer;" onclick="abrirModalIdioma()"><div class="info-icon"><img src="icono-idioma.png"></div><span>Idiomas</span></div>
+          <div class="info-item" onclick="abrirModalIdioma()"><div class="info-icon"><img src="icono-idioma.png"></div><span>Idiomas</span></div>
         </div>
       </div>
     </section>
-<section id="cuenta" class="section">
-      <div class="content-wrapper">
-        <h2>Cuenta regresiva</h2>
-        <p class="cinzel" style="font-size: 9px; letter-spacing: 0.3em; margin-bottom: 25px;">Para nuestro gran día</p>
-        <div class="ramito"></div>
-        <div class="countdown">
-          <div><strong id="days">--</strong><span class="cinzel">Días</span></div>
-          <div class="countdown-separator">:</div>
-          <div><strong id="hours">--</strong><span class="cinzel">Horas</span></div>
-          <div class="countdown-separator">:</div>
-          <div><strong id="minutes">--</strong><span class="cinzel">Minutos</span></div>
-        </div>
-        <p class="cinzel" style="margin-top: 35px;">26 de septiembre 2026</p>
-      </div>
-    </section>
-
-    <section id="dresscode" class="section">
-      <div class="content-wrapper">
-        <h2>Dress Code</h2>
-        <div class="ramito"></div>
-        <p class="cinzel">Formal · Elegante</p>
-        <div class="dress-icons"><img src="formal-elegante.png" alt="Dress Code"></div>
-      </div>
-    </section>
-
-    <section id="rsvp" class="section">
-      <div class="content-wrapper" style="max-width: 600px;">
-        <h2>Confirmación</h2>
-        <form id="rsvpForm" onsubmit="enviarRsvp(event)">
-          <div class="form-group"><input type="text" id="nombre" placeholder="Nombre" required></div>
-          <div class="form-group"><input type="email" id="email" placeholder="Email" required></div>
-          <button type="submit" class="btn">Enviar Confirmación</button>
-        </form>
-      </div>
-    </section>
-    
   </main>
 
-  <div class="modal-overlay" id="mainModal"><div class="modal-sheet"><button class="close-btn" onclick="cerrarModal()">×</button><div id="modalContent"></div></div></div>
+  <div class="modal-overlay" id="mainModal">
+    <div class="modal-sheet">
+      <button onclick="cerrarModal()" style="position:absolute; top:10px; right:10px;">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
 
   <script>
-    function toggleMusic() { const audio = document.getElementById('bgMusic'); isPlaying ? audio.pause() : audio.play(); isPlaying = !isPlaying; }
     function enterInvitation() { 
       document.getElementById('opening').classList.add('hide'); 
-      setTimeout(() => { document.getElementById('main').classList.add('visible'); }, 500);
+      document.getElementById('main').style.display = 'block';
+      setTimeout(() => { document.getElementById('main').style.opacity = '1'; }, 100);
     }
     function abrirModal() { document.getElementById('mainModal').classList.add('show'); }
     function cerrarModal() { document.getElementById('mainModal').classList.remove('show'); }
