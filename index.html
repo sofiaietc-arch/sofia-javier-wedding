@@ -244,15 +244,53 @@
     /* DRESS CODE */
     .dress-image-wrap img { width: min(340px, 80vw); object-fit: contain; mix-blend-mode: multiply; margin-top: 20px; }
 
-    /* RSVP CON PÁJAROS */
-    .rsvp-birds-frame {
-      display: flex; align-items: center; justify-content: center; gap: 15px;
-      margin-top: 30px; position: relative; z-index: 10;
+   /* =========================================
+       RSVP CON PÁJAROS (Encuadre perfecto sin cortes)
+       ========================================= */
+    .rsvp-birds-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 480px; /* Determina qué tan separados o juntos están los pájaros */
+      margin: 30px auto 0 auto;
+      min-height: 120px;
     }
-    .bird-crop { width: 120px; height: 120px; overflow: hidden; position: relative; }
-    .bird-crop img { position: absolute; top: 50%; transform: translateY(-50%); width: 500px; opacity: 0.9; }
-    .bird-crop.left img { left: 0; }
-    .bird-crop.right img { right: 0; }
+
+    .pajaros-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .rsvp-birds-container .btn {
+      position: relative;
+      z-index: 2;
+      padding: 14px 28px;
+      font-size: 13px;
+      background: rgba(255, 253, 248, 0.95); /* Fondo apenas opaco para destacar el texto sobre la línea de los pájaros */
+      box-shadow: 0 4px 15px rgba(80, 60, 30, 0.05);
+    }
+
+    @media (max-width: 760px) {
+      .rsvp-birds-container {
+        max-width: 95vw;
+        min-height: 100px;
+        margin-top: 20px;
+      }
+      .rsvp-birds-container .btn {
+        font-size: 11px;
+        padding: 12px 22px;
+      }
+    }
 
     /* =========================================
        7. NAV BAR & MÚSICA (CORREGIDOS)
@@ -465,10 +503,9 @@
         <div class="ramito"></div>
         <p>Agradecemos que confirmes tu asistencia antes del 20 de julio.</p>
         
-        <div class="rsvp-birds-frame">
-          <div class="bird-crop left"><img src="pajaros-rsvp.png" alt=""></div>
-          <button class="btn" onclick="abrirRsvp()" style="padding: 15px 30px; font-size: 14px;">Enviar Confirmación</button>
-          <div class="bird-crop right"><img src="pajaros-rsvp.png" alt=""></div>
+     <div class="rsvp-birds-container">
+          <img src="pajaros-rsvp.png" alt="" class="pajaros-frame">
+          <button class="btn" onclick="abrirRsvp()">Enviar Confirmación</button>
         </div>
       </div>
     </section>
