@@ -482,7 +482,7 @@ body {
     </section>
     
     <!-- 6. EL VIAJE -->
-  <section id="info" class="section page-carta">
+ <section id="info" class="section page-carta">
       <div class="content-wrapper">
         <h2 class="gold-gradient">El viaje</h2>
         <div class="ramito"></div>
@@ -493,28 +493,33 @@ body {
         </div>
 
         <div class="info-grid">
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 14 C25 14 19 20 19 28 C19 40 32 54 32 54 C32 54 45 40 45 28 C45 20 39 14 32 14 Z"></path><circle cx="32" cy="28" r="4"></circle></svg></div>
+          <a href="https://maps.google.com" target="_blank" class="info-item">
+            <div class="info-icon"><img src="icono-llegar.png" alt="Cómo llegar"></div>
             <span>Cómo llegar</span>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 18 C24 18 18 28 18 38 H46 C46 28 40 18 32 18 Z"></path><rect x="14" y="38" width="36" height="4"></rect><circle cx="32" cy="14" r="2"></circle><path d="M32 16 V18"></path></svg></div>
+          </a>
+
+          <a href="https://www.google.com/search?q=hoteles+en+Morcote+Suiza" target="_blank" class="info-item">
+            <div class="info-icon"><img src="icono-hoteles.png" alt="Hoteles"></div>
             <span>Hoteles</span>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M46 16 C50 12 54 14 54 18 L46 44 L34 40 L26 48 V40 L12 36 L18 28 L36 32 L46 16 Z"></path><path d="M34 40 L40 50 L46 44"></path></svg></div>
+          </a>
+
+          <a href="https://www.google.com/flights" target="_blank" class="info-item">
+            <div class="info-icon"><img src="icono-transporte.png" alt="Transporte"></div>
             <span>Transporte</span>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="10"></circle><path d="M32 12 V16 M32 48 V52 M12 32 H16 M48 32 H52 M18 18 L21 21 M43 43 L46 46 M18 46 L21 43 M43 21 L46 18"></path></svg></div>
+          </a>
+
+          <a href="https://www.meteosvizzera.admin.ch/previsioni-locali/lugano/6900.html#forecast-tab=detail-view" target="_blank" class="info-item">
+            <div class="info-icon"><img src="icono-clima.png" alt="Clima"></div>
             <span>Clima</span>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="16"></circle><text x="32" y="36" font-size="12" text-anchor="middle" font-family="'Cinzel', serif" fill="currentColor" stroke="none">CHF</text></svg></div>
+          </a>
+
+          <a href="https://www.revolut.com/es-ES/currency-converter/convert-chf-to-usd-exchange-rate/" target="_blank" class="info-item">
+            <div class="info-icon"><img src="icono-moneda.png" alt="Moneda"></div>
             <span>Moneda</span>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><svg viewBox="0 0 64 64"><path d="M32 18 L20 46 H24 L27 38 H37 L40 46 H44 L32 18 Z M29 32 L32 24 L35 32 Z"></path></svg></div>
+          </a>
+
+          <div class="info-item" style="cursor: pointer;" onclick="abrirModalIdioma()">
+            <div class="info-icon"><img src="icono-idioma.png" alt="Idiomas"></div>
             <span>Idiomas</span>
           </div>
         </div>
@@ -767,6 +772,29 @@ body {
         btn.innerText = 'Enviar Confirmación';
       });
     }
+<script>
+    /* 1. MÚSICA */
+    let isPlaying = false;
+    function toggleMusic() {
+      const audio = document.getElementById('bgMusic');
+      if (isPlaying) { audio.pause(); } else { audio.play().catch(e => console.log(e)); }
+      isPlaying = !isPlaying;
+    }
+
+    /* 2. APERTURA DE CARTA (TRANSICIÓN 3D) */
+    function enterInvitation() {
+      toggleMusic();
+      document.getElementById('opening').classList.add('hide');
+      const overlay = document.getElementById('letterTransition');
+      overlay.classList.add('show');
+      setTimeout(() => { overlay.classList.add('open'); }, 100);
+      setTimeout(() => {
+        document.getElementById('opening').style.display = 'none';
+        const main = document.getElementById('main');
+        main.classList.add('visible');
+        overlay.style.display = 'none';
+        iniciar
+    
   </script>
 </body>
 </html>
