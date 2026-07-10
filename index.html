@@ -18183,7 +18183,158 @@ body.menu-visible {
   .bottom-nav .nav-label { font-size: 5.3px !important; letter-spacing: 0 !important; }
   body.menu-visible { padding-bottom: 74px !important; }
 }
+/* =====================================================
+   REDISEÑO CELEBRACIONES: Estilo Vertical (Referencia Img 2)
+   ===================================================== */
 
+/* 1. Ajuste de la grilla para que las tarjetas sean más altas y estilizadas */
+#celebraciones .celebration-grid,
+.celebrations .celebration-grid {
+  grid-template-columns: repeat(2, minmax(320px, 420px)) !important;
+  gap: 40px !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  margin: 40px auto 0 !important;
+}
+
+/* 2. Tarjeta con estructura de columna vertical */
+#celebraciones .event-card,
+.celebrations .event-card {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 520px !important; 
+  min-height: 520px !important;
+  background: rgba(255,253,248,.94) !important;
+  border: 1px solid rgba(198,160,91,.34) !important;
+  box-shadow: 0 14px 34px rgba(70,55,38,.08) !important;
+  overflow: hidden !important;
+}
+
+/* 3. Imagen en la parte superior */
+#celebraciones .event-art,
+.celebrations .event-art {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: 280px !important;
+  min-height: 280px !important;
+  flex: 0 0 280px !important;
+}
+
+/* Fundido vertical de la foto (de arriba hacia abajo) */
+#celebraciones .event-art img,
+.celebrations .event-art img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%) !important;
+}
+
+/* Velo sutil para fusionar la foto con el papel */
+#celebraciones .event-art::after,
+.celebrations .event-art::after {
+  background: linear-gradient(to bottom, rgba(255,253,248,0) 0%, rgba(255,253,248,.5) 60%, rgba(255,253,248,1) 100%) !important;
+}
+
+/* 4. Textos en la parte inferior, perfectamente centrados */
+#celebraciones .event-copy,
+.celebrations .event-copy,
+#celebraciones .event-card:nth-child(2) .event-copy,
+.celebrations .event-card:nth-child(2) .event-copy {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: auto !important;
+  flex: 1 !important;
+  padding: 10px 30px 40px !important;
+  text-align: center !important;
+  background: transparent !important;
+}
+
+/* Anulación de alineaciones a la derecha y márgenes previos */
+#celebraciones .event-copy h3,
+.celebrations .event-copy h3,
+#celebraciones .event-card:nth-child(2) .event-copy h3,
+.celebrations .event-card:nth-child(2) .event-copy h3 {
+  text-align: center !important;
+  margin: 0 auto 12px auto !important;
+  font-size: clamp(26px, 3vw, 32px) !important;
+  letter-spacing: .20em !important;
+  padding: 0 !important;
+}
+
+#celebraciones .event-copy .place,
+.celebrations .event-copy .place {
+  text-align: center !important;
+  margin: 0 auto 16px auto !important;
+}
+
+#celebraciones .event-copy .date-small,
+.celebrations .event-copy .date-small {
+  text-align: center !important;
+  margin: 0 auto 24px auto !important;
+}
+
+/* Botón centrado en la base */
+#celebraciones .event-copy .btn,
+.celebrations .event-copy .btn {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  justify-content: center !important;
+  margin: auto auto 0 auto !important; 
+}
+
+/* 5. Adaptación para celulares */
+@media (max-width: 760px) {
+  #celebraciones .celebration-grid,
+  .celebrations .celebration-grid {
+    grid-template-columns: 1fr !important;
+    width: min(360px, 94vw) !important;
+    gap: 30px !important;
+  }
+
+  #celebraciones .event-card,
+  .celebrations .event-card {
+    height: 480px !important;
+    min-height: 480px !important;
+  }
+
+  #celebraciones .event-art,
+  .celebrations .event-art {
+    height: 250px !important;
+    min-height: 250px !important;
+    flex: 0 0 250px !important;
+  }
+
+  #celebraciones .event-copy,
+  .celebrations .event-copy,
+  #celebraciones .event-card:nth-child(2) .event-copy,
+  .celebrations .event-card:nth-child(2) .event-copy {
+    padding: 10px 20px 30px !important;
+  }
+  
+  #celebraciones .event-copy h3,
+  .celebrations .event-copy h3,
+  #celebraciones .event-card:nth-child(2) .event-copy h3,
+  .celebrations .event-card:nth-child(2) .event-copy h3 {
+    font-size: 24px !important;
+    letter-spacing: .16em !important;
+  }
+}
+
+
+
+   
 </style>
 
 <!-- Imagen civil actualizada: Museo Fernández Blanco subida por ustedes -->
