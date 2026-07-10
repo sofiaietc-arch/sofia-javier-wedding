@@ -21347,6 +21347,36 @@ Enviar confirmación
     font-size: clamp(19px, 5vw, 24px) !important;
   }
 }
+/* Limpieza y estandarización de los SVGs de la barra de navegación */
+.bottom-nav .nav-icon svg,
+.bottom-nav .nav-icon svg * {
+  fill: none !important;
+  stroke: #A77C32 !important;
+  stroke-width: 2.1 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+/* Modificación de márgenes si el texto está en dos líneas (Información Útil) */
+.bottom-nav .nav-label {
+  white-space: normal !important;
+  line-height: 1.15 !important;
+}
+
+/* Redimensionamiento fino y consistencia */
+.bottom-nav .nav-icon {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+@media (max-width: 760px) {
+  .bottom-nav .nav-icon {
+    width: 23px !important;
+    height: 23px !important;
+  }
+}
+
+
 </style>
 
 <script>
